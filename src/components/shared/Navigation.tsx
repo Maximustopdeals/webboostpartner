@@ -16,11 +16,12 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { path: '/', label: 'HOME' },
-    { path: '/pakketten', label: 'PAKKETTEN' },
-    { path: '/faq', label: 'FAQ' },
-    { path: '/contact', label: 'CONTACT' },
-  ];
+  { path: '/', label: 'HOME' },
+  { path: '/pakketten', label: 'PAKKETTEN' },
+  { path: '/faq', label: 'FAQ' },
+  { path: '/over-mij', label: 'OVER MIJ' },
+  { path: '/contact', label: 'CONTACT' },
+];
 
   const isActive = (path: string) => {
     return location.pathname === path;
