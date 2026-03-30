@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/shared';
-import { Home, Pakketten, FAQ, Contact } from './pages';
+import { Home, Pakketten, FAQ, OverMij, Contact } from './pages';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pakketten" element={<Pakketten />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/over-mij" element={<OverMij />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
