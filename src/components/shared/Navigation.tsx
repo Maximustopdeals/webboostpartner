@@ -19,7 +19,7 @@ export function Navigation() {
   { path: '/', label: 'HOME' },
   { path: '/pakketten', label: 'PAKKETTEN' },
   { path: '/faq', label: 'FAQ' },
-  { path: '/over-mij', label: 'OVER MIJ' },
+  { path: '/over-mij', label: 'OVER MIJ' },   // ← voeg deze toe
   { path: '/contact', label: 'CONTACT' },
 ];
 
