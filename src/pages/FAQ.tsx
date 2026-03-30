@@ -146,8 +146,8 @@ export function FAQ() {
               <Accordion type="single" collapsible className="w-full">
                 {category.questions.map((faq, index) => (
                   <AccordionItem 
-                    key={`${category.id}-${index}`} 
-                    value={`${category.id}-${index}`}
+                    key={category.id + '-' + index} 
+                    value={category.id + '-' + index}
                     className="border border-gray-200 rounded-lg mb-3 px-4 data-[state=open]:border-blue-300"
                   >
                     <AccordionTrigger className="text-left text-lg font-medium text-gray-900 hover:text-blue-600 py-4">
