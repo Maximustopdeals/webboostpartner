@@ -21,22 +21,54 @@ export function Contact() {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 3000);
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Create FormData object for the form
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('message', formData.message);
+    formDataToSend.append('_subject', `Nieuw bericht van ${formData.name} via webboostpartner.nl`);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mdapzjod', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 4000);
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          alert(data.errors.map((error: any) => error.message).join(', '));
+        } else {
+          alert('Er ging iets mis. Probeer het later opnieuw.');
+        }
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Er ging iets mis met het versturen. Controleer je internetverbinding.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -193,10 +225,11 @@ export function Contact() {
                     
                     <Button
                       type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all"
+                      disabled={isSubmitting}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Send className="w-5 h-5" />
-                      Verstuur bericht
+                      {isSubmitting ? 'Versturen...' : 'Verstuur bericht'}
                     </Button>
                   </form>
                 )}
