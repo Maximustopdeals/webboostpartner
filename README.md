@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# WebBoostPartner - Next.js 15 Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Een complete Next.js 15 website met App Router voor WebBoostPartner.nl.
 
-Currently, two official plugins are available:
+## Migratie van Vite naar Next.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Deze website is gemigreerd van Vite + React naar Next.js 15 met App Router.
 
-## React Compiler
+### Belangrijkste wijzigingen
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Routing**: Geen React Router meer, maar Next.js App Router (`/app` folder)
+- **SEO**: Elke pagina heeft eigen metadata via `generateMetadata`
+- **Contactformulier**: Werkt via API route (`/app/api/contact/route.ts`) die Formspree aanroept
+- **Sitemap & Robots**: Automatisch gegenereerd
+- **Statische export**: Geconfigureerd voor Vercel deployment
 
-## Expanding the ESLint configuration
+## Installatie
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) in je browser.
+
+## Build
+
+```bash
+npm run build
+```
+
+De statische bestanden worden geëxporteerd naar de `dist` folder.
+
+## Deployment naar Vercel
+
+1. Push de code naar GitHub
+2. Importeer het project in Vercel
+3. Vercel herkent automatisch dat het een Next.js project is
+4. Deploy!
+
+## Pagina's
+
+- `/` - Homepage
+- `/over-mij/` - Over mij
+- `/pakketten/` - Pakketten
+- `/faq/` - Veelgestelde vragen
+- `/contact/` - Contact (met werkend formulier)
+
+## Contactformulier
+
+Het contactformulier werkt via een API route die een POST request doet naar Formspree.
+Het Formspree endpoint is: `https://formspree.io/f/mdapzjod`
+
+## Domein
+
+De website is geconfigureerd voor: `https://www.webboostpartner.nl`
+
+Canonical URLs en alle metadata verwijzen naar dit domein.
