@@ -3,15 +3,21 @@ import { ArrowRight } from "lucide-react";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import PricingSection from "@/components/PricingSection";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Website laten maken Rotterdam | Professionele Next.js Websites",
   description:
     "Wilt u een professionele website laten maken in Rotterdam? WebBoost Partner bouwt Next.js websites die mooi, snel én vindbaar zijn. Maatwerk vanaf €1.495.",
   alternates: { canonical: "https://webboostpartner.nl/website-laten-maken-rotterdam" },
 };
 
-const faqs = [
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+const faqs: FAQItem[] = [
   {
     q: "Wat kost een Next.js website?",
     a: "Bij WebBoost Partner werk ik met drie heldere pakketten plus een webshop-pakket. Het Starter pakket begint bij €1.495 (excl. btw) voor ZZP'ers die snel professioneel online willen. Het Premium pakket à €2.495 is geschikt voor ondernemers die meer content en lokale SEO nodig hebben. Het Pro pakket à €3.495 bevat een volwaardig SEO-traject met conversieoptimalisatie. Het Webshop pakket start vanaf €6.495 met iDEAL-integratie en productbeheer. Alle pakketten zijn maatwerk in te vullen — een persoonlijke offerte is altijd mogelijk.",
