@@ -3,26 +3,75 @@
 import { useState } from "react";
 import { Zap, Monitor, Smartphone, ArrowRight, Loader2 } from "lucide-react";
 
-// API call gaat via eigen server route — key blijft verborgen
+// Types voor PageSpeed API responses
+interface LighthouseCategory {
+  score: number;
+}
 
-function getScore(cat) {
+interface LighthouseAudit {
+  displayValue?: string;
+}
+
+interface LighthouseResult {
+  categories: {
+    performance?: LighthouseCategory;
+    accessibility?: LighthouseCategory;
+    "best-practices"?: LighthouseCategory;
+    seo?: LighthouseCategory;
+  };
+  audits: {
+    "largest-contentful-paint"?: LighthouseAudit;
+    "cumulative-layout-shift"?: LighthouseAudit;
+    "interaction-to-next-paint"?: LighthouseAudit;
+    "first-contentful-paint"?: LighthouseAudit;
+    "server-response-time"?: LighthouseAudit;
+  };
+}
+
+interface PageSpeedResponse {
+  lighthouseResult: LighthouseResult;
+}
+
+interface ScoresType {
+  performance: number;
+  accessibility: number;
+  bestPractices: number;
+  seo: number;
+  lcp: string;
+  cls: string;
+  inp: string;
+  fcp: string;
+  ttfb: string;
+}
+
+// Helper functions
+function getScore(cat?: LighthouseCategory): number {
   if (!cat || typeof cat.score !== "number") return 0;
   return cat.score;
 }
 
-function getAuditValue(audit) {
+function getAuditValue(audit?: LighthouseAudit): string {
   if (!audit || !audit.displayValue || audit.displayValue === "") return "N/A";
   return audit.displayValue;
 }
 
-export default function PageSpeedTool() {
-  const [url, setUrl] = useState("");
-  const [strategy, setStrategy] = useState("mobile");
-  const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState("");
+// Props interfaces
+interface ScoreCircleProps {
+  score: number;
+}
 
-  async function handleScan() {
+interface ScoreInterpretationProps {
+  score: number;
+}
+
+export default function PageSpeedTool() {
+  const [url, setUrl] = useState<string>("");
+  const [strategy, setStrategy] = useState<string>("mobile");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [result, setResult] = useState<PageSpeedResponse | null>(null);
+  const [error, setError] = useState<string>("");
+
+  async function handleScan(): Promise<void> {
     if (!url.trim()) {
       setError("Voer een URL in.");
       return;
@@ -31,7 +80,7 @@ export default function PageSpeedTool() {
     setLoading(true);
     setResult(null);
 
-    let scanUrl = url.trim();
+    let scanUrl: string = url.trim();
     if (!/^https?:\/\//i.test(scanUrl)) {
       scanUrl = "https://" + scanUrl;
     }
@@ -44,16 +93,17 @@ export default function PageSpeedTool() {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error || "Scan mislukt. Controleer de URL.");
       }
-      const data = await res.json();
+      const data: PageSpeedResponse = await res.json();
       setResult(data);
-    } catch (err) {
-      setError(err.message || "Er ging iets mis. Probeer het opnieuw.");
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "Er ging iets mis. Probeer het opnieuw.";
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
   }
 
-  function handleKeyDown(e) {
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void {
     if (e.key === "Enter") handleScan();
   }
 
@@ -61,7 +111,7 @@ export default function PageSpeedTool() {
   const cats = result?.lighthouseResult?.categories || {};
   const audits = result?.lighthouseResult?.audits || {};
 
-  const scores = result
+  const scores: ScoresType | null = result
     ? {
         performance: getScore(cats.performance),
         accessibility: getScore(cats.accessibility),
@@ -99,7 +149,7 @@ export default function PageSpeedTool() {
                 "Officiële Google PageSpeed Insights data",
                 "Mobiele en desktop scan",
                 "Direct inzicht in verbeterpunten",
-              ].map((item) => (
+              ].map((item: string) => (
                 <li key={item} className="flex items-center gap-3 text-sm text-[#525252]">
                   <ArrowRight size={14} className="text-[#FF4500] shrink-0" />
                   {item}
@@ -119,7 +169,7 @@ export default function PageSpeedTool() {
                 <input
                   type="text"
                   value={url}
-                  onChange={(e) => setUrl(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="bv. jouwbedrijf.nl"
                   className="flex-1 border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors font-mono text-sm"
@@ -237,10 +287,10 @@ export default function PageSpeedTool() {
   );
 }
 
-function ScoreCircle({ score }) {
-  const safeScore = typeof score === "number" ? score : 0;
-  const color = safeScore >= 90 ? "#00B050" : safeScore >= 50 ? "#FF4500" : "#CC0000";
-  const displayScore = Number.isFinite(safeScore) ? safeScore : 0;
+function ScoreCircle({ score }: ScoreCircleProps) {
+  const safeScore: number = typeof score === "number" ? score : 0;
+  const color: string = safeScore >= 90 ? "#00B050" : safeScore >= 50 ? "#FF4500" : "#CC0000";
+  const displayScore: number = Number.isFinite(safeScore) ? safeScore : 0;
   return (
     <div className="relative inline-flex items-center justify-center w-16 h-16">
       <svg className="w-16 h-16 -rotate-90" viewBox="0 0 36 36">
@@ -266,7 +316,7 @@ function ScoreCircle({ score }) {
   );
 }
 
-function ScoreInterpretation({ score }) {
+function ScoreInterpretation({ score }: ScoreInterpretationProps) {
   if (score >= 90) {
     return (
       <p className="text-sm text-white/80">
