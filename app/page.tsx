@@ -12,6 +12,21 @@ export const metadata = {
     "Razendsnelle Next.js websites voor ondernemers in Rotterdam. Beter dan WordPress op snelheid, SEO en Core Web Vitals. Vrijblijvend kennismaken.",
 };
 
+// Interface voor Bar component props
+interface BarProps {
+  label: string;
+  value: string;
+}
+
+function Bar({ label, value }: BarProps) {
+  return (
+    <div className="flex items-center justify-between">
+      <span className="text-[#525252]">{label}</span>
+      <span className="font-bold">{value}</span>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -234,14 +249,5 @@ export default function HomePage() {
 
       <CTASection />
     </>
-  );
-}
-
-function Bar({ label, value }) {
-  return (
-    <div className="flex items-center justify-between">
-      <span className="text-[#525252]">{label}</span>
-      <span className="font-bold">{value}</span>
-    </div>
   );
 }
