@@ -4,7 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { Zap, Menu, X, FileText } from "lucide-react";
 
-const links = [
+interface NavLink {
+  href: string;
+  label: string;
+}
+
+const links: NavLink[] = [
   { href: "/", label: "HOME" },
   { href: "/website-laten-maken-rotterdam", label: "WEBSITE ROTTERDAM" },
   { href: "/seo-rotterdam", label: "SEO" },
@@ -15,7 +20,7 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#FAFAFA] border-b-2 border-black" data-testid="site-navbar">
@@ -33,7 +38,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             {/* Navigatielinks */}
             <nav className="flex items-center">
-              {links.map((l) => (
+              {links.map((l: NavLink) => (
                 <Link
                   key={l.href}
                   href={l.href}
@@ -67,7 +72,7 @@ export default function Navbar() {
         {/* Mobile menu */}
         {open && (
           <nav className="lg:hidden border-t-2 border-black py-4 space-y-1">
-            {links.map((l) => (
+            {links.map((l: NavLink) => (
               <Link
                 key={l.href}
                 href={l.href}
