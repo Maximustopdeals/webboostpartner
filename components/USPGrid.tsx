@@ -1,6 +1,14 @@
-import { Gauge, Search, MapPin, Handshake, Zap, Target, Code, ShieldCheck } from "lucide-react";
+import { Gauge, Search, MapPin, Handshake, Zap, Target, Code, ShieldCheck, LucideIcon } from "lucide-react";
 
-const items = [
+interface USPItem {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  metric?: string;
+  big?: boolean;
+}
+
+const items: USPItem[] = [
   {
     icon: Gauge,
     title: "Snelle Next.js websites",
@@ -62,7 +70,7 @@ export default function USPGrid() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {items.map((it, i) => {
+          {items.map((it: USPItem, i: number) => {
             const Icon = it.icon;
             return (
               <div
