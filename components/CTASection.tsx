@@ -1,12 +1,19 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+interface CTASectionProps {
+  title?: string;
+  subtitle?: string;
+  button?: string;
+  href?: string;
+}
+
 export default function CTASection({
   title = "Klaar voor een website die wél scoort?",
   subtitle = "Plan een vrijblijvend kennismakingsgesprek. Geen verkooppraatjes — gewoon een eerlijk advies.",
   button = "Plan een gesprek",
   href = "/contact",
-}) {
+}: CTASectionProps) {
   return (
     <section className="bg-black text-white py-20 sm:py-28 border-y-2 border-black relative overflow-hidden" data-testid="cta-section">
       <div className="absolute inset-0 opacity-5 pointer-events-none">
