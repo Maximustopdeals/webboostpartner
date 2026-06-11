@@ -1,14 +1,20 @@
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "WordPress naar Next.js migratie | SEO behouden, snelheid verbeteren",
   description:
     "WordPress migreren naar Next.js: waarom, hoe en wat het oplevert. SEO-rankings behouden, snelheid verdrievoudigen, onderhoud minimaliseren.",
   alternates: { canonical: "https://webboostpartner.nl/wordpress-naar-nextjs" },
 };
 
-const faqs = [
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+const faqs: FAQItem[] = [
   {
     q: "Verlies ik mijn Google rankings tijdens een migratie?",
     a: "Niet als de migratie zorgvuldig wordt uitgevoerd. Cruciaal zijn: identieke URL-structuur (of complete 301-redirect mapping), behoud van titles en meta descriptions, en het direct indienen van de nieuwe sitemap bij Search Console. In de praktijk zien sites na een correcte migratie binnen 2-4 weken een stijging in rankings door betere Core Web Vitals.",
