@@ -1,7 +1,8 @@
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Website Pakketten | Essential €2.495 · Professional €4.495 · Enterprise €6.995",
   description:
     "Heldere pakketten voor uw nieuwe Next.js website. Van Essential voor ZZP'ers tot Enterprise voor maatwerk. Geen verborgen kosten — wel SEO, snelheid en transparantie.",
