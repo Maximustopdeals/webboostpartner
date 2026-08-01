@@ -19,28 +19,36 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    q: "Wat kost een Next.js website?",
-    a: "Bij WebBoost Partner werk ik met drie heldere pakketten. Het Essential pakket voor ZZP'ers en starters is €2.495 (excl. btw) / €3.019 (incl. btw). Het Professional pakket voor ondernemers met ambitie is €4.495 (excl. btw) / €5.439 (incl. btw). Het Enterprise pakket voor groeiende bedrijven is vanaf €6.995 (excl. btw) / €8.464 (incl. btw) — maatwerk mogelijk. Alle pakketten zijn volledig transparant geprijsd, er zitten geen verborgen kosten in. Een persoonlijke offerte voor maatwerk is altijd mogelijk.",
+    q: "Wat kost een website laten maken met Next.js?",
+    a: "Bij WebBoost Partner werk ik met drie transparante pakketten die aansluiten bij verschillende soorten ondernemers. Het Essential pakket voor ZZP'ers en starters begint vanaf €2.495 excl. btw. Voor ondernemers die meer willen groeien is er het Professional pakket vanaf €4.495 excl. btw. Groeiende bedrijven kunnen kiezen voor het Enterprise pakket vanaf €6.995 excl. btw. Alle websites worden volledig op maat ontwikkeld. U weet vooraf precies waar u aan toe bent: geen verborgen kosten en geen verrassingen achteraf. Voor specifieke wensen maak ik graag een persoonlijk voorstel.",
   },
   {
     q: "Hoe lang duurt het traject?",
-    a: "Een gemiddelde Next.js website is binnen 2 tot 4 weken live. De doorlooptijd hangt af van de hoeveelheid pagina's, of je content kant-en-klaar aanlevert, en hoe snel feedback rondkomt. Een one-pager kan binnen één week staan, een uitgebreide site met blog en lokale SEO duurt doorgaans 3 tot 4 weken. Bij webshops reken ik 4 tot 8 weken afhankelijk van het aantal producten en integraties.",
+    a: "Een gemiddeld traject duurt ongeveer 2 tot 4 weken. De exacte planning hangt af van het aantal pagina's, de hoeveelheid content en hoe snel keuzes en feedback worden aangeleverd. Tijdens het traject blijft u betrokken en krijgt u inzicht in de voortgang. Een eenvoudige website kan sneller live gaan, terwijl uitgebreide websites met bijvoorbeeld blogs, meerdere diensten of lokale SEO meer tijd nodig hebben.",
   },
   {
     q: "Kan mijn bestaande WordPress website worden overgezet naar Next.js?",
-    a: "Ja, een bestaande WordPress-website kan worden overgezet naar Next.js — maar het is geen automatische migratie. Het is een herbouw waarbij content, structuur en functionaliteit opnieuw worden opgezet in een modern JavaScript-framework. De kern: WordPress is een CMS + thema, terwijl Next.js een framework is. Je vervangt het thema dus volledig, maar je kunt WordPress eventueel blijven gebruiken als headless CMS. SEO-rankings blijven behouden door zorgvuldige URL-mapping, 301-redirects en het behouden van metadata.",
+    a: "Ja, een bestaande WordPress website kan worden vernieuwd naar Next.js. Dit gebeurt niet door simpelweg een knop om te zetten, maar door de website opnieuw op te bouwen met behoud van belangrijke onderdelen zoals content, structuur en SEO-waarde. Voor de overstap maken we een zorgvuldige migratie waarbij URL's, metadata en redirects worden meegenomen. Hierdoor blijft uw opgebouwde vindbaarheid behouden en krijgt u een modernere, snellere website.",
   },
   {
     q: "Is SEO inbegrepen?",
-    a: "Ja. Technische SEO is bij élke pagina inbegrepen: schema markup, semantische HTML, geoptimaliseerde meta tags, sitemap.xml, robots.txt, Open Graph en correcte heading-structuur. Lokale SEO voor Rotterdam (Google Business Profile koppeling, NAP-consistentie, lokale schema) zit standaard in het Professional pakket en hoger.",
+    a: "Ja. Iedere website wordt technisch SEO-proof gebouwd. Dit betekent onder andere een correcte structuur, metadata, schema markup, sitemap.xml, robots.txt, Open Graph en een logische heading-structuur. Voor lokale ondernemers in Rotterdam kunnen aanvullende lokale SEO-optimalisaties worden ingericht, zoals Google Business Profile optimalisatie, lokale structured data en verbeterde regionale vindbaarheid.",
   },
   {
     q: "Werk je alleen voor bedrijven in Rotterdam?",
-    a: "Mijn focus ligt op Rotterdam en de directe omgeving — Capelle aan den IJssel, Krimpen aan den IJssel, Ridderkerk, Barendrecht en Schiedam — omdat ik geloof in persoonlijk contact en lokale expertise. Maar ik werk ook landelijk wanneer een project klikt. Een kennismakingsgesprek kan altijd op locatie of via een videocall.",
+    a: "WebBoost Partner richt zich voornamelijk op ondernemers in Rotterdam en omgeving, zoals Capelle aan den IJssel, Krimpen aan den IJssel, Ridderkerk, Barendrecht en Schiedam. Door lokaal betrokken te zijn, begrijp ik beter welke uitdagingen ondernemers hebben en hoe zij zich online kunnen onderscheiden. Een kennismakingsgesprek kan altijd op locatie of via een videocall.",
   },
   {
     q: "Wat als ik later iets wil aanpassen?",
-    a: "Kleine aanpassingen (tekst, foto's) doe ik tegen een vast uurtarief óf je krijgt toegang tot een headless CMS waarin je zelf content beheert — zonder dat je code aanraakt. Bij het Enterprise pakket zit 6 maanden support inbegrepen voor doorontwikkeling.",
+    a: "Uw website wordt gebouwd met het oog op groei. Wilt u later nieuwe pagina's toevoegen, een dienst uitbreiden of functionaliteit toevoegen? Dan kan de website eenvoudig worden doorontwikkeld. Kleine aanpassingen zoals tekst- of beeldwijzigingen kunnen worden uitgevoerd tegen een vast uurtarief. Voor grotere doorontwikkelingen maak ik graag een persoonlijk voorstel. Bij het Enterprise pakket zit 6 maanden support inbegrepen voor doorontwikkeling.",
+  },
+  {
+    q: "Waarom kiezen voor Next.js in plaats van WordPress?",
+    a: "WordPress kan voor veel situaties een goede oplossing zijn, maar veel websites worden na verloop van tijd zwaar door thema's en plugins. Next.js biedt een moderne technische basis waarbij snelheid, veiligheid en prestaties centraal staan. Het resultaat is een website die sneller laadt, beter scoort in Google en minder onderhoud vraagt. Voor bedrijven die een snelle, professionele en toekomstgerichte website willen, is Next.js een krachtige keuze.",
+  },
+  {
+    q: "Kan ik zelf mijn website aanpassen?",
+    a: "Ja. Afhankelijk van uw wensen kan een CMS worden gekoppeld waarmee u zelf teksten, afbeeldingen of pagina's kunt aanpassen zonder technische kennis. U krijgt dan een gebruiksvriendelijke omgeving waarin u eenvoudig content kunt beheren. Voor grotere wijzigingen of uitbreidingen kunt u altijd terugvallen op WebBoost Partner. Zo combineert u flexibiliteit met professionele ondersteuning.",
   },
 ];
 
