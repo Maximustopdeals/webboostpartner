@@ -48,10 +48,15 @@ export default function HomePage() {
               <span className="text-[#FF4500]">Rotterdam</span>
             </h1>
             <p className="mt-8 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] leading-relaxed">
-              WebBoost Partner ontwikkelt razendsnelle <strong>Next.js websites</strong> voor
-              ondernemers in Rotterdam en omgeving. Met jarenlange ervaring in webdevelopment,
-              nu volledig gespecialiseerd in het framework waarmee Nike, Netflix en TikTok werken.
-              <em>Geen plugins. Geen poespas. Wel resultaat.</em>
+              Uw website is vaak het eerste contactmoment met een potentiële klant. 
+              Daarom ontwikkelen wij razendsnelle <strong>Next.js websites</strong> die 
+              binnen een fractie van een seconde laden, uitstekend presteren in Google 
+              en bezoekers overtuigen om contact op te nemen. Geen zware plugins, geen 
+              onnodig onderhoud, maar een veilige en toekomstbestendige website die 
+              voor uw bedrijf werkt. Next.js is ontwikkeld door Vercel en wordt gebruikt 
+              door bedrijven als <strong>Nike</strong>, <strong>Netflix</strong>, 
+              <strong>TikTok</strong> en vele andere internationale organisaties vanwege 
+              de uitzonderlijke prestaties en schaalbaarheid.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
               <Link
