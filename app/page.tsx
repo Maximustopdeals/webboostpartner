@@ -59,7 +59,7 @@ export default function HomePage() {
                 className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
                 data-testid="hero-cta-primary"
               >
-                Plan een gesprek <ArrowRight size={18} />
+                Plan een vrijblijvend adviesgesprek <ArrowRight size={18} />
               </Link>
               <Link
                 href="/pakketten"
