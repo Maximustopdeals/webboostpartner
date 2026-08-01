@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Website laten maken Rotterdam | Professionele Next.js Websites",
   description:
-    "Wilt u een professionele website laten maken in Rotterdam? WebBoost Partner bouwt Next.js websites die mooi, snel én vindbaar zijn. Maatwerk vanaf €1.495.",
+    "Wilt u een professionele website laten maken in Rotterdam? WebBoost Partner bouwt Next.js websites die mooi, snel én vindbaar zijn. Maatwerk vanaf €2.495.",
   alternates: { canonical: "https://webboostpartner.nl/website-laten-maken-rotterdam" },
 };
 
@@ -75,72 +75,151 @@ export default function WebsiteRotterdamPage() {
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
           <h2>Waarom een professionele website belangrijk is</h2>
+          
           <p>
-            Voor de meeste ondernemers in Rotterdam is de website het <strong>eerste contactmoment</strong> met
-            potentiële klanten. Voordat iemand belt, een offerte aanvraagt of langs komt, heeft hij of zij
-            al rondgesnuffeld op uw site. Wat ze daar tegenkomen bepaalt — vaak in de eerste vijf seconden —
-            of u serieus wordt genomen of dat de tab gesloten wordt.
+            Voor veel ondernemers in Rotterdam is uw website het eerste contactmoment 
+            met een potentiële klant. Nog voordat iemand belt, een offerte aanvraagt 
+            of uw bedrijf bezoekt, vormt een bezoeker een eerste indruk op basis van 
+            uw website.
           </p>
+
           <p>
-            Een professionele website doet vier dingen tegelijk:
+            In enkele seconden bepaalt iemand of uw bedrijf professioneel, betrouwbaar 
+            en geschikt genoeg is om contact mee op te nemen. Een website moet daarom 
+            niet alleen mooi zijn, maar vooral effectief werken.
           </p>
+
+          <p>
+            Een professionele website helpt u met vier belangrijke doelen:
+          </p>
+
           <ul>
-            <li><strong>Vertrouwen opbouwen</strong> door een verzorgde uitstraling en duidelijke informatie.</li>
-            <li><strong>Aanvragen genereren</strong> via heldere call-to-actions en strategisch geplaatste formulieren.</li>
-            <li><strong>Uw merk versterken</strong> met consistente visuele identiteit en tone of voice.</li>
-            <li><strong>Online zichtbaarheid verbeteren</strong> doordat zoekmachines de site begrijpen en goed ranken.</li>
+            <li>
+              <strong>Vertrouwen opbouwen</strong> door een professionele uitstraling, 
+              duidelijke informatie en een sterke eerste indruk.
+            </li>
+            <li>
+              <strong>Meer aanvragen genereren</strong> met een logische structuur, 
+              duidelijke CTA&apos;s en een gebruiksvriendelijke ervaring.
+            </li>
+            <li>
+              <strong>Uw merk versterken</strong> met een herkenbare uitstraling en 
+              communicatie die aansluit bij uw doelgroep.
+            </li>
+            <li>
+              <strong>Beter gevonden worden</strong> doordat zoekmachines uw website 
+              technisch goed kunnen begrijpen en indexeren.
+            </li>
           </ul>
+
           <p>
-            Veel websites in Rotterdam falen op minstens twee van deze punten. Vaak ligt de oorzaak in
-            verouderde technologie (lees: WordPress met te veel plugins) of in een ontwerp dat is gekozen
-            op basis van "wat mooi staat" in plaats van "wat werkt voor de bezoeker".
+            Veel websites zijn door de jaren heen opgebouwd zonder duidelijke strategie 
+            voor snelheid, vindbaarheid en conversie. Daardoor missen ondernemers 
+            kansen om online nieuwe klanten te bereiken.
           </p>
 
           <h2>Wat krijgt u bij een website van WebBoost Partner</h2>
+
           <p>
-            Een website bouwen is meer dan code schrijven. Het is een traject waarin we samen bepalen wat
-            uw bezoekers nodig hebben, hoe Google uw bedrijf moet begrijpen, en hoe we dat vertalen naar
-            een snelle, mooie en vindbare site. Concreet krijgt u:
+            Een website laten maken is meer dan alleen een mooi ontwerp. Uw website 
+            moet een <strong>digitaal fundament</strong> zijn waarmee uw bedrijf kan 
+            groeien. Daarom combineren wij strategie, design, techniek en SEO om een 
+            website te bouwen die bezoekers overtuigt en resultaat oplevert.
           </p>
+
+          <p>
+            Concreet krijgt u:
+          </p>
+
           <ul>
-            <li><strong>Maatwerk design</strong> — geen sjablonen, wel een look die past bij uw bedrijf en doelgroep.</li>
-            <li><strong>Responsive ontwerp</strong> dat scherp werkt op telefoon, tablet en desktop.</li>
-            <li><strong>Technische SEO</strong> als fundament: semantische HTML, schema markup, sitemap, robots.txt, Open Graph.</li>
-            <li><strong>Supersnelle laadtijden</strong> — Core Web Vitals onder de groene grens (LCP &lt; 1.0s waar mogelijk).</li>
-            <li><strong>Conversiegerichte structuur</strong> met CTA&apos;s, vertrouwenssignalen en heldere navigatie.</li>
-            <li><strong>Google Analytics 4</strong> en Search Console correct ingericht.</li>
-            <li><strong>Contactformulieren</strong> die werken en notificeren — gekoppeld aan e-mail of CRM.</li>
+            <li>
+              <strong>Maatwerk design</strong> — geen standaard templates, maar een 
+              unieke uitstraling die past bij uw bedrijf, doelgroep en merk.
+            </li>
+            <li>
+              <strong>Responsive ontwerp</strong> — een snelle en gebruiksvriendelijke 
+              ervaring op mobiel, tablet en desktop.
+            </li>
+            <li>
+              <strong>Technische SEO als fundament</strong> — een professionele basis 
+              met semantische HTML, schema markup, sitemap.xml, robots.txt en correcte 
+              metadata.
+            </li>
+            <li>
+              <strong>Uitstekende prestaties</strong> — een razendsnelle website 
+              waarbij Core Web Vitals centraal staan.
+            </li>
+            <li>
+              <strong>Conversiegerichte structuur</strong> — duidelijke navigatie, 
+              sterke CTA&apos;s en vertrouwenselementen die bezoekers helpen contact 
+              op te nemen.
+            </li>
+            <li>
+              <strong>Google Analytics 4 en Search Console</strong> — correct 
+              ingericht zodat u inzicht krijgt in bezoekers en resultaten.
+            </li>
+            <li>
+              <strong>Betrouwbare contactmogelijkheden</strong> — formulieren die 
+              werken en gekoppeld kunnen worden aan e-mail of CRM.
+            </li>
           </ul>
 
           <h2>Website laten maken voor ZZP en MKB</h2>
+
           <p>
-            De meeste van mijn opdrachtgevers zijn <strong>ZZP'ers en MKB-bedrijven</strong> in Rotterdam en
-            omgeving. Aannemers in Capelle, coaches in Hillegersberg, fysiotherapeuten in Kralingen,
-            consultants in het centrum — allemaal mensen die hun vak verstaan, maar niet de tijd hebben
-            om uit te zoeken waarom hun WordPress site zo traag is.
+            WebBoost Partner helpt <strong>ZZP&apos;ers en MKB-bedrijven</strong> in 
+            Rotterdam en omgeving met websites die niet alleen professioneel ogen, 
+            maar ook bijdragen aan de groei van hun onderneming.
           </p>
+
           <p>
-            Ik help die ondernemers met websites die <strong>meegroeien met hun bedrijf</strong>. Dat
-            betekent: een site die vandaag op orde is, maar morgen ook nog uitbreidbaar. Een blog kunnen
-            toevoegen, een nieuwe dienst lanceren, een tweede vestiging documenteren — zonder dat je
-            elke keer terug moet naar nul.
+            Of u nu een aannemer bent in Capelle aan den IJssel, een coach in 
+            Hillegersberg, een fysiotherapeut in Kralingen of een ondernemer in het 
+            centrum van Rotterdam: uw website moet uw vakmanschap zichtbaar maken en 
+            nieuwe klanten aantrekken.
+          </p>
+
+          <p>
+            Ik bouw websites die <strong>meegroeien met uw bedrijf</strong>. Vandaag 
+            een sterke basis, morgen eenvoudig uit te breiden met nieuwe diensten, 
+            extra pagina&apos;s, blogs of meerdere locaties.
           </p>
 
           <h2>Waarom bouwen met Next.js</h2>
+
           <p>
-            <strong>Next.js</strong> is een modern JavaScript-framework dat door bedrijven als Nike,
-            Netflix, TikTok en het Witte Huis wordt gebruikt. Dat is geen toeval. Het framework is
-            ontworpen voor websites die zowel razendsnel moeten zijn als perfect vindbaar.
+            Uw website verdient een moderne technische basis. Daarom gebruikt 
+            WebBoost Partner <strong>Next.js</strong>: een krachtige technologie 
+            waarmee websites extreem snel, veilig en toekomstgericht gebouwd worden.
           </p>
-          <ul>
-            <li><strong>Snellere prestaties</strong> — pagina&apos;s worden statisch gegenereerd of server-side gerenderd, waardoor laadtijden onder een seconde realistisch zijn.</li>
-            <li><strong>Betere SEO</strong> — Google indexeert Next.js-pagina&apos;s net zo eenvoudig als een statische site, met volledige metadata en schema.</li>
-            <li><strong>Meer veiligheid</strong> — er is geen database aan de voorkant, dus geen kwetsbare plugins die gehackt kunnen worden.</li>
-            <li><strong>Toekomstbestendig</strong> — de stack groeit mee met de webstandaarden, niet erachteraan.</li>
-          </ul>
+
           <p>
-            Voor de meeste lokale ondernemers in Rotterdam betekent dit één ding: <strong>uw site
-            verslaat de concurrentie op snelheid en vindbaarheid</strong>, vrijwel zonder onderhoud.
+            Het resultaat voor u als ondernemer:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Snellere prestaties</strong> — moderne technieken zorgen voor 
+              korte laadtijden en een betere ervaring voor uw bezoekers.
+            </li>
+            <li>
+              <strong>Sterke SEO-basis</strong> — volledige controle over metadata, 
+              structuur en technische optimalisaties voor zoekmachines.
+            </li>
+            <li>
+              <strong>Meer veiligheid</strong> — minder afhankelijkheid van losse 
+              plugins en complexe onderhoudsstructuren.
+            </li>
+            <li>
+              <strong>Toekomstbestendig</strong> — een technische basis die klaar is 
+              voor verdere groei en nieuwe ontwikkelingen.
+            </li>
+          </ul>
+
+          <p>
+            Voor lokale ondernemers in Rotterdam betekent dit één ding: een website 
+            die <strong>sneller werkt, professioneler overkomt en klaar is om online 
+            meer resultaat te behalen</strong>.
           </p>
 
           <h2>Het traject in vier stappen</h2>
