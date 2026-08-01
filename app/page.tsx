@@ -232,7 +232,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Website Rotterdam intro */}
+      {/* Website Rotterdam intro - NIEUWE TEKST */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
@@ -245,20 +245,28 @@ export default function HomePage() {
           </div>
           <div className="lg:col-span-7 prose-brutal">
             <p>
-              Een professionele website is meer dan alleen een mooi ontwerp. Hij moet
-              bezoekers overtuigen, snel laden en goed gevonden worden in Google.
-              Veel websites in Rotterdam zien er prima uit, maar leveren bedroevend
-              weinig klanten op. Vaak komt dat door een verouderde technische basis:
-              trage laadtijden, overbodige code, en een SEO die nooit is ingericht.
+              Uw website moet meer doen dan alleen professioneel ogen. Hij moet 
+              vertrouwen opbouwen, bezoekers overtuigen en nieuwe klanten opleveren. 
+              Toch hebben veel bedrijven in Rotterdam een website die er goed uitziet, 
+              maar nauwelijks resultaat brengt.
             </p>
             <p>
-              Mijn aanpak: een complete website, gebouwd in Next.js, met technische
-              SEO én lokale SEO ingebakken vanaf de eerste regel code. Resultaat?
-              Een site die laadt in een halve seconde en in Google omhoog beweegt
-              in plaats van weg te zakken.
+              Vaak ligt het probleem niet bij het ontwerp, maar bij de basis: een 
+              trage website, slechte vindbaarheid in Google en een structuur die 
+              bezoekers niet naar actie begeleidt.
             </p>
-            <Link href="/website-laten-maken-rotterdam" className="inline-flex items-center gap-2 mt-2 font-heading font-bold uppercase text-sm tracking-widest text-[#FF4500] hover:underline">
-              Lees meer over de aanpak <ArrowRight size={16} />
+            <p>
+              Daarom bouw ik moderne websites in Next.js die vanaf de basis zijn 
+              ontwikkeld voor snelheid, gebruiksgemak en online groei. Met technische 
+              SEO en lokale SEO direct geïntegreerd, zodat uw website niet alleen 
+              mooi is, maar ook beter gevonden wordt door potentiële klanten in 
+              Rotterdam.
+            </p>
+            <Link 
+              href="/website-laten-maken-rotterdam" 
+              className="inline-flex items-center gap-2 mt-2 font-heading font-bold uppercase text-sm tracking-widest text-[#FF4500] hover:underline"
+            >
+              Bekijk mijn aanpak <ArrowRight size={16} />
             </Link>
           </div>
         </div>
