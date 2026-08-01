@@ -223,34 +223,78 @@ export default function WebsiteRotterdamPage() {
           </p>
 
           <h2>Het traject in vier stappen</h2>
+          
+          <p>
+            Een professionele website ontstaat niet zomaar. Daarom werken we met een 
+            duidelijk proces waarin strategie, ontwerp, techniek en optimalisatie 
+            samenkomen.
+          </p>
+
           <h3>1. Kennismaking & strategie</h3>
           <p>
-            We beginnen met een vrijblijvend gesprek — bij u op locatie, bij mij in Rotterdam, of via
-            videocall. Daarin bespreken we uw bedrijf, uw doelgroep, en wat de website voor u moet doen.
-            Hieruit volgt een concreet voorstel met scope, doorlooptijd en investering.
+            We starten met een vrijblijvend gesprek bij u op locatie, bij mij in 
+            Rotterdam of via videocall. We bespreken uw bedrijf, doelgroep, doelen 
+            en wat uw website moet bereiken.
           </p>
+          <p>
+            Daarnaast kijken we naar uw huidige online positie, uw concurrentie en 
+            welke kansen er liggen om meer bezoekers om te zetten naar klanten.
+          </p>
+          <p>
+            Op basis daarvan ontvangt u een duidelijk voorstel met de aanpak, 
+            planning en investering.
+          </p>
+
           <h3>2. Design & content</h3>
           <p>
-            Op basis van uw merk en doelgroep ontwerp ik een look die werkt. Geen sjablonen, geen
-            "templates met logo erin", maar een ontwerp dat is gebouwd rond uw doelen. Tegelijk denken
-            we mee over content en SEO-structuur.
+            Op basis van uw merk, doelgroep en commerciële doelen ontwikkelen we een 
+            professioneel ontwerp dat past bij uw onderneming.
           </p>
-          <h3>3. Development</h3>
           <p>
-            Ik bouw uw site in Next.js, met technische SEO ingebakken en aandacht voor elke pixel.
-            Tussentijds krijgt u een preview-link waarop u live mee kunt kijken.
+            Geen standaard templates of een website met alleen uw logo erin, maar een 
+            unieke uitstraling die vertrouwen opbouwt en bezoekers helpt de juiste 
+            actie te nemen.
           </p>
+          <p>
+            Ook denken we mee over de inhoud, structuur en SEO-opbouw van uw website.
+          </p>
+
+          <h3>3. Ontwikkeling & optimalisatie</h3>
+          <p>
+            Uw website wordt gebouwd met <strong>Next.js</strong>: een moderne 
+            technologie die zorgt voor snelheid, veiligheid en een sterke technische 
+            basis.
+          </p>
+          <p>
+            Tijdens de ontwikkeling letten we op gebruikservaring, technische SEO, 
+            prestaties en een perfecte werking op mobiel, tablet en desktop.
+          </p>
+          <p>
+            U krijgt tussentijds toegang tot een preview-link zodat u live kunt 
+            meekijken en feedback kunt geven.
+          </p>
+
           <h3>4. Lancering & nazorg</h3>
           <p>
-            We zetten de site live, koppelen Google Analytics en Search Console, en voeren een finale
-            check op Core Web Vitals. Daarna ben ik beschikbaar voor doorontwikkeling.
+            Na een uitgebreide controle zetten we uw website live. We koppelen 
+            Google Analytics en Search Console en controleren belangrijke prestaties 
+            zoals Core Web Vitals.
+          </p>
+          <p>
+            Ook na de lancering kunt u bij WebBoost Partner terecht voor uitbreidingen, 
+            verbeteringen en verdere groei van uw website.
           </p>
 
           <h2>Werkgebied</h2>
           <p>
-            Hoewel ik landelijk werk, zit het zwaartepunt van mijn klanten in Rotterdam en de directe omgeving:
-            Capelle aan den IJssel, Krimpen aan den IJssel, Ridderkerk, Barendrecht en Schiedam. Lokaal
-            werken heeft één groot voordeel: ik begrijp uw markt, uw doelgroep en uw concurrentie.
+            Hoewel WebBoost Partner landelijk werkt, ligt de focus op Rotterdam en de 
+            directe omgeving: Capelle aan den IJssel, Krimpen aan den IJssel, 
+            Ridderkerk, Barendrecht en Schiedam.
+          </p>
+          <p>
+            Door lokaal betrokken te zijn, begrijp ik beter welke uitdagingen 
+            ondernemers hebben, welke doelgroep zij willen bereiken en hoe zij zich 
+            online kunnen onderscheiden van concurrenten.
           </p>
 
           <h2>Veelgestelde vragen</h2>
