@@ -55,12 +55,20 @@ export default function WebsiteRotterdamPage() {
           <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
             Website laten<br/>maken in <span className="text-[#FF4500]">Rotterdam</span>
           </h1>
-          <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
-            Wilt u een <strong>professionele website laten maken in Rotterdam</strong> die
-            niet alleen mooi oogt, maar ook klanten oplevert? WebBoost Partner ontwikkelt
-            moderne Next.js websites die zijn gebouwd voor snelheid, SEO en conversie.
-            Geen sjabloon-werk. Geen WordPress-trage plugins. Wel meetbare resultaten.
-          </p>
+          <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-3xl leading-relaxed">
+            <p>
+              Een professionele website laten maken die niet alleen indruk maakt, 
+              maar ook nieuwe klanten oplevert? WebBoost Partner ontwikkelt snelle, 
+              moderne websites voor Rotterdamse ondernemers die online beter gevonden 
+              willen worden en willen groeien.
+            </p>
+            <p>
+              Met een sterke technische basis, slimme SEO-structuur en een 
+              conversiegericht ontwerp bouwen wij websites die bezoekers veranderen 
+              in klanten. Geen standaard oplossing, maar een website die volledig 
+              aansluit bij uw bedrijf en ambities.
+            </p>
+          </div>
         </div>
       </section>
 
