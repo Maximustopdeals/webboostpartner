@@ -5,26 +5,83 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
 
   const routes = [
-    '',
-    '/website-laten-maken-rotterdam',
-    '/nextjs-website-rotterdam',
-    '/nextjs-developer-rotterdam',
-    '/seo-rotterdam',
-    '/nextjs-vs-wordpress',
-    '/wordpress-naar-nextjs',
-    '/core-web-vitals',
-    '/nextjs-specialist',
-    '/pakketten',
-    '/over-mij',
-    '/contact',
-    '/demo',
-    '/pagespeed',
+    {
+      route: '',
+      priority: 1.0,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      route: '/website-laten-maken-rotterdam',
+      priority: 0.9,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/over-mij',
+      priority: 0.8,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/pakketten',
+      priority: 0.8,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/seo-rotterdam',
+      priority: 0.8,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/contact',
+      priority: 0.7,
+      changeFrequency: 'monthly' as const,
+    },
+    // Minder belangrijke pagina's
+    {
+      route: '/nextjs-website-rotterdam',
+      priority: 0.6,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/nextjs-developer-rotterdam',
+      priority: 0.6,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/nextjs-vs-wordpress',
+      priority: 0.6,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/wordpress-naar-nextjs',
+      priority: 0.6,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/core-web-vitals',
+      priority: 0.6,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/nextjs-specialist',
+      priority: 0.6,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/demo',
+      priority: 0.5,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      route: '/pagespeed',
+      priority: 0.5,
+      changeFrequency: 'monthly' as const,
+    },
   ];
 
-  return routes.map((route) => ({
+  return routes.map(({ route, priority, changeFrequency }) => ({
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
-    changeFrequency: route === '' ? 'weekly' : 'monthly',
-    priority: route === '' ? 1.0 : 0.8,
+    changeFrequency,
+    priority,
   }));
 }
