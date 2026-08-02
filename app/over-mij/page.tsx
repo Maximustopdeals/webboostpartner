@@ -52,11 +52,17 @@ export default function OverMijPage() {
             <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
               Over mij — <span className="text-[#FF4500]">Next.js</span> webbouwer Rotterdam
             </h1>
-            <p className="mt-6 text-lg sm:text-xl max-w-2xl leading-relaxed">
-              Ik bouw razendsnelle Next.js websites die <strong>beter scoren in Google
-              dan 98% van alle websites</strong>. Geen marketing-praat, gewoon meetbaar
-              feit.
-            </p>
+            <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-2xl leading-relaxed">
+              <p>
+                Achter iedere succesvolle website staat een ondernemer met ambitie. 
+                Mijn rol is om die ambitie te vertalen naar een snelle, professionele 
+                website die vertrouwen uitstraalt en klaar is voor groei.
+              </p>
+              <p>
+                Ik ben <strong>Ron</strong>, oprichter van WebBoost Partner uit Rotterdam 
+                en gespecialiseerd in hoogwaardige Next.js websites voor ZZP en MKB.
+              </p>
+            </div>
           </div>
           <div className="lg:col-span-5">
             <div className="relative max-w-sm ml-auto">
