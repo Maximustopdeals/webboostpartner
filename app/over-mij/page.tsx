@@ -83,102 +83,217 @@ export default function OverMijPage() {
 
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
+          {/* Sectie 1 — Mijn verhaal */}
+          <h2>Waarom ik WebBoost Partner ben gestart</h2>
+
           <p>
-            Ik heb jarenlang gewerkt met WordPress. <strong>Divi-thema&apos;s, plugins,
-            updates, onderhoud</strong>. Het was wat ik deed. En ik deed het goed.
-            Maar ergens, tussen het oplossen van een kapotte plugin en het uitleggen
-            aan een klant waarom hun website weer traag was, begon er iets te knagen.
-          </p>
-          <p>
-            Dit is niet hoe het hoort.
+            Door de jaren heen heb ik veel ondernemers geholpen met het bouwen en 
+            verbeteren van hun website. Ik heb gewerkt met WordPress, verschillende 
+            thema's, onderhoud en online optimalisaties. Die ervaring heeft mij veel 
+            geleerd over wat ondernemers nodig hebben om online succesvol te zijn.
           </p>
 
-          <h2>Het moment van inzicht</h2>
           <p>
-            Ik keek naar mijn klanten. Naar de rekeningen die ze betaalden voor
-            onderhoud aan systemen die ze niet begrepen. Naar de uren die ik stopte
-            in het repareren van iets dat eigenlijk al kapot was voordat het begon.
-          </p>
-          <p>
-            Dus ik stopte. Niet omdat ik niet meer wilde bouwen. Integendeel. Ik
-            wilde alleen bouwen wat <em>echt</em> werkt.
+            Maar ik zag ook steeds hetzelfde probleem terugkomen: ondernemers 
+            investeerden in een website, maar liepen daarna tegen dezelfde 
+            uitdagingen aan. Websites werden langzaam, onderhoud werd ingewikkelder 
+            en technische beperkingen stonden groei soms in de weg.
           </p>
 
-          <h2>Wat ik nu doe</h2>
           <p>
-            Tegenwoordig werk ik met <strong>Next.js</strong>. Hetzelfde framework
-            dat Netflix, Uber en Nike gebruiken. Geen plugins die stukgaan. Geen
-            updates die mislukken. Geen trage laadtijden.
+            Ik geloof dat een website niet voor problemen moet zorgen, maar juist 
+            een oplossing moet zijn. Een <strong>digitaal fundament</strong> waarop 
+            een ondernemer kan bouwen.
           </p>
 
-          <h2>Mijn belofte</h2>
+          {/* Sectie 2 — Het moment van inzicht */}
+          <h2>Het moment waarop mijn visie veranderde</h2>
+
           <p>
-            Ik praat geen technisch jargon. Ik leg uit wat je moet weten, in gewoon
-            Nederlands.
-          </p>
-          <p>
-            Ik ben direct — als iets niet kan, zeg ik dat. Als er een betere manier
-            is, vertel ik die.
-          </p>
-          <p>
-            Ik bouw alsof het voor mezelf is. Want dat is het enige wat ik weet.
+            Ik begon steeds vaker te kijken naar de vraag achter de website. Niet 
+            alleen: "Hoe maken we een mooie website?" maar vooral: "Hoe helpt deze 
+            website de ondernemer verder?"
           </p>
 
-          <h2>Waarom ik overstapte naar Next.js</h2>
           <p>
-            De laatste twee jaar dat ik WordPress bouwde, voelde ik dat de
-            technologie steeds verder achterop raakte. Klanten betaalden meer voor
-            minder. Updates braken sites. Snelheid bleef het probleem dat nooit
-            écht opgelost werd.
-          </p>
-          <p>
-            Toen ik mijn eerste Next.js site bouwde en zag dat <strong>Core Web Vitals
-            standaard groen waren zonder een enkele optimalisatie</strong>, wist ik het.
-            Dit is geen trend. Dit is de toekomst. En ik wilde niet de webbouwer zijn
-            die over vijf jaar nog steeds plugins draait te repareren.
+            Een website moet meer doen dan alleen online aanwezig zijn. Hij moet 
+            vertrouwen geven, bezoekers overtuigen en bijdragen aan nieuwe klanten.
           </p>
 
+          <p>
+            Daarom besloot ik mijn manier van werken opnieuw te bekijken. Niet omdat 
+            ik wilde stoppen met websites bouwen, maar omdat ik websites wilde 
+            bouwen die vanaf de basis beter werken.
+          </p>
+
+          {/* Sectie 3 — Wat ik nu doe */}
+          <h2>Wat ik vandaag voor ondernemers doe</h2>
+
+          <p>
+            Tegenwoordig help ik ondernemers met moderne websites die zijn gebouwd 
+            voor snelheid, vindbaarheid en groei.
+          </p>
+
+          <p>
+            Ik werk met <strong>Next.js</strong>: een moderne technologie waarmee 
+            websites snel, veilig en toekomstgericht ontwikkeld kunnen worden.
+          </p>
+
+          <p>
+            Voor u betekent dat geen ingewikkelde techniek, maar een website die 
+            professioneel overkomt, prettig werkt voor bezoekers en klaar is om mee 
+            te groeien met uw onderneming.
+          </p>
+
+          {/* Sectie 4 — Mijn belofte */}
+          <h2>Mijn belofte aan iedere klant</h2>
+
+          <p>
+            Ik geloof in duidelijke communicatie. Geen ingewikkelde technische 
+            verhalen, maar eerlijk advies in begrijpelijke taal.
+          </p>
+
+          <p>
+            Als iets niet de beste oplossing is, zeg ik dat. Als er een betere 
+            aanpak mogelijk is, bespreek ik die. Mijn doel is niet om zoveel 
+            mogelijk techniek te verkopen, maar om de juiste oplossing voor uw 
+            bedrijf te bouwen.
+          </p>
+
+          <p>
+            Ik behandel iedere website alsof deze voor mijn eigen bedrijf wordt 
+            gebouwd: met aandacht, kwaliteit en verantwoordelijkheid.
+          </p>
+
+          {/* Sectie 5 — Waarom ik kies voor Next.js */}
+          <h2>Waarom ik kies voor Next.js</h2>
+
+          <p>
+            Mijn keuze voor Next.js komt voort uit één belangrijke vraag: hoe kan 
+            ik ondernemers een betere website bieden?
+          </p>
+
+          <p>
+            Moderne websites moeten snel laden, veilig zijn en een sterke basis 
+            hebben voor zoekmachines. Daarom werk ik met een technologie die vanaf 
+            de basis is ontwikkeld voor prestaties en schaalbaarheid.
+          </p>
+
+          <p>
+            Next.js geeft mij de mogelijkheid om websites te bouwen die technisch 
+            sterk zijn, zonder dat de ondernemer zich hoeft bezig te houden met de 
+            techniek erachter.
+          </p>
+
+          <p>
+            De technologie is slechts het middel. Het doel blijft altijd hetzelfde: 
+            een website bouwen die uw bedrijf helpt groeien.
+          </p>
+
+          {/* Sectie 6 — Mijn visie op moderne websites */}
           <h2>Mijn visie op moderne websites</h2>
+
           <p>
-            Een website is <strong>geen visitekaartje meer</strong>. Het is uw
-            beste verkoper, uw 24/7 receptie, uw eerste indruk. Als hij langzaam
-            is, voelt dat als een verkoper die in de hoek zit te slapen. Als hij
-            niet vindbaar is, bestaat hij niet voor de mensen die u zoeken.
-          </p>
-          <p>
-            Een goede website moet drie dingen tegelijk doen: <strong>snel laden,
-            duidelijk overtuigen en gevonden worden</strong>. Daar bouw ik op.
-            Niet op kleurtjes, niet op trucs, niet op &quot;ik bouw wat de klant
-            zegt zonder mee te denken&quot;.
+            Een website is tegenwoordig veel meer dan een digitaal visitekaartje. 
+            Het is uw online verkoper, uw eerste kennismaking met potentiële 
+            klanten en vaak het eerste moment waarop iemand beslist of uw bedrijf 
+            vertrouwen verdient.
           </p>
 
-          <h2>Mijn werkwijze</h2>
           <p>
-            Ik werk met een vast team van één — mijzelf. U heeft één
-            aanspreekpunt, één eindverantwoordelijke, één persoon die uw site
-            écht kent. Geen accountmanager die niet weet wat een meta description
-            is, geen projectleider die alleen doorgeeft.
+            Een trage website zorgt voor twijfel. Een onduidelijke website zorgt 
+            ervoor dat bezoekers afhaken. Een website die niet gevonden wordt, 
+            bereikt de mensen niet die juist naar uw diensten zoeken.
           </p>
+
           <p>
-            Een typisch traject ziet eruit als:
+            Daarom bouw ik websites die drie dingen combineren: <strong>snelheid, 
+            overtuigingskracht en vindbaarheid</strong>.
           </p>
+
+          <p>
+            Niet alleen gericht op hoe een website eruitziet, maar vooral op wat 
+            deze website voor uw onderneming moet bereiken.
+          </p>
+
+          {/* Sectie 7 — Mijn werkwijze */}
+          <h2>Persoonlijke begeleiding van begin tot eind</h2>
+
+          <p>
+            Bij WebBoost Partner werkt u rechtstreeks met mij. Geen accountmanager, 
+            geen tussenpersonen en geen onnodige communicatielijnen.
+          </p>
+
+          <p>
+            U heeft één aanspreekpunt die uw bedrijf, uw doelen en uw website 
+            echt kent.
+          </p>
+
+          <p>
+            Een traject bestaat uit:
+          </p>
+
           <ul>
-            <li><strong>Kennismaking</strong> — bij u, bij mij in Rotterdam, of via videocall.</li>
-            <li><strong>Strategie</strong> — wat moet de site doen, voor wie, en hoe meten we succes?</li>
-            <li><strong>Design & content</strong> — wireframes, moodboard, content-structuur.</li>
-            <li><strong>Bouw</strong> — Next.js development met tussentijdse preview-link.</li>
-            <li><strong>Lancering</strong> — live, met SEO setup en analytics.</li>
-            <li><strong>Nazorg</strong> — ik blijf bereikbaar voor doorontwikkeling.</li>
+            <li>
+              <strong>Kennismaking</strong> — we bespreken uw bedrijf, doelgroep 
+              en online doelen.
+            </li>
+            <li>
+              <strong>Strategie</strong> — we bepalen welke structuur en aanpak 
+              het beste past bij uw onderneming.
+            </li>
+            <li>
+              <strong>Design & content</strong> — een professioneel ontwerp en 
+              inhoud die bezoekers overtuigt.
+            </li>
+            <li>
+              <strong>Ontwikkeling</strong> — een snelle Next.js website met 
+              aandacht voor SEO en prestaties.
+            </li>
+            <li>
+              <strong>Lancering</strong> — inclusief technische controle, 
+              analytics en SEO-basis.
+            </li>
+            <li>
+              <strong>Nazorg</strong> — ondersteuning en verdere ontwikkeling 
+              wanneer uw bedrijf groeit.
+            </li>
           </ul>
 
-          <h2>Expertise</h2>
+          {/* Sectie 8 — Expertise */}
+          <h2>Mijn expertise</h2>
+
+          <p>
+            Achter iedere succesvolle website staat een sterke technische basis. 
+            Mijn kennis ligt op het snijvlak van moderne webontwikkeling, SEO en 
+            conversie.
+          </p>
+
           <ul>
-            <li><strong>Next.js</strong> — App Router, RSC, SSG, ISR, Edge runtime.</li>
-            <li><strong>SEO</strong> — technische SEO, lokale SEO, schema markup, content strategie.</li>
-            <li><strong>Core Web Vitals</strong> — LCP, INP, CLS optimalisatie tot in de details.</li>
-            <li><strong>Conversieoptimalisatie</strong> — heuristische UX review, A/B test setup, micro-copy.</li>
-            <li><strong>Headless CMS</strong> — Sanity, Contentful, Strapi, WordPress headless.</li>
-            <li><strong>Tailwind CSS</strong> — moderne, schaalbare design systems.</li>
+            <li>
+              <strong>Next.js</strong> — moderne websites gebouwd voor snelheid, 
+              schaalbaarheid en prestaties.
+            </li>
+            <li>
+              <strong>Technische SEO</strong> — structuur, metadata, schema 
+              markup en optimale vindbaarheid.
+            </li>
+            <li>
+              <strong>Lokale SEO</strong> — gericht op ondernemers die zichtbaar 
+              willen zijn in hun regio.
+            </li>
+            <li>
+              <strong>Core Web Vitals</strong> — optimalisatie voor snelheid en 
+              gebruikerservaring.
+            </li>
+            <li>
+              <strong>Conversieoptimalisatie</strong> — websites die bezoekers 
+              helpen de juiste actie te nemen.
+            </li>
+            <li>
+              <strong>Moderne CMS-oplossingen</strong> — flexibel beheer zonder 
+              technische beperkingen.
+            </li>
           </ul>
 
           <h2>Werkgebied</h2>
