@@ -26,16 +26,8 @@ const mainLinks: (NavLink | NavDropdown)[] = [
     ],
   },
   { href: "/website-laten-maken-rotterdam", label: "WEBSITES" },
+  { href: "/seo-rotterdam", label: "SEO" },
   { href: "/over-mij", label: "OVER MIJ" },
-  {
-    label: "TOOLS",
-    items: [
-      { href: "/pagespeed", label: "PageSpeed Scan" },
-      { href: "/virtual-shadow", label: "Virtual Shadow Renderer" },
-      { href: "/business-impact", label: "Business Impact" },
-      { href: "/migratie-schatting", label: "Migratie Schatting" },
-    ],
-  },
   { href: "/pakketten", label: "PAKKETTEN" },
   { href: "/contact", label: "CONTACT" },
 ];
@@ -47,12 +39,8 @@ const allMobileLinks: NavLink[] = [
   { href: "/nextjs-website-rotterdam", label: "NEXT.JS WEBSITES" },
   { href: "/nextjs-developer-rotterdam", label: "NEXT.JS DEVELOPER" },
   { href: "/website-laten-maken-rotterdam", label: "WEBSITES ROTTERDAM" },
+  { href: "/seo-rotterdam", label: "SEO" },
   { href: "/over-mij", label: "OVER MIJ" },
-  { href: "/pagespeed", label: "PAGESPEED SCAN" },
-  { href: "/virtual-shadow", label: "VIRTUAL SHADOW" },
-  { href: "/business-impact", label: "BUSINESS IMPACT" },
-  { href: "/migratie-schatting", label: "MIGRATIE SCHATTING" },
-  { href: "/tech-stack", label: "TECH STACK" },
   { href: "/pakketten", label: "PAKKETTEN" },
   { href: "/contact", label: "CONTACT" },
 ];
