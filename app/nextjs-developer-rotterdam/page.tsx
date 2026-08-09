@@ -79,7 +79,7 @@ export default function NextjsDeveloperPage() {
             Ik werk uitsluitend met de nieuwste versies van het Next.js-ecosysteem:
           </p>
           <ul>
-            <li><strong>Next.js 14/15</strong> met App Router en React Server Components.</li>
+            <li><strong>Next.js 14/15/16</strong> met App Router en React Server Components.</li>
             <li><strong>TypeScript</strong> voor type-veilige, onderhoudbare code.</li>
             <li><strong>Tailwind CSS</strong> voor snel, consistent design.</li>
             <li><strong>next/image</strong> voor automatische image-optimalisatie.</li>
