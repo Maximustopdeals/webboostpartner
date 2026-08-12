@@ -3,7 +3,7 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Pakketten | Essential €2.495 · Professional €4.495 · Enterprise €6.995",
+  title: "Website Pakketten | Essential €3.495 · Professional €5.495 · Enterprise €8.495",
   description:
     "Heldere pakketten voor uw nieuwe Next.js website. Van Essential voor ZZP'ers tot Enterprise voor maatwerk. Geen verborgen kosten — wel SEO, snelheid en transparantie.",
   alternates: { canonical: "https://webboostpartner.nl/pakketten" },
@@ -47,21 +47,21 @@ export default function PakkettenPage() {
 
           <h2>Hoe kies ik het juiste pakket?</h2>
           
-          <h3>Essential (€2.495 excl. btw / €3.019 incl.)</h3>
+          <h3>Essential (€3.495 excl. btw / €4.229 incl.)</h3>
           <p>
             Ideaal voor ZZP&apos;ers en starters die snel een professionele
             online aanwezigheid nodig hebben. 5 pagina&apos;s, kern-SEO, en een
             uitstraling die direct vertrouwen wekt. Jij levert de input, ik bouw de website.
           </p>
           
-          <h3>Professional (€4.495 excl. btw / €5.439 incl.)</h3>
+          <h3>Professional (€5.495 excl. btw / €6.649 incl.)</h3>
           <p>
             Voor ondernemers met ambitie die meer content nodig hebben én lokaal goed
             gevonden willen worden. Inclusief lokale SEO Rotterdam, onbeperkt pagina&apos;s,
             blog/nieuws module, Schema markup en 1 uur strategiegesprek.
           </p>
           
-          <h3>Enterprise (vanaf €6.995 excl. btw / €8.464 incl.)</h3>
+          <h3>Enterprise (vanaf €8.495 excl. btw / €10.279 incl.)</h3>
           <p>
             Voor groeiende en gevestigde bedrijven die maximaal online rendement willen.
             Volledige SEO-strategie, conversieoptimalisatie, headless CMS koppeling,
