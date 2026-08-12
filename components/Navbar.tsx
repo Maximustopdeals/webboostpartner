@@ -2,56 +2,37 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Zap, Menu, X, FileText, ChevronDown } from "lucide-react";
+import { Zap, Menu, X, FileText } from "lucide-react";
 
 interface NavLink {
   href: string;
   label: string;
 }
 
-interface NavDropdown {
-  label: string;
-  items: NavLink[];
-}
-
-// Hoofdnavigatie: 7 items + CTA
-const mainLinks: (NavLink | NavDropdown)[] = [
+// Hoofdnavigatie: vereenvoudigd en klantgericht
+const mainLinks: NavLink[] = [
   { href: "/", label: "HOME" },
-  {
-    label: "NEXT.JS",
-    items: [
-      { href: "/nextjs-specialist", label: "Next.js Specialist" },
-      { href: "/nextjs-website-rotterdam", label: "Next.js Websites" },
-      { href: "/nextjs-developer-rotterdam", label: "Next.js Developer" },
-    ],
-  },
   { href: "/website-laten-maken-rotterdam", label: "WEBSITES" },
-  { href: "/seo-rotterdam", label: "SEO" },
-  { href: "/over-mij", label: "OVER MIJ" },
+  { href: "/seo-rotterdam", label: "VINDBARE SITE" },
   { href: "/pakketten", label: "PAKKETTEN" },
+  { href: "/nextjs-vs-wordpress", label: "VERGELIJKING" },
+  { href: "/over-mij", label: "OVER MIJ" },
   { href: "/contact", label: "CONTACT" },
 ];
 
-// Mobiel: alle links plat
+// Mobiel: vereenvoudigd en klantgericht
 const allMobileLinks: NavLink[] = [
   { href: "/", label: "HOME" },
-  { href: "/nextjs-specialist", label: "NEXT.JS SPECIALIST" },
-  { href: "/nextjs-website-rotterdam", label: "NEXT.JS WEBSITES" },
-  { href: "/nextjs-developer-rotterdam", label: "NEXT.JS DEVELOPER" },
-  { href: "/website-laten-maken-rotterdam", label: "WEBSITES ROTTERDAM" },
-  { href: "/seo-rotterdam", label: "SEO" },
-  { href: "/over-mij", label: "OVER MIJ" },
+  { href: "/website-laten-maken-rotterdam", label: "WEBSITES" },
+  { href: "/seo-rotterdam", label: "VINDBARE SITE" },
   { href: "/pakketten", label: "PAKKETTEN" },
+  { href: "/nextjs-vs-wordpress", label: "VERGELIJKING" },
+  { href: "/over-mij", label: "OVER MIJ" },
   { href: "/contact", label: "CONTACT" },
 ];
-
-function isDropdown(item: NavLink | NavDropdown): item is NavDropdown {
-  return "items" in item;
-}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#FAFAFA] border-b-2 border-black" data-testid="site-navbar">
@@ -68,48 +49,15 @@ export default function Navbar() {
           {/* Desktop nav + CTA */}
           <div className="hidden lg:flex items-center">
             <nav className="flex items-center">
-              {mainLinks.map((item, idx) => {
-                if (isDropdown(item)) {
-                  return (
-                    <div
-                      key={idx}
-                      className="relative"
-                      onMouseEnter={() => setDropdownOpen(true)}
-                      onMouseLeave={() => setDropdownOpen(false)}
-                    >
-                      <button className="flex items-center gap-1 px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider hover:bg-black hover:text-white transition-colors whitespace-nowrap">
-                        {item.label}
-                        <ChevronDown
-                          size={12}
-                          className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
-                        />
-                      </button>
-                      {dropdownOpen && (
-                        <div className="absolute top-full left-0 bg-[#FAFAFA] border-2 border-black border-t-0 min-w-[220px] shadow-brutal-sm">
-                          {item.items.map((sub) => (
-                            <Link
-                              key={sub.href}
-                              href={sub.href}
-                              className="block px-4 py-3 font-heading font-bold uppercase text-xs tracking-wider hover:bg-[#FF4500] hover:text-white transition-colors border-b border-black/10 last:border-b-0"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider hover:bg-black hover:text-white transition-colors whitespace-nowrap"
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
+              {mainLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider hover:bg-black hover:text-white transition-colors whitespace-nowrap"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
 
             {/* CTA Button */}
