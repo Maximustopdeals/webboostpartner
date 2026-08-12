@@ -25,7 +25,7 @@ function NextjsLogoCard() {
       </svg>
       <div className="absolute bottom-4 left-0 right-0 text-center">
         <p className="font-mono text-xs uppercase tracking-widest text-white/40">
-          Powered by
+          Gebouwd met
         </p>
         <p className="font-heading font-extrabold uppercase text-lg text-white tracking-tight">
           Next.js
@@ -83,7 +83,6 @@ export default function OverMijPage() {
 
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
-          {/* Sectie 1 — Mijn verhaal */}
           <h2>Waarom ik WebBoost Partner ben gestart</h2>
 
           <p>
@@ -106,7 +105,6 @@ export default function OverMijPage() {
             een ondernemer kan bouwen.
           </p>
 
-          {/* Sectie 2 — Het moment van inzicht */}
           <h2>Het moment waarop mijn visie veranderde</h2>
 
           <p>
@@ -126,7 +124,6 @@ export default function OverMijPage() {
             bouwen die vanaf de basis beter werken.
           </p>
 
-          {/* Sectie 3 — Wat ik nu doe */}
           <h2>Wat ik vandaag voor ondernemers doe</h2>
 
           <p>
@@ -145,7 +142,6 @@ export default function OverMijPage() {
             te groeien met uw onderneming.
           </p>
 
-          {/* Sectie 4 — Mijn belofte */}
           <h2>Mijn belofte aan iedere klant</h2>
 
           <p>
@@ -165,7 +161,6 @@ export default function OverMijPage() {
             gebouwd: met aandacht, kwaliteit en verantwoordelijkheid.
           </p>
 
-          {/* Sectie 5 — Waarom ik kies voor Next.js */}
           <h2>Waarom ik kies voor Next.js</h2>
 
           <p>
@@ -190,7 +185,6 @@ export default function OverMijPage() {
             een website bouwen die uw bedrijf helpt groeien.
           </p>
 
-          {/* Sectie 6 — Mijn visie op moderne websites */}
           <h2>Mijn visie op moderne websites</h2>
 
           <p>
@@ -216,7 +210,6 @@ export default function OverMijPage() {
             deze website voor uw onderneming moet bereiken.
           </p>
 
-          {/* Sectie 7 — Mijn werkwijze */}
           <h2>Persoonlijke begeleiding van begin tot eind</h2>
 
           <p>
@@ -260,7 +253,6 @@ export default function OverMijPage() {
             </li>
           </ul>
 
-          {/* Sectie 8 — Expertise */}
           <h2>Mijn expertise</h2>
 
           <p>
