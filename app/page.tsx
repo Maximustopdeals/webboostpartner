@@ -41,11 +41,8 @@ export default function HomePage() {
               <span className="w-2 h-2 bg-[#FF4500] rounded-full animate-pulse" />
               <span className="font-mono text-xs uppercase tracking-widest">Website laten maken · Rotterdam</span>
             </div>
-            <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl lg:text-[5.5rem]" data-testid="hero-h1">
-              Website laten<br />
-              maken in<br />
-              <span className="text-[#FF4500]">Rotterdam</span><br />
-              die écht werkt.
+            <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl lg:text-[5.5rem] max-w-4xl" data-testid="hero-h1">
+              Website laten maken in <span className="text-[#FF4500]">Rotterdam</span> die écht werkt.
             </h1>
             <p className="mt-8 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] leading-relaxed">
               Uw website is uw beste verkoper. WebBoost Partner ontwikkelt 
