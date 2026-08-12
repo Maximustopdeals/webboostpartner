@@ -18,8 +18,8 @@ const packages: PricingPackage[] = [
   {
     id: "essential",
     name: "Essential",
-    priceExcl: "2.495",
-    priceIncl: "3.019",
+    priceExcl: "3.495",
+    priceIncl: "4.229",
     audience: "Voor ZZP'ers & starters",
     tagline: "Jij levert de input, ik bouw de website.",
     description:
@@ -39,8 +39,8 @@ const packages: PricingPackage[] = [
   {
     id: "professional",
     name: "Professional",
-    priceExcl: "4.495",
-    priceIncl: "5.439",
+    priceExcl: "5.495",
+    priceIncl: "6.649",
     audience: "Voor ondernemers met ambitie",
     tagline: "Complete website met lokale SEO en geavanceerde optimalisatie.",
     description:
@@ -60,8 +60,8 @@ const packages: PricingPackage[] = [
   {
     id: "enterprise",
     name: "Enterprise",
-    priceExcl: "6.995",
-    priceIncl: "8.464",
+    priceExcl: "8.495",
+    priceIncl: "10.279",
     audience: "Voor groeiende & gevestigde bedrijven",
     tagline: "Maatwerk, strategie en doorlopende optimalisatie.",
     description:
