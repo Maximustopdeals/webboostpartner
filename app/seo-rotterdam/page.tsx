@@ -22,16 +22,15 @@ export default function SEORotterdamPage() {
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
-            // SEO Rotterdam
+            // Vindbaar in Rotterdam
           </p>
           <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
-            SEO <span className="text-[#FF4500]">Rotterdam</span>
+            Vindbaar in <span className="text-[#FF4500]">Rotterdam</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
-            Meer klanten via Google? Als <strong>SEO specialist in Rotterdam</strong> help ik
-            ondernemers om hun online zichtbaarheid te vergroten. Met technische SEO, lokale
-            SEO-optimalisatie en een focus op Core Web Vitals til ik uw website naar een
-            hoger niveau.
+            Uw website heeft geen waarde als niemand hem vindt. Ik help ondernemers in 
+            Rotterdam om zichtbaar te worden in Google — met technische optimalisatie, 
+            lokale vindbaarheid en een focus op prestaties die écht werken.
           </p>
         </div>
       </section>
