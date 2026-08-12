@@ -12,6 +12,21 @@ export const metadata = {
     "Op zoek naar een website die écht werkt? WebBoost Partner bouwt razendsnelle websites in Rotterdam die uw klanten overtuigen. Geen gedoe, wel resultaat.",
 };
 
+// Interface voor Bar component props
+interface BarProps {
+  label: string;
+  value: string;
+}
+
+function Bar({ label, value }: BarProps) {
+  return (
+    <div className="flex items-center justify-between">
+      <span className="text-[#525252]">{label}</span>
+      <span className="font-bold">{value}</span>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -30,7 +45,7 @@ export default function HomePage() {
               Website laten<br />
               maken in<br />
               <span className="text-[#FF4500]">Rotterdam</span><br />
-              die echt werkt.
+              die écht werkt.
             </h1>
             <p className="mt-8 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] leading-relaxed">
               Uw website is uw beste verkoper. WebBoost Partner ontwikkelt 
@@ -90,43 +105,54 @@ export default function HomePage() {
 
       <USPGrid />
 
-      {/* Website Rotterdam intro */}
+      {/* Website Rotterdam intro - Overzichtelijk en verwijzend */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
-              // Voor ondernemers in Rotterdam
+              // Website laten maken in Rotterdam
             </p>
             <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
-              Een website die<br />klanten overtuigt.
+              Een sterke basis<br />voor uw online groei.
             </h2>
           </div>
           <div className="lg:col-span-7 prose-brutal">
             <p>
-              Een professionele website is meer dan een mooi visitekaartje. Hij moet bezoekers overtuigen, 
-              snel laden en gevonden worden in Google. Veel websites in Rotterdam falen op minstens 
-              twee van deze punten, waardoor klanten afhaken.
+              Uw website is de basis van uw online zichtbaarheid. WebBoost Partner 
+              bouwt moderne, snelle websites die uw bedrijf professioneel neerzetten 
+              en nieuwe klanten aantrekken.
             </p>
             <p>
-              Mijn aanpak combineert een doordacht ontwerp met een technische basis die werkt. 
-              Het resultaat? Een site die laadt in een halve seconde, uw klanten informeert en 
-              overtuigt, en gevonden wordt in Google.
+              Naast een professioneel ontwerp zorgen wij voor een sterke technische 
+              basis, zodat uw website snel laadt, goed vindbaar is in Google en 
+              bezoekers overtuigt.
             </p>
-            <Link href="/website-laten-maken-rotterdam" className="inline-flex items-center gap-2 mt-2 font-heading font-bold uppercase text-sm tracking-widest text-[#FF4500] hover:underline">
-              Lees meer over de aanpak <ArrowRight size={16} />
-            </Link>
+            <div className="flex flex-wrap gap-4 mt-6">
+              <Link
+                href="/website-laten-maken-rotterdam"
+                className="inline-flex items-center gap-2 bg-[#FF4500] text-white px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black transition-colors"
+              >
+                Lees meer over de aanpak <ArrowRight size={16} />
+              </Link>
+              <Link
+                href="/seo-rotterdam"
+                className="inline-flex items-center gap-2 border-2 border-black px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black hover:text-white transition-colors"
+              >
+                Meer over SEO & vindbaarheid
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Next.js vs WordPress */}
+      {/* Next.js vs WordPress - Kortere versie */}
       <section className="bg-[#FAFAFA] py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
-            // Waarom deze aanpak beter werkt
+            // Technologie die werkt
           </p>
           <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] max-w-3xl">
-            Waarom kiezen voor een moderne website?
+            Waarom een moderne<br />website beter presteert.
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 mt-12">
@@ -164,7 +190,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <Link href="/nextjs-vs-wordpress" className="mt-6 inline-flex items-center gap-2 font-heading font-bold uppercase text-sm tracking-widest text-[#FF4500] hover:underline">
-                Lees meer over de aanpak <ArrowRight size={16} />
+                Volledige vergelijking <ArrowRight size={16} />
               </Link>
             </div>
           </div>
@@ -176,10 +202,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-2 gap-12">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
-              // Vindbaar in Google
+              // Zichtbaar in Google
             </p>
             <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
-              Zichtbaarheid die<br/>klanten oplevert.
+              Vindbaarheid die<br/>klanten oplevert.
             </h2>
             <p className="mt-5 text-lg text-[#1a1a1a] leading-relaxed max-w-prose">
               Een mooie website heeft geen waarde als niemand hem vindt. 
@@ -229,14 +255,5 @@ export default function HomePage() {
 
       <CTASection />
     </>
-  );
-}
-
-function Bar({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-center justify-between">
-      <span className="text-[#525252]">{label}</span>
-      <span className="font-bold">{value}</span>
-    </div>
   );
 }
