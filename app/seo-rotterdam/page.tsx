@@ -29,7 +29,7 @@ export default function SEORotterdamPage() {
           </h1>
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
             Uw website heeft geen waarde als niemand hem vindt. Ik help ondernemers in 
-            Rotterdam om zichtbaar te worden in Google — met technische optimalisatie, 
+            Rotterdam om zichtbaar te worden in Google met technische optimalisatie, 
             lokale vindbaarheid en een focus op prestaties die écht werken.
           </p>
         </div>
