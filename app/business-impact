@@ -1,0 +1,50 @@
+"use client";
+
+import { useState } from "react";
+import BusinessKPICalculator from "@/components/BusinessKPICalculator";
+import LeadCapture from "@/components/LeadCapture";
+
+export default function BusinessImpactPage() {
+  const [capturedData, setCapturedData] = useState<Record<string, unknown> | null>(null);
+
+  const handleResult = (data: { visitors: number; conversionRate: number; avgOrderValue: number; annualUplift: number }) => {
+    setCapturedData({
+      monthlyVisitors: data.visitors,
+      conversionRate: `${data.conversionRate}%`,
+      averageOrderValue: `€${data.avgOrderValue}`,
+      annualUplift: `€${data.annualUplift.toLocaleString("nl-NL")}`,
+    });
+  };
+
+  return (
+    <main>
+      <section className="bg-[#FAFAFA] py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="text-center mb-12">
+            <h1 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
+              Business <span className="text-[#FF4500]">Impact</span> Calculator
+            </h1>
+            <p className="mt-4 text-lg text-[#525252] max-w-2xl mx-auto">
+              Vertaal trage laadtijden naar concrete euro's. Zie precies wat een
+              Next.js migratie oplevert voor jouw bedrijf.
+            </p>
+          </div>
+
+          <BusinessKPICalculator onResult={handleResult} />
+
+          {capturedData && (
+            <div className="mt-8 max-w-2xl mx-auto">
+              <LeadCapture
+                tool="business-impact"
+                resultData={capturedData}
+                title="Ontvang je business case rapport"
+                description="Laat je e-mail achter en ontvang een gedetailleerd business case rapport met ROI-berekening en migratieadvies."
+                ctaText="Stuur business case naar mijn e-mail"
+              />
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
+  );
+}
