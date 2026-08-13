@@ -2,20 +2,34 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Zap, Menu, X, FileText } from "lucide-react";
+import { Zap, Menu, X, FileText, ChevronDown } from "lucide-react";
 
 interface NavLink {
   href: string;
   label: string;
 }
 
-// Hoofdnavigatie: vereenvoudigd en klantgericht
-const mainLinks: NavLink[] = [
+interface NavDropdown {
+  label: string;
+  items: NavLink[];
+}
+
+// Hoofdnavigatie: vereenvoudigd en klantgericht + TOOLS dropdown
+const mainLinks: (NavLink | NavDropdown)[] = [
   { href: "/", label: "HOME" },
   { href: "/website-laten-maken-rotterdam", label: "WEBSITES" },
   { href: "/seo-rotterdam", label: "VINDBARE SITE" },
   { href: "/pakketten", label: "PAKKETTEN" },
   { href: "/nextjs-vs-wordpress", label: "VERGELIJKING" },
+  {
+    label: "TOOLS",
+    items: [
+      { href: "/pagespeed", label: "PageSpeed Scan" },
+      { href: "/virtual-shadow", label: "Virtual Shadow" },
+      { href: "/business-impact", label: "Business Impact" },
+      { href: "/migratie-schatting", label: "Migratie Schatting" },
+    ],
+  },
   { href: "/over-mij", label: "OVER MIJ" },
   { href: "/contact", label: "CONTACT" },
 ];
@@ -27,12 +41,21 @@ const allMobileLinks: NavLink[] = [
   { href: "/seo-rotterdam", label: "VINDBARE SITE" },
   { href: "/pakketten", label: "PAKKETTEN" },
   { href: "/nextjs-vs-wordpress", label: "VERGELIJKING" },
+  { href: "/pagespeed", label: "PAGESPEED SCAN" },
+  { href: "/virtual-shadow", label: "VIRTUAL SHADOW" },
+  { href: "/business-impact", label: "BUSINESS IMPACT" },
+  { href: "/migratie-schatting", label: "MIGRATIE SCHATTING" },
   { href: "/over-mij", label: "OVER MIJ" },
   { href: "/contact", label: "CONTACT" },
 ];
 
+function isDropdown(item: NavLink | NavDropdown): item is NavDropdown {
+  return "items" in item;
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#FAFAFA] border-b-2 border-black" data-testid="site-navbar">
@@ -49,15 +72,48 @@ export default function Navbar() {
           {/* Desktop nav + CTA */}
           <div className="hidden lg:flex items-center">
             <nav className="flex items-center">
-              {mainLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider hover:bg-black hover:text-white transition-colors whitespace-nowrap"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {mainLinks.map((item, idx) => {
+                if (isDropdown(item)) {
+                  return (
+                    <div
+                      key={idx}
+                      className="relative"
+                      onMouseEnter={() => setDropdownOpen(true)}
+                      onMouseLeave={() => setDropdownOpen(false)}
+                    >
+                      <button className="flex items-center gap-1 px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider hover:bg-black hover:text-white transition-colors whitespace-nowrap">
+                        {item.label}
+                        <ChevronDown
+                          size={12}
+                          className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                      {dropdownOpen && (
+                        <div className="absolute top-full left-0 bg-[#FAFAFA] border-2 border-black border-t-0 min-w-[220px] shadow-brutal-sm">
+                          {item.items.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              className="block px-4 py-3 font-heading font-bold uppercase text-xs tracking-wider hover:bg-[#FF4500] hover:text-white transition-colors border-b border-black/10 last:border-b-0"
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider hover:bg-black hover:text-white transition-colors whitespace-nowrap"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* CTA Button */}
