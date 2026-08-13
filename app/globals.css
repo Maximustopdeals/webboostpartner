@@ -93,7 +93,8 @@ body {
   padding: 0 2px;
 }
 
-.prose-brutal a {
+/* FIX: uitzondering voor knoppen met achtergrondkleur */
+.prose-brutal a:not([class*="bg-"]) {
   color: #FF4500;
   font-weight: 600;
   text-decoration: underline;
@@ -101,7 +102,7 @@ body {
   text-underline-offset: 3px;
 }
 
-.prose-brutal a:hover {
+.prose-brutal a:hover:not([class*="bg-"]) {
   background: #0A0A0A;
   color: #FAFAFA;
 }
