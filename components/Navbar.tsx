@@ -14,38 +14,44 @@ interface NavDropdown {
   items: NavLink[];
 }
 
-// Hoofdnavigatie: vereenvoudigd en klantgericht + TOOLS dropdown
+// Hoofdnavigatie: max 5 items + CTA
 const mainLinks: (NavLink | NavDropdown)[] = [
   { href: "/", label: "HOME" },
+  {
+    label: "NEXT.JS",
+    items: [
+      { href: "/nextjs-specialist", label: "Next.js Specialist" },
+      { href: "/nextjs-website-rotterdam", label: "Next.js Websites" },
+      { href: "/nextjs-developer-rotterdam", label: "Next.js Developer" },
+    ],
+  },
   { href: "/website-laten-maken-rotterdam", label: "WEBSITES" },
-  { href: "/seo-rotterdam", label: "VINDBARE SITE" },
-  { href: "/pakketten", label: "PAKKETTEN" },
-  { href: "/nextjs-vs-wordpress", label: "VERGELIJKING" },
   {
     label: "TOOLS",
     items: [
       { href: "/pagespeed", label: "PageSpeed Scan" },
-      { href: "/virtual-shadow", label: "Virtual Shadow" },
+      { href: "/virtual-shadow", label: "Virtual Shadow Renderer" },
       { href: "/business-impact", label: "Business Impact" },
       { href: "/migratie-schatting", label: "Migratie Schatting" },
     ],
   },
-  { href: "/over-mij", label: "OVER MIJ" },
+  { href: "/pakketten", label: "PAKKETTEN" },
   { href: "/contact", label: "CONTACT" },
 ];
 
-// Mobiel: vereenvoudigd en klantgericht
+// Mobiel: alle links plat, plus footer-links onderaan
 const allMobileLinks: NavLink[] = [
   { href: "/", label: "HOME" },
-  { href: "/website-laten-maken-rotterdam", label: "WEBSITES" },
-  { href: "/seo-rotterdam", label: "VINDBARE SITE" },
-  { href: "/pakketten", label: "PAKKETTEN" },
-  { href: "/nextjs-vs-wordpress", label: "VERGELIJKING" },
+  { href: "/nextjs-specialist", label: "NEXT.JS SPECIALIST" },
+  { href: "/nextjs-website-rotterdam", label: "NEXT.JS WEBSITES" },
+  { href: "/nextjs-developer-rotterdam", label: "NEXT.JS DEVELOPER" },
+  { href: "/website-laten-maken-rotterdam", label: "WEBSITES ROTTERDAM" },
   { href: "/pagespeed", label: "PAGESPEED SCAN" },
   { href: "/virtual-shadow", label: "VIRTUAL SHADOW" },
   { href: "/business-impact", label: "BUSINESS IMPACT" },
   { href: "/migratie-schatting", label: "MIGRATIE SCHATTING" },
-  { href: "/over-mij", label: "OVER MIJ" },
+  { href: "/tech-stack", label: "TECH STACK" },
+  { href: "/pakketten", label: "PAKKETTEN" },
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -119,9 +125,9 @@ export default function Navbar() {
             {/* CTA Button */}
             <Link
               href="/contact"
-              className="ml-3 inline-flex items-center gap-1.5 bg-[#FF4500] text-white font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-2.5 hover:bg-black hover:-translate-y-0.5 hover:shadow-brutal-sm transition-all whitespace-nowrap"
+              className="ml-2 inline-flex items-center gap-1.5 bg-[#FF4500] text-white font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-3 py-2 hover:bg-black hover:-translate-y-0.5 hover:shadow-brutal-sm transition-all whitespace-nowrap"
             >
-              <FileText size={14} strokeWidth={2.5} /> OFFERTE AANVRAGEN
+              <FileText size={13} strokeWidth={2.5} /> OFFERTE
             </Link>
           </div>
 
