@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Zap, Monitor, Smartphone, ArrowRight, Loader2 } from "lucide-react";
+import { Zap, Monitor, Smartphone, ArrowRight, Loader2, CheckCircle2, AlertCircle, Send } from "lucide-react";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdapzjod";
 
 // Types voor PageSpeed API responses
 interface LighthouseCategory {
@@ -64,12 +66,32 @@ interface ScoreInterpretationProps {
   score: number;
 }
 
+interface LeadFormData {
+  naam: string;
+  email: string;
+  website: string;
+  telefoon: string;
+  interesse: boolean;
+}
+
 export default function PageSpeedTool() {
   const [url, setUrl] = useState<string>("");
   const [strategy, setStrategy] = useState<string>("mobile");
   const [loading, setLoading] = useState<boolean>(false);
   const [result, setResult] = useState<PageSpeedResponse | null>(null);
   const [error, setError] = useState<string>("");
+
+  // Lead capture state
+  const [showLeadForm, setShowLeadForm] = useState<boolean>(false);
+  const [leadStatus, setLeadStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [leadError, setLeadError] = useState<string>("");
+  const [leadData, setLeadData] = useState<LeadFormData>({
+    naam: "",
+    email: "",
+    website: "",
+    telefoon: "",
+    interesse: false,
+  });
 
   async function handleScan(): Promise<void> {
     if (!url.trim()) {
@@ -79,6 +101,7 @@ export default function PageSpeedTool() {
     setError("");
     setLoading(true);
     setResult(null);
+    setShowLeadForm(false);
 
     let scanUrl: string = url.trim();
     if (!/^https?:\/\//i.test(scanUrl)) {
@@ -95,6 +118,9 @@ export default function PageSpeedTool() {
       }
       const data: PageSpeedResponse = await res.json();
       setResult(data);
+      // Auto-fill website in lead form
+      setLeadData(prev => ({ ...prev, website: scanUrl }));
+      setShowLeadForm(true);
     } catch (err: unknown) {
       const errorMessage = err instanceof Error ? err.message : "Er ging iets mis. Probeer het opnieuw.";
       setError(errorMessage);
@@ -105,6 +131,44 @@ export default function PageSpeedTool() {
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void {
     if (e.key === "Enter") handleScan();
+  }
+
+  async function handleLeadSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
+    e.preventDefault();
+    setLeadStatus("loading");
+    setLeadError("");
+
+    const formData = new FormData();
+    formData.append("naam", leadData.naam);
+    formData.append("email", leadData.email);
+    formData.append("website", leadData.website);
+    formData.append("telefoon", leadData.telefoon || "Niet opgegeven");
+    formData.append("interesse", leadData.interesse ? "Ja, meer informatie over versnellen" : "Nee, alleen scanresultaat");
+    formData.append("pagespeed_score", String(scores?.performance ?? "N/A"));
+    formData.append("bron", "PageSpeed Tool Lead");
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setLeadStatus("success");
+      } else {
+        let msg = "Er ging iets mis. Probeer het opnieuw.";
+        try {
+          const json = await res.json();
+          if (json?.errors?.[0]?.message) msg = json.errors[0].message;
+        } catch {}
+        setLeadError(msg);
+        setLeadStatus("error");
+      }
+    } catch {
+      setLeadError("Netwerkfout. Probeer het later opnieuw.");
+      setLeadStatus("error");
+    }
   }
 
   // Extract scores from normalized API response
@@ -141,8 +205,7 @@ export default function PageSpeedTool() {
             </h2>
             <p className="text-lg text-[#1a1a1a] leading-relaxed max-w-lg mb-8">
               Voer je URL in en zie binnen 30 seconden hoe Google jouw site beoordeelt.{" "}
-              <strong>Core Web Vitals, SEO, performance</strong> — alles in één rapport.
-              Geen e-mail nodig.
+              <strong>Core Web Vitals, SEO, performance</strong> — alles in een rapport.
             </p>
             <ul className="space-y-3">
               {[
@@ -278,6 +341,122 @@ export default function PageSpeedTool() {
                   </p>
                   <ScoreInterpretation score={scores.performance} />
                 </div>
+              </div>
+            )}
+
+            {/* Lead Capture Form */}
+            {showLeadForm && leadStatus !== "success" && (
+              <div className="mt-6 border-2 border-[#FF4500] bg-[#FFF5F0] p-5" data-testid="lead-capture-form">
+                <p className="font-heading font-bold uppercase text-sm tracking-widest text-[#FF4500] mb-3">
+                  Wil je weten hoe je dit kunt verbeteren?
+                </p>
+                <p className="text-sm text-[#525252] mb-4">
+                  Laat je gegevens achter en ik stuur je binnen 24 uur een persoonlijk adviesrapport — gratis en vrijblijvend.
+                </p>
+                <form onSubmit={handleLeadSubmit} className="space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-1">
+                        Naam *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={leadData.naam}
+                        onChange={(e) => setLeadData(prev => ({ ...prev, naam: e.target.value }))}
+                        className="w-full border-2 border-black p-3 bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+                        placeholder="Jouw naam"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-1">
+                        E-mail *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={leadData.email}
+                        onChange={(e) => setLeadData(prev => ({ ...prev, email: e.target.value }))}
+                        className="w-full border-2 border-black p-3 bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+                        placeholder="jouw@email.nl"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-1">
+                        Website URL *
+                      </label>
+                      <input
+                        type="url"
+                        required
+                        value={leadData.website}
+                        onChange={(e) => setLeadData(prev => ({ ...prev, website: e.target.value }))}
+                        className="w-full border-2 border-black p-3 bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+                        placeholder="https://jouwbedrijf.nl"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-1">
+                        Telefoon
+                      </label>
+                      <input
+                        type="tel"
+                        value={leadData.telefoon}
+                        onChange={(e) => setLeadData(prev => ({ ...prev, telefoon: e.target.value }))}
+                        className="w-full border-2 border-black p-3 bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+                        placeholder="06-12345678"
+                      />
+                    </div>
+                  </div>
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={leadData.interesse}
+                      onChange={(e) => setLeadData(prev => ({ ...prev, interesse: e.target.checked }))}
+                      className="w-5 h-5 border-2 border-black accent-[#FF4500]"
+                    />
+                    <span className="text-sm">
+                      Ja, ik wil graag weten hoe ik mijn website kan versnellen en meer klanten kan aantrekken.
+                    </span>
+                  </label>
+
+                  {leadStatus === "error" && (
+                    <div className="flex items-start gap-2 border-2 border-black bg-[#FFE5DA] p-3">
+                      <AlertCircle size={18} className="text-[#FF4500] mt-0.5 shrink-0" />
+                      <p className="text-sm font-medium">{leadError}</p>
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={leadStatus === "loading"}
+                    className="inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-6 py-3 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all disabled:opacity-60"
+                  >
+                    {leadStatus === "loading" ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" /> Versturen...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={16} /> Stuur mijn gratis adviesrapport
+                      </>
+                    )}
+                  </button>
+                </form>
+              </div>
+            )}
+
+            {/* Lead Success */}
+            {leadStatus === "success" && (
+              <div className="mt-6 border-2 border-black bg-white p-6 text-center" data-testid="lead-success">
+                <CheckCircle2 size={40} className="text-[#FF4500] mx-auto mb-3" strokeWidth={2.5} />
+                <h3 className="font-heading font-extrabold uppercase text-xl mb-2">
+                  Bedankt!
+                </h3>
+                <p className="text-sm text-[#525252]">
+                  Ik stuur je binnen 24 uur een persoonlijk adviesrapport met concrete verbeterpunten voor jouw website.
+                </p>
               </div>
             )}
           </div>
