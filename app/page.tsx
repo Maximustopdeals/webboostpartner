@@ -133,7 +133,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/seo-rotterdam"
-                className="inline-flex items-center gap-2 border-2 border-black px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 border-2 border-black px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest text-black hover:bg-black hover:text-white transition-colors"
               >
                 Meer over SEO & vindbaarheid
               </Link>
