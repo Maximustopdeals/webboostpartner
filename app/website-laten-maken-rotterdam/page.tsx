@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Website laten maken Rotterdam | Professionele Next.js Websites",
   description:
-    "Wilt u een professionele website laten maken in Rotterdam? WebBoost Partner bouwt Next.js websites die mooi, snel én vindbaar zijn. Maatwerk vanaf €2.495.",
+    "Wilt u een professionele website laten maken in Rotterdam? WebBoost Partner bouwt Next.js websites die mooi, snel én vindbaar zijn. Maatwerk vanaf €3.495.",
   alternates: { canonical: "https://webboostpartner.nl/website-laten-maken-rotterdam" },
 };
 
