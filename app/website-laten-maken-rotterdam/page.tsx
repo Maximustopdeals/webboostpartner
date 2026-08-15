@@ -20,7 +20,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     q: "Wat kost een website laten maken met Next.js?",
-    a: "Bij WebBoost Partner werk ik met drie transparante pakketten die aansluiten bij verschillende soorten ondernemers. Het Essential pakket voor ZZP'ers en starters begint vanaf €2.495 excl. btw. Voor ondernemers die meer willen groeien is er het Professional pakket vanaf €4.495 excl. btw. Groeiende bedrijven kunnen kiezen voor het Enterprise pakket vanaf €6.995 excl. btw. Alle websites worden volledig op maat ontwikkeld. U weet vooraf precies waar u aan toe bent: geen verborgen kosten en geen verrassingen achteraf. Voor specifieke wensen maak ik graag een persoonlijk voorstel.",
+    a: "Bij WebBoost Partner werk ik met drie transparante pakketten die aansluiten bij verschillende soorten ondernemers. Het Essential pakket voor ZZP'ers en starters begint vanaf €3.495 excl. btw. Voor ondernemers die meer willen groeien is er het Professional pakket vanaf €5.495 excl. btw. Groeiende bedrijven kunnen kiezen voor het Enterprise pakket vanaf €8.495 excl. btw. Alle websites worden volledig op maat ontwikkeld. U weet vooraf precies waar u aan toe bent: geen verborgen kosten en geen verrassingen achteraf. Voor specifieke wensen maak ik graag een persoonlijk voorstel.",
   },
   {
     q: "Hoe lang duurt het traject?",
