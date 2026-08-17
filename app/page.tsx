@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import USPGrid from "@/components/USPGrid";
@@ -101,6 +102,128 @@ export default function HomePage() {
       <PageSpeedTool />
 
       <USPGrid />
+
+      {/* Portfolio / Cases */}
+      <section className="bg-[#FAFAFA] py-20 sm:py-28 border-y-2 border-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
+            // Gerealiseerde Projecten
+          </p>
+          <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] mb-12">
+            Websites die<br />presteren.
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* D.T.G. Cleaning Case */}
+            <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
+              <a 
+                href="https://dtgcleaning.nl" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block aspect-[16/10] bg-[#1a3a52] relative overflow-hidden"
+              >
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <p className="font-heading font-black uppercase text-2xl tracking-tight">D.T.G. Cleaning</p>
+                    <p className="font-mono text-xs uppercase tracking-widest opacity-60 mt-1">Glazenwasser Nijkerk</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 bg-green-500 text-white font-mono text-xs uppercase tracking-widest px-2 py-1 border border-white/20">
+                  #1 Google
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                  <p className="text-white text-sm font-semibold tracking-wider flex items-center gap-2">
+                    <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    Klik om de snelheid te ervaren
+                  </p>
+                </div>
+              </a>
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Next.js 16</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">SEO</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Lokale SEO</span>
+                </div>
+                <h3 className="font-heading font-extrabold uppercase text-xl tracking-tight mb-2">
+                  D.T.G. Cleaning — Glazenwasser Nijkerk
+                </h3>
+                <p className="text-sm text-[#525252] leading-relaxed mb-4 flex-1">
+                  Complete Next.js website voor een glazenwasser in Nijkerk. Gebouwd voor 
+                  lokale SEO met meerdere landingspagina's per dienst. Scoort op pagina 1 in Google 
+                  voor "glazenwasser Nijkerk" en gerelateerde zoektermen.
+                </p>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-wider text-[#525252]">
+                    <span>100/100 PageSpeed</span>
+                    <span>•</span>
+                    <span>4 pagina's</span>
+                  </div>
+                  <a 
+                    href="https://dtgcleaning.nl" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-heading font-bold uppercase text-xs tracking-widest text-[#FF4500] hover:underline"
+                  >
+                    Bezoek website <ArrowRight size={14} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Luxe Fashion Webshop - LIVE */}
+            <Link 
+              href="/demo/fashion" 
+              className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all block"
+            >
+              <div className="aspect-[16/10] relative overflow-hidden bg-stone-100">
+                <div className="absolute inset-0 grid grid-cols-4 grid-rows-2 gap-0.5">
+                  {[
+                    "/images/fashion/blazer.jpg",
+                    "/images/fashion/coat.jpg",
+                    "/images/fashion/bag.jpg",
+                    "/images/fashion/sweater.jpg",
+                    "/images/fashion/trousers.jpg",
+                    "/images/fashion/scarf.jpg",
+                    "/images/fashion/dress.jpg",
+                    "/images/fashion/shirt.jpg",
+                  ].map((src, i) => (
+                    <div key={i} className="relative overflow-hidden">
+                      <Image
+                        src={src}
+                        alt={`Product ${i + 1}`}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                <div className="absolute top-4 right-4 bg-white text-black font-mono text-xs uppercase tracking-widest px-2 py-1 border border-black">
+                  Live Demo
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Next.js 16</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">E-commerce</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">AI Foto's</span>
+                </div>
+                <h3 className="font-heading font-extrabold uppercase text-xl tracking-tight mb-2">
+                  Luxe Fashion Webshop
+                </h3>
+                <p className="text-sm text-[#525252] leading-relaxed mb-4">
+                  Volledig functionele fashion webshop met 8 producten, werkende 
+                  winkelwagen en categorie-filters. Gebouwd als e-commerce showcase.
+                </p>
+                <span className="inline-flex items-center gap-2 font-heading font-bold uppercase text-xs tracking-widest text-[#FF4500]">
+                  Bekijk webshop <ArrowRight size={14} />
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Website Rotterdam intro - Overzichtelijk en verwijzend */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
