@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
-import PricingSection from "@/components/PricingSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -309,7 +308,6 @@ export default function WebsiteRotterdamPage() {
         </div>
       </article>
 
-      <PricingSection compact />
       <CTASection
         title="Vraag een vrijblijvende offerte aan."
         subtitle="Vertel kort over uw bedrijf en wensen. U krijgt binnen 24 uur een reactie."
