@@ -19,10 +19,6 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    q: "Wat kost een website laten maken met Next.js?",
-    a: "Bij WebBoost Partner werk ik met drie transparante pakketten die aansluiten bij verschillende soorten ondernemers. Het Essential pakket voor ZZP'ers en starters begint vanaf €3.495 excl. btw. Voor ondernemers die meer willen groeien is er het Professional pakket vanaf €5.495 excl. btw. Groeiende bedrijven kunnen kiezen voor het Enterprise pakket vanaf €8.495 excl. btw. Alle websites worden volledig op maat ontwikkeld. U weet vooraf precies waar u aan toe bent: geen verborgen kosten en geen verrassingen achteraf. Voor specifieke wensen maak ik graag een persoonlijk voorstel.",
-  },
-  {
     q: "Hoe lang duurt het traject?",
     a: "Een gemiddeld traject duurt ongeveer 2 tot 4 weken. De exacte planning hangt af van het aantal pagina's, de hoeveelheid content en hoe snel keuzes en feedback worden aangeleverd. Tijdens het traject blijft u betrokken en krijgt u inzicht in de voortgang. Een eenvoudige website kan sneller live gaan, terwijl uitgebreide websites met bijvoorbeeld blogs, meerdere diensten of lokale SEO meer tijd nodig hebben.",
   },
