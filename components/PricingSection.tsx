@@ -69,7 +69,7 @@ const packages: PricingPackage[] = [
     features: [
       "Volledige SEO strategie",
       "Headless CMS (Sanity / Contentful)",
-      "Webshop functionaliteit (tot 100 producten)",
+      "Webshop functionaliteit — onbeperkt schaalbaar",
       "iDEAL / Mollie / Stripe integratie",
       "Geavanceerde animaties",
       "A/B test-ready setup",
