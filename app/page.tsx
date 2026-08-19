@@ -103,7 +103,7 @@ export default function HomePage() {
 
       <USPGrid />
 
-      {/* Portfolio / Cases */}
+            {/* Portfolio / Cases */}
       <section className="bg-[#FAFAFA] py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
@@ -113,12 +113,69 @@ export default function HomePage() {
             Websites die<br />presteren.
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Autorijschool Valberg — Next.js migratie */}
+            <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
+              <a
+                href="https://autorijschoolvalberg.nl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block aspect-[16/10] relative overflow-hidden"
+              >
+                <Image
+                  src="/images/portfolio/valberg.jpg"
+                  alt="Homepage van Autorijschool Valberg — Next.js website door WebBoost Partner"
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute top-4 right-4 bg-green-500 text-white font-mono text-xs uppercase tracking-widest px-2 py-1 border border-white/20">
+                  Live
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                  <p className="text-white text-sm font-semibold tracking-wider flex items-center gap-2">
+                    <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    Bekijk de live website
+                  </p>
+                </div>
+              </a>
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Next.js 16</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">SEO</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Vercel</span>
+                </div>
+                <h3 className="font-heading font-extrabold uppercase text-xl tracking-tight mb-2">
+                  Autorijschool Valberg — Valkenburg
+                </h3>
+                <p className="text-sm text-[#525252] leading-relaxed mb-4 flex-1">
+                  Complete migratie van WordPress naar Next.js met statische export. 
+                  15 zelfstandige pagina's, volledige technische SEO, GA4, Tag Manager 
+                  en razendsnelle WebP-afbeeldingen. Gebouwd voor #1 op "rijschool Valkenburg".
+                </p>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-wider text-[#525252]">
+                    <span>100/100 PageSpeed</span>
+                    <span>•</span>
+                    <span>15 pagina's</span>
+                  </div>
+                  <a
+                    href="https://autorijschoolvalberg.nl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-heading font-bold uppercase text-xs tracking-widest text-[#FF4500] hover:underline"
+                  >
+                    Bezoek website <ArrowRight size={14} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* D.T.G. Cleaning Case */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
-              <a 
-                href="https://dtgcleaning.nl" 
-                target="_blank" 
+              <a
+                href="https://dtgcleaning.nl"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block aspect-[16/10] bg-[#1a3a52] relative overflow-hidden"
               >
@@ -158,9 +215,9 @@ export default function HomePage() {
                     <span>•</span>
                     <span>4 pagina's</span>
                   </div>
-                  <a 
-                    href="https://dtgcleaning.nl" 
-                    target="_blank" 
+                  <a
+                    href="https://dtgcleaning.nl"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 font-heading font-bold uppercase text-xs tracking-widest text-[#FF4500] hover:underline"
                   >
@@ -171,8 +228,8 @@ export default function HomePage() {
             </div>
 
             {/* Luxe Fashion Webshop - LIVE */}
-            <Link 
-              href="/demo/fashion" 
+            <Link
+              href="/demo/fashion"
               className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all block"
             >
               <div className="aspect-[16/10] relative overflow-hidden bg-stone-100">
