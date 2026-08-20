@@ -103,7 +103,7 @@ export default function HomePage() {
 
       <USPGrid />
 
-            {/* Portfolio / Cases */}
+      {/* Portfolio / Cases */}
       <section className="bg-[#FAFAFA] py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
@@ -149,15 +149,16 @@ export default function HomePage() {
                   Autorijschool Valberg — Valkenburg
                 </h3>
                 <p className="text-sm text-[#525252] leading-relaxed mb-4 flex-1">
-                  Complete migratie van WordPress naar Next.js met statische export. 
-                  15 zelfstandige pagina's, volledige technische SEO, GA4, Tag Manager 
-                  en razendsnelle WebP-afbeeldingen. Gebouwd voor #1 op "rijschool Valkenburg".
+                  Van WordPress naar Next.js met <span className="font-bold text-black">15 zelfstandige pagina's</span>. 
+                  Volledig geoptimaliseerd voor technische SEO en gebouwd voor de 
+                  <span className="font-bold text-black"> #1 positie</span> op 
+                  <span className="font-bold text-black"> "rijschool Valkenburg"</span>.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-gray-100">
                   <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-wider text-[#525252]">
-                    <span>100/100 PageSpeed</span>
+                    <span>🏆 100/100 PageSpeed</span>
                     <span>•</span>
-                    <span>15 pagina's</span>
+                    <span>📄 15 pagina's</span>
                   </div>
                   <a
                     href="https://autorijschoolvalberg.nl"
@@ -171,7 +172,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* D.T.G. Cleaning Case */}
+            {/* D.T.G. Cleaning — Glazenwasser Nijkerk */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <a
                 href="https://dtgcleaning.nl"
@@ -198,22 +199,23 @@ export default function HomePage() {
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Next.js 16</span>
-                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">SEO</span>
                   <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Lokale SEO</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Vercel</span>
                 </div>
                 <h3 className="font-heading font-extrabold uppercase text-xl tracking-tight mb-2">
                   D.T.G. Cleaning — Glazenwasser Nijkerk
                 </h3>
                 <p className="text-sm text-[#525252] leading-relaxed mb-4 flex-1">
-                  Complete Next.js website voor een glazenwasser in Nijkerk. Gebouwd voor 
-                  lokale SEO met meerdere landingspagina's per dienst. Scoort op pagina 1 in Google 
-                  voor "glazenwasser Nijkerk" en gerelateerde zoektermen.
+                  Complete Next.js website met <span className="font-bold text-black">10 pagina's</span> voor een glazenwasser in Nijkerk. 
+                  Gebouwd voor lokale SEO met strategische landingspagina's per dienst en werkgebied. 
+                  Scoort op <span className="font-bold text-black">pagina 1 in Google</span> voor 
+                  <span className="font-bold text-black"> "glazenwasser Nijkerk"</span> en gerelateerde zoektermen.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-gray-100">
                   <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-wider text-[#525252]">
-                    <span>100/100 PageSpeed</span>
+                    <span>🏆 100/100 PageSpeed</span>
                     <span>•</span>
-                    <span>4 pagina's</span>
+                    <span>📄 10 pagina's</span>
                   </div>
                   <a
                     href="https://dtgcleaning.nl"
@@ -227,7 +229,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Luxe Fashion Webshop - LIVE */}
+            {/* Luxe Fashion Webshop — Technische Showcase */}
             <Link
               href="/demo/fashion"
               className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all block"
@@ -270,8 +272,9 @@ export default function HomePage() {
                   Luxe Fashion Webshop
                 </h3>
                 <p className="text-sm text-[#525252] leading-relaxed mb-4">
-                  Volledig functionele fashion webshop met 8 producten, werkende 
-                  winkelwagen en categorie-filters. Gebouwd als e-commerce showcase.
+                  Technische showcase van een fashion webshop met 
+                  <span className="font-bold text-black"> 8 producten</span>, werkende winkelwagen 
+                  en categorie-filters. Gebouwd om de kracht van Next.js voor e-commerce te demonstreren.
                 </p>
                 <span className="inline-flex items-center gap-2 font-heading font-bold uppercase text-xs tracking-widest text-[#FF4500]">
                   Bekijk webshop <ArrowRight size={14} />
