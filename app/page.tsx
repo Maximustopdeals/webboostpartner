@@ -230,29 +230,64 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3. Inas Kraamzorg — Geen afbeelding, pure focus op tekst */}
+            {/* 3. Inas Kraamzorg — Met hero-tekst als uitgangspunt */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <Link
                 href="https://inaskraamzorg.nl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block aspect-[16/10] relative overflow-hidden bg-gradient-to-br from-[#FF4500]/10 via-[#FF4500]/5 to-white flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700"
+                className="block aspect-[16/10] relative overflow-hidden bg-gradient-to-br from-rose-50 via-pink-50/30 to-rose-50/50 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700"
               >
-                {/* Grote, opvallende initiaal als visueel element */}
-                <div className="text-center">
-                  <span className="text-8xl font-black text-[#FF4500] opacity-20 select-none">IK</span>
-                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.25em] text-[#525252]">
-                    Inas Kraamzorg
+                {/* Subtiele decoratieve elementen */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-2/3 h-2/3 rounded-full bg-rose-100/20 blur-2xl" />
+                </div>
+                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-rose-200/10 blur-2xl" />
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-rose-200/10 blur-2xl" />
+                
+                {/* Content - De hero-tekst */}
+                <div className="relative text-center px-6 max-w-xs">
+                  {/* Subtiele tag */}
+                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-rose-400 font-semibold mb-2">
+                    Kraamzorg in Zaandam & de Zaanstreek
                   </p>
-                  <div className="mt-4 flex items-center justify-center gap-6 text-sm font-mono uppercase tracking-wider text-[#525252]">
+                  
+                  {/* Warme koptekst */}
+                  <h4 className="font-heading font-bold text-xl leading-tight text-slate-800">
+                    Een warme start <br />
+                    <span className="text-rose-500">voor jou en je baby</span>
+                  </h4>
+                  
+                  {/* Citaat van Fatima */}
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed max-w-xs mx-auto">
+                    <span className="font-semibold text-rose-500">"</span>
+                    De eerste dagen na de geboorte zijn bijzonder, maar kunnen ook spannend zijn. 
+                    Ik sta naast je, zodat je met vertrouwen herstelt.
+                    <span className="font-semibold text-rose-500">"</span>
+                  </p>
+                  
+                  {/* CTA */}
+                  <div className="mt-3 flex items-center justify-center gap-3">
+                    <span className="inline-block bg-rose-500 text-white font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full">
+                      Meld je nu aan
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">
+                      Plan een kennismaking
+                    </span>
+                  </div>
+                  
+                  {/* Statistieken */}
+                  <div className="mt-3 flex items-center justify-center gap-3 text-[10px] font-mono uppercase tracking-wider text-slate-400">
                     <span>🏆 100/100</span>
-                    <span className="w-px h-4 bg-black/20" />
+                    <span className="w-px h-3 bg-slate-200" />
                     <span>📄 12 pagina's</span>
-                    <span className="w-px h-4 bg-black/20" />
+                    <span className="w-px h-3 bg-slate-200" />
                     <span>🌍 3 talen</span>
                   </div>
                 </div>
-                <div className="absolute top-4 right-4 bg-green-500 text-white font-mono text-xs uppercase tracking-widest px-2 py-1 border border-white/20">
+
+                {/* Badges */}
+                <div className="absolute top-4 right-4 bg-green-500 text-white font-mono text-[10px] uppercase tracking-widest px-2 py-1 border border-white/20 rounded-full">
                   Live
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
