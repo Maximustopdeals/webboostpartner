@@ -103,7 +103,7 @@ export default function HomePage() {
 
       <USPGrid />
 
-      {/* Portfolio / Cases */}
+      {/* Portfolio / Cases - 2x2 Grid */}
       <section className="bg-[#FAFAFA] py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
@@ -113,10 +113,9 @@ export default function HomePage() {
             Websites die<br />presteren.
           </h2>
 
-          {/* 2x2 Grid in plaats van 3 kolommen */}
           <div className="grid md:grid-cols-2 gap-6">
             
-            {/* 1. Autorijschool Valberg — Next.js migratie */}
+            {/* 1. Autorijschool Valberg */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <a
                 href="https://autorijschoolvalberg.nl"
@@ -126,9 +125,9 @@ export default function HomePage() {
               >
                 <Image
                   src="/images/portfolio/valberg.jpg"
-                  alt="Homepage van Autorijschool Valberg — Next.js website door WebBoost Partner"
+                  alt="Autorijschool Valberg — Next.js website met 100/100 PageSpeed"
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-[50%_30%] group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute top-4 right-4 bg-green-500 text-white font-mono text-xs uppercase tracking-widest px-2 py-1 border border-white/20">
@@ -174,13 +173,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 2. D.T.G. Cleaning — Glazenwasser Nijkerk */}
+            {/* 2. D.T.G. Cleaning */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <a
                 href="https://dtgcleaning.nl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block aspect-[16/10] bg-[#1a3a52] relative overflow-hidden"
+                className="block aspect-[16/10] relative overflow-hidden bg-[#1a3a52]"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
@@ -231,7 +230,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3. Inas Kraamzorg — Next.js kraamzorg website */}
+            {/* 3. Inas Kraamzorg */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <a
                 href="https://inaskraamzorg.nl"
@@ -241,9 +240,9 @@ export default function HomePage() {
               >
                 <Image
                   src="/images/portfolio/inas-kraamzorg.jpg"
-                  alt="Homepage van Inas Kraamzorg — moderne kraamzorgwebsite in Next.js"
+                  alt="Inas Kraamzorg — Next.js website met 100/100 PageSpeed"
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-[50%_22%] group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute top-4 right-4 bg-green-500 text-white font-mono text-xs uppercase tracking-widest px-2 py-1 border border-white/20">
@@ -259,7 +258,7 @@ export default function HomePage() {
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Next.js 16</span>
-                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">SEO</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Meertalig</span>
                   <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Vercel</span>
                 </div>
                 <h3 className="font-heading font-extrabold uppercase text-xl tracking-tight mb-2">
@@ -288,7 +287,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 4. Luxe Fashion Webshop — Technische Showcase */}
+            {/* 4. Luxe Fashion Webshop */}
             <Link
               href="/demo/fashion"
               className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all block"
@@ -344,7 +343,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Website Rotterdam intro - Overzichtelijk en verwijzend */}
+      {/* Website Rotterdam intro */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
@@ -384,7 +383,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Next.js vs WordPress - Kortere versie */}
+      {/* Next.js vs WordPress */}
       <section className="bg-[#FAFAFA] py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
