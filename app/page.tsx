@@ -265,7 +265,7 @@ export default function HomePage() {
                   Inas Kraamzorg — Zaandam
                 </h3>
                 <p className="text-sm text-[#525252] leading-relaxed mb-4 flex-1">
-                  Professionele kraamzorgwebsite met <span className="font-bold text-black">12 pagina's</span>, 
+                  Professionele kraamzorgwebsite met <span className="font-bold text-black">5 pagina's</span>, 
                   volledig meertalig (🇳🇱🇬🇧🇦🇷) en geoptimaliseerd voor lokale SEO in de Zaanstreek. 
                   Met een warme, uitnodigende uitstraling die vertrouwen uitstraalt.
                 </p>
@@ -273,7 +273,7 @@ export default function HomePage() {
                   <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-wider text-[#525252]">
                     <span>🏆 100/100 PageSpeed</span>
                     <span>•</span>
-                    <span>📄 12 pagina's</span>
+                    <span>📄 5 pagina's</span>
                   </div>
                   <a
                     href="https://inaskraamzorg.nl"
