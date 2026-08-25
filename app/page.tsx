@@ -113,8 +113,10 @@ export default function HomePage() {
             Websites die<br />presteren.
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Autorijschool Valberg — Next.js migratie */}
+          {/* 2x2 Grid in plaats van 3 kolommen */}
+          <div className="grid md:grid-cols-2 gap-6">
+            
+            {/* 1. Autorijschool Valberg — Next.js migratie */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <a
                 href="https://autorijschoolvalberg.nl"
@@ -172,7 +174,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* D.T.G. Cleaning — Glazenwasser Nijkerk */}
+            {/* 2. D.T.G. Cleaning — Glazenwasser Nijkerk */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <a
                 href="https://dtgcleaning.nl"
@@ -229,7 +231,64 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Luxe Fashion Webshop — Technische Showcase */}
+            {/* 3. Inas Kraamzorg — Next.js kraamzorg website */}
+            <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
+              <a
+                href="https://inaskraamzorg.nl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block aspect-[16/10] relative overflow-hidden"
+              >
+                <Image
+                  src="/images/portfolio/inas-kraamzorg.jpg"
+                  alt="Homepage van Inas Kraamzorg — moderne kraamzorgwebsite in Next.js"
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute top-4 right-4 bg-green-500 text-white font-mono text-xs uppercase tracking-widest px-2 py-1 border border-white/20">
+                  Live
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                  <p className="text-white text-sm font-semibold tracking-wider flex items-center gap-2">
+                    <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    Bekijk de live website
+                  </p>
+                </div>
+              </a>
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Next.js 16</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">SEO</span>
+                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Vercel</span>
+                </div>
+                <h3 className="font-heading font-extrabold uppercase text-xl tracking-tight mb-2">
+                  Inas Kraamzorg — Zaandam
+                </h3>
+                <p className="text-sm text-[#525252] leading-relaxed mb-4 flex-1">
+                  Professionele kraamzorgwebsite met <span className="font-bold text-black">12 pagina's</span>, 
+                  volledig meertalig (🇳🇱🇬🇧🇦🇷) en geoptimaliseerd voor lokale SEO in de Zaanstreek. 
+                  Met een warme, uitnodigende uitstraling die vertrouwen uitstraalt.
+                </p>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-wider text-[#525252]">
+                    <span>🏆 100/100 PageSpeed</span>
+                    <span>•</span>
+                    <span>📄 12 pagina's</span>
+                  </div>
+                  <a
+                    href="https://inaskraamzorg.nl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-heading font-bold uppercase text-xs tracking-widest text-[#FF4500] hover:underline"
+                  >
+                    Bezoek website <ArrowRight size={14} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Luxe Fashion Webshop — Technische Showcase */}
             <Link
               href="/demo/fashion"
               className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all block"
