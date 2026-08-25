@@ -230,21 +230,28 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3. Inas Kraamzorg */}
+            {/* 3. Inas Kraamzorg — Geen afbeelding, pure focus op tekst */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
-              <a
+              <Link
                 href="https://inaskraamzorg.nl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block aspect-[16/10] relative overflow-hidden"
+                className="block aspect-[16/10] relative overflow-hidden bg-gradient-to-br from-[#FF4500]/10 via-[#FF4500]/5 to-white flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700"
               >
-                <Image
-                  src="/images/portfolio/inas-kraamzorg.jpg"
-                  alt="Inas Kraamzorg — Next.js website met 100/100 PageSpeed"
-                  fill
-                  className="object-cover object-[50%_22%] group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+                {/* Grote, opvallende initiaal als visueel element */}
+                <div className="text-center">
+                  <span className="text-8xl font-black text-[#FF4500] opacity-20 select-none">IK</span>
+                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.25em] text-[#525252]">
+                    Inas Kraamzorg
+                  </p>
+                  <div className="mt-4 flex items-center justify-center gap-6 text-sm font-mono uppercase tracking-wider text-[#525252]">
+                    <span>🏆 100/100</span>
+                    <span className="w-px h-4 bg-black/20" />
+                    <span>📄 12 pagina's</span>
+                    <span className="w-px h-4 bg-black/20" />
+                    <span>🌍 3 talen</span>
+                  </div>
+                </div>
                 <div className="absolute top-4 right-4 bg-green-500 text-white font-mono text-xs uppercase tracking-widest px-2 py-1 border border-white/20">
                   Live
                 </div>
@@ -254,7 +261,7 @@ export default function HomePage() {
                     Bekijk de live website
                   </p>
                 </div>
-              </a>
+              </Link>
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Next.js 16</span>
@@ -275,14 +282,14 @@ export default function HomePage() {
                     <span>•</span>
                     <span>📄 12 pagina's</span>
                   </div>
-                  <a
+                  <Link
                     href="https://inaskraamzorg.nl"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 font-heading font-bold uppercase text-xs tracking-widest text-[#FF4500] hover:underline"
                   >
                     Bezoek website <ArrowRight size={14} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
