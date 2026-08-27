@@ -230,7 +230,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3. Inas Kraamzorg — Professionele screenshot */}
+            {/* 3. Inas Kraamzorg — VERWIJDERD: "Meertalig" tag */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <a
                 href="https://inaskraamzorg.nl"
@@ -258,7 +258,6 @@ export default function HomePage() {
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Next.js 16</span>
-                  <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Meertalig</span>
                   <span className="font-mono text-xs uppercase tracking-wider bg-[#FAFAFA] border border-black px-2 py-1">Vercel</span>
                 </div>
                 <h3 className="font-heading font-extrabold uppercase text-xl tracking-tight mb-2">
@@ -266,7 +265,7 @@ export default function HomePage() {
                 </h3>
                 <p className="text-sm text-[#525252] leading-relaxed mb-4 flex-1">
                   Professionele kraamzorgwebsite met <span className="font-bold text-black">5 pagina's</span>, 
-                  volledig meertalig (🇳🇱🇬🇧🇦🇷) en geoptimaliseerd voor lokale SEO in de Zaanstreek. 
+                  geoptimaliseerd voor lokale SEO in de Zaanstreek. 
                   Met een warme, uitnodigende uitstraling die vertrouwen uitstraalt.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-gray-100">
