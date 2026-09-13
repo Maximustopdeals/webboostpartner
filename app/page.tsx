@@ -40,7 +40,7 @@ export default function HomePage() {
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-2 border-2 border-black bg-white px-3 py-1 mb-6">
               <span className="w-2 h-2 bg-[#FF4500] rounded-full animate-pulse" />
-              <span className="font-mono text-xs uppercase tracking-widest">Website laten maken · Rotterdam</span>
+              <span className="font-mono text-xs uppercase tracking-widest">Website laten maken in Rotterdam</span>
             </div>
             <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl lg:text-[5.5rem] max-w-4xl" data-testid="hero-h1">
               Website laten maken in <span className="text-[#FF4500]">Rotterdam</span> die écht werkt.
