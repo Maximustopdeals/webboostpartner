@@ -38,11 +38,13 @@ export default function HomePage() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-16 pb-24 sm:pt-24 sm:pb-32 grid lg:grid-cols-12 gap-10 items-center relative">
           <div className="lg:col-span-8">
+            {/* AANPASSING 1: Badge zonder punt, met "in" */}
             <div className="inline-flex items-center gap-2 border-2 border-black bg-white px-3 py-1 mb-6">
               <span className="w-2 h-2 bg-[#FF4500] rounded-full animate-pulse" />
               <span className="font-mono text-xs uppercase tracking-widest">Website laten maken in Rotterdam</span>
             </div>
-            <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl lg:text-[5.5rem] max-w-4xl" data-testid="hero-h1">
+            {/* AANPASSING 2: Heading met meer lucht (tracking-tight + leading-[0.95]) */}
+            <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-7xl lg:text-[5.5rem] max-w-4xl" data-testid="hero-h1">
               Website laten maken in <span className="text-[#FF4500]">Rotterdam</span> die écht werkt.
             </h1>
             <p className="mt-8 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] leading-relaxed">
@@ -89,10 +91,11 @@ export default function HomePage() {
                   <span className="font-heading font-black text-7xl leading-none">100</span>
                   <span className="text-[#525252] font-mono text-sm mb-2">/100</span>
                 </div>
+                {/* AANPASSING 3: LCP/CLS/FID vervangen door begrijpelijke termen */}
                 <div className="space-y-1 text-xs font-mono">
-                  <Bar label="LCP" value="0.6s" />
-                  <Bar label="CLS" value="0.00" />
-                  <Bar label="FID" value="0ms" />
+                  <Bar label="Laadtijd" value="0.6s" />
+                  <Bar label="Stabiliteit" value="Perfect" />
+                  <Bar label="Reactietijd" value="Direct" />
                 </div>
                 <div className="mt-4 pt-4 border-t-2 border-black">
                   <p className="text-xs font-bold uppercase tracking-widest text-[#00B050]">
