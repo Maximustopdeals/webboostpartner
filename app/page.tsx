@@ -51,7 +51,9 @@ export default function HomePage() {
               gevonden. Geen technisch jargon, maar een site die écht werkt 
               voor uw onderneming in Rotterdam.
             </p>
-            <div className="mt-9 flex flex-col sm:flex-row gap-4">
+            
+            {/* AANPASSING 1: 3 CTAs in plaats van 2 */}
+            <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
@@ -65,6 +67,13 @@ export default function HomePage() {
                 data-testid="hero-cta-secondary"
               >
                 Bekijk pakketten
+              </Link>
+              <Link
+                href="/website-laten-maken-rotterdam"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#FF4500] font-heading font-bold uppercase tracking-wider border-2 border-[#FF4500] px-8 py-4 hover:bg-[#FF4500] hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+                data-testid="hero-cta-tertiary"
+              >
+                Ontdek onze aanpak <ArrowRight size={18} />
               </Link>
             </div>
           </div>
@@ -230,7 +239,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3. Inas Kraamzorg — VERWIJDERD: "Meertalig" tag */}
+            {/* 3. Inas Kraamzorg */}
             <div className="border-2 border-black bg-white group hover:shadow-brutal-sm transition-all flex flex-col">
               <a
                 href="https://inaskraamzorg.nl"
@@ -342,7 +351,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Website Rotterdam intro */}
+      {/* AANPASSING 2: Website Rotterdam intro - Concreet met 4 voordelen */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
@@ -350,39 +359,52 @@ export default function HomePage() {
               // Website laten maken in Rotterdam
             </p>
             <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
-              Een sterke basis<br />voor uw online groei.
+              Waarom een website laten maken<br className="hidden sm:block" />
+              bij WebBoost Partner?
             </h2>
           </div>
           <div className="lg:col-span-7 prose-brutal">
-            <p>
-              Uw website is de basis van uw online zichtbaarheid. WebBoost Partner 
-              bouwt moderne, snelle websites die uw bedrijf professioneel neerzetten 
-              en nieuwe klanten aantrekken.
-            </p>
-            <p>
-              Naast een professioneel ontwerp zorgen wij voor een sterke technische 
-              basis, zodat uw website snel laadt, goed vindbaar is in Google en 
-              bezoekers overtuigt.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-6">
-              <Link
-                href="/website-laten-maken-rotterdam"
-                className="inline-flex items-center gap-2 bg-[#FF4500] text-white px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black transition-colors"
-              >
-                Lees meer over de aanpak <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/seo-rotterdam"
-                className="inline-flex items-center gap-2 border-2 border-black px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest text-black hover:bg-black hover:text-white transition-colors"
-              >
-                Meer over SEO & vindbaarheid
-              </Link>
-            </div>
+            <ul className="space-y-4 text-base">
+              <li className="flex items-start gap-3 border-b border-black/5 pb-3">
+                <span className="text-[#FF4500] font-bold text-xl leading-none">→</span>
+                <div>
+                  <strong className="block">100/100 PageSpeed</strong>
+                  <span className="text-[#525252]">Uw website laadt sneller dan 98% van alle websites</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-3 border-b border-black/5 pb-3">
+                <span className="text-[#FF4500] font-bold text-xl leading-none">→</span>
+                <div>
+                  <strong className="block">Technische SEO inbegrepen</strong>
+                  <span className="text-[#525252]">Google vindt u direct, zonder maanden wachten</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-3 border-b border-black/5 pb-3">
+                <span className="text-[#FF4500] font-bold text-xl leading-none">→</span>
+                <div>
+                  <strong className="block">Maatwerk ontwerp</strong>
+                  <span className="text-[#525252]">Geen templates, uw eigen identiteit en uitstraling</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#FF4500] font-bold text-xl leading-none">→</span>
+                <div>
+                  <strong className="block">Vaste prijs, geen verrassingen</strong>
+                  <span className="text-[#525252]">Transparant en eerlijk, vooraf duidelijk wat u betaalt</span>
+                </div>
+              </li>
+            </ul>
+            <Link
+              href="/website-laten-maken-rotterdam"
+              className="inline-flex items-center gap-2 mt-8 bg-[#FF4500] text-white px-8 py-4 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black transition-colors border-2 border-black hover:-translate-y-1 hover:shadow-brutal-sm"
+            >
+              Bekijk alle voordelen <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Next.js vs WordPress */}
+      {/* AANPASSING 3: Next.js vs WordPress - Zakelijke voordelen ipv technische termen */}
       <section className="bg-[#FAFAFA] py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
@@ -398,14 +420,14 @@ export default function HomePage() {
               <h3 className="font-heading font-extrabold uppercase text-3xl mb-5">Soms<br/>onbetrouwbaar</h3>
               <ul className="space-y-3 text-sm">
                 {[
-                  ["Laden", "Vaak traag en onvoorspelbaar"],
-                  ["Updates", "Wekelijks risico op problemen"],
-                  ["Beveiliging", "Meer kwetsbaarheden"],
-                  ["Onderhoud", "Onverwachte kosten"],
+                  ["Snelheid", "Bezoekers haken af door trage laadtijden"],
+                  ["Onderhoud", "Maandelijks kwetsbaar voor updates"],
+                  ["Beveiliging", "Veel kwetsbaarheden, risico op hacks"],
+                  ["Conversie", "Onvoorspelbare prestaties"],
                 ].map(([k, v]) => (
                   <li key={k} className="flex justify-between border-b border-black/10 pb-2">
-                    <span className="font-mono uppercase text-xs text-[#525252]">{k}</span>
-                    <span className="font-semibold">{v}</span>
+                    <span className="font-mono uppercase text-xs text-[#525252] w-24">{k}</span>
+                    <span className="font-semibold text-right">{v}</span>
                   </li>
                 ))}
               </ul>
@@ -415,14 +437,14 @@ export default function HomePage() {
               <h3 className="font-heading font-extrabold uppercase text-3xl mb-5">Snel<br/>& Betrouwbaar</h3>
               <ul className="space-y-3 text-sm">
                 {[
-                  ["Laden", "Altijd snel en consistent"],
-                  ["Updates", "Minimale risico's"],
-                  ["Beveiliging", "Standaard veiliger"],
-                  ["Onderhoud", "Geen onverwachte kosten"],
+                  ["Snelheid", "Uw website laadt razendsnel, klanten blijven"],
+                  ["Onderhoud", "Stabiel en veilig, geen gedoe"],
+                  ["Beveiliging", "Standaard veiliger, minder risico"],
+                  ["Conversie", "Consistent hoge prestaties = meer klanten"],
                 ].map(([k, v]) => (
                   <li key={k} className="flex justify-between border-b border-white/10 pb-2">
-                    <span className="font-mono uppercase text-xs text-white/60">{k}</span>
-                    <span className="font-semibold">{v}</span>
+                    <span className="font-mono uppercase text-xs text-white/60 w-24">{k}</span>
+                    <span className="font-semibold text-right">{v}</span>
                   </li>
                 ))}
               </ul>
@@ -434,7 +456,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEO Rotterdam preview */}
+      {/* AANPASSING 4: SEO Rotterdam - Specifieker en positiever */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-2 gap-12">
           <div>
@@ -442,12 +464,13 @@ export default function HomePage() {
               // Zichtbaar in Google
             </p>
             <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
-              Vindbaarheid die<br/>klanten oplevert.
+              Uw website gevonden<br className="hidden sm:block" />
+              in Google Rotterdam
             </h2>
             <p className="mt-5 text-lg text-[#1a1a1a] leading-relaxed max-w-prose">
-              Een mooie website heeft geen waarde als niemand hem vindt. 
-              Daarom wordt elke website gebouwd met een sterke technische basis 
-              die Google helpt om uw bedrijf te vinden.
+              Wij bouwen websites die niet alleen mooi zijn, maar ook gevonden worden. 
+              Met technische SEO en lokale optimalisatie zorgen wij dat klanten uit 
+              Rotterdam en omgeving u makkelijk vinden.
             </p>
             <Link href="/seo-rotterdam" className="inline-flex items-center gap-2 mt-6 font-heading font-bold uppercase text-sm tracking-widest bg-[#FF4500] text-white border-2 border-black px-5 py-3 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all">
               Lees over SEO in Rotterdam <ArrowRight size={16} />
