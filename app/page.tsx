@@ -16,7 +16,6 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
       <section className="relative bg-[#FAFAFA] border-b-2 border-black overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
           <div className="absolute top-10 right-10 w-[500px] h-[500px] border-[20px] border-black rotate-12" />
@@ -24,36 +23,28 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-20 pb-28 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-8">
-
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 border-2 border-black bg-white px-3 py-1 mb-6">
               <span className="w-2 h-2 bg-[#FF4500] rounded-full animate-pulse" />
               <span className="font-mono text-xs uppercase tracking-widest">
-                Next.js Website Laten Maken in Rotterdam
+                Next.js website laten maken in Rotterdam
               </span>
             </div>
 
-            {/* H1 */}
             <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-7xl lg:text-[5.5rem] max-w-4xl">
-              Razendsnelle <span className="text-[#FF4500]">Next.js websites</span> in Rotterdam die scoren én converteren.
+              Next.js websites in <span className="text-[#FF4500]">Rotterdam</span> die scoren.
             </h1>
 
-            {/* Subheadline */}
             <p className="mt-6 text-xl max-w-2xl text-[#1a1a1a] leading-relaxed font-semibold">
-              Binnen 1 seconde laadtijd. 100/100 PageSpeed.  
-              Beter gevonden in Google.  
-              Meer aanvragen.  
-              Dit is hoe een moderne website hoort te presteren.
+              Binnen 1 seconde laadtijd, 100/100 PageSpeed en beter gevonden in Google.
+              Gebouwd met Next.js — zonder WordPress-problemen. Meer aanvragen, minder gedoe.
             </p>
 
-            {/* Trust bullets */}
             <ul className="mt-4 text-sm font-mono uppercase tracking-wider text-[#525252] space-y-1">
               <li>● Binnen 24 uur reactie</li>
               <li>● Gratis adviesgesprek</li>
               <li>● Geen verplichtingen</li>
             </ul>
 
-            {/* CTA’s */}
             <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
               <Link
                 href="/contact"
@@ -78,7 +69,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* PageSpeed Card */}
           <div className="lg:col-span-4">
             <div className="relative max-w-sm ml-auto">
               <div className="bg-white border-2 border-black shadow-brutal p-6">
@@ -92,9 +82,18 @@ export default function HomePage() {
                 </div>
 
                 <div className="space-y-1 text-xs font-mono">
-                  <div className="flex justify-between"><span>Laadtijd</span><span className="font-bold">0.6s</span></div>
-                  <div className="flex justify-between"><span>Stabiliteit</span><span className="font-bold">Perfect</span></div>
-                  <div className="flex justify-between"><span>Reactietijd</span><span className="font-bold">Direct</span></div>
+                  <div className="flex justify-between">
+                    <span>Laadtijd</span>
+                    <span className="font-bold">0.6s</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Stabiliteit</span>
+                    <span className="font-bold">Perfect</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Reactietijd</span>
+                    <span className="font-bold">Direct</span>
+                  </div>
                 </div>
 
                 <div className="mt-4 pt-4 border-t-2 border-black">
@@ -110,19 +109,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Logos */}
       <Marquee />
-
-      {/* PageSpeed Tool */}
       <PageSpeedTool />
-
-      {/* USP Grid */}
       <USPGrid />
 
-      {/* Cases */}
-      {/* (Je bestaande cases-sectie blijft intact, geen wijzigingen nodig) */}
-
-      {/* Voordelen */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
@@ -136,10 +126,22 @@ export default function HomePage() {
 
           <div className="lg:col-span-7 prose-brutal">
             <ul className="space-y-4 text-base">
-              <li><strong>100/100 PageSpeed</strong><span className="text-[#525252]"> Sneller dan 98% van alle websites</span></li>
-              <li><strong>Technische SEO inbegrepen</strong><span className="text-[#525252]"> Direct zichtbaar in Google</span></li>
-              <li><strong>Maatwerk ontwerp</strong><span className="text-[#525252]"> Geen templates, pure branding</span></li>
-              <li><strong>Vaste prijs</strong><span className="text-[#525252]"> Geen verrassingen, geen gedoe</span></li>
+              <li>
+                <strong>100/100 PageSpeed</strong>
+                <span className="text-[#525252]"> Sneller dan 98% van alle websites</span>
+              </li>
+              <li>
+                <strong>Technische SEO inbegrepen</strong>
+                <span className="text-[#525252]"> Direct zichtbaar in Google</span>
+              </li>
+              <li>
+                <strong>Maatwerk ontwerp</strong>
+                <span className="text-[#525252]"> Geen templates, pure branding</span>
+              </li>
+              <li>
+                <strong>Vaste prijs</strong>
+                <span className="text-[#525252]"> Geen verrassingen, geen gedoe</span>
+              </li>
             </ul>
 
             <Link
@@ -151,15 +153,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Next.js vs WordPress */}
-      {/* (Je bestaande sectie blijft intact, maar is nu logischer gepositioneerd) */}
-
-      {/* SEO Rotterdam */}
-      {/* (Je bestaande sectie blijft intact) */}
-
-      {/* Voor wie */}
-      {/* (Je bestaande sectie blijft intact) */}
 
       <PricingSection />
       <CTASection />
