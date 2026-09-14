@@ -17,24 +17,24 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     q: "Verlies ik mijn Google‑posities?",
-    a: "Nee. Bij een zorgvuldige migratie blijven posities behouden. URL‑structuur, metadata en redirects worden één‑op‑één meegenomen. Vaak stijgen posities zelfs door betere snelheid en structuur.",
+    a: "Nee. Bij een zorgvuldige migratie blijven posities behouden. URL‑structuur, metadata en redirects worden één‑op‑één meegenomen. Vaak stijgen posities zelfs door betere snelheid en structuur."
   },
   {
     q: "Wat gebeurt er met mijn content?",
-    a: "Alle teksten, afbeeldingen, blogs en pagina’s worden netjes overgezet. U kunt zelfs uw vertrouwde WordPress‑omgeving blijven gebruiken als headless CMS.",
+    a: "Alle teksten, afbeeldingen, blogs en pagina’s worden netjes overgezet. U kunt kiezen: uw vertrouwde WordPress‑omgeving behouden als backend, of overstappen naar een modern, onderhoudsarm content‑systeem dat draait op GitHub."
   },
   {
     q: "Hoe lang duurt een migratie?",
-    a: "Voor een gemiddelde MKB‑site duurt een migratie 2 tot 4 weken. Grotere sites of webshops duren langer.",
+    a: "Voor een gemiddelde MKB‑site duurt een migratie 2 tot 4 weken. Grotere sites of webshops duren langer, afhankelijk van het aantal pagina’s en functionaliteit."
   },
   {
     q: "Wat kost een migratie?",
-    a: "Migraties starten vanaf €1.495. De exacte prijs hangt af van het aantal pagina’s, functionaliteit en gewenste uitbreidingen.",
+    a: "Migraties starten vanaf €1.495. De exacte prijs hangt af van het aantal pagina’s, functionaliteit en gewenste uitbreidingen. U ontvangt altijd een duidelijke analyse vooraf."
   },
   {
     q: "Behoud ik mijn admin‑omgeving?",
-    a: "Ja. U kunt WordPress blijven gebruiken als backend, of overstappen naar een modern CMS zoals Sanity of Contentful.",
-  },
+    a: "Ja. Optie 1: WordPress blijft bestaan als backend — u blijft werken in uw vertrouwde omgeving. Optie 2: een modern, onderhoudsarm content‑systeem dat draait op GitHub. Wilt u later zelf content beheren? Dan kan ik een gebruiksvriendelijke CMS‑omgeving koppelen zoals Sanity."
+  }
 ];
 
 export default function WordPressNaarNextjsPage() {
@@ -132,7 +132,7 @@ export default function WordPressNaarNextjsPage() {
           <h3>2. Nieuwe structuur</h3>
           <p>
             We bepalen wat behouden blijft, wat verbeterd wordt en wat vernieuwd wordt.  
-            Indien gewenst blijft WordPress als backend bestaan.
+            Indien gewenst blijft WordPress als backend bestaan — of we stappen over op een modern, onderhoudsarm content‑systeem dat draait op GitHub.
           </p>
 
           <h3>3. Herbouw in Next.js</h3>
