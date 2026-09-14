@@ -3,9 +3,9 @@ import FAQ from "@/components/FAQ";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "WordPress naar Next.js migratie | SEO behouden, snelheid verbeteren",
+  title: "WordPress naar Next.js migratie | Sneller, veiliger & SEO‑vriendelijk",
   description:
-    "WordPress migreren naar Next.js: waarom, hoe en wat het oplevert. SEO-rankings behouden, snelheid verdrievoudigen, onderhoud minimaliseren.",
+    "Overstappen van WordPress naar Next.js zonder rankings te verliezen. Snellere laadtijden, minder onderhoud en een moderne technische basis.",
   alternates: { canonical: "https://webboostpartner.nl/wordpress-naar-nextjs" },
 };
 
@@ -16,172 +16,153 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    q: "Verlies ik mijn Google rankings tijdens een migratie?",
-    a: "Niet als de migratie zorgvuldig wordt uitgevoerd. Cruciaal zijn: identieke URL-structuur (of complete 301-redirect mapping), behoud van titles en meta descriptions, en het direct indienen van de nieuwe sitemap bij Search Console. In de praktijk zien sites na een correcte migratie binnen 2-4 weken een stijging in rankings door betere Core Web Vitals.",
+    q: "Verlies ik mijn Google‑posities?",
+    a: "Nee. Bij een zorgvuldige migratie blijven posities behouden. URL‑structuur, metadata en redirects worden één‑op‑één meegenomen. Vaak stijgen posities zelfs door betere snelheid en structuur.",
   },
   {
     q: "Wat gebeurt er met mijn content?",
-    a: "Alle content (teksten, afbeeldingen, blogartikelen, formulieren) wordt overgezet. Optioneel kunnen we WordPress behouden als headless CMS, zodat u in dezelfde vertrouwde backend blijft schrijven terwijl Next.js de razendsnelle frontend levert.",
+    a: "Alle teksten, afbeeldingen, blogs en pagina’s worden netjes overgezet. U kunt zelfs uw vertrouwde WordPress‑omgeving blijven gebruiken als headless CMS.",
   },
   {
     q: "Hoe lang duurt een migratie?",
-    a: "Voor een gemiddelde MKB-site (10-30 pagina's) reken ik 2 tot 4 weken. Webshops en grote content-sites duren langer, afhankelijk van complexiteit en aantal producten.",
+    a: "Voor een gemiddelde MKB‑site duurt een migratie 2 tot 4 weken. Grotere sites of webshops duren langer.",
   },
   {
     q: "Wat kost een migratie?",
-    a: "Een migratie wordt geprijsd op basis van scope. Een eenvoudige bedrijfssite migreren start vanaf €1.495 (Starter pakket). Een uitgebreide site met blog, lokale SEO en custom functionaliteit valt vaak binnen het Premium (€2.495) of Pro (€3.495) pakket. Vraag een vrijblijvende analyse aan voor een exacte offerte.",
+    a: "Migraties starten vanaf €1.495. De exacte prijs hangt af van het aantal pagina’s, functionaliteit en gewenste uitbreidingen.",
   },
   {
-    q: "Behoud ik mijn admin-omgeving?",
-    a: "Dat kan op twee manieren. Optie 1: WordPress blijft draaien als headless CMS — u schrijft in WordPress, Next.js publiceert. Optie 2: u stapt over naar een modern headless CMS (Sanity, Contentful, Strapi) met een betere editor-ervaring. We bespreken samen wat past.",
+    q: "Behoud ik mijn admin‑omgeving?",
+    a: "Ja. U kunt WordPress blijven gebruiken als backend, of overstappen naar een modern CMS zoals Sanity of Contentful.",
   },
 ];
 
 export default function WordPressNaarNextjsPage() {
   return (
     <>
+      {/* HERO */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Migratie</p>
+
           <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
             WordPress naar <span className="text-[#FF4500]">Next.js</span> migratie
           </h1>
+
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
-            De website werkt nog, maar is traag, kwetsbaar of duur in onderhoud?
-            Een doordachte overstap naar Next.js geeft uw site een nieuw leven —
-            <strong> sneller, veiliger en beter vindbaar</strong>, zonder dat u
-            rankings verliest.
+            Uw website werkt, maar voelt traag, verouderd of vraagt veel onderhoud?  
+            Een overstap naar Next.js geeft uw site een frisse start: <strong>sneller, veiliger en beter vindbaar</strong> — zonder dat u uw Google‑posities verliest.
           </p>
         </div>
       </section>
 
+      {/* CONTENT */}
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
-          <h2>Waarom overstappen?</h2>
+
+          <h2>Waarom ondernemers overstappen</h2>
           <p>
-            Veel ondernemers in Rotterdam hebben jaren geleden een WordPress site
-            laten maken. Toen werkte het. Een mooi Divi-thema, een paar plugins
-            voor SEO en formulieren, en de site stond live. Maar nu, drie tot
-            zeven jaar later, lopen ze tegen dezelfde problemen aan:
-          </p>
-          <ul>
-            <li>De site is <strong>traag geworden</strong> — wat begon als snel is overgroeid met plugins.</li>
-            <li><strong>Updates breken</strong> regelmatig functionaliteit, en oplossen kost tijd én geld.</li>
-            <li><strong>Onderhoudskosten lopen op</strong> — €100 per maand is niet ongewoon.</li>
-            <li><strong>Google rankings dalen</strong> doordat Core Web Vitals niet meer voldoen.</li>
-            <li><strong>De look voelt gedateerd</strong>, maar een redesign in WordPress voelt als geld in een lekkende emmer gooien.</li>
-          </ul>
-          <p>
-            Op dat punt is een <strong>migratie naar Next.js</strong> vaak goedkoper
-            én slimmer dan opnieuw bouwen op WordPress. U investeert eenmalig,
-            en bespaart jaren onderhoudskosten en frustratie.
+            Veel ondernemers hebben jaren plezier gehad van hun WordPress‑website.  
+            Maar na verloop van tijd ontstaan herkenbare uitdagingen:
           </p>
 
-          <h2>Veelvoorkomende WordPress problemen</h2>
-          <h3>Plugin-conflicten</h3>
+          <ul>
+            <li><strong>De website wordt trager</strong> door groeiende plugins en thema’s.</li>
+            <li><strong>Updates zorgen voor stress</strong> of onverwachte foutmeldingen.</li>
+            <li><strong>Onderhoud kost tijd en geld</strong> — vaak maandelijks.</li>
+            <li><strong>Google‑posities dalen</strong> door slechtere prestaties.</li>
+            <li><strong>De uitstraling voelt gedateerd</strong> en lastig te moderniseren.</li>
+          </ul>
+
           <p>
-            Hoe meer plugins, hoe groter de kans dat één plugin breekt na een
-            update — en de hele site meeneemt. Plugins voor SEO, security, cache,
-            backups, formulieren en page builders vechten allemaal om dezelfde
-            resources.
+            In zulke situaties is een migratie naar Next.js geen “technische keuze”,  
+            maar een <strong>strategische investering</strong> in snelheid, betrouwbaarheid en groei.
           </p>
-          <h3>Trage Time To First Byte</h3>
-          <p>
-            Elke pagina-aanvraag start een PHP-proces, doet meerdere database
-            queries, en bouwt de HTML on-the-fly. Op shared hosting met veel
-            plugins zien we TTFB's van 1-3 seconden — nog voor de eerste pixel
-            verschijnt.
-          </p>
-          <h3>Beveiligingsincidenten</h3>
-          <p>
-            WordPress is verantwoordelijk voor ongeveer 90% van alle gehackte CMS-sites
-            (volgens Sucuri). Dat komt niet door WordPress zelf, maar door verouderde
-            plugins en zwakke wachtwoorden — beide nauwelijks te elimineren in
-            een typische WordPress installatie.
-          </p>
-          <h3>Onderhoudslast</h3>
-          <p>
-            Een serieuze WordPress site vereist wekelijks aandacht: core updates,
-            plugin updates, theme updates, backup checks, security scans. Dat
-            werk verdwijnt grotendeels bij Next.js.
-          </p>
+
+          <h2>Wat levert een migratie op?</h2>
+          <ul>
+            <li><strong>Snellere website</strong> — vaak 2 tot 4× sneller dan voorheen.</li>
+            <li><strong>Betere vindbaarheid</strong> door sterke Core Web Vitals.</li>
+            <li><strong>Minder onderhoud</strong> — geen plugin‑updates of breekbare thema’s.</li>
+            <li><strong>Moderne uitstraling</strong> die past bij uw bedrijf.</li>
+            <li><strong>Veiligere basis</strong> zonder kwetsbare login‑pagina’s.</li>
+          </ul>
 
           <h2>SEO behouden tijdens migratie</h2>
           <p>
-            Dit is meestal het grootste zorgpunt: "Ga ik mijn Google posities
-            verliezen?" Nee — niet als de migratie zorgvuldig gebeurt. De vier
-            cruciale stappen:
-          </p>
-          <ul>
-            <li><strong>URL-mapping</strong> — alle bestaande URL's krijgen óf dezelfde structuur in Next.js, óf een 1-op-1 301-redirect naar de nieuwe URL.</li>
-            <li><strong>Behoud van metadata</strong> — titles, meta descriptions, alt-teksten en headings worden meegenomen of verbeterd.</li>
-            <li><strong>Schema markup uitbreiden</strong> — vaak is dit waar Next.js juist beter scoort dan de oude WordPress versie.</li>
-            <li><strong>Sitemap en Search Console</strong> — direct na lancering wordt de nieuwe sitemap ingediend en monitoring opgezet.</li>
-          </ul>
-          <p>
-            In de meeste migraties zien we binnen 2-4 weken een <strong>stijging</strong> in
-            rankings, vooral door verbeterde Core Web Vitals en betere structuur.
+            De grootste zorg is vaak: “Verlies ik mijn posities in Google?”  
+            Het antwoord: <strong>nee</strong>, mits de migratie zorgvuldig gebeurt.
           </p>
 
-          <h2>Verbetering van snelheid</h2>
-          <p>
-            De meest meetbare winst zit in snelheid. Een paar voorbeelden uit
-            recente migraties:
-          </p>
+          <p>Dit is wat ik standaard doe:</p>
+
           <ul>
-            <li>WordPress LCP <strong>3.4s</strong> → Next.js LCP <strong>0.8s</strong></li>
-            <li>WordPress PageSpeed <strong>52</strong> → Next.js PageSpeed <strong>98</strong></li>
-            <li>WordPress TTFB <strong>1.8s</strong> → Next.js TTFB <strong>0.1s</strong> (CDN edge)</li>
+            <li><strong>URL‑mapping</strong> — bestaande URL’s blijven identiek of krijgen een perfecte 301‑redirect.</li>
+            <li><strong>Metadata meenemen</strong> — titles, descriptions, headings en alt‑teksten blijven behouden.</li>
+            <li><strong>Structured data verbeteren</strong> — vaak een upgrade ten opzichte van de oude site.</li>
+            <li><strong>Sitemap indienen</strong> — direct na livegang bij Google Search Console.</li>
           </ul>
+
           <p>
-            Voor bezoekers betekent dit: minder bounce, meer pagina's per sessie,
-            hogere conversie. Voor Google betekent het: hogere posities en meer
-            organische impressies.
+            In de praktijk zien we dat websites na 2–4 weken vaak <strong>stijgen</strong>  
+            door betere prestaties en een modernere structuur.
           </p>
 
-          <h2>Het migratieproces</h2>
-          <h3>Stap 1 — Audit</h3>
+          <h2>Snelheidswinst in de praktijk</h2>
+          <p>Enkele voorbeelden uit recente migraties:</p>
+
+          <ul>
+            <li>LCP: 3.4s → <strong>0.8s</strong></li>
+            <li>PageSpeed: 52 → <strong>98</strong></li>
+            <li>TTFB: 1.8s → <strong>0.1s</strong></li>
+          </ul>
+
           <p>
-            Ik analyseer uw huidige WordPress site: structuur, content, plugins,
-            performance, SEO-status, formulieren en integraties. U krijgt een
-            helder migratieplan met te behouden, te verbeteren en te schrappen
-            elementen.
+            Snellere websites zorgen voor meer vertrouwen, hogere conversie en betere SEO‑resultaten.
           </p>
-          <h3>Stap 2 — Architectuur</h3>
+
+          <h2>Hoe verloopt een migratie?</h2>
+
+          <h3>1. Analyse</h3>
           <p>
-            We bepalen of WordPress behouden blijft als headless CMS, of dat we
-            overstappen naar een ander systeem. Voor veel sites is het simpelste:
-            content overzetten naar Next.js zelf (MDX of een lichte CMS).
+            Ik bekijk uw huidige website: structuur, content, prestaties en SEO.  
+            U ontvangt een helder migratieplan.
           </p>
-          <h3>Stap 3 — Herbouw</h3>
+
+          <h3>2. Nieuwe structuur</h3>
           <p>
-            De site wordt opnieuw opgebouwd in Next.js. Dit is geen kopieer-actie,
-            maar een herbouw — wat is meteen de kans om verouderde structuur,
-            slechte UX en SEO-problemen op te lossen.
+            We bepalen wat behouden blijft, wat verbeterd wordt en wat vernieuwd wordt.  
+            Indien gewenst blijft WordPress als backend bestaan.
           </p>
-          <h3>Stap 4 — Redirect map & launch</h3>
+
+          <h3>3. Herbouw in Next.js</h3>
           <p>
-            Volledige 301-redirect map wordt geconfigureerd. We testen alle URL's,
-            controleren broken links, en gaan live. Direct daarna sitemap
-            indienen bij Google Search Console.
+            De website wordt opnieuw opgebouwd — een kans om direct design, snelheid en SEO te verbeteren.
           </p>
-          <h3>Stap 5 — Monitoring</h3>
+
+          <h3>4. Redirects & livegang</h3>
           <p>
-            De eerste weken na launch monitoren we rankings, crawl errors en
-            performance. Eventuele issues lossen we direct op. Na 4 weken doen
-            we een eindrapportage.
+            Alle oude URL’s worden gecontroleerd en gemapt.  
+            Na livegang wordt de sitemap ingediend en monitoring gestart.
+          </p>
+
+          <h3>5. Monitoring</h3>
+          <p>
+            De eerste weken monitoren we rankings, crawl‑errors en prestaties.  
+            U ontvangt een overzicht van de resultaten.
           </p>
 
           <h2>Veelgestelde vragen</h2>
         </div>
+
         <div className="max-w-3xl mx-auto px-4 sm:px-8 mt-6">
           <FAQ items={faqs} schemaId="migratie" />
         </div>
       </article>
 
       <CTASection
-        title="Vraag een migratie-analyse aan."
-        subtitle="Stuur de URL van uw huidige WordPress site en u krijgt binnen 48 uur een gratis migratie-advies."
+        title="Gratis migratie‑analyse"
+        subtitle="Stuur de URL van uw huidige WordPress‑site en ontvang binnen 48 uur een vrijblijvend advies."
         button="Migratie analyse"
       />
     </>
