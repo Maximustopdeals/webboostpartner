@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { Check, Zap, TrendingUp, Star, Layers } from "lucide-react";
 
@@ -8,7 +9,7 @@ interface PricingPackage {
   name: string;
   price: string;
   badge?: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
   features: string[];
 }
 
