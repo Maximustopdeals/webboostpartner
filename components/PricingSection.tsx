@@ -1,186 +1,142 @@
+"use client";
+
 import Link from "next/link";
-import { Check, Star, Sparkles } from "lucide-react";
+import { Check, Zap, TrendingUp, Star, Layers } from "lucide-react";
 
 interface PricingPackage {
   id: string;
   name: string;
-  priceExcl: string;
-  priceIncl: string;
-  audience: string;
-  tagline: string;
-  description: string;
+  price: string;
+  badge?: string;
+  icon: JSX.Element;
   features: string[];
-  featured: boolean;
-  isCustom?: boolean;
 }
-
-const packages: PricingPackage[] = [
-  {
-    id: "essential",
-    name: "Essential",
-    priceExcl: "3.495",
-    priceIncl: "4.229",
-    audience: "Voor ZZP'ers & starters",
-    tagline: "Jij levert de input, ik bouw de website.",
-    description:
-      "Een professionele, razendsnelle Next.js website om snel online te staan en gevonden te worden.",
-    features: [
-      "5 pagina's op maat",
-      "Technische SEO basis",
-      "100/100 SEO score",
-      "Responsive design",
-      "Contactformulier",
-      "Google Analytics setup",
-      "Hosting setup eerste jaar",
-      "30 dagen support",
-    ],
-    featured: false,
-  },
-  {
-    id: "professional",
-    name: "Professional",
-    priceExcl: "5.495",
-    priceIncl: "6.649",
-    audience: "Voor ondernemers met ambitie",
-    tagline: "Complete website met lokale SEO en geavanceerde optimalisatie.",
-    description:
-      "Meer pagina's, meer bereik in Rotterdam en omgeving, en een website die klaar is voor groei.",
-    features: [
-      "Onbeperkt pagina's",
-      "Lokale SEO Rotterdam",
-      "Core Web Vitals 95+",
-      "Blog / nieuws module",
-      "Google Search Console setup",
-      "Schema markup (FAQ, LocalBusiness, etc.)",
-      "90 dagen support",
-      "1 uur strategiegesprek",
-    ],
-    featured: true,
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    priceExcl: "8.495",
-    priceIncl: "10.279",
-    audience: "Voor groeiende & gevestigde bedrijven",
-    tagline: "Maatwerk, strategie en doorlopende optimalisatie.",
-    description:
-      "Een op maat gemaakte oplossing voor maximale groei, inclusief webshop functionaliteit, dashboards en SLA.",
-    features: [
-      "Volledige SEO strategie",
-      "Headless CMS (Sanity / Contentful)",
-      "Webshop functionaliteit — onbeperkt schaalbaar",
-      "iDEAL / Mollie / Stripe integratie",
-      "Geavanceerde animaties",
-      "A/B test-ready setup",
-      "Custom dashboards",
-      "6 maanden support",
-      "SLA beschikbaar",
-    ],
-    featured: false,
-    isCustom: true,
-  },
-];
 
 interface PricingSectionProps {
   compact?: boolean;
 }
 
+const packages: PricingPackage[] = [
+  {
+    id: "starter",
+    name: "Starter",
+    price: "Vanaf € 1.250",
+    icon: <Zap size={32} />,
+    features: [
+      "Professioneel Next.js ontwerp",
+      "Razendsnelle laadtijd (1 seconde)",
+      "100/100 PageSpeed basisoptimalisatie",
+      "3–5 pagina’s (Home, Diensten, Contact)",
+      "Mobiel geoptimaliseerd",
+      "Basis SEO (titels, meta’s, structuur)",
+      "Contactformulier + WhatsApp‑koppeling",
+      "Hosting via Vercel inbegrepen",
+    ],
+  },
+  {
+    id: "professional",
+    name: "Professional",
+    price: "Vanaf € 1.950",
+    badge: "Meest gekozen",
+    icon: <TrendingUp size={32} />,
+    features: [
+      "Premium Next.js ontwerp (volledig maatwerk)",
+      "100/100 PageSpeed optimalisatie",
+      "6–10 pagina’s inclusief landingspagina’s",
+      "Lokale SEO‑optimalisatie (Rotterdam + regio)",
+      "Conversiegericht ontwerp (CTA’s, flow, structuur)",
+      "Reactietijd onder 0.2s",
+      "Google Analytics + Tag Manager integratie",
+      "Blogmodule of nieuwssectie",
+      "Extra trust‑elementen (reviews, badges, USP’s)",
+    ],
+  },
+  {
+    id: "premium",
+    name: "Premium",
+    price: "Vanaf € 2.950",
+    badge: "Beste waarde",
+    icon: <Star size={32} />,
+    features: [
+      "High‑end Next.js ontwerp (volledig custom)",
+      "100/100 PageSpeed + Core Web Vitals optimalisatie",
+      "10–20 pagina’s inclusief SEO‑landingspagina’s",
+      "Technische SEO + contentstructuur",
+      "Conversiepsychologie op elke pagina",
+      "Geavanceerde animaties (brutalist stijl)",
+      "Integraties (CRM, boekingssysteem, API’s)",
+      "Uitgebreide analytics dashboards",
+      "Lokale + regionale SEO strategie",
+      "Laadtijd onder 0.8s",
+    ],
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise",
+    price: "Offerte",
+    icon: <Layers size={32} />,
+    features: [
+      "Volledig custom Next.js platform",
+      "Complexe integraties (API’s, CRM, systemen)",
+      "Webapplicaties, dashboards, portals",
+      "SEO‑strategie op maat",
+      "Conversie‑optimalisatie op maat",
+      "Projectplanning + consultancy",
+      "Doorlopende ondersteuning",
+    ],
+  },
+];
+
 export default function PricingSection({ compact = false }: PricingSectionProps) {
   return (
-    <section className="bg-[#FAFAFA] py-20 sm:py-28" data-testid="pricing-section">
+    <section className="bg-[#FAFAFA] py-20 sm:py-28 border-t-2 border-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {!compact && (
           <div className="max-w-3xl mb-12">
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
-              // Pakketten & Prijzen
+              // Pakketten
             </p>
-            <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
-              Heldere prijzen.<br />Geen verrassingen.
+            <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
+              Kies een pakket dat<br />past bij jouw onderneming.
             </h2>
             <p className="mt-4 text-lg text-[#525252] max-w-2xl">
-              Drie pakketten, één belofte: een website die laadt in een halve seconde,
-              scoort in Google en eruit ziet alsof hij voor jou is gemaakt. Want dat is hij.
+              Van snelle starters tot high‑end maatwerk — altijd razendsnel, SEO‑technisch sterk en gebouwd voor groei.
             </p>
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {packages.map((pkg: PricingPackage) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {packages.map((pkg) => (
             <div
               key={pkg.id}
-              className={`relative border-2 border-black p-6 flex flex-col transition-all hover:-translate-y-1 ${
-                pkg.featured
-                  ? "bg-[#FF4500] text-white shadow-brutal"
-                  : "bg-white hover:shadow-brutal-sm"
-              }`}
-              data-testid={`pricing-card-${pkg.id}`}
+              className="relative bg-white border-2 border-black p-8 shadow-brutal flex flex-col"
             >
-              {pkg.featured && (
-                <span className="absolute -top-3 left-4 bg-black text-white text-xs font-bold uppercase tracking-widest px-3 py-1 border-2 border-black flex items-center gap-1">
-                  <Star size={12} fill="#FF4500" stroke="#FF4500" /> Meest gekozen
-                </span>
+              {pkg.badge && (
+                <div className="absolute -top-3 left-4 bg-[#FF4500] text-white font-heading text-xs uppercase px-3 py-1 border-2 border-black">
+                  {pkg.badge}
+                </div>
               )}
 
-              {/* Audience & Name */}
-              <p className={`font-mono text-xs uppercase tracking-widest mb-1 ${pkg.featured ? "text-white/80" : "text-[#525252]"}`}>
-                {pkg.audience}
-              </p>
-              <h3 className="font-heading font-extrabold uppercase text-3xl mb-2">{pkg.name}</h3>
-              
-              {/* Tagline */}
-              <p className={`text-sm font-medium mb-3 ${pkg.featured ? "text-white/90" : "text-[#1a1a1a]"}`}>
-                {pkg.tagline}
-              </p>
+              <div className="mb-6 text-[#FF4500]">{pkg.icon}</div>
 
-              {/* Price - with both excl and incl VAT */}
-              <div className="mb-4">
-                <div className="flex items-baseline flex-wrap gap-1">
-                  <span className="font-heading font-extrabold text-5xl">
-                    €{pkg.priceExcl}
-                  </span>
-                  <span className={`text-sm ml-1 ${pkg.featured ? "text-white/80" : "text-[#525252]"}`}>
-                    excl. btw
-                  </span>
-                </div>
-                <div className={`text-xs mt-1 ${pkg.featured ? "text-white/60" : "text-[#525252]"}`}>
-                  (€{pkg.priceIncl} incl. 21% btw)
-                </div>
-                {pkg.isCustom && (
-                  <div className="mt-1">
-                    <span className={`inline-flex items-center gap-1 text-xs font-medium ${pkg.featured ? "text-white/80" : "text-[#FF4500]"}`}>
-                      <Sparkles size={12} /> Vanaf prijs - maatwerk mogelijk
-                    </span>
-                  </div>
-                )}
-              </div>
+              <h3 className="font-heading font-black uppercase text-3xl mb-2">
+                {pkg.name}
+              </h3>
 
-              {/* Description */}
-              <p className={`text-sm mb-5 ${pkg.featured ? "text-white/90" : "text-[#525252]"}`}>
-                {pkg.description}
-              </p>
+              <p className="font-heading text-xl mb-6">{pkg.price}</p>
 
-              {/* Features list */}
-              <ul className="space-y-2 mb-6 flex-1">
-                {pkg.features.map((feature: string) => (
+              <ul className="space-y-3 mb-8 flex-1">
+                {pkg.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2 text-sm">
-                    <Check size={16} strokeWidth={3} className={pkg.featured ? "text-white shrink-0 mt-0.5" : "text-[#FF4500] shrink-0 mt-0.5"} />
-                    <span className={pkg.featured ? "text-white/95" : "text-[#1a1a1a]"}>
-                      {feature}
-                    </span>
+                    <Check size={16} className="text-[#00B050] mt-1" />
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              {/* CTA Button */}
               <Link
                 href="/contact"
-                className={`text-center font-heading font-bold uppercase text-sm tracking-widest border-2 px-4 py-3 transition-all ${
-                  pkg.featured
-                    ? "bg-white text-black border-white hover:bg-black hover:text-white hover:border-black"
-                    : "bg-black text-white border-black hover:bg-[#FF4500] hover:border-[#FF4500]"
-                }`}
-                data-testid={`pricing-cta-${pkg.id}`}
+                className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-6 py-3 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
               >
                 Offerte aanvragen →
               </Link>
@@ -188,10 +144,11 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
           ))}
         </div>
 
-        <p className="mt-8 text-sm text-[#525252] max-w-2xl">
-          Alle prijzen zijn exclusief 21% btw. Een offerte op maat is altijd mogelijk —
-          stuur een berichtje en we kijken samen wat past.
-        </p>
+        {!compact && (
+          <p className="mt-8 text-sm text-[#525252] max-w-2xl">
+            Alle prijzen zijn vanaf‑prijzen. Een offerte op maat is altijd mogelijk — stuur een berichtje en we kijken samen wat past.
+          </p>
+        )}
       </div>
     </section>
   );
