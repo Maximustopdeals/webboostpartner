@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
 import USPGrid from "@/components/USPGrid";
 import Marquee from "@/components/Marquee";
 import PageSpeedTool from "@/components/PageSpeedTool";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
+import PortfolioSection from "@/components/PortfolioSection"; // ⭐ NIEUW TOEGEVOEGD
 
 export const metadata = {
   title: "Website laten maken in Rotterdam | Next.js Specialist | WebBoost Partner",
@@ -16,6 +18,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* HERO */}
       <section className="relative bg-[#FAFAFA] border-b-2 border-black overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
           <div className="absolute top-10 right-10 w-[500px] h-[500px] border-[20px] border-black rotate-12" />
@@ -109,10 +112,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* USP / SPEED / MARQUEE */}
       <Marquee />
       <PageSpeedTool />
       <USPGrid />
 
+      {/* ⭐ NIEUW PORTFOLIO BLOK */}
+      <PortfolioSection />
+
+      {/* WAAROM WEBBOOST PARTNER */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
