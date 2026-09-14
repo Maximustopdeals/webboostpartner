@@ -22,7 +22,7 @@ export default function NextjsVsWordpressPage() {
 
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
             Twee populaire platforms, ieder met een eigen kracht.  
-            Dit is een eerlijke vergelijking — geen voorkeur, geen afkraken — maar een helder overzicht van wat beide systemen kunnen en wanneer ze het beste passen.
+            Dit is een eerlijke vergelijking — geen voorkeur, geen afkraken maar een helder overzicht van wat beide systemen kunnen en wanneer ze het beste passen.
           </p>
         </div>
       </section>
