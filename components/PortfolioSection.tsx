@@ -23,7 +23,7 @@ export default function PortfolioSection() {
     },
     {
       name: "Luxe Webshop",
-      url: "#",
+      url: "https://luxe-webshop.vercel.app", // ⭐ JUISTE URL INGEVULD
       tagline: "High‑end webshop — maatwerk design + schaalbare structuur",
     },
   ];
