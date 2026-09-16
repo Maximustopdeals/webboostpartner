@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
           <p className="text-sm text-white/70 max-w-md leading-relaxed">
             Razendsnelle Next.js websites voor ondernemers in Rotterdam en omgeving.
-            Gebouwd voor snelheid, SEO en conversie. Zonder WordPress-gedoe.
+            Gebouwd voor snelheid, SEO en conversie. Modern, schaalbaar en toekomstbestendig.
           </p>
         </div>
 
@@ -53,9 +53,26 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/50">
-          <p>&copy; {new Date().getFullYear()} WebBoost Partner. Alle rechten voorbehouden.</p>
-          <p>Gebouwd met Next.js — uiteraard.</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 flex flex-col gap-3 text-xs text-white/50">
+          <div className="flex flex-col sm:flex-row justify-between gap-3">
+            <p>&copy; {new Date().getFullYear()} WebBoost Partner. Alle rechten voorbehouden.</p>
+            <p>Gebouwd met Next.js — uiteraard.</p>
+          </div>
+
+          {/* Juridische links */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link href="/privacy" className="hover:text-[#FF4500] transition-colors">
+              Privacyverklaring
+            </Link>
+            <span className="text-white/20">·</span>
+            <Link href="/voorwaarden" className="hover:text-[#FF4500] transition-colors">
+              Algemene voorwaarden
+            </Link>
+            <span className="text-white/20">·</span>
+            <Link href="/cookiebeleid" className="hover:text-[#FF4500] transition-colors">
+              Cookiebeleid
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
