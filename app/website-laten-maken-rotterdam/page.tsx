@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
+import PortfolioSection from "@/components/PortfolioSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -50,14 +51,14 @@ const faqs: FAQItem[] = [
 export default function WebsiteRotterdamPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — UITGEBREID MET TRUST-BAR + DUBBELE CTA */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
             // Website laten maken Rotterdam
           </p>
 
-          <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
+          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-7xl">
             Website laten<br/>maken in <span className="text-[#FF4500]">Rotterdam</span>
           </h1>
 
@@ -74,8 +75,47 @@ export default function WebsiteRotterdamPage() {
               conversiegericht ontwerp.
             </p>
           </div>
+
+          {/* Trust-bar */}
+          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-[#525252]">
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#00B050] rounded-full" />
+              100/100 PageSpeed
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#00B050] rounded-full" />
+              SEO inbegrepen
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#00B050] rounded-full" />
+              Vaste prijs
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#00B050] rounded-full" />
+              Reactie binnen 24 uur
+            </li>
+          </ul>
+
+          {/* Dubbele CTA */}
+          <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+            >
+              Plan een gratis gesprek <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/pakketten"
+              className="inline-flex items-center justify-center gap-2 bg-white text-black font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+            >
+              Bekijk pakketten
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* PORTFOLIO — VISUEEL BEWIJS */}
+      <PortfolioSection />
 
       {/* CONTENT */}
       <article className="bg-white py-16 sm:py-24">
@@ -184,7 +224,48 @@ export default function WebsiteRotterdamPage() {
             terecht voor uitbreidingen en verbeteringen.
           </p>
 
-          {/* WERKGEBIED — NIEUWE SECTIE */}
+          {/* WAT KOST HET — NIEUWE SECTIE */}
+          <h2>Wat kost een website laten maken in Rotterdam?</h2>
+
+          <p>
+            De investering hangt af van uw wensen. Een professionele website op maat 
+            start bij een vast bedrag dat vooraf duidelijk is — geen verrassingen achteraf.
+          </p>
+
+          <p>
+            Onze pakketten zijn opgebouwd voor verschillende behoeften:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Starter</strong> — voor ZZP&apos;ers en starters die een professionele 
+              website nodig hebben om serieus online te gaan.
+            </li>
+            <li>
+              <strong>Professional</strong> — voor MKB-bedrijven die willen groeien met 
+              SEO, meerdere diensten en conversiegerichte pagina&apos;s.
+            </li>
+            <li>
+              <strong>Enterprise</strong> — voor organisaties die een uitgebreide website 
+              met support en doorlopende optimalisatie nodig hebben.
+            </li>
+          </ul>
+
+          <p>
+            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan — u ontvangt 
+            binnen 24 uur een helder voorstel met vaste prijs.
+          </p>
+
+          <p>
+            <Link
+              href="/pakketten"
+              className="inline-flex items-center gap-2 font-heading font-bold uppercase text-sm tracking-widest text-[#FF4500] hover:underline"
+            >
+              Bekijk alle pakketten en prijzen <ArrowRight size={16} />
+            </Link>
+          </p>
+
+          {/* WERKGEBIED */}
           <h2>Werkgebied</h2>
 
           <p>
