@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
+import CookieBanner from "@/components/CookieBanner";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -137,6 +138,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <main id="main">{children}</main>
         <Footer />
         <FloatingActions />
+        <CookieBanner />
       </body>
     </html>
   );
