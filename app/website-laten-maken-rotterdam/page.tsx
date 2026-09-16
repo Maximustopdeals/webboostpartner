@@ -51,7 +51,7 @@ const faqs: FAQItem[] = [
 export default function WebsiteRotterdamPage() {
   return (
     <>
-      {/* HERO — UITGEBREID MET TRUST-BAR + DUBBELE CTA */}
+      {/* HERO — UITGEBREID MET TRUST-BAR + GRATIS SCHETS AANBOD */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
@@ -92,17 +92,17 @@ export default function WebsiteRotterdamPage() {
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
-              Reactie binnen 24 uur
+              Gratis schets binnen 24 uur
             </li>
           </ul>
 
-          {/* Dubbele CTA */}
+          {/* Dubbele CTA — met gratis schets als primair aanbod */}
           <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
             >
-              Plan een gratis gesprek <ArrowRight size={18} />
+              Vraag een gratis schets aan <ArrowRight size={18} />
             </Link>
             <Link
               href="/pakketten"
@@ -111,6 +111,11 @@ export default function WebsiteRotterdamPage() {
               Bekijk pakketten
             </Link>
           </div>
+
+          {/* Subtiele uitleg onder CTA */}
+          <p className="mt-4 text-sm text-[#525252]">
+            Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien — zonder verplichtingen.
+          </p>
         </div>
       </section>
 
@@ -224,7 +229,7 @@ export default function WebsiteRotterdamPage() {
             terecht voor uitbreidingen en verbeteringen.
           </p>
 
-          {/* WAT KOST HET — NIEUWE SECTIE */}
+          {/* WAT KOST HET */}
           <h2>Wat kost een website laten maken in Rotterdam?</h2>
 
           <p>
@@ -283,10 +288,11 @@ export default function WebsiteRotterdamPage() {
         </div>
       </article>
 
+      {/* CTA — GRATIS SCHETS ALS PRIMAIR AANBOD */}
       <CTASection
-        title="Vraag een vrijblijvende offerte aan."
-        subtitle="Vertel kort over uw bedrijf en wensen. U krijgt binnen 24 uur een reactie."
-        button="Offerte aanvragen"
+        title="Vraag een gratis schets aan."
+        subtitle="Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien. Zonder verplichtingen, zonder verkoopgesprek."
+        button="Vraag gratis schets aan"
       />
     </>
   );
