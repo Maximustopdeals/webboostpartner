@@ -184,6 +184,16 @@ export default function WebsiteRotterdamPage() {
             terecht voor uitbreidingen en verbeteringen.
           </p>
 
+          {/* WERKGEBIED — NIEUWE SECTIE */}
+          <h2>Werkgebied</h2>
+
+          <p>
+            Hoewel ik landelijk werk, zit het zwaartepunt van mijn klanten in Rotterdam 
+            en de directe omgeving: Capelle aan den IJssel, Krimpen aan den IJssel, 
+            Ridderkerk, Barendrecht en Schiedam. Lokaal werken heeft één groot voordeel: 
+            ik begrijp uw markt, uw doelgroep en uw concurrentie.
+          </p>
+
           <h2>Veelgestelde vragen</h2>
         </div>
 
