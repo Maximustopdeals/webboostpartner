@@ -1,0 +1,126 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Cookiebeleid",
+  description:
+    "Welke cookies gebruikt WebBoost Partner, waarom en hoe u ze beheert. Transparant en conform de AVG.",
+  alternates: { canonical: "https://webboostpartner.nl/cookiebeleid" },
+  robots: { index: true, follow: true },
+};
+
+export default function CookiebeleidPage() {
+  return (
+    <>
+      <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
+            // Juridisch
+          </p>
+          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-6xl">
+            Cookiebeleid
+          </h1>
+          <p className="mt-6 text-lg text-[#525252] leading-relaxed">
+            Laatst bijgewerkt: 16 september 2026
+          </p>
+        </div>
+      </section>
+
+      <article className="bg-white py-16 sm:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
+          <h2>1. Wat zijn cookies</h2>
+          <p>
+            Cookies zijn kleine tekstbestanden die op uw apparaat worden 
+            opgeslagen wanneer u een website bezoekt. Ze helpen de website om 
+            goed te functioneren en om het gebruik te analyseren.
+          </p>
+
+          <h2>2. Welke cookies gebruiken wij</h2>
+
+          <h3>Functionele cookies (altijd actief)</h3>
+          <p>
+            Deze cookies zijn noodzakelijk voor de werking van de website en 
+            kunnen niet worden uitgeschakeld.
+          </p>
+          <ul>
+            <li>
+              <strong>cookie-consent</strong> — onthoudt uw keuze voor het 
+              cookiebeleid. Bewaartermijn: 1 jaar.
+            </li>
+          </ul>
+
+          <h3>Analytische cookies (met toestemming)</h3>
+          <p>
+            Deze cookies helpen ons begrijpen hoe bezoekers de website gebruiken, 
+            zodat wij de website kunnen verbeteren.
+          </p>
+          <ul>
+            <li>
+              <strong>_ga, _ga_*</strong> — Google Analytics 4. Meet anoniem 
+              websitebezoek, zoals paginaweergaven, sessieduur en herkomst. 
+              Bewaartermijn: 14 maanden.
+            </li>
+          </ul>
+
+          <h3>Marketing cookies</h3>
+          <p>
+            Op dit moment gebruiken wij <strong>geen</strong> marketing- of 
+            trackingcookies voor advertenties.
+          </p>
+
+          <h2>3. Cookies van derden</h2>
+          <p>
+            Voor analyse maken wij gebruik van Google Analytics 4. Google kan 
+            gegevens verwerken op servers binnen en buiten de EU. Zie het{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FF4500] underline"
+            >
+              privacybeleid van Google
+            </a>{" "}
+            voor meer informatie.
+          </p>
+
+          <h2>4. Cookies beheren</h2>
+          <p>
+            U kunt uw cookievoorkeuren op elk moment aanpassen via de 
+            cookiebanner onderaan de pagina. Daarnaast kunt u via uw 
+            browserinstellingen cookies verwijderen of blokkeren. Let op: als u 
+            functionele cookies blokkeert, werkt de website mogelijk niet goed.
+          </p>
+
+          <h2>5. Wijzigingen</h2>
+          <p>
+            Wij kunnen dit cookiebeleid aanpassen wanneer onze cookies wijzigen. 
+            De meest recente versie staat altijd op deze pagina.
+          </p>
+
+          <h2>6. Contact</h2>
+          <p>
+            Vragen over ons cookiebeleid? Neem contact op via{" "}
+            <a href="mailto:info@webboostpartner.nl" className="text-[#FF4500] underline">
+              info@webboostpartner.nl
+            </a>
+            . Zie ook onze{" "}
+            <Link href="/privacy" className="text-[#FF4500] underline">
+              privacyverklaring
+            </Link>
+            .
+          </p>
+
+          <div className="mt-12 pt-8 border-t-2 border-black">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-[#FF4500] text-white px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black transition-colors border-2 border-black"
+            >
+              Vragen? Neem contact op <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </article>
+    </>
+  );
+}
