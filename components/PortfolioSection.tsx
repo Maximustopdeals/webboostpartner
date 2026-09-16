@@ -4,8 +4,15 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Globe } from "lucide-react";
 
+interface Project {
+  name: string;
+  url: string;
+  tagline: string;
+  isDemo?: boolean;
+}
+
 export default function PortfolioSection() {
-  const projects = [
+  const projects: Project[] = [
     {
       name: "DTG Cleaning",
       url: "https://dtgcleaning.nl",
@@ -23,14 +30,30 @@ export default function PortfolioSection() {
     },
     {
       name: "Luxe Webshop",
-      url: "https://luxe-webshop.vercel.app", // ⭐ JUISTE URL INGEVULD
-      tagline: "High‑end webshop — maatwerk design + schaalbare structuur",
+      url: "https://luxe-webshop.vercel.app",
+      tagline: "Showcase — high-end webshop met maatwerk design en schaalbare structuur",
+      isDemo: true,
     },
   ];
 
   return (
     <section className="bg-white border-y-2 border-black py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
+
+        {/* HEADER */}
+        <div className="mb-12 max-w-3xl">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+            // Recent werk
+          </p>
+          <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] mb-4">
+            Websites die wij<br />realiseerden.
+          </h2>
+          <p className="text-lg text-[#525252] leading-relaxed">
+            Een selectie van recente projecten. Van lokale dienstverleners tot 
+            high-end webshops — allemaal gebouwd met Next.js en geoptimaliseerd 
+            voor snelheid, SEO en conversie.
+          </p>
+        </div>
 
         {/* MARQUEE */}
         <div className="overflow-hidden border-2 border-black bg-[#FAFAFA] py-4 mb-16">
@@ -52,8 +75,14 @@ export default function PortfolioSection() {
           {projects.map((p) => (
             <div
               key={p.name}
-              className="border-2 border-black p-6 bg-[#FAFAFA] shadow-brutal flex flex-col"
+              className="relative border-2 border-black p-6 bg-[#FAFAFA] shadow-brutal flex flex-col"
             >
+              {p.isDemo && (
+                <span className="absolute -top-3 -right-3 bg-[#FF4500] text-white font-mono text-[10px] uppercase tracking-widest px-2 py-1 border-2 border-black">
+                  Showcase
+                </span>
+              )}
+
               <h3 className="font-heading font-black uppercase text-2xl mb-2">
                 {p.name}
               </h3>
@@ -77,7 +106,7 @@ export default function PortfolioSection() {
             href="/contact"
             className="inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
           >
-            Ook zo’n website? <Globe size={18} />
+            Uw website als volgende? <Globe size={18} />
           </Link>
         </div>
       </div>
