@@ -68,7 +68,7 @@ export default function OverMijPage() {
               <div className="bg-white border-2 border-black p-2 relative z-10">
                 <NextjsLogoCard />
                 <div className="px-3 py-3 border-t-2 border-black mt-2">
-                  <p className="font-heading font-bold uppercase text-sm">Ron · Founder</p>
+                  <p className="font-heading font-bold uppercase text-sm">Ron · Oprichter</p>
                   <p className="font-mono text-xs text-[#525252] flex items-center gap-1 mt-1">
                     <MapPin size={12} /> Rotterdam, NL
                   </p>
