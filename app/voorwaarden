@@ -1,0 +1,198 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Algemene Voorwaarden",
+  description:
+    "De algemene voorwaarden van WebBoost Partner. Duidelijk, eerlijk en zonder kleine lettertjes.",
+  alternates: { canonical: "https://webboostpartner.nl/voorwaarden" },
+  robots: { index: true, follow: true },
+};
+
+export default function VoorwaardenPage() {
+  return (
+    <>
+      <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
+            // Juridisch
+          </p>
+          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-6xl">
+            Algemene<br />Voorwaarden
+          </h1>
+          <p className="mt-6 text-lg text-[#525252] leading-relaxed">
+            Versie 1.0 — 16 september 2026
+          </p>
+        </div>
+      </section>
+
+      <article className="bg-white py-16 sm:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
+          <h2>Artikel 1 — Definities</h2>
+          <p>In deze algemene voorwaarden wordt verstaan onder:</p>
+          <ul>
+            <li>
+              <strong>Opdrachtnemer:</strong> WebBoost Partner, gevestigd in 
+              Rotterdam.
+            </li>
+            <li>
+              <strong>Opdrachtgever:</strong> de natuurlijke of rechtspersoon 
+              die aan WebBoost Partner een opdracht verstrekt.
+            </li>
+            <li>
+              <strong>Overeenkomst:</strong> de overeenkomst tot het verrichten 
+              van werkzaamheden op het gebied van webdesign, webdevelopment, 
+              SEO of aanverwante diensten.
+            </li>
+          </ul>
+
+          <h2>Artikel 2 — Toepasselijkheid</h2>
+          <p>
+            Deze voorwaarden zijn van toepassing op alle aanbiedingen, offertes 
+            en overeenkomsten tussen WebBoost Partner en opdrachtgever, tenzij 
+            schriftelijk anders is overeengekomen.
+          </p>
+
+          <h2>Artikel 3 — Offertes en aanbiedingen</h2>
+          <p>
+            Alle offertes zijn vrijblijvend en geldig gedurende 30 dagen, tenzij 
+            anders vermeld. Offertes zijn gebaseerd op de informatie die 
+            opdrachtgever bij aanvraag heeft verstrekt.
+          </p>
+
+          <h2>Artikel 4 — Totstandkoming overeenkomst</h2>
+          <p>
+            De overeenkomst komt tot stand op het moment dat opdrachtgever een 
+            schriftelijke opdrachtbevestiging stuurt of een aanbetaling verricht.
+          </p>
+
+          <h2>Artikel 5 — Uitvoering van de opdracht</h2>
+          <p>
+            WebBoost Partner voert de opdracht uit naar beste inzicht en 
+            vermogen, overeenkomstig de eisen van goed vakmanschap. Opdrachtgever 
+            zorgt tijdig voor alle informatie, materialen en medewerking die 
+            nodig zijn voor de uitvoering.
+          </p>
+
+          <h2>Artikel 6 — Planning en termijnen</h2>
+          <p>
+            Genoemde termijnen zijn indicatief. Vertraging door toedoen van 
+            opdrachtgever (bijvoorbeeld late aanlevering van content of 
+            feedback) kan leiden tot verlenging van de planning, zonder dat 
+            WebBoost Partner in verzuim is.
+          </p>
+
+          <h2>Artikel 7 — Prijzen en betaling</h2>
+          <ul>
+            <li>
+              Alle prijzen zijn in euro&apos;s en exclusief btw, tenzij anders vermeld.
+            </li>
+            <li>
+              Betaling geschiedt in termijnen: 50% bij opdrachtbevestiging, 
+              50% bij oplevering.
+            </li>
+            <li>
+              Facturen dienen binnen 14 dagen na factuurdatum te worden voldaan.
+            </li>
+            <li>
+              Bij niet-tijdige betaling is opdrachtgever wettelijke rente 
+              verschuldigd en kunnen incassokosten in rekening worden gebracht.
+            </li>
+          </ul>
+
+          <h2>Artikel 8 — Meerwerk</h2>
+          <p>
+            Werkzaamheden die buiten de oorspronkelijke opdracht vallen, worden 
+            als meerwerk beschouwd. Meerwerk wordt in overleg uitgevoerd en 
+            gefactureerd tegen het geldende uurtarief.
+          </p>
+
+          <h2>Artikel 9 — Intellectuele eigendom</h2>
+          <p>
+            Na volledige betaling verkrijgt opdrachtgever het gebruiksrecht op 
+            het opgeleverde werk (website, design, code). WebBoost Partner 
+            behoudt het recht om het werk te gebruiken voor eigen promotie, 
+            tenzij schriftelijk anders overeengekomen.
+          </p>
+
+          <h2>Artikel 10 — Oplevering en acceptatie</h2>
+          <p>
+            Opdrachtgever dient binnen 14 dagen na oplevering eventuele 
+            gebreken schriftelijk te melden. Indien geen gebreken worden gemeld, 
+            wordt het werk als geaccepteerd beschouwd.
+          </p>
+
+          <h2>Artikel 11 — Garantie en onderhoud</h2>
+          <p>
+            WebBoost Partner garandeert dat de opgeleverde website functioneert 
+            zoals overeengekomen. Voor technische storingen die het gevolg zijn 
+            van wijzigingen door opdrachtgever of derden, vervalt de garantie.
+            Onderhoud en updates na oplevering vallen buiten de garantie, tenzij 
+            een onderhoudscontract is afgesloten.
+          </p>
+
+          <h2>Artikel 12 — Aansprakelijkheid</h2>
+          <p>
+            De aansprakelijkheid van WebBoost Partner is beperkt tot het bedrag 
+            dat in het kader van de opdracht is gefactureerd, met een maximum 
+            van het bedrag dat de aansprakelijkheidsverzekering uitkeert. 
+            WebBoost Partner is niet aansprakelijk voor indirecte schade, 
+            gederfde winst of gevolgschade.
+          </p>
+
+          <h2>Artikel 13 — Overmacht</h2>
+          <p>
+            Onder overmacht wordt verstaan: elke van de wil van WebBoost Partner 
+            onafhankelijke omstandigheid die nakoming redelijkerwijs niet 
+            mogelijk maakt. Denk aan storingen bij hostingpartijen, 
+            cyberaanvallen, stroomuitval of overheidsmaatregelen.
+          </p>
+
+          <h2>Artikel 14 — Opzegging en ontbinding</h2>
+          <p>
+            Beide partijen kunnen de overeenkomst tussentijds opzeggen met 
+            inachtneming van een redelijke termijn. Werkzaamheden die op het 
+            moment van opzegging zijn verricht, worden naar rato gefactureerd.
+          </p>
+
+          <h2>Artikel 15 — Privacy en vertrouwelijkheid</h2>
+          <p>
+            WebBoost Partner gaat vertrouwelijk om met alle informatie die 
+            tijdens de samenwerking wordt uitgewisseld. Zie ook onze{" "}
+            <Link href="/privacy" className="text-[#FF4500] underline">
+              privacyverklaring
+            </Link>
+            .
+          </p>
+
+          <h2>Artikel 16 — Klachten</h2>
+          <p>
+            Klachten over de uitvoering van de opdracht dienen binnen 30 dagen 
+            na constatering schriftelijk te worden gemeld via{" "}
+            <a href="mailto:info@webboostpartner.nl" className="text-[#FF4500] underline">
+              info@webboostpartner.nl
+            </a>
+            . Wij streven ernaar klachten binnen 14 dagen op te lossen.
+          </p>
+
+          <h2>Artikel 17 — Toepasselijk recht en geschillen</h2>
+          <p>
+            Op alle overeenkomsten is Nederlands recht van toepassing. Geschillen 
+            worden voorgelegd aan de bevoegde rechter in het arrondissement 
+            Rotterdam, tenzij partijen een andere oplossing kiezen.
+          </p>
+
+          <div className="mt-12 pt-8 border-t-2 border-black">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-[#FF4500] text-white px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black transition-colors border-2 border-black"
+            >
+              Vragen? Neem contact op <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </article>
+    </>
+  );
+}
