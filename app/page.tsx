@@ -7,7 +7,6 @@ import Marquee from "@/components/Marquee";
 import PageSpeedTool from "@/components/PageSpeedTool";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
-import PortfolioSection from "@/components/PortfolioSection"; // ⭐ NIEUW TOEGEVOEGD
 
 export const metadata = {
   title: "Website laten maken in Rotterdam | Next.js Specialist | WebBoost Partner",
@@ -117,8 +116,32 @@ export default function HomePage() {
       <PageSpeedTool />
       <USPGrid />
 
-      {/* ⭐ NIEUW PORTFOLIO BLOK */}
-      <PortfolioSection />
+      {/* PORTFOLIO VERWIJZING — stuurt naar money page */}
+      <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+              // Recent werk
+            </p>
+            <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
+              Websites die<br />presteren.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 prose-brutal">
+            <p>
+              Van lokale dienstverleners tot high-end webshops: wij bouwen websites 
+              die snel laden, goed scoren in Google en klanten opleveren. Bekijk 
+              onze recente projecten en zie zelf het resultaat.
+            </p>
+            <Link
+              href="/website-laten-maken-rotterdam"
+              className="inline-flex items-center gap-2 mt-6 bg-[#FF4500] text-white px-8 py-4 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black transition-colors border-2 border-black hover:-translate-y-1 hover:shadow-brutal-sm"
+            >
+              Bekijk onze projecten <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* WAAROM WEBBOOST PARTNER */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
