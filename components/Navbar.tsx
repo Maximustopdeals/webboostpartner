@@ -22,10 +22,7 @@ const mainLinks: NavLink[] = [
         href: "/website-laten-maken-rotterdam",
         label: "Website laten maken in Rotterdam",
       },
-      {
-        href: "/nextjs-website-laten-maken",
-        label: "Next.js website laten maken",
-      },
+      
       { href: "/nextjs-vs-wordpress", label: "Next.js vs WordPress" },
       { href: "/wordpress-naar-nextjs", label: "WordPress naar Next.js" },
     ],
