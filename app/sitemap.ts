@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // === Primaire pagina's ===
     { route: "/", priority: 1.0, changeFrequency: "weekly" },
     { route: "/website-laten-maken-rotterdam", priority: 0.9, changeFrequency: "monthly" },
-    { route: "/nextjs-website-laten-maken", priority: 0.9, changeFrequency: "monthly" },
     { route: "/seo-rotterdam", priority: 0.9, changeFrequency: "monthly" },
 
     // === Commerciële pagina's ===
@@ -25,4 +24,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/contact", priority: 0.7, changeFrequency: "monthly" },
 
     // === Diepgaande / technische pagina's ===
-    { route: "/wordpress-naar-nextjs", priority: 0.6, change
+    { route: "/wordpress-naar-nextjs", priority: 0.6, changeFrequency: "monthly" },
+    { route: "/core-web-vitals", priority: 0.6, changeFrequency: "monthly" },
+
+    // === Juridische pagina's ===
+    { route: "/privacy", priority: 0.3, changeFrequency: "yearly" },
+    { route: "/voorwaarden", priority: 0.3, changeFrequency: "yearly" },
+    { route: "/cookiebeleid", priority: 0.3, changeFrequency: "yearly" },
+  ];
+
+  const currentDate = new Date();
+
+  return routes.map(({ route, priority, changeFrequency }) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: currentDate,
+    changeFrequency,
+    priority,
+  }));
+}
