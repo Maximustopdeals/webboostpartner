@@ -81,28 +81,28 @@ export default function CoreWebVitalsPage() {
           </ul>
 
           <p>
-            Websites die snel laden en stabiel blijven, scoren beter in Google en zorgen voor meer
-            aanvragen, telefoontjes en offerteverzoeken.
+            Websites die snel laden en stabiel blijven, scoren over het algemeen beter in Google en
+            zorgen voor meer aanvragen, telefoontjes en offerteverzoeken.
           </p>
 
           <h2>Waarom is dit belangrijk voor uw bedrijf?</h2>
           <p>
             Bezoekers zijn ongeduldig. Als een website langzaam is, haperend reageert of verspringt
-            tijdens het laden, haken mensen af — vaak binnen één seconde.
+            tijdens het laden, haken mensen af — vaak binnen enkele seconden.
           </p>
 
-          <p>Goede Core Web Vitals zorgen voor:</p>
+          <p>Goede Core Web Vitals dragen bij aan:</p>
 
           <ul>
             <li><strong>Minder afhakers</strong> — bezoekers blijven langer op uw site.</li>
-            <li><strong>Meer conversie</strong> — snelle websites overtuigen beter.</li>
-            <li><strong>Betere Google‑posities</strong> — snelheid is een rankingfactor.</li>
-            <li><strong>Lagere advertentiekosten</strong> — snelle pagina’s scoren beter in Google Ads.</li>
+            <li><strong>Meer conversie</strong> — snelle websites overtuigen doorgaans beter.</li>
+            <li><strong>Betere Google‑posities</strong> — snelheid is één van de rankingfactoren.</li>
+            <li><strong>Lagere advertentiekosten</strong> — snelle pagina&apos;s kunnen beter presteren in Google Ads.</li>
           </ul>
 
           <h2>Waarom veel websites moeite hebben</h2>
           <p>
-            Veel websites worden na verloop van tijd trager door thema’s, plugins, scripts en
+            Veel websites worden na verloop van tijd trager door thema&apos;s, plugins, scripts en
             verouderde techniek. Dat is geen fout — het is een gevolg van hoe traditionele systemen
             werken.
           </p>
@@ -125,38 +125,57 @@ export default function CoreWebVitalsPage() {
 
           <h2>Hoe Next.js betere scores haalt</h2>
           <p>
-            Next.js is gebouwd voor snelheid. Het levert pagina’s kant‑en‑klaar aan de browser,
+            Next.js is gebouwd voor snelheid. Het levert pagina&apos;s kant‑en‑klaar aan de browser,
             zonder dat er eerst allerlei scripts of database‑processen moeten draaien.
           </p>
 
           <p>Dat betekent:</p>
 
           <ul>
-            <li><strong>Snelle laadtijden</strong> — vaak onder één seconde.</li>
-            <li><strong>Stabiele pagina’s</strong> — geen verspringende elementen.</li>
+            <li><strong>Snelle laadtijden</strong> — in de regel onder twee seconden.</li>
+            <li><strong>Stabiele pagina&apos;s</strong> — geen verspringende elementen.</li>
             <li><strong>Direct zichtbare content</strong> — ook op mobiel.</li>
             <li><strong>Moderne beeldoptimalisatie</strong> — automatisch in het juiste formaat.</li>
           </ul>
 
           <p>
-            Het resultaat: websites die standaard rond de <strong>95–100</strong> scoren in PageSpeed
-            Insights.
+            Het resultaat: websites die doorgaans <strong>95+</strong> scoren in PageSpeed
+            Insights — met uitschieters naar 100 op desktop.
           </p>
 
           <h2>Wat levert dit concreet op?</h2>
-          <p>Bij ondernemers die overstappen naar een snellere website zien we vaak:</p>
+          <p>
+            Bij ondernemers die overstappen naar een snellere website zien we in de praktijk
+            vaak verbeteringen. De exacte cijfers hangen af van je doelgroep, content, concurrentie
+            en de kwaliteit van de landingspagina&apos;s. Gemiddeld genomen merken onze klanten:
+          </p>
 
           <ul>
-            <li>15–40% minder afhakers</li>
-            <li>meer pagina’s per sessie</li>
-            <li>hogere conversie op mobiel</li>
-            <li>betere posities binnen 4–8 weken</li>
-            <li>lagere advertentiekosten</li>
+            <li>
+              <strong>Minder afhakers</strong> — in onze projecten zagen we bounce rates dalen met
+              15–40%, maar dit is geen garantie. Het effect verschilt per branche en doelgroep.
+            </li>
+            <li>
+              <strong>Meer pagina&apos;s per sessie</strong> — bezoekers blijven langer doorklikken.
+            </li>
+            <li>
+              <strong>Hogere conversie op mobiel</strong> — snelle pagina&apos;s converteren meestal
+              beter, maar conversie is van veel factoren afhankelijk.
+            </li>
+            <li>
+              <strong>Beweging in rankings</strong> — in de regel zien we binnen 4–8 weken beweging
+              in Google-posities. Dit verschilt sterk per markt en zoekwoord; content en autoriteit
+              zijn minstens zo belangrijk.
+            </li>
+            <li>
+              <strong>Mogelijk lagere advertentiekosten</strong> — een snellere website kan de
+              kwaliteitsscore van je Google Ads positief beïnvloeden.
+            </li>
           </ul>
 
           <p>
-            Snelheid is geen luxe — het is een fundament. Een snelle website maakt al uw andere
-            marketinginspanningen sterker.
+            Snelheid is geen garantie voor succes — maar het is wel een fundament. Een snelle
+            website maakt al uw andere marketinginspanningen sterker.
           </p>
         </div>
       </article>
