@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -11,7 +10,7 @@ import CTASection from "@/components/CTASection";
 export const metadata = {
   title: "Website laten maken in Rotterdam | Next.js Specialist | WebBoost Partner",
   description:
-    "Razendsnelle Next.js websites in Rotterdam die binnen 1 seconde laden, beter scoren in Google en meer klanten opleveren. Geen WordPress-problemen, maar moderne techniek die écht werkt.",
+    "Razendsnelle Next.js websites in Rotterdam die binnen 2 seconden laden, beter scoren in Google en meer klanten opleveren. Moderne techniek die écht werkt.",
 };
 
 export default function HomePage() {
@@ -26,7 +25,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-20 pb-28 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-2 border-2 border-black bg-white px-3 py-1 mb-6">
-              <span className="w-2 h-2 bg-[#FF4500] rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-[#FF4500] rounded-full" />
               <span className="font-mono text-xs uppercase tracking-widest">
                 Next.js website laten maken in Rotterdam
               </span>
@@ -37,8 +36,8 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 text-xl max-w-2xl text-[#1a1a1a] leading-relaxed font-semibold">
-              Binnen 1 seconde laadtijd, 100/100 PageSpeed en beter gevonden in Google.
-              Gebouwd met Next.js — zonder WordPress-problemen. Meer aanvragen, minder gedoe.
+              Binnen 2 seconden laadtijd, 95+ PageSpeed en beter gevonden in Google.
+              Gebouwd met Next.js — moderne techniek die écht werkt. Meer aanvragen, minder gedoe.
             </p>
 
             <ul className="mt-4 text-sm font-mono uppercase tracking-wider text-[#525252] space-y-1">
@@ -79,18 +78,18 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex items-end gap-3 mb-3">
-                  <span className="font-heading font-black text-7xl leading-none">100</span>
+                  <span className="font-heading font-black text-7xl leading-none">95+</span>
                   <span className="text-[#525252] font-mono text-sm mb-2">/100</span>
                 </div>
 
                 <div className="space-y-1 text-xs font-mono">
                   <div className="flex justify-between">
                     <span>Laadtijd</span>
-                    <span className="font-bold">0.6s</span>
+                    <span className="font-bold">onder 2s</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Stabiliteit</span>
-                    <span className="font-bold">Perfect</span>
+                    <span className="font-bold">Uitstekend</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Reactietijd</span>
@@ -100,7 +99,7 @@ export default function HomePage() {
 
                 <div className="mt-4 pt-4 border-t-2 border-black">
                   <p className="text-xs font-bold uppercase tracking-widest text-[#00B050]">
-                    ● Sneller dan 98% van alle websites
+                    ● Sneller dan 95% van alle websites
                   </p>
                 </div>
               </div>
@@ -158,8 +157,8 @@ export default function HomePage() {
           <div className="lg:col-span-7 prose-brutal">
             <ul className="space-y-4 text-base">
               <li>
-                <strong>100/100 PageSpeed</strong>
-                <span className="text-[#525252]"> Sneller dan 98% van alle websites</span>
+                <strong>95+ PageSpeed</strong>
+                <span className="text-[#525252]"> Sneller dan 95% van alle websites</span>
               </li>
               <li>
                 <strong>Technische SEO inbegrepen</strong>
