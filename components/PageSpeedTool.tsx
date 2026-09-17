@@ -1,7 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Zap, Monitor, Smartphone, ArrowRight, Loader2, CheckCircle2, AlertCircle, Send } from "lucide-react";
+import {
+  Zap,
+  Monitor,
+  Smartphone,
+  ArrowRight,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
+  Send,
+} from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdapzjod";
 
@@ -28,6 +37,7 @@ interface LighthouseResult {
     "first-contentful-paint"?: LighthouseAudit;
     "server-response-time"?: LighthouseAudit;
   };
+  formFactor?: string; // ← FIX: toegevoegd voor debugging
 }
 
 interface PageSpeedResponse {
@@ -109,20 +119,29 @@ export default function PageSpeedTool() {
     }
 
     try {
+      // ← FIX: strategy wordt nu correct doorgegeven aan de API
       const res = await fetch(
-        `/api/pagespeed?url=${encodeURIComponent(scanUrl)}&strategy=${strategy}`
+        `/api/pagespeed?url=${encodeURIComponent(scanUrl)}&strategy=${strategy}&_t=${Date.now()}`
       );
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error || "Scan mislukt. Controleer de URL.");
       }
       const data: PageSpeedResponse = await res.json();
+
+      // ← FIX: debug log om te controleren of strategy correct is
+      if (typeof window !== "undefined") {
+        console.log(
+          `[PageSpeed] Requested: ${strategy} | Returned: ${data.lighthouseResult.formFactor}`
+        );
+      }
+
       setResult(data);
-      // Auto-fill website in lead form
-      setLeadData(prev => ({ ...prev, website: scanUrl }));
+      setLeadData((prev) => ({ ...prev, website: scanUrl }));
       setShowLeadForm(true);
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : "Er ging iets mis. Probeer het opnieuw.";
+      const errorMessage =
+        err instanceof Error ? err.message : "Er ging iets mis. Probeer het opnieuw.";
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -143,7 +162,10 @@ export default function PageSpeedTool() {
     formData.append("email", leadData.email);
     formData.append("website", leadData.website);
     formData.append("telefoon", leadData.telefoon || "Niet opgegeven");
-    formData.append("interesse", leadData.interesse ? "Ja, meer informatie over versnellen" : "Nee, alleen scanresultaat");
+    formData.append(
+      "interesse",
+      leadData.interesse ? "Ja, meer informatie over versnellen" : "Nee, alleen scanresultaat"
+    );
     formData.append("pagespeed_score", String(scores?.performance ?? "N/A"));
     formData.append("bron", "PageSpeed Tool Lead");
 
@@ -190,7 +212,10 @@ export default function PageSpeedTool() {
     : null;
 
   return (
-    <section className="bg-[#FAFAFA] py-20 sm:py-28 border-y-2 border-black" data-testid="pagespeed-tool">
+    <section
+      className="bg-[#FAFAFA] py-20 sm:py-28 border-y-2 border-black"
+      data-testid="pagespeed-tool"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left - Title & info */}
@@ -200,7 +225,8 @@ export default function PageSpeedTool() {
               <span className="font-mono text-xs uppercase tracking-widest">Gratis tool</span>
             </div>
             <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] mb-6">
-              Hoe snel<br />
+              Hoe snel
+              <br />
               is jouw <span className="text-[#FF4500]">site</span>?
             </h2>
             <p className="text-lg text-[#1a1a1a] leading-relaxed max-w-lg mb-8">
@@ -259,7 +285,9 @@ export default function PageSpeedTool() {
 
             {/* Device toggle */}
             <div className="flex items-center gap-3 mb-5">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#525252]">Apparaat:</span>
+              <span className="font-mono text-xs uppercase tracking-widest text-[#525252]">
+                Apparaat:
+              </span>
               <div className="flex border-2 border-black">
                 <button
                   onClick={() => setStrategy("mobile")}
@@ -296,6 +324,16 @@ export default function PageSpeedTool() {
             {/* Results */}
             {scores && (
               <div className="space-y-5" data-testid="pagespeed-results">
+                {/* ← FIX: subtle indicator van welk apparaat getest is */}
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#525252]">
+                  <span
+                    className={`w-2 h-2 rounded-full ${
+                      strategy === "mobile" ? "bg-[#FF4500]" : "bg-black"
+                    }`}
+                  />
+                  Getest op: {strategy === "mobile" ? "Mobiel" : "Desktop"}
+                </div>
+
                 {/* Main score circles */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {[
@@ -306,7 +344,9 @@ export default function PageSpeedTool() {
                   ].map((cat) => (
                     <div key={cat.label} className="border-2 border-black bg-[#FAFAFA] p-4 text-center">
                       <ScoreCircle score={cat.score} />
-                      <p className="font-heading font-bold uppercase text-xs tracking-wider mt-2">{cat.label}</p>
+                      <p className="font-heading font-bold uppercase text-xs tracking-wider mt-2">
+                        {cat.label}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -318,15 +358,41 @@ export default function PageSpeedTool() {
                   </p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {[
-                      { label: "LCP", value: scores.lcp, good: scores.lcp !== "N/A" && parseFloat(scores.lcp) < 2.5 },
-                      { label: "CLS", value: scores.cls, good: scores.cls !== "N/A" && parseFloat(scores.cls) < 0.1 },
-                      { label: "INP", value: scores.inp, good: scores.inp !== "N/A" && parseFloat(scores.inp) < 200 },
-                      { label: "FCP", value: scores.fcp, good: scores.fcp !== "N/A" && parseFloat(scores.fcp) < 1.8 },
-                      { label: "TTFB", value: scores.ttfb, good: scores.ttfb !== "N/A" && parseFloat(scores.ttfb) < 600 },
+                      {
+                        label: "LCP",
+                        value: scores.lcp,
+                        good: scores.lcp !== "N/A" && parseFloat(scores.lcp) < 2.5,
+                      },
+                      {
+                        label: "CLS",
+                        value: scores.cls,
+                        good: scores.cls !== "N/A" && parseFloat(scores.cls) < 0.1,
+                      },
+                      {
+                        label: "INP",
+                        value: scores.inp,
+                        good: scores.inp !== "N/A" && parseFloat(scores.inp) < 200,
+                      },
+                      {
+                        label: "FCP",
+                        value: scores.fcp,
+                        good: scores.fcp !== "N/A" && parseFloat(scores.fcp) < 1.8,
+                      },
+                      {
+                        label: "TTFB",
+                        value: scores.ttfb,
+                        good: scores.ttfb !== "N/A" && parseFloat(scores.ttfb) < 600,
+                      },
                     ].map((m) => (
                       <div key={m.label} className="bg-white border border-black p-3">
-                        <p className="font-mono text-xs uppercase tracking-widest text-[#525252]">{m.label}</p>
-                        <p className={`font-heading font-extrabold text-xl ${m.good ? "text-[#00B050]" : "text-[#FF4500]"}`}>
+                        <p className="font-mono text-xs uppercase tracking-widest text-[#525252]">
+                          {m.label}
+                        </p>
+                        <p
+                          className={`font-heading font-extrabold text-xl ${
+                            m.good ? "text-[#00B050]" : "text-[#FF4500]"
+                          }`}
+                        >
                           {m.value}
                         </p>
                       </div>
@@ -346,12 +412,16 @@ export default function PageSpeedTool() {
 
             {/* Lead Capture Form */}
             {showLeadForm && leadStatus !== "success" && (
-              <div className="mt-6 border-2 border-[#FF4500] bg-[#FFF5F0] p-5" data-testid="lead-capture-form">
+              <div
+                className="mt-6 border-2 border-[#FF4500] bg-[#FFF5F0] p-5"
+                data-testid="lead-capture-form"
+              >
                 <p className="font-heading font-bold uppercase text-sm tracking-widest text-[#FF4500] mb-3">
                   Wil je weten hoe je dit kunt verbeteren?
                 </p>
                 <p className="text-sm text-[#525252] mb-4">
-                  Laat je gegevens achter en ik stuur je binnen 24 uur een persoonlijk adviesrapport — gratis en vrijblijvend.
+                  Laat je gegevens achter en ik stuur je binnen 24 uur een persoonlijk
+                  adviesrapport — gratis en vrijblijvend.
                 </p>
                 <form onSubmit={handleLeadSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -363,7 +433,7 @@ export default function PageSpeedTool() {
                         type="text"
                         required
                         value={leadData.naam}
-                        onChange={(e) => setLeadData(prev => ({ ...prev, naam: e.target.value }))}
+                        onChange={(e) => setLeadData((prev) => ({ ...prev, naam: e.target.value }))}
                         className="w-full border-2 border-black p-3 bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
                         placeholder="Jouw naam"
                       />
@@ -376,7 +446,7 @@ export default function PageSpeedTool() {
                         type="email"
                         required
                         value={leadData.email}
-                        onChange={(e) => setLeadData(prev => ({ ...prev, email: e.target.value }))}
+                        onChange={(e) => setLeadData((prev) => ({ ...prev, email: e.target.value }))}
                         className="w-full border-2 border-black p-3 bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
                         placeholder="jouw@email.nl"
                       />
@@ -391,7 +461,7 @@ export default function PageSpeedTool() {
                         type="url"
                         required
                         value={leadData.website}
-                        onChange={(e) => setLeadData(prev => ({ ...prev, website: e.target.value }))}
+                        onChange={(e) => setLeadData((prev) => ({ ...prev, website: e.target.value }))}
                         className="w-full border-2 border-black p-3 bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
                         placeholder="https://jouwbedrijf.nl"
                       />
@@ -403,7 +473,7 @@ export default function PageSpeedTool() {
                       <input
                         type="tel"
                         value={leadData.telefoon}
-                        onChange={(e) => setLeadData(prev => ({ ...prev, telefoon: e.target.value }))}
+                        onChange={(e) => setLeadData((prev) => ({ ...prev, telefoon: e.target.value }))}
                         className="w-full border-2 border-black p-3 bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
                         placeholder="06-12345678"
                       />
@@ -413,11 +483,14 @@ export default function PageSpeedTool() {
                     <input
                       type="checkbox"
                       checked={leadData.interesse}
-                      onChange={(e) => setLeadData(prev => ({ ...prev, interesse: e.target.checked }))}
+                      onChange={(e) =>
+                        setLeadData((prev) => ({ ...prev, interesse: e.target.checked }))
+                      }
                       className="w-5 h-5 border-2 border-black accent-[#FF4500]"
                     />
                     <span className="text-sm">
-                      Ja, ik wil graag weten hoe ik mijn website kan versnellen en meer klanten kan aantrekken.
+                      Ja, ik wil graag weten hoe ik mijn website kan versnellen en meer klanten kan
+                      aantrekken.
                     </span>
                   </label>
 
@@ -449,13 +522,15 @@ export default function PageSpeedTool() {
 
             {/* Lead Success */}
             {leadStatus === "success" && (
-              <div className="mt-6 border-2 border-black bg-white p-6 text-center" data-testid="lead-success">
+              <div
+                className="mt-6 border-2 border-black bg-white p-6 text-center"
+                data-testid="lead-success"
+              >
                 <CheckCircle2 size={40} className="text-[#FF4500] mx-auto mb-3" strokeWidth={2.5} />
-                <h3 className="font-heading font-extrabold uppercase text-xl mb-2">
-                  Bedankt!
-                </h3>
+                <h3 className="font-heading font-extrabold uppercase text-xl mb-2">Bedankt!</h3>
                 <p className="text-sm text-[#525252]">
-                  Ik stuur je binnen 24 uur een persoonlijk adviesrapport met concrete verbeterpunten voor jouw website.
+                  Ik stuur je binnen 24 uur een persoonlijk adviesrapport met concrete
+                  verbeterpunten voor jouw website.
                 </p>
               </div>
             )}
@@ -507,17 +582,24 @@ function ScoreInterpretation({ score }: ScoreInterpretationProps) {
   if (score >= 50) {
     return (
       <p className="text-sm text-white/80">
-        Je site scoort <strong className="text-white">{score}/100</strong> — er is ruimte voor verbetering.
-        Met een paar optimalisaties (afbeeldingen comprimeren, caching, script vertraging) kan je
-        flink winnen. <a href="/contact" className="text-[#FF4500] underline">Neem contact op</a> voor een gratis advies.
+        Je site scoort <strong className="text-white">{score}/100</strong> — er is ruimte voor
+        verbetering. Met een paar optimalisaties (afbeeldingen comprimeren, caching, script
+        vertraging) kan je flink winnen.{" "}
+        <a href="/contact" className="text-[#FF4500] underline">
+          Neem contact op
+        </a>{" "}
+        voor een gratis advies.
       </p>
     );
   }
   return (
     <p className="text-sm text-white/80">
-      Je site scoort <strong className="text-white">{score}/100</strong> — dit kost je bezoekers en rankings.
-      Een trage site heeft directe impact op bounce rate en conversie.{" "}
-      <a href="/contact" className="text-[#FF4500] underline">Laten we dit oplossen</a>.
+      Je site scoort <strong className="text-white">{score}/100</strong> — dit kost je bezoekers en
+      rankings. Een trage site heeft directe impact op bounce rate en conversie.{" "}
+      <a href="/contact" className="text-[#FF4500] underline">
+        Laten we dit oplossen
+      </a>
+      .
     </p>
   );
 }
