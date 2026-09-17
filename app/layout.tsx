@@ -7,25 +7,29 @@ import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import CookieBanner from "@/components/CookieBanner";
 
+// ✅ Gereduceerd: alleen weights die daadwerkelijk gebruikt worden
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800", "900"],
+  weight: ["700", "900"],  // ← 700 voor subheadings, 900 voor H1
   variable: "--font-outfit",
   display: "swap",
+  preload: true,  // ← Voeg preload toe
 });
 
 const ibmPlex = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],  // ← 400 voor body, 700 voor bold
   variable: "--font-ibm-plex",
   display: "swap",
+  preload: true,
 });
 
 const ibmMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "700"],  // ← 400 voor normaal, 700 voor bold
   variable: "--font-ibm-mono",
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -98,14 +102,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="nl" className={`${outfit.variable} ${ibmPlex.variable} ${ibmMono.variable}`}>
       <head>
         <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FF4500'/%3E%3Cpath d='M55 20L35 55H50L45 80L70 45H55L60 20H55Z' fill='white'/%3E%3C/svg%3E" type="image/svg+xml" />
-        {/* Google Tag Manager */}
-        <Script id="gtm-script" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-PSM987PS');`}
-        </Script>
       </head>
       <body>
         {/* GTM noscript */}
@@ -118,27 +114,36 @@ export default function RootLayout({ children }: RootLayoutProps) {
           />
         </noscript>
 
-        {/* Google Analytics 4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-L8ZWH28FVR"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-script" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-L8ZWH28FVR');`}
-        </Script>
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
+
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
         <FloatingActions />
         <CookieBanner />
+
+        {/* ✅ GTM + GA4 nu aan het einde van body */}
+        <Script id="gtm-script" strategy="lazyOnload">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PSM987PS');`}
+        </Script>
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-L8ZWH28FVR"
+          strategy="lazyOnload"
+        />
+        <Script id="ga4-script" strategy="lazyOnload">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-L8ZWH28FVR');`}
+        </Script>
       </body>
     </html>
   );
