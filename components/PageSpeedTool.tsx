@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   AlertCircle,
   Send,
+  AlertTriangle,
 } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdapzjod";
@@ -37,7 +38,7 @@ interface LighthouseResult {
     "first-contentful-paint"?: LighthouseAudit;
     "server-response-time"?: LighthouseAudit;
   };
-  formFactor?: string; // ← FIX: toegevoegd voor debugging
+  formFactor?: string;
 }
 
 interface PageSpeedResponse {
@@ -119,7 +120,6 @@ export default function PageSpeedTool() {
     }
 
     try {
-      // ← FIX: strategy wordt nu correct doorgegeven aan de API
       const res = await fetch(
         `/api/pagespeed?url=${encodeURIComponent(scanUrl)}&strategy=${strategy}&_t=${Date.now()}`
       );
@@ -129,7 +129,7 @@ export default function PageSpeedTool() {
       }
       const data: PageSpeedResponse = await res.json();
 
-      // ← FIX: debug log om te controleren of strategy correct is
+      // Debug log om te controleren of strategy correct is
       if (typeof window !== "undefined") {
         console.log(
           `[PageSpeed] Requested: ${strategy} | Returned: ${data.lighthouseResult.formFactor}`
@@ -196,6 +196,15 @@ export default function PageSpeedTool() {
   // Extract scores from normalized API response
   const cats = result?.lighthouseResult?.categories || {};
   const audits = result?.lighthouseResult?.audits || {};
+
+  // Werkelijke formFactor uit de API-response
+  const actualFormFactor = result?.lighthouseResult?.formFactor || "";
+
+  // Detecteer of de API iets anders teruggaf dan we vroegen
+  const strategyMismatch =
+    actualFormFactor !== "" &&
+    ((strategy === "mobile" && actualFormFactor !== "mobile") ||
+      (strategy === "desktop" && actualFormFactor !== "desktop"));
 
   const scores: ScoresType | null = result
     ? {
@@ -324,15 +333,39 @@ export default function PageSpeedTool() {
             {/* Results */}
             {scores && (
               <div className="space-y-5" data-testid="pagespeed-results">
-                {/* ← FIX: subtle indicator van welk apparaat getest is */}
+                {/* Indicator: welk apparaat is daadwerkelijk getest? */}
                 <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#525252]">
                   <span
                     className={`w-2 h-2 rounded-full ${
-                      strategy === "mobile" ? "bg-[#FF4500]" : "bg-black"
+                      actualFormFactor === "mobile" ? "bg-[#FF4500]" : "bg-black"
                     }`}
                   />
-                  Getest op: {strategy === "mobile" ? "Mobiel" : "Desktop"}
+                  Getest op:{" "}
+                  {actualFormFactor === "mobile"
+                    ? "Mobiel"
+                    : actualFormFactor === "desktop"
+                      ? "Desktop"
+                      : strategy === "mobile"
+                        ? "Mobiel"
+                        : "Desktop"}
+                  {actualFormFactor && (
+                    <span className="text-[#525252]/60 normal-case">
+                      ({actualFormFactor})
+                    </span>
+                  )}
                 </div>
+
+                {/* Waarschuwing als de API iets anders teruggaf dan we vroegen */}
+                {strategyMismatch && (
+                  <div className="flex items-start gap-2 border-2 border-[#FF4500] bg-[#FFF5F0] p-3">
+                    <AlertTriangle size={18} className="text-[#FF4500] mt-0.5 shrink-0" />
+                    <p className="text-xs font-medium text-[#FF4500]">
+                      Let op: je vroeg om <strong>{strategy}</strong>, maar de API gaf{" "}
+                      <strong>{actualFormFactor}</strong> terug. Dit kan door caching komen —
+                      probeer opnieuw of wacht even.
+                    </p>
+                  </div>
+                )}
 
                 {/* Main score circles */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
