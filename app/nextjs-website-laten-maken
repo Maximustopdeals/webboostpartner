@@ -1,0 +1,416 @@
+import Link from "next/link";
+import { ArrowRight, Zap, Gauge, Search, Shield, Smartphone, TrendingUp } from "lucide-react";
+import PortfolioSection from "@/components/PortfolioSection";
+import CTASection from "@/components/CTASection";
+import FAQ from "@/components/FAQ";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Next.js website laten maken | Specialist in Rotterdam",
+  description:
+    "Een Next.js website laten maken door een specialist in Rotterdam. Razendsnel, SEO-proof en gebouwd voor conversie. Bekijk de mogelijkheden en vraag een gratis analyse aan.",
+  alternates: { canonical: "https://webboostpartner.nl/nextjs-website-laten-maken" },
+};
+
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+const faqs: FAQItem[] = [
+  {
+    q: "Wat is het verschil tussen een Next.js website en een gewone website?",
+    a: "Een Next.js website is een moderne website die vooraf wordt opgebouwd (statisch gegenereerd) en direct aan de bezoeker wordt geleverd. Daardoor laadt de website binnen enkele seconden, ook op mobiel. Traditionele websites (zoals WordPress) moeten elke keer opnieuw worden opgebouwd, wat ze trager maakt.",
+  },
+  {
+    q: "Is Next.js geschikt voor mijn bedrijf?",
+    a: "Ja, in vrijwel alle gevallen. Next.js werkt voor ZZP'ers met een one-page website, voor MKB-bedrijven met meerdere diensten en voor bedrijven die groeien met SEO-landingspagina's. Alleen voor zeer complexe webapplicaties met specifieke eisen kan een andere aanpak nodig zijn. Tijdens een kennismaking bekijken we wat past.",
+  },
+  {
+    q: "Wat kost een Next.js website laten maken?",
+    a: "Onze Next.js websites starten vanaf €1.250 voor een compacte website voor ZZP'ers. Voor MKB-bedrijven met meerdere pagina's en SEO-optimalisatie starten we rond €1.950. Voor maatwerk met integraties en uitgebreide SEO zijn er pakketten vanaf €2.950. Bekijk de pakketten voor een volledig overzicht.",
+  },
+  {
+    q: "Kan ik mijn huidige WordPress website laten migreren naar Next.js?",
+    a: "Ja, dat doen we regelmatig. Bij een migratie behouden we uw content, URL-structuur en SEO-waarde. We zetten de website opnieuw op in Next.js en zorgen voor correcte redirects. Uw rankings blijven daardoor behouden — vaak verbeteren ze zelfs.",
+  },
+  {
+    q: "Hoe lang duurt het bouwen van een Next.js website?",
+    a: "Een compacte website is meestal binnen 2 weken klaar. Voor een uitgebreidere website met meerdere pagina's, SEO-optimalisatie en integraties rekenen we op 4 tot 6 weken. De exacte planning hangt af van het aantal pagina's en hoe snel we content en feedback ontvangen.",
+  },
+  {
+    q: "Waarom zou ik voor een Next.js specialist kiezen en niet voor een algemeen webbureau?",
+    a: "Een algemeen webbureau werkt vaak met WordPress of een website builder. Wij werken uitsluitend met Next.js. Daardoor kennen we de techniek door en door en halen we het maximale uit snelheid, SEO en onderhoudsvriendelijkheid. Dat vertaalt zich direct in betere prestaties en lagere onderhoudskosten.",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Next.js website laten maken",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "WebBoost Partner",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Rotterdam",
+      addressCountry: "NL",
+    },
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Rotterdam",
+  },
+  description:
+    "Next.js website laten maken door specialist in Rotterdam. Razendsnel, SEO-proof en conversiegericht.",
+};
+
+export default function NextjsWebsiteLatenMakenPage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* HERO */}
+      <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
+            // Next.js website laten maken
+          </p>
+
+          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-7xl">
+            Next.js website<br />
+            laten maken
+          </h1>
+
+          <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-3xl leading-relaxed">
+            <p>
+              Een website die razendsnel laadt, goed gevonden wordt in Google en 
+              bezoekers omzet in klanten. WebBoost Partner bouwt Next.js websites 
+              voor ondernemers in Rotterdam en omgeving.
+            </p>
+            <p>
+              Next.js is de moderne standaard voor websites die presteren. 
+              Geen plugins, geen updates, geen gedoe — maar een technische basis 
+              die jaren meegaat en uw website sneller maakt dan 95% van alle 
+              Nederlandse bedrijven.
+            </p>
+          </div>
+
+          {/* Trust-bar */}
+          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-[#525252]">
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#00B050] rounded-full" />
+              95+ PageSpeed
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#00B050] rounded-full" />
+              SEO inbegrepen
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#00B050] rounded-full" />
+              Vaste prijs
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#00B050] rounded-full" />
+              Reactie binnen 24 uur
+            </li>
+          </ul>
+
+          {/* Dubbele CTA */}
+          <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+            >
+              Vraag een gratis analyse aan <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/pakketten"
+              className="inline-flex items-center justify-center gap-2 bg-white text-black font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+            >
+              Bekijk pakketten
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WAT IS NEXT.JS */}
+      <section className="bg-white py-16 sm:py-24 border-b-2 border-black">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
+          <h2>Wat is een Next.js website?</h2>
+
+          <p>
+            Next.js is een moderne technologie waarmee websites razendsnel worden 
+            opgebouwd en geleverd aan de bezoeker. Waar traditionele systemen 
+            zoals WordPress bij elk bezoek opnieuw de pagina moeten samenstellen, 
+            levert Next.js de pagina direct kant-en-klaar aan.
+          </p>
+
+          <p>
+            Dat klinkt technisch, maar het resultaat is eenvoudig: uw website laadt 
+            binnen één seconde, ook op mobiel. En dat merkt u direct in uw resultaten.
+          </p>
+
+          <p>
+            Bekende platformen zoals Netflix, TikTok, Nike en Twitch gebruiken 
+            dezelfde technologie. Niet omdat het hip is, maar omdat het werkt.
+          </p>
+        </div>
+      </section>
+
+      {/* VOORDELEN */}
+      <section className="bg-[#FAFAFA] py-20 sm:py-28 border-b-2 border-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+              // Waarom Next.js
+            </p>
+            <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] mb-4">
+              Zes redenen om voor<br />Next.js te kiezen.
+            </h2>
+            <p className="text-lg text-[#525252] leading-relaxed">
+              Wat u merkt als ondernemer — geen technische verhalen, maar 
+              concrete voordelen.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Gauge,
+                title: "95+ PageSpeed",
+                desc: "Uw website laadt in minder dan 2 seconden. Sneller dan 95% van alle Nederlandse websites.",
+              },
+              {
+                icon: Search,
+                title: "Betere SEO",
+                desc: "Volledige controle over metadata, structuur en snelheid. Google begrijpt en waardeert dat.",
+              },
+              {
+                icon: Shield,
+                title: "Veiliger",
+                desc: "Geen plugins, geen updates, geen kwetsbaarheden. Uw website is inherent veilig.",
+              },
+              {
+                icon: Smartphone,
+                title: "Perfect op mobiel",
+                desc: "Dezelfde snelheid op elk apparaat. Zonder concessies aan design of functionaliteit.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Klaar voor groei",
+                desc: "Nieuwe pagina's toevoegen is eenvoudig. Uw website groeit mee met uw bedrijf.",
+              },
+              {
+                icon: Zap,
+                title: "Lagere kosten",
+                desc: "Geen maandelijkse plugin- of onderhoudskosten. Hosting is goedkoper en stabieler.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="bg-white border-2 border-black p-6 hover:shadow-brutal-sm hover:-translate-y-1 transition-all"
+              >
+                <div className="w-12 h-12 bg-[#FF4500] border-2 border-black flex items-center justify-center mb-4">
+                  <item.icon size={22} className="text-white" strokeWidth={2.5} />
+                </div>
+                <h3 className="font-heading font-extrabold uppercase text-lg tracking-tight mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#525252] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VOOR WIE */}
+      <section className="bg-white py-16 sm:py-24 border-b-2 border-black">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
+          <h2>Voor wie is een Next.js website geschikt?</h2>
+
+          <p>
+            Next.js is geschikt voor vrijwel elk type bedrijf. Van ZZP'er met een 
+            compacte website tot een groeiend MKB-bedrijf met meerdere diensten en 
+            SEO-landingspagina's.
+          </p>
+
+          <ul>
+            <li>
+              <strong>ZZP'ers en starters</strong> — die een professionele website 
+              nodig hebben om serieus online te gaan, zonder gedoe.
+            </li>
+            <li>
+              <strong>MKB-bedrijven</strong> — die klanten zoeken via Google en een 
+              website willen die meewerkt aan hun groei.
+            </li>
+            <li>
+              <strong>Dienstverleners</strong> — van aannemers tot coaches en 
+              zorgverleners, die vertrouwen willen uitstralen en aanvragen willen 
+              ontvangen.
+            </li>
+            <li>
+              <strong>Bedrijven met een verouderde website</strong> — die toe zijn 
+              aan een snellere, veiligere en beter vindbare website.
+            </li>
+          </ul>
+
+          <p>
+            Twijfelt u of Next.js bij uw bedrijf past? Neem gerust{" "}
+            <Link href="/contact">contact</Link> op voor een vrijblijvend gesprek.
+          </p>
+        </div>
+      </section>
+
+      {/* WERKWIJZE */}
+      <section className="bg-[#FAFAFA] py-20 sm:py-28 border-b-2 border-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+              // Werkwijze
+            </p>
+            <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] mb-4">
+              Van gesprek tot<br />live website.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                step: "01",
+                title: "Kennismaking",
+                desc: "We bespreken uw doelen, doelgroep en wensen. Vrijblijvend en zonder verplichtingen.",
+              },
+              {
+                step: "02",
+                title: "Ontwerp",
+                desc: "U ontvangt een uniek ontwerp op maat. We stemmen af tot het perfect past bij uw merk.",
+              },
+              {
+                step: "03",
+                title: "Development",
+                desc: "Ik bouw uw website in Next.js. Snel, veilig en volledig geoptimaliseerd voor SEO.",
+              },
+              {
+                step: "04",
+                title: "Lancering",
+                desc: "Uw website gaat live. Inclusief hosting, domein-koppeling en Search Console setup.",
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="bg-white border-2 border-black p-6 hover:shadow-brutal-sm transition-shadow"
+              >
+                <span className="font-heading font-black text-5xl text-[#FF4500] leading-none block mb-4">
+                  {item.step}
+                </span>
+                <h3 className="font-heading font-extrabold uppercase text-lg tracking-tight mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#525252] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PORTFOLIO */}
+      <PortfolioSection />
+
+      {/* NEXT.JS VS WORDPRESS */}
+      <section className="bg-white py-16 sm:py-24 border-b-2 border-black">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
+          <h2>Next.js of WordPress?</h2>
+
+          <p>
+            De meeste websites in Nederland draaien op WordPress. Dat werkt, 
+            maar het heeft ook nadelen: trager, kwetsbaarder, en u bent 
+            afhankelijk van plugins en updates. Next.js biedt een moderner 
+            alternatief.
+          </p>
+
+          <h3>Wat u merkt als ondernemer</h3>
+
+          <ul>
+            <li>
+              <strong>Snelheid</strong> — Next.js websites laden binnen 1-2 seconden, 
+              WordPress-websites vaak tussen 3 en 6 seconden.
+            </li>
+            <li>
+              <strong>Onderhoud</strong> — Next.js heeft geen wekelijkse updates nodig. 
+              Geen verrassingen, geen downtime.
+            </li>
+            <li>
+              <strong>Veiligheid</strong> — geen plugins betekent geen 
+              plugin-kwetsbaarheden. Uw website is inherent veiliger.
+            </li>
+            <li>
+              <strong>Kosten op lange termijn</strong> — geen abonnementen voor 
+              plugins, thema's of beveiligingssoftware.
+            </li>
+          </ul>
+
+          <p>
+            Meer weten over de verschillen? Bekijk onze uitgebreide vergelijking 
+            op de <Link href="/nextjs-vs-wordpress">Next.js vs WordPress</Link> pagina. 
+            Of als u een bestaande WordPress website wilt laten migreren, bekijk dan{" "}
+            <Link href="/wordpress-naar-nextjs">WordPress naar Next.js</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* INTERNE LINK NAAR BREED AANBOD */}
+      <section className="bg-[#FAFAFA] py-16 border-b-2 border-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
+            // Meer weten
+          </p>
+          <h2 className="font-heading font-extrabold uppercase text-2xl sm:text-3xl tracking-tight mb-4">
+            Niet specifiek op zoek naar Next.js?
+          </h2>
+          <p className="text-[#525252] leading-relaxed mb-6 max-w-2xl mx-auto">
+            Bekijk onze pagina over website laten maken in Rotterdam voor het 
+            volledige aanbod. Of bekijk direct de pakketten en prijzen.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/website-laten-maken-rotterdam"
+              className="inline-flex items-center gap-2 border-2 border-black bg-white text-black px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black hover:text-white transition-colors"
+            >
+              Website laten maken <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/pakketten"
+              className="inline-flex items-center gap-2 border-2 border-black bg-white text-black px-6 py-3 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black hover:text-white transition-colors"
+            >
+              Bekijk pakketten <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-white py-20 sm:py-28 border-b-2 border-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
+            // Veelgestelde vragen
+          </p>
+          <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] mb-12">
+            Uw vragen,<br />beantwoord.
+          </h2>
+
+          <FAQ items={faqs} schemaId="nextjs-website-laten-maken" />
+        </div>
+      </section>
+
+      <CTASection
+        title="Klaar voor een Next.js website?"
+        subtitle="Vraag een gratis analyse aan. Binnen 24 uur ziet u wat er mogelijk is voor uw bedrijf — zonder verplichtingen."
+        button="Vraag gratis analyse aan"
+      />
+    </>
+  );
+}
