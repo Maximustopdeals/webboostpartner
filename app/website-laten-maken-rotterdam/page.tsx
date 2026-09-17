@@ -51,7 +51,7 @@ const faqs: FAQItem[] = [
 export default function WebsiteRotterdamPage() {
   return (
     <>
-      {/* HERO — UITGEBREID MET TRUST-BAR + GRATIS SCHETS AANBOD */}
+      {/* HERO */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
@@ -59,19 +59,21 @@ export default function WebsiteRotterdamPage() {
           </p>
 
           <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-7xl">
-            Website laten<br/>maken in <span className="text-[#FF4500]">Rotterdam</span>
+            Website laten
+            <br />
+            maken in <span className="text-[#FF4500]">Rotterdam</span>
           </h1>
 
           <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-3xl leading-relaxed">
             <p>
-              Een website die professioneel oogt, snel laadt en nieuwe klanten oplevert. 
-              WebBoost Partner bouwt moderne Next.js websites voor Rotterdamse ondernemers 
+              Een website die professioneel oogt, snel laadt en nieuwe klanten oplevert.
+              WebBoost Partner bouwt moderne Next.js websites voor Rotterdamse ondernemers
               die online willen groeien.
             </p>
 
             <p>
-              Geen standaard templates, maar een website die past bij uw bedrijf, doelgroep 
-              en ambities. Met een sterke technische basis, slimme SEO‑structuur en een 
+              Geen standaard templates, maar een website die past bij uw bedrijf, doelgroep
+              en ambities. Met een sterke technische basis, slimme SEO‑structuur en een
               conversiegericht ontwerp.
             </p>
           </div>
@@ -80,7 +82,7 @@ export default function WebsiteRotterdamPage() {
           <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-[#525252]">
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
-              100/100 PageSpeed
+              95+ PageSpeed
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
@@ -99,7 +101,7 @@ export default function WebsiteRotterdamPage() {
           {/* Dubbele CTA — met gratis schets als primair aanbod */}
           <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
-              href="/contact"
+              href="/contact?intent=schets"
               className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
             >
               Vraag een gratis schets aan <ArrowRight size={18} />
@@ -125,81 +127,110 @@ export default function WebsiteRotterdamPage() {
       {/* CONTENT */}
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
-
           <h2>Waarom een professionele website belangrijk is</h2>
 
           <p>
-            Uw website is vaak het eerste contactmoment met een potentiële klant. 
-            Nog voordat iemand belt of een offerte aanvraagt, vormt een bezoeker een 
+            Uw website is vaak het eerste contactmoment met een potentiële klant.
+            Nog voordat iemand belt of een offerte aanvraagt, vormt een bezoeker een
             eerste indruk op basis van uw website.
           </p>
 
           <p>
-            In enkele seconden bepaalt iemand of uw bedrijf professioneel, betrouwbaar 
-            en geschikt genoeg is om contact mee op te nemen. Daarom moet een website 
+            In enkele seconden bepaalt iemand of uw bedrijf professioneel, betrouwbaar
+            en geschikt genoeg is om contact mee op te nemen. Daarom moet een website
             niet alleen mooi zijn, maar vooral effectief werken.
           </p>
 
           <p>Een professionele website helpt u met:</p>
 
           <ul>
-            <li><strong>Vertrouwen opbouwen</strong> door een professionele uitstraling.</li>
-            <li><strong>Meer aanvragen genereren</strong> met duidelijke CTA’s.</li>
-            <li><strong>Uw merk versterken</strong> met een herkenbare uitstraling.</li>
-            <li><strong>Beter gevonden worden</strong> dankzij een sterke technische basis.</li>
+            <li>
+              <strong>Vertrouwen opbouwen</strong> door een professionele uitstraling.
+            </li>
+            <li>
+              <strong>Meer aanvragen genereren</strong> met duidelijke CTA’s.
+            </li>
+            <li>
+              <strong>Uw merk versterken</strong> met een herkenbare uitstraling.
+            </li>
+            <li>
+              <strong>Beter gevonden worden</strong> dankzij een sterke technische basis.
+            </li>
           </ul>
 
           <h2>Wat krijgt u bij een website van WebBoost Partner</h2>
 
           <p>
-            Een website moet een digitaal fundament zijn waarmee uw bedrijf kan groeien. 
+            Een website moet een digitaal fundament zijn waarmee uw bedrijf kan groeien.
             Daarom combineren wij strategie, design, techniek en SEO.
           </p>
 
           <ul>
-            <li><strong>Maatwerk design</strong> — geen templates, maar een unieke uitstraling.</li>
-            <li><strong>Responsive ontwerp</strong> — perfect op mobiel, tablet en desktop.</li>
-            <li><strong>Technische SEO</strong> — correcte structuur, metadata en schema markup.</li>
-            <li><strong>Uitstekende prestaties</strong> — razendsnel en Core Web Vitals‑proof.</li>
-            <li><strong>Conversiegerichte structuur</strong> — duidelijke navigatie en CTA’s.</li>
-            <li><strong>Google Analytics 4 & Search Console</strong> — correct ingericht.</li>
-            <li><strong>Betrouwbare contactmogelijkheden</strong> — formulieren die werken.</li>
+            <li>
+              <strong>Maatwerk design</strong> — geen templates, maar een unieke uitstraling.
+            </li>
+            <li>
+              <strong>Responsive ontwerp</strong> — perfect op mobiel, tablet en desktop.
+            </li>
+            <li>
+              <strong>Technische SEO</strong> — correcte structuur, metadata en schema markup.
+            </li>
+            <li>
+              <strong>Uitstekende prestaties</strong> — razendsnel en Core Web Vitals‑proof.
+            </li>
+            <li>
+              <strong>Conversiegerichte structuur</strong> — duidelijke navigatie en CTA’s.
+            </li>
+            <li>
+              <strong>Google Analytics 4 & Search Console</strong> — correct ingericht.
+            </li>
+            <li>
+              <strong>Betrouwbare contactmogelijkheden</strong> — formulieren die werken.
+            </li>
           </ul>
 
           <h2>Website laten maken voor ZZP en MKB</h2>
 
           <p>
-            WebBoost Partner helpt ZZP’ers en MKB‑bedrijven in Rotterdam en omgeving 
+            WebBoost Partner helpt ZZP’ers en MKB‑bedrijven in Rotterdam en omgeving
             met websites die professioneel ogen en bijdragen aan groei.
           </p>
 
           <p>
-            Of u nu een aannemer bent in Capelle aan den IJssel, een coach in Hillegersberg, 
-            een fysiotherapeut in Kralingen of een ondernemer in het centrum: uw website 
+            Of u nu een aannemer bent in Capelle aan den IJssel, een coach in Hillegersberg,
+            een fysiotherapeut in Kralingen of een ondernemer in het centrum: uw website
             moet uw vakmanschap zichtbaar maken.
           </p>
 
           <p>
-            Vandaag een sterke basis, morgen eenvoudig uit te breiden met nieuwe diensten, 
+            Vandaag een sterke basis, morgen eenvoudig uit te breiden met nieuwe diensten,
             extra pagina’s of meerdere locaties.
           </p>
 
           <h2>Waarom bouwen met Next.js</h2>
 
           <p>
-            Next.js biedt een moderne technische basis waarmee websites extreem snel, 
+            Next.js biedt een moderne technische basis waarmee websites extreem snel,
             veilig en toekomstgericht gebouwd worden.
           </p>
 
           <ul>
-            <li><strong>Snellere prestaties</strong> — korte laadtijden.</li>
-            <li><strong>Sterke SEO‑basis</strong> — volledige controle over metadata.</li>
-            <li><strong>Meer veiligheid</strong> — minder afhankelijkheid van plugins.</li>
-            <li><strong>Toekomstbestendig</strong> — klaar voor groei.</li>
+            <li>
+              <strong>Snellere prestaties</strong> — korte laadtijden.
+            </li>
+            <li>
+              <strong>Sterke SEO‑basis</strong> — volledige controle over metadata.
+            </li>
+            <li>
+              <strong>Meer veiligheid</strong> — minder afhankelijkheid van plugins.
+            </li>
+            <li>
+              <strong>Toekomstbestendig</strong> — klaar voor groei.
+            </li>
           </ul>
 
           <p>
-            Voor Rotterdamse ondernemers betekent dit: een website die sneller werkt, 
+            Voor Rotterdamse ondernemers betekent dit: een website die sneller werkt,
             professioneler oogt en klaar is om online meer resultaat te behalen.
           </p>
 
@@ -207,25 +238,25 @@ export default function WebsiteRotterdamPage() {
 
           <h3>1. Kennismaking & strategie</h3>
           <p>
-            We bespreken uw bedrijf, doelgroep en doelen. U krijgt een duidelijk voorstel 
+            We bespreken uw bedrijf, doelgroep en doelen. U krijgt een duidelijk voorstel
             met aanpak, planning en investering.
           </p>
 
           <h3>2. Design & content</h3>
           <p>
-            Een professioneel ontwerp dat past bij uw merk en doelgroep. Geen templates, 
+            Een professioneel ontwerp dat past bij uw merk en doelgroep. Geen templates,
             maar een unieke uitstraling die vertrouwen opbouwt.
           </p>
 
           <h3>3. Ontwikkeling & optimalisatie</h3>
           <p>
-            Uw website wordt gebouwd met Next.js. Tijdens de ontwikkeling letten we op 
+            Uw website wordt gebouwd met Next.js. Tijdens de ontwikkeling letten we op
             gebruikservaring, SEO en prestaties.
           </p>
 
           <h3>4. Lancering & nazorg</h3>
           <p>
-            Na een uitgebreide controle zetten we uw website live. Ook daarna kunt u 
+            Na een uitgebreide controle zetten we uw website live. Ook daarna kunt u
             terecht voor uitbreidingen en verbeteringen.
           </p>
 
@@ -233,31 +264,29 @@ export default function WebsiteRotterdamPage() {
           <h2>Wat kost een website laten maken in Rotterdam?</h2>
 
           <p>
-            De investering hangt af van uw wensen. Een professionele website op maat 
+            De investering hangt af van uw wensen. Een professionele website op maat
             start bij een vast bedrag dat vooraf duidelijk is — geen verrassingen achteraf.
           </p>
 
-          <p>
-            Onze pakketten zijn opgebouwd voor verschillende behoeften:
-          </p>
+          <p>Onze pakketten zijn opgebouwd voor verschillende behoeften:</p>
 
           <ul>
             <li>
-              <strong>Starter</strong> — voor ZZP&apos;ers en starters die een professionele 
+              <strong>Starter</strong> — voor ZZP&apos;ers en starters die een professionele
               website nodig hebben om serieus online te gaan.
             </li>
             <li>
-              <strong>Professional</strong> — voor MKB-bedrijven die willen groeien met 
+              <strong>Professional</strong> — voor MKB-bedrijven die willen groeien met
               SEO, meerdere diensten en conversiegerichte pagina&apos;s.
             </li>
             <li>
-              <strong>Enterprise</strong> — voor organisaties die een uitgebreide website 
+              <strong>Enterprise</strong> — voor organisaties die een uitgebreide website
               met support en doorlopende optimalisatie nodig hebben.
             </li>
           </ul>
 
           <p>
-            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan — u ontvangt 
+            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan — u ontvangt
             binnen 24 uur een helder voorstel met vaste prijs.
           </p>
 
@@ -274,9 +303,9 @@ export default function WebsiteRotterdamPage() {
           <h2>Werkgebied</h2>
 
           <p>
-            Hoewel ik landelijk werk, zit het zwaartepunt van mijn klanten in Rotterdam 
-            en de directe omgeving: Capelle aan den IJssel, Krimpen aan den IJssel, 
-            Ridderkerk, Barendrecht en Schiedam. Lokaal werken heeft één groot voordeel: 
+            Hoewel ik landelijk werk, zit het zwaartepunt van mijn klanten in Rotterdam
+            en de directe omgeving: Capelle aan den IJssel, Krimpen aan den IJssel,
+            Ridderkerk, Barendrecht en Schiedam. Lokaal werken heeft één groot voordeel:
             ik begrijp uw markt, uw doelgroep en uw concurrentie.
           </p>
 
@@ -293,6 +322,7 @@ export default function WebsiteRotterdamPage() {
         title="Vraag een gratis schets aan."
         subtitle="Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien. Zonder verplichtingen, zonder verkoopgesprek."
         button="Vraag gratis schets aan"
+        href="/contact?intent=schets"
       />
     </>
   );
