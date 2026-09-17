@@ -21,8 +21,9 @@ export default function Marquee() {
     <section className="bg-black border-y-2 border-black overflow-hidden py-6 sm:py-8" data-testid="marquee-banner">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex items-center gap-8 sm:gap-12 overflow-hidden">
+          {/* FIX: "Vertrouwd door" → "Next.js is de technologie achter" (feitelijk + juridisch veilig) */}
           <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] font-mono shrink-0">
-            Vertrouwd door
+            Next.js is de technologie achter
           </span>
           <div
             className="flex items-center gap-8 sm:gap-12 animate-marquee whitespace-nowrap"
