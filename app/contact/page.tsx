@@ -107,7 +107,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* RIGHT SIDE — Suspense wrapper verplicht voor useSearchParams */}
+          {/* RIGHT SIDE — Suspense wrapper is verplicht voor useSearchParams */}
           <div className="lg:col-span-3">
             <Suspense
               fallback={
