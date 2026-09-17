@@ -25,7 +25,6 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-20 pb-28 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-2 border-2 border-black bg-white px-3 py-1 mb-6">
-              {/* FIX 1: animate-pulse verwijderd */}
               <span className="w-2 h-2 bg-[#FF4500] rounded-full" />
               <span className="font-mono text-xs uppercase tracking-widest">
                 Next.js website laten maken in Rotterdam
@@ -73,7 +72,6 @@ export default function HomePage() {
 
           <div className="lg:col-span-4">
             <div className="relative max-w-sm ml-auto">
-              {/* FIX 2: will-change: auto toegevoegd aan PageSpeed-kaart */}
               <div
                 className="bg-white border-2 border-black shadow-brutal p-6"
                 style={{ willChange: "auto" }}
@@ -87,18 +85,19 @@ export default function HomePage() {
                   <span className="text-[#525252] font-mono text-sm mb-2">/100</span>
                 </div>
 
+                {/* FIX: FID vervangen door officiële Core Web Vitals (LCP, INP, CLS) */}
                 <div className="space-y-1 text-xs font-mono">
                   <div className="flex justify-between">
-                    <span>Laadtijd</span>
-                    <span className="font-bold">onder 2s</span>
+                    <span>LCP</span>
+                    <span className="font-bold">0.6s</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Stabiliteit</span>
-                    <span className="font-bold">Uitstekend</span>
+                    <span>INP</span>
+                    <span className="font-bold">&lt; 200ms</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Reactietijd</span>
-                    <span className="font-bold">Direct</span>
+                    <span>CLS</span>
+                    <span className="font-bold">0.00</span>
                   </div>
                 </div>
 
