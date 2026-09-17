@@ -8,28 +8,32 @@ import FloatingActions from "@/components/FloatingActions";
 import CookieBanner from "@/components/CookieBanner";
 
 // ✅ Gereduceerd: alleen weights die daadwerkelijk gebruikt worden
+// ✅ Fix 3: adjustFontFallback toegevoegd voor minder layout shift
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["700", "900"],  // ← 700 voor subheadings, 900 voor H1
+  weight: ["700", "900"],
   variable: "--font-outfit",
   display: "swap",
-  preload: true,  // ← Voeg preload toe
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const ibmPlex = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["400", "700"],  // ← 400 voor body, 700 voor bold
+  weight: ["400", "700"],
   variable: "--font-ibm-plex",
   display: "swap",
   preload: true,
+  adjustFontFallback: true,
 });
 
 const ibmMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],  // ← 400 voor normaal, 700 voor bold
+  weight: ["400", "700"],
   variable: "--font-ibm-mono",
   display: "swap",
   preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -125,7 +129,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <FloatingActions />
         <CookieBanner />
 
-        {/* ✅ GTM + GA4 nu aan het einde van body */}
+        {/* GTM + GA4 nu aan het einde van body */}
         <Script id="gtm-script" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
