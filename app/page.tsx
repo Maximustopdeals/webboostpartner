@@ -25,6 +25,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-20 pb-28 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-2 border-2 border-black bg-white px-3 py-1 mb-6">
+              {/* FIX 1: animate-pulse verwijderd */}
               <span className="w-2 h-2 bg-[#FF4500] rounded-full" />
               <span className="font-mono text-xs uppercase tracking-widest">
                 Next.js website laten maken in Rotterdam
@@ -72,7 +73,11 @@ export default function HomePage() {
 
           <div className="lg:col-span-4">
             <div className="relative max-w-sm ml-auto">
-              <div className="bg-white border-2 border-black shadow-brutal p-6">
+              {/* FIX 2: will-change: auto toegevoegd aan PageSpeed-kaart */}
+              <div
+                className="bg-white border-2 border-black shadow-brutal p-6"
+                style={{ willChange: "auto" }}
+              >
                 <p className="font-mono text-xs uppercase tracking-widest text-[#525252] mb-2">
                   PageSpeed Insights
                 </p>
