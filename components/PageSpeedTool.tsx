@@ -68,6 +68,37 @@ function getAuditValue(audit?: LighthouseAudit): string {
   return audit.displayValue;
 }
 
+/**
+ * Normaliseert een URL:
+ * 1. Voegt https:// toe als dat ontbreekt
+ * 2. Voegt www. toe als er geen subdomein is (om redirects te voorkomen)
+ */
+function normalizeUrl(input: string): string {
+  let scanUrl = input.trim();
+
+  // Voeg https:// toe als het ontbreekt
+  if (!/^https?:\/\//i.test(scanUrl)) {
+    scanUrl = "https://" + scanUrl;
+  }
+
+  try {
+    const urlObj = new URL(scanUrl);
+    const hostname = urlObj.hostname;
+
+    // Als er geen subdomein is (bijv. "webboostpartner.nl" → 2 delen)
+    // voeg dan "www." toe om redirects te voorkomen
+    const parts = hostname.split(".");
+    if (parts.length === 2 && !hostname.startsWith("www.")) {
+      urlObj.hostname = "www." + hostname;
+      scanUrl = urlObj.toString();
+    }
+  } catch {
+    // Ongeldige URL — laat staan, de API geeft zelf een fout terug
+  }
+
+  return scanUrl;
+}
+
 // Props interfaces
 interface ScoreCircleProps {
   score: number;
@@ -114,10 +145,8 @@ export default function PageSpeedTool() {
     setResult(null);
     setShowLeadForm(false);
 
-    let scanUrl: string = url.trim();
-    if (!/^https?:\/\//i.test(scanUrl)) {
-      scanUrl = "https://" + scanUrl;
-    }
+    // Normaliseer de URL (voegt https:// en www. toe waar nodig)
+    const scanUrl = normalizeUrl(url);
 
     try {
       const res = await fetch(
@@ -132,7 +161,7 @@ export default function PageSpeedTool() {
       // Debug log om te controleren of strategy correct is
       if (typeof window !== "undefined") {
         console.log(
-          `[PageSpeed] Requested: ${strategy} | Returned: ${data.lighthouseResult.formFactor}`
+          `[PageSpeed] Requested: ${strategy} | Returned: ${data.lighthouseResult.formFactor} | URL: ${scanUrl}`
         );
       }
 
@@ -290,6 +319,11 @@ export default function PageSpeedTool() {
                   )}
                 </button>
               </div>
+              {/* Subtiele hint over www-normalisatie */}
+              <p className="mt-2 text-xs text-[#525252]/70">
+                Tip: u hoeft geen <span className="font-mono">www.</span> of{" "}
+                <span className="font-mono">https://</span> in te voeren — dat regelen wij.
+              </p>
             </div>
 
             {/* Device toggle */}
