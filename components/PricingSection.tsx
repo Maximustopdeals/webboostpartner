@@ -31,8 +31,8 @@ const packages: PricingPackage[] = [
     promise: "Een professionele website die werkt — zonder gedoe.",
     features: [
       "Professioneel Next.js ontwerp",
-      "Razendsnelle laadtijd (binnen 1 seconde)",
-      "100/100 PageSpeed",
+      "Razendsnelle laadtijd (onder 2 seconden)",
+      "95+ PageSpeed",
       "3–5 pagina's (Home, Diensten, Contact)",
       "Mobiel geoptimaliseerd",
       "Basis SEO (titels, meta's, structuur)",
@@ -80,7 +80,7 @@ const packages: PricingPackage[] = [
       "Integraties (CRM, boekingssysteem, API's)",
       "Uitgebreide analytics dashboards",
       "Lokale + regionale SEO-strategie",
-      "Laadtijd onder 0,8s",
+      "Laadtijd onder 1 seconde",
     ],
   },
   {
