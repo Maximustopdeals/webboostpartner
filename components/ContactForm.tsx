@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 const FALLBACK_ENDPOINT: string = "https://formspree.io/f/mdapzjod";
 
-// Interface voor Field component props
 interface FieldProps {
   label: string;
   name: string;
@@ -20,8 +20,22 @@ interface FormStatus {
 }
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
+  const intent = searchParams.get("intent");
+
+  const [schetsAanvraag, setSchetsAanvraag] = useState(intent === "schets");
+  const [offerteAanvraag, setOfferteAanvraag] = useState(intent === "offerte");
+  const [gesprekAanvraag, setGesprekAanvraag] = useState(intent === "gesprek");
+
   const [status, setStatus] = useState<FormStatus["status"]>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+
+  const getTitle = (): string => {
+    if (intent === "schets") return "Vraag een gratis schets aan";
+    if (intent === "offerte") return "Vraag een offerte aan";
+    if (intent === "gesprek") return "Plan een kennismaking";
+    return "Stuur een bericht";
+  };
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
@@ -30,8 +44,13 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Log voor debugging (verwijder in productie)
-    console.log("Formspree endpoint:", FALLBACK_ENDPOINT);
+    data.set("intentie_schets", schetsAanvraag ? "JA" : "NEE");
+    data.set("intentie_offerte", offerteAanvraag ? "JA" : "NEE");
+    data.set("intentie_gesprek", gesprekAanvraag ? "JA" : "NEE");
+
+    if (intent) {
+      data.set("cta_bron", intent);
+    }
 
     try {
       const res = await fetch(FALLBACK_ENDPOINT, {
@@ -40,9 +59,6 @@ export default function ContactForm() {
         headers: { Accept: "application/json" },
       });
 
-      // Log response status voor debugging
-      console.log("Response status:", res.status, res.statusText);
-
       if (res.ok) {
         setStatus("success");
         form.reset();
@@ -50,7 +66,6 @@ export default function ContactForm() {
         let msg = "Er ging iets mis. Probeer het opnieuw.";
         try {
           const json = await res.json();
-          console.log("Error response:", json);
           if (json?.errors?.[0]?.message) {
             msg = json.errors[0].message;
           } else if (json?.error) {
@@ -63,8 +78,10 @@ export default function ContactForm() {
         setStatus("error");
       }
     } catch (err: unknown) {
-      console.error("Fetch error:", err);
-      const errorMessage = err instanceof Error ? err.message : "Netwerkfout. Controleer je verbinding of probeer het later opnieuw.";
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Netwerkfout. Controleer je verbinding of probeer het later opnieuw.";
       setErrorMsg(errorMessage);
       setStatus("error");
     }
@@ -93,6 +110,15 @@ export default function ContactForm() {
       className="bg-white border-2 border-black p-6 sm:p-10 shadow-brutal space-y-5"
       data-testid="contact-form"
     >
+      <div className="border-b-2 border-black pb-4 mb-2">
+        <h2 className="font-heading font-extrabold uppercase text-2xl">
+          {getTitle()}
+        </h2>
+        <p className="text-sm text-[#525252] mt-1">
+          Vul het formulier in en ik reageer binnen 24 uur persoonlijk.
+        </p>
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-5">
         <Field label="Naam *" name="naam" required={true} testid="field-naam" />
         <Field label="Bedrijfsnaam" name="bedrijf" testid="field-bedrijf" />
@@ -133,8 +159,68 @@ export default function ContactForm() {
         </select>
       </div>
 
+      <div className="border-2 border-black bg-[#FAFAFA] p-5 space-y-4">
+        <p className="font-heading font-bold uppercase text-xs tracking-widest text-[#525252]">
+          Waar kan ik u mee helpen?
+        </p>
+
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={schetsAanvraag}
+            onChange={(e) => setSchetsAanvraag(e.target.checked)}
+            className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
+            data-testid="intent-schets"
+          />
+          <span className="text-sm">
+            <strong>Ja, ik wil een gratis schets</strong>
+            <br />
+            <span className="text-[#525252]">
+              Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien.
+            </span>
+          </span>
+        </label>
+
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={offerteAanvraag}
+            onChange={(e) => setOfferteAanvraag(e.target.checked)}
+            className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
+            data-testid="intent-offerte"
+          />
+          <span className="text-sm">
+            <strong>Ja, ik wil een offerte</strong>
+            <br />
+            <span className="text-[#525252]">
+              U ontvangt een helder voorstel met vaste prijs.
+            </span>
+          </span>
+        </label>
+
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={gesprekAanvraag}
+            onChange={(e) => setGesprekAanvraag(e.target.checked)}
+            className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
+            data-testid="intent-gesprek"
+          />
+          <span className="text-sm">
+            <strong>Ja, ik wil een kennismakingsgesprek</strong>
+            <br />
+            <span className="text-[#525252]">
+              Vrijblijvend, telefonisch of via videocall.
+            </span>
+          </span>
+        </label>
+      </div>
+
       {status === "error" && (
-        <div className="flex items-start gap-2 border-2 border-black bg-[#FFE5DA] p-4" data-testid="contact-form-error">
+        <div
+          className="flex items-start gap-2 border-2 border-black bg-[#FFE5DA] p-4"
+          data-testid="contact-form-error"
+        >
           <AlertCircle size={20} className="text-[#FF4500] mt-0.5 shrink-0" />
           <p className="text-sm font-medium">{errorMsg}</p>
         </div>
@@ -152,7 +238,8 @@ export default function ContactForm() {
           </>
         ) : (
           <>
-            Verstuur aanvraag <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+            Verstuur aanvraag{" "}
+            <Send size={18} className="group-hover:translate-x-1 transition-transform" />
           </>
         )}
       </button>
