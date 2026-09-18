@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Globe } from "lucide-react";
+import { ArrowRight, Sparkles, Globe, Quote } from "lucide-react";
 
 interface Project {
   name: string;
@@ -27,6 +27,11 @@ export default function PortfolioSection() {
       name: "Inas Kraamzorg",
       url: "https://inaskraamzorg.nl",
       tagline: "Zorgsector — warme branding + snelle Next.js performance",
+    },
+    {
+      name: "Cindy's Kraamzorg",
+      url: "https://cindyskraamzorg.nl",
+      tagline: "Kraamzorg — van WordPress naar Next.js, lagere hostingkosten",
     },
     {
       name: "Luxe Webshop",
@@ -71,7 +76,7 @@ export default function PortfolioSection() {
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((p) => (
             <div
               key={p.name}
@@ -98,6 +103,37 @@ export default function PortfolioSection() {
               </Link>
             </div>
           ))}
+        </div>
+
+        {/* TESTIMONIAL BLOK - CINDY'S KRAAMZORG */}
+        <div className="mt-20 border-2 border-black bg-[#FAFAFA] p-8 sm:p-12 shadow-brutal relative">
+          <Quote size={40} className="text-[#FF4500] mb-6" />
+          
+          <blockquote className="text-xl sm:text-2xl font-medium leading-relaxed mb-8">
+            "Ik vond het spannend om mijn website te laten vernieuwen, maar WebBoost Partner heeft me echt ontzorgd. 
+            De nieuwe website is zoveel sneller en professioneler dan mijn oude WordPress-site. 
+            Wat ik vooral fijn vond, is dat mijn e-mail gewoon bij Cloud86 bleef werken. 
+            Bovendien zijn mijn maandelijkse hostingkosten nu een stuk lager, omdat ik alleen nog maar 
+            mijn e-mailpakket nodig heb. Een absolute aanrader!"
+          </blockquote>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <p className="font-heading font-black uppercase text-lg tracking-tight">
+                Cindy
+              </p>
+              <p className="text-sm text-[#525252] font-mono uppercase tracking-wider">
+                Eigenaar, Cindy's Kraamzorg
+              </p>
+            </div>
+            <Link
+              href="https://cindyskraamzorg.nl"
+              target="_blank"
+              className="inline-flex items-center gap-2 bg-black text-white font-heading uppercase text-sm tracking-wider border-2 border-black px-6 py-3 hover:bg-[#FF4500] hover:border-[#FF4500] transition-all"
+            >
+              Bekijk website <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
 
         {/* CTA */}
