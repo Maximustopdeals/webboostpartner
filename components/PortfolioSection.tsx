@@ -2,12 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sparkles, Globe, Quote } from "lucide-react";
 
 interface Project {
   name: string;
   url: string;
   tagline: string;
+  image: string;
   isDemo?: boolean;
 }
 
@@ -17,26 +19,31 @@ export default function PortfolioSection() {
       name: "DTG Cleaning",
       url: "https://dtgcleaning.nl",
       tagline: "Schoonmaakbedrijf — razendsnelle lokale SEO website",
+      image: "/images/portfolio/dtg-cleaning.jpg",
     },
     {
       name: "Autorijschool Valberg",
       url: "https://autorijschoolvalberg.nl",
       tagline: "Rijschool — conversiegerichte website met landingspagina’s",
+      image: "/images/portfolio/valberg.jpg",
     },
     {
       name: "Inas Kraamzorg",
       url: "https://inaskraamzorg.nl",
       tagline: "Zorgsector — warme branding + snelle Next.js performance",
+      image: "/images/portfolio/inas.jpg",
     },
     {
       name: "Cindy's Kraamzorg",
       url: "https://cindyskraamzorg.nl",
       tagline: "Kraamzorg — van WordPress naar Next.js, lagere hostingkosten",
+      image: "/images/portfolio/cindys-kraamzorg.jpg",
     },
     {
       name: "Luxe Webshop",
       url: "https://luxe-webshop.vercel.app",
       tagline: "Showcase — high-end webshop met maatwerk design en schaalbare structuur",
+      image: "/images/portfolio/luxe-webshop.jpg",
       isDemo: true,
     },
   ];
@@ -80,27 +87,41 @@ export default function PortfolioSection() {
           {projects.map((p) => (
             <div
               key={p.name}
-              className="relative border-2 border-black p-6 bg-[#FAFAFA] shadow-brutal flex flex-col"
+              className="relative border-2 border-black bg-[#FAFAFA] shadow-brutal flex flex-col group overflow-hidden"
             >
               {p.isDemo && (
-                <span className="absolute -top-3 -right-3 bg-[#FF4500] text-white font-mono text-[10px] uppercase tracking-widest px-2 py-1 border-2 border-black">
+                <span className="absolute top-4 right-4 z-20 bg-[#FF4500] text-white font-mono text-[10px] uppercase tracking-widest px-2 py-1 border-2 border-black">
                   Showcase
                 </span>
               )}
 
-              <h3 className="font-heading font-black uppercase text-2xl mb-2">
-                {p.name}
-              </h3>
+              {/* AFBEELDING BLOK */}
+              <div className="relative w-full h-56 border-b-2 border-black overflow-hidden bg-gray-100">
+                <Image
+                  src={p.image}
+                  alt={`Screenshot van ${p.name}`}
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
 
-              <p className="text-sm text-[#525252] mb-6">{p.tagline}</p>
+              {/* TEKST BLOK */}
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="font-heading font-black uppercase text-2xl mb-2">
+                  {p.name}
+                </h3>
 
-              <Link
-                href={p.url}
-                target="_blank"
-                className="mt-auto inline-flex items-center gap-2 bg-black text-white font-heading uppercase text-sm tracking-wider border-2 border-black px-4 py-3 hover:bg-[#FF4500] hover:border-[#FF4500] transition-all"
-              >
-                Bekijk website <ArrowRight size={16} />
-              </Link>
+                <p className="text-sm text-[#525252] mb-6">{p.tagline}</p>
+
+                <Link
+                  href={p.url}
+                  target="_blank"
+                  className="mt-auto inline-flex items-center justify-center gap-2 bg-black text-white font-heading uppercase text-sm tracking-wider border-2 border-black px-4 py-3 hover:bg-[#FF4500] hover:border-[#FF4500] transition-all"
+                >
+                  Bekijk website <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           ))}
         </div>
