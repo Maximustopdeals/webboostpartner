@@ -37,7 +37,7 @@ export default function HomePage() {
 
             <p className="mt-6 text-xl max-w-2xl text-[#1a1a1a] leading-relaxed font-semibold">
               Binnen 2 seconden laadtijd, 95+ PageSpeed en beter gevonden in Google.
-              Gebouwd met Next.js — moderne techniek die écht werkt. Meer aanvragen, minder gedoe.
+              Gebouwd met Next.js. Moderne techniek die écht werkt. Meer aanvragen, minder gedoe.
             </p>
 
             <ul className="mt-4 text-sm font-mono uppercase tracking-wider text-[#525252] space-y-1">
