@@ -51,7 +51,7 @@ export default function ContactPage() {
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
             Heeft u plannen voor een nieuwe website, wilt u overstappen naar Next.js of
             zoekt u eerlijk advies over uw huidige site? Neem vrijblijvend contact op. U
-            krijgt <strong>binnen 24 uur</strong> een persoonlijke reactie — geen
+            krijgt <strong>binnen 24 uur</strong> een persoonlijke reactie geen
             automatische mails, geen funnels.
           </p>
         </div>
