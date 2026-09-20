@@ -24,7 +24,7 @@ export default function PortfolioSection() {
       name: "Marley's Kraamzorg",
       url: "https://www.marleyskraamzorg.nl",
       tagline: "Kraamzorg — persoonlijke website met 1 vast gezicht",
-      image: "/images/portfolio/marleyskraamzorg.jpg",
+      image: "/images/portfolio/marleyskraamzorg-hero.jpg",
       testimonial: {
         quote:
           "Ik ben ontzettend blij met mijn nieuwe website. Het geeft precies de warme, persoonlijke uitstraling die ik wilde. Klanten vinden mij nu veel makkelijker online en de site voelt echt als een verlengstuk van mijn praktijk.",
