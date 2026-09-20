@@ -98,8 +98,8 @@ export default function PortfolioSection() {
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
             // Recent werk
           </p>
-          <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] mb-4">
-            Websites die wij<br />realiseerden.
+          <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] mb-4 text-balance">
+            Websites die wij realiseerden.
           </h2>
           <p className="text-lg text-[#525252] leading-relaxed">
             Een selectie van recente projecten. Van lokale dienstverleners tot 
