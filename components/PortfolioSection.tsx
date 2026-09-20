@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, Globe, Quote } from "lucide-react";
+import { ArrowRight, Sparkles, Globe } from "lucide-react";
 
 interface Project {
   name: string;
@@ -24,10 +24,10 @@ export default function PortfolioSection() {
       name: "Marley's Kraamzorg",
       url: "https://www.marleyskraamzorg.nl",
       tagline: "Kraamzorg — persoonlijke website met 1 vast gezicht",
-      image: "/images/portfolio/marleyskraamzorg.jpg",
+      image: "/images/portfolio/marleyskraamzorg.webp",
       testimonial: {
         quote:
-          "Ik ben ontzettend blij met mijn nieuwe website. Het geeft precies de warme, persoonlijke uitstraling die ik wilde. Klanten vinden mij nu veel makkelijker online.",
+          "Ik ben ontzettend blij met mijn nieuwe website. Het geeft precies de warme, persoonlijke uitstraling die ik wilde. Klanten vinden mij nu veel makkelijker online en de site voelt echt als een verlengstuk van mijn praktijk.",
         author: "Lisa",
         role: "Oprichter, Marley's Kraamzorg",
       },
@@ -36,7 +36,7 @@ export default function PortfolioSection() {
       name: "DTG Cleaning",
       url: "https://dtgcleaning.nl",
       tagline: "Schoonmaakbedrijf — razendsnelle lokale SEO website",
-      image: "/images/portfolio/dtg-cleaning.jpg",
+      image: "/images/portfolio/dtg-cleaning.webp",
       testimonial: {
         quote:
           "De nieuwe website is een enorme sprong vooruit. Hij laadt razendsnel en ziet er professioneel uit. Ik krijg nu veel meer aanvragen via de site.",
@@ -48,7 +48,7 @@ export default function PortfolioSection() {
       name: "Autorijschool Valberg",
       url: "https://autorijschoolvalberg.nl",
       tagline: "Rijschool — conversiegerichte website met landingspagina’s",
-      image: "/images/portfolio/valberg.jpg",
+      image: "/images/portfolio/valberg.webp",
       testimonial: {
         quote:
           "De website is modern, overzichtelijk en trekt precies de juiste doelgroep aan. Het aantal aanmeldingen via de site is flink gestegen.",
@@ -60,10 +60,10 @@ export default function PortfolioSection() {
       name: "Inas Kraamzorg",
       url: "https://inaskraamzorg.nl",
       tagline: "Zorgsector — warme branding + snelle Next.js performance",
-      image: "/images/portfolio/inas.jpg",
+      image: "/images/portfolio/inas.webp",
       testimonial: {
         quote:
-          "De website straalt precies de warmte en professionaliteit uit die bij mijn praktijk past. Ik ben er ontzettend trots op.",
+          "De website straalt precies de warmte en professionaliteit uit die bij mijn praktijk past. Ik merk dat aanstaande ouders mij nu makkelijker weten te vinden en zich meteen op hun gemak voelen als ze de site openen.",
         author: "Fatima",
         role: "Oprichter, Inas Kraamzorg",
       },
@@ -72,10 +72,10 @@ export default function PortfolioSection() {
       name: "Cindy's Kraamzorg",
       url: "https://cindyskraamzorg.nl",
       tagline: "Kraamzorg — van WordPress naar Next.js, lagere hostingkosten",
-      image: "/images/portfolio/cindys-kraamzorg.jpg",
+      image: "/images/portfolio/cindys-kraamzorg.webp",
       testimonial: {
         quote:
-          "De nieuwe website is zoveel sneller en professioneler. En ik bespaar nu maandelijks op mijn hostingkosten. Een absolute aanrader!",
+          "De nieuwe website is zoveel sneller en professioneler. En ik bespaar nu maandelijks op mijn hostingkosten. Maar wat ik het fijnste vind: de site voelt weer als mij. Klanten zeggen dat ze precies zien wie ik ben voordat ze mij bellen.",
         author: "Cindy",
         role: "Eigenaar, Cindy's Kraamzorg",
       },
@@ -83,8 +83,8 @@ export default function PortfolioSection() {
     {
       name: "Luxe Webshop",
       url: "https://luxe-webshop.vercel.app",
-      tagline: "Showcase — high-end webshop met maatwerk design en schaalbare structuur",
-      image: "/images/portfolio/luxe-webshop.jpg",
+      tagline: "Showcase — high-end webshop met maatwerk design",
+      image: "/images/portfolio/luxe-webshop.webp",
       isDemo: true,
     },
   ];
@@ -170,7 +170,7 @@ export default function PortfolioSection() {
                 <Link
                   href={p.url}
                   target="_blank"
-                  className="mt-auto inline-flex items-center justify-center gap-2 bg-black text-white font-heading uppercase text-sm tracking-wider border-2 border-black px-4 py-3 hover:bg-[#FF4500] hover:border-[#FF4500] transition-all"
+                  className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading uppercase text-sm tracking-wider border-2 border-black px-4 py-3 hover:bg-black hover:border-black transition-all"
                 >
                   Bekijk website <ArrowRight size={16} />
                 </Link>
