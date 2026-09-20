@@ -93,15 +93,15 @@ export default function PortfolioSection() {
     <section className="bg-white border-y-2 border-black py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
-        {/* HEADER */}
-        <div className="mb-12 max-w-3xl">
+        {/* HEADER — verbreed naar max-w-5xl */}
+        <div className="mb-12 max-w-5xl">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
             // Recent werk
           </p>
           <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] mb-4 text-balance">
             Websites die wij realiseerden.
           </h2>
-          <p className="text-lg text-[#525252] leading-relaxed">
+          <p className="text-lg text-[#525252] leading-relaxed max-w-3xl">
             Een selectie van recente projecten. Van lokale dienstverleners tot 
             high-end webshops — allemaal gebouwd met Next.js en geoptimaliseerd 
             voor snelheid, SEO en conversie.
