@@ -10,34 +10,75 @@ interface Project {
   url: string;
   tagline: string;
   image: string;
+  testimonial?: {
+    quote: string;
+    author: string;
+    role: string;
+  };
   isDemo?: boolean;
 }
 
 export default function PortfolioSection() {
   const projects: Project[] = [
     {
+      name: "Marley's Kraamzorg",
+      url: "https://www.marleyskraamzorg.nl",
+      tagline: "Kraamzorg — persoonlijke website met 1 vast gezicht",
+      image: "/images/portfolio/marleyskraamzorg.jpg",
+      testimonial: {
+        quote:
+          "Ik ben ontzettend blij met mijn nieuwe website. Het geeft precies de warme, persoonlijke uitstraling die ik wilde. Klanten vinden mij nu veel makkelijker online.",
+        author: "Lisa",
+        role: "Oprichter, Marley's Kraamzorg",
+      },
+    },
+    {
       name: "DTG Cleaning",
       url: "https://dtgcleaning.nl",
       tagline: "Schoonmaakbedrijf — razendsnelle lokale SEO website",
       image: "/images/portfolio/dtg-cleaning.jpg",
+      testimonial: {
+        quote:
+          "De nieuwe website is een enorme sprong vooruit. Hij laadt razendsnel en ziet er professioneel uit. Ik krijg nu veel meer aanvragen via de site.",
+        author: "Dominique",
+        role: "Eigenaar, DTG Cleaning",
+      },
     },
     {
       name: "Autorijschool Valberg",
       url: "https://autorijschoolvalberg.nl",
       tagline: "Rijschool — conversiegerichte website met landingspagina’s",
       image: "/images/portfolio/valberg.jpg",
+      testimonial: {
+        quote:
+          "De website is modern, overzichtelijk en trekt precies de juiste doelgroep aan. Het aantal aanmeldingen via de site is flink gestegen.",
+        author: "Roy",
+        role: "Eigenaar, Autorijschool Valberg",
+      },
     },
     {
       name: "Inas Kraamzorg",
       url: "https://inaskraamzorg.nl",
       tagline: "Zorgsector — warme branding + snelle Next.js performance",
       image: "/images/portfolio/inas.jpg",
+      testimonial: {
+        quote:
+          "De website straalt precies de warmte en professionaliteit uit die bij mijn praktijk past. Ik ben er ontzettend trots op.",
+        author: "Fatima",
+        role: "Oprichter, Inas Kraamzorg",
+      },
     },
     {
       name: "Cindy's Kraamzorg",
       url: "https://cindyskraamzorg.nl",
       tagline: "Kraamzorg — van WordPress naar Next.js, lagere hostingkosten",
       image: "/images/portfolio/cindys-kraamzorg.jpg",
+      testimonial: {
+        quote:
+          "De nieuwe website is zoveel sneller en professioneler. En ik bespaar nu maandelijks op mijn hostingkosten. Een absolute aanrader!",
+        author: "Cindy",
+        role: "Eigenaar, Cindy's Kraamzorg",
+      },
     },
     {
       name: "Luxe Webshop",
@@ -114,6 +155,18 @@ export default function PortfolioSection() {
 
                 <p className="text-sm text-[#525252] mb-6">{p.tagline}</p>
 
+                {/* TESTIMONIAL */}
+                {p.testimonial && (
+                  <blockquote className="border-l-4 border-[#FF4500] pl-4 mb-6 italic text-sm text-[#525252]">
+                    <p className="mb-2">
+                      &ldquo;{p.testimonial.quote}&rdquo;
+                    </p>
+                    <footer className="font-mono text-xs uppercase tracking-wider not-italic text-[#0A0A0A]">
+                      — {p.testimonial.author}, {p.testimonial.role}
+                    </footer>
+                  </blockquote>
+                )}
+
                 <Link
                   href={p.url}
                   target="_blank"
@@ -124,37 +177,6 @@ export default function PortfolioSection() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* TESTIMONIAL BLOK - CINDY'S KRAAMZORG */}
-        <div className="mt-20 border-2 border-black bg-[#FAFAFA] p-8 sm:p-12 shadow-brutal relative">
-          <Quote size={40} className="text-[#FF4500] mb-6" />
-          
-          <blockquote className="text-xl sm:text-2xl font-medium leading-relaxed mb-8">
-            "Ik vond het spannend om mijn website te laten vernieuwen, maar WebBoost Partner heeft me echt ontzorgd. 
-            De nieuwe website is zoveel sneller en professioneler dan mijn oude WordPress-site. 
-            Wat ik vooral fijn vond, is dat mijn e-mail gewoon bij Cloud86 bleef werken. 
-            Bovendien zijn mijn maandelijkse hostingkosten nu een stuk lager, omdat ik alleen nog maar 
-            mijn e-mailpakket nodig heb. Een absolute aanrader!"
-          </blockquote>
-
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <p className="font-heading font-black uppercase text-lg tracking-tight">
-                Cindy
-              </p>
-              <p className="text-sm text-[#525252] font-mono uppercase tracking-wider">
-                Eigenaar, Cindy's Kraamzorg
-              </p>
-            </div>
-            <Link
-              href="https://cindyskraamzorg.nl"
-              target="_blank"
-              className="inline-flex items-center gap-2 bg-black text-white font-heading uppercase text-sm tracking-wider border-2 border-black px-6 py-3 hover:bg-[#FF4500] hover:border-[#FF4500] transition-all"
-            >
-              Bekijk website <ArrowRight size={16} />
-            </Link>
-          </div>
         </div>
 
         {/* CTA */}
