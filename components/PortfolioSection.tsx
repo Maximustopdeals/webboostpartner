@@ -24,7 +24,7 @@ export default function PortfolioSection() {
       name: "Marley's Kraamzorg",
       url: "https://www.marleyskraamzorg.nl",
       tagline: "Kraamzorg — persoonlijke website met 1 vast gezicht",
-      image: "/images/portfolio/marleyskraamzorg.webp",
+      image: "/images/portfolio/marleyskraamzorg.jpg",
       testimonial: {
         quote:
           "Ik ben ontzettend blij met mijn nieuwe website. Het geeft precies de warme, persoonlijke uitstraling die ik wilde. Klanten vinden mij nu veel makkelijker online en de site voelt echt als een verlengstuk van mijn praktijk.",
@@ -36,7 +36,7 @@ export default function PortfolioSection() {
       name: "DTG Cleaning",
       url: "https://dtgcleaning.nl",
       tagline: "Schoonmaakbedrijf — razendsnelle lokale SEO website",
-      image: "/images/portfolio/dtg-cleaning.webp",
+      image: "/images/portfolio/dtg-cleaning.jpg",
       testimonial: {
         quote:
           "De nieuwe website is een enorme sprong vooruit. Hij laadt razendsnel en ziet er professioneel uit. Ik krijg nu veel meer aanvragen via de site.",
@@ -48,7 +48,7 @@ export default function PortfolioSection() {
       name: "Autorijschool Valberg",
       url: "https://autorijschoolvalberg.nl",
       tagline: "Rijschool — conversiegerichte website met landingspagina’s",
-      image: "/images/portfolio/valberg.webp",
+      image: "/images/portfolio/valberg.jpg",
       testimonial: {
         quote:
           "De website is modern, overzichtelijk en trekt precies de juiste doelgroep aan. Het aantal aanmeldingen via de site is flink gestegen.",
@@ -60,7 +60,7 @@ export default function PortfolioSection() {
       name: "Inas Kraamzorg",
       url: "https://inaskraamzorg.nl",
       tagline: "Zorgsector — warme branding + snelle Next.js performance",
-      image: "/images/portfolio/inas.webp",
+      image: "/images/portfolio/inas.jpg",
       testimonial: {
         quote:
           "De website straalt precies de warmte en professionaliteit uit die bij mijn praktijk past. Ik merk dat aanstaande ouders mij nu makkelijker weten te vinden en zich meteen op hun gemak voelen als ze de site openen.",
@@ -72,7 +72,7 @@ export default function PortfolioSection() {
       name: "Cindy's Kraamzorg",
       url: "https://cindyskraamzorg.nl",
       tagline: "Kraamzorg — van WordPress naar Next.js, lagere hostingkosten",
-      image: "/images/portfolio/cindys-kraamzorg.webp",
+      image: "/images/portfolio/cindys-kraamzorg.jpg",
       testimonial: {
         quote:
           "De nieuwe website is zoveel sneller en professioneler. En ik bespaar nu maandelijks op mijn hostingkosten. Maar wat ik het fijnste vind: de site voelt weer als mij. Klanten zeggen dat ze precies zien wie ik ben voordat ze mij bellen.",
@@ -84,7 +84,7 @@ export default function PortfolioSection() {
       name: "Luxe Webshop",
       url: "https://luxe-webshop.vercel.app",
       tagline: "Showcase — high-end webshop met maatwerk design",
-      image: "/images/portfolio/luxe-webshop.webp",
+      image: "/images/portfolio/luxe-webshop.jpg",
       isDemo: true,
     },
   ];
