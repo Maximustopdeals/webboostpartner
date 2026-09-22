@@ -24,6 +24,76 @@ body {
   outline-offset: 2px;
 }
 
+/* ─── CUSTOM UTILITIES ─── */
+@layer utilities {
+  .text-orange {
+    color: #FF4500;
+  }
+  .bg-orange {
+    background-color: #FF4500;
+  }
+  .bg-orange-hover {
+    background-color: #E63E00;
+  }
+  .border-orange {
+    border-color: #FF4500;
+  }
+  .bg-near-black {
+    background-color: #0A0A0A;
+  }
+  .bg-off-white {
+    background-color: #F5F5F5;
+  }
+}
+
+/* ─── CUSTOM COMPONENTS ─── */
+@layer components {
+  .container-wb {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+  .font-mono-label {
+    font-family: var(--font-ibm-plex), ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .font-display {
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  .card-shadow {
+    box-shadow: 6px 6px 0px 0px #0A0A0A;
+  }
+
+  .cta-shadow {
+    box-shadow: 4px 4px 0px 0px #0A0A0A;
+  }
+}
+
 /* Prose styling for long-form SEO content */
 .prose-brutal h2 {
   font-family: var(--font-outfit), sans-serif;
@@ -108,6 +178,7 @@ body {
 }
 
 /* Marquee handled by JS requestAnimationFrame */
+
 /* WhatsApp widget animation */
 @keyframes fade-up {
   from {
