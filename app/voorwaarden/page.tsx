@@ -10,7 +10,7 @@ export default function VoorwaardenPage() {
       <section className="pt-[72px]">
         <div className="container-wb py-16 lg:py-20">
           <span className="font-mono-label text-orange block mb-4">
-            // LEGAAL
+            
           </span>
           <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] mb-6">
             <span className="block">
