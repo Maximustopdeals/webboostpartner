@@ -162,9 +162,9 @@ export default function WebsiteRotterdamPage() {
             // Website laten maken Rotterdam
           </p>
 
-          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-[clamp(2rem,6vw,4.5rem)]">
-  Website laten maken in <span className="text-[#FF4500]">Rotterdam</span>
-</h1>
+          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-4xl sm:text-5xl lg:text-6xl max-w-none">
+            Website laten maken in <span className="text-[#FF4500]">Rotterdam</span>
+          </h1>
 
           <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-3xl leading-relaxed">
             <p>
@@ -362,7 +362,7 @@ export default function WebsiteRotterdamPage() {
             terecht voor uitbreidingen en verbeteringen.
           </p>
 
-          {/* WAT KOST HET — ACTUELE PRIJZEN UIT SCREENSHOT */}
+          {/* WAT KOST HET */}
           <h2>Wat kost een website laten maken in Rotterdam?</h2>
 
           <p>
