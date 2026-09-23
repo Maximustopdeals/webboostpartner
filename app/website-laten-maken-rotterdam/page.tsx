@@ -162,11 +162,9 @@ export default function WebsiteRotterdamPage() {
             // Website laten maken Rotterdam
           </p>
 
-          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-7xl">
-            Website laten
-            <br />
-            maken in <span className="text-[#FF4500]">Rotterdam</span>
-          </h1>
+          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-[clamp(2rem,6vw,4.5rem)]">
+  Website laten maken in <span className="text-[#FF4500]">Rotterdam</span>
+</h1>
 
           <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-3xl leading-relaxed">
             <p>
