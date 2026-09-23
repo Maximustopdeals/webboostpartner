@@ -116,7 +116,7 @@ export default function WebsiteRotterdamPage() {
 
           {/* Subtiele uitleg onder CTA */}
           <p className="mt-4 text-sm text-[#525252]">
-            Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien — zonder verplichtingen.
+            Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien zonder verplichtingen.
           </p>
         </div>
       </section>
@@ -265,7 +265,7 @@ export default function WebsiteRotterdamPage() {
 
           <p>
             De investering hangt af van uw wensen. Een professionele website op maat
-            start bij een vast bedrag dat vooraf duidelijk is — geen verrassingen achteraf.
+            start bij een vast bedrag dat vooraf duidelijk is. Geen verrassingen achteraf.
           </p>
 
           <p>Onze pakketten zijn opgebouwd voor verschillende behoeften:</p>
@@ -286,7 +286,7 @@ export default function WebsiteRotterdamPage() {
           </ul>
 
           <p>
-            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan — u ontvangt
+            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan. U ontvangt
             binnen 24 uur een helder voorstel met vaste prijs.
           </p>
 
