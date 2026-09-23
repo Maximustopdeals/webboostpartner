@@ -212,7 +212,7 @@ export default function HomePage() {
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
               // Recent werk
             </p>
-            <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
+            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[0.95]">
               Websites die<br />presteren.
             </h2>
           </div>
@@ -239,7 +239,7 @@ export default function HomePage() {
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
               // Waarom WebBoost Partner
             </p>
-            <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
+            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[0.95]">
               Waarom ondernemers<br />voor ons kiezen.
             </h2>
           </div>
