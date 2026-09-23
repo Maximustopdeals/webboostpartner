@@ -6,10 +6,31 @@ import PortfolioSection from "@/components/PortfolioSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website laten maken Rotterdam | Professionele Next.js Websites",
+  title: "Website Laten Maken Rotterdam | Vanaf €1.250 | WebBoost Partner",
   description:
-    "Een professionele website laten maken in Rotterdam? WebBoost Partner bouwt snelle, moderne Next.js websites die scoren in Google en nieuwe klanten opleveren.",
-  alternates: { canonical: "https://webboostpartner.nl/website-laten-maken-rotterdam" },
+    "Professionele website laten maken in Rotterdam? WebBoost Partner bouwt snelle, SEO-geoptimaliseerde websites voor ZZP & MKB. Vaste prijzen. Gratis schets binnen 24 uur.",
+  keywords: [
+    "website laten maken Rotterdam",
+    "webdesign Rotterdam",
+    "website bouwen Rotterdam",
+    "nieuwe website Rotterdam",
+    "website maken ZZP Rotterdam",
+    "website laten maken prijs",
+    "goedkope website Rotterdam",
+    "professionele website Rotterdam",
+  ],
+  alternates: {
+    canonical: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
+  },
+  openGraph: {
+    title: "Website Laten Maken Rotterdam | Vanaf €1.250 | WebBoost Partner",
+    description:
+      "Snelle, SEO-geoptimaliseerde websites voor Rotterdamse ondernemers. Vaste prijzen, gratis schets binnen 24 uur. Bekijk ons werk.",
+    url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
+    siteName: "WebBoost Partner",
+    locale: "nl_NL",
+    type: "article",
+  },
 };
 
 interface FAQItem {
@@ -20,15 +41,15 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     q: "Hoe lang duurt het traject?",
-    a: "Een gemiddeld traject duurt 2 tot 4 weken. De exacte planning hangt af van het aantal pagina’s, de hoeveelheid content en hoe snel keuzes en feedback worden aangeleverd. Een eenvoudige website kan sneller live gaan, terwijl uitgebreide websites met blogs, meerdere diensten of lokale SEO meer tijd nodig hebben.",
+    a: "Een gemiddeld traject duurt 2 tot 4 weken. De exacte planning hangt af van het aantal pagina's, de hoeveelheid content en hoe snel keuzes en feedback worden aangeleverd. Een eenvoudige website kan sneller live gaan, terwijl uitgebreide websites met blogs, meerdere diensten of lokale SEO meer tijd nodig hebben.",
   },
   {
     q: "Kan mijn bestaande WordPress website worden overgezet naar Next.js?",
-    a: "Ja. Uw WordPress website kan worden vernieuwd naar Next.js. Dit gebeurt niet door simpelweg een knop om te zetten, maar door de website opnieuw op te bouwen met behoud van content, structuur en SEO‑waarde. Tijdens de migratie worden URL’s, metadata en redirects meegenomen zodat uw vindbaarheid behouden blijft.",
+    a: "Ja. Uw WordPress website kan worden vernieuwd naar Next.js. Dit gebeurt niet door simpelweg een knop om te zetten, maar door de website opnieuw op te bouwen met behoud van content, structuur en SEO-waarde. Tijdens de migratie worden URL's, metadata en redirects meegenomen zodat uw vindbaarheid behouden blijft.",
   },
   {
     q: "Is SEO inbegrepen?",
-    a: "Ja. Iedere website wordt technisch SEO‑proof gebouwd: correcte structuur, metadata, schema markup, sitemap.xml, robots.txt, Open Graph en een logische heading‑structuur. Voor lokale ondernemers in Rotterdam kunnen aanvullende lokale SEO‑optimalisaties worden ingericht.",
+    a: "Ja. Iedere website wordt technisch SEO-proof gebouwd: correcte structuur, metadata, schema markup, sitemap.xml, robots.txt, Open Graph en een logische heading-structuur. Voor lokale ondernemers in Rotterdam kunnen aanvullende lokale SEO-optimalisaties worden ingericht.",
   },
   {
     q: "Werk je alleen voor bedrijven in Rotterdam?",
@@ -36,21 +57,104 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Wat als ik later iets wil aanpassen?",
-    a: "Uw website wordt gebouwd met het oog op groei. Nieuwe pagina’s, diensten of functionaliteit kunnen eenvoudig worden toegevoegd. Kleine aanpassingen kunnen tegen een vast uurtarief worden uitgevoerd. Bij het Enterprise pakket zit 6 maanden support inbegrepen.",
+    a: "Uw website wordt gebouwd met het oog op groei. Nieuwe pagina's, diensten of functionaliteit kunnen eenvoudig worden toegevoegd. Kleine aanpassingen kunnen tegen een vast uurtarief worden uitgevoerd. Bij het Enterprise pakket zit 6 maanden support inbegrepen.",
   },
   {
     q: "Waarom kiezen voor Next.js in plaats van WordPress?",
-    a: "Veel WordPress websites worden na verloop van tijd zwaar door thema’s en plugins. Next.js biedt een moderne technische basis waarbij snelheid, veiligheid en prestaties centraal staan. Het resultaat is een website die sneller laadt, beter scoort in Google en minder onderhoud vraagt.",
+    a: "Veel WordPress websites worden na verloop van tijd zwaar door thema's en plugins. Next.js biedt een moderne technische basis waarbij snelheid, veiligheid en prestaties centraal staan. Het resultaat is een website die sneller laadt, beter scoort in Google en minder onderhoud vraagt.",
   },
   {
     q: "Kan ik zelf mijn website aanpassen?",
-    a: "Ja. Afhankelijk van uw wensen kan een CMS worden gekoppeld waarmee u zelf teksten, afbeeldingen of pagina’s kunt beheren. Voor grotere wijzigingen kunt u altijd terugvallen op WebBoost Partner.",
+    a: "Ja. Afhankelijk van uw wensen kan een CMS worden gekoppeld waarmee u zelf teksten, afbeeldingen of pagina's kunt beheren. Voor grotere wijzigingen kunt u altijd terugvallen op WebBoost Partner.",
   },
 ];
 
 export default function WebsiteRotterdamPage() {
   return (
     <>
+      {/* Schema Markup: LocalBusiness + BreadcrumbList + WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": "https://www.webboostpartner.nl/website-laten-maken-rotterdam#webpage",
+                url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
+                name: "Website Laten Maken Rotterdam | WebBoost Partner",
+                isPartOf: {
+                  "@id": "https://www.webboostpartner.nl/#website",
+                },
+                about: {
+                  "@id": "https://www.webboostpartner.nl/#organization",
+                },
+                breadcrumb: {
+                  "@id": "https://www.webboostpartner.nl/website-laten-maken-rotterdam#breadcrumb",
+                },
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.webboostpartner.nl/website-laten-maken-rotterdam#breadcrumb",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://www.webboostpartner.nl/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Website laten maken Rotterdam",
+                    item: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
+                  },
+                ],
+              },
+              {
+                "@type": "LocalBusiness",
+                "@id": "https://www.webboostpartner.nl/#localbusiness",
+                name: "WebBoost Partner",
+                description:
+                  "Webdesign bureau in Rotterdam. Professionele websites voor ZZP en MKB.",
+                url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
+                telephone: "+31642628242",
+                email: "info@webboostpartner.nl",
+                priceRange: "€",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Neeltje Griffijnstraat 12",
+                  addressLocality: "Rotterdam",
+                  postalCode: "3065 KD",
+                  addressCountry: "NL",
+                },
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: "51.9225",
+                  longitude: "4.47917",
+                },
+                areaServed: [
+                  { "@type": "City", name: "Rotterdam" },
+                  { "@type": "City", name: "Capelle aan den IJssel" },
+                  { "@type": "City", name: "Krimpen aan den IJssel" },
+                  { "@type": "City", name: "Ridderkerk" },
+                  { "@type": "City", name: "Barendrecht" },
+                  { "@type": "City", name: "Schiedam" },
+                ],
+                serviceType: [
+                  "Webdesign",
+                  "Website ontwikkeling",
+                  "SEO",
+                  "Next.js development",
+                ],
+                openingHours: ["Mo,Tu,We,Th,Fr 09:00-18:00"],
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* HERO */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
@@ -73,7 +177,7 @@ export default function WebsiteRotterdamPage() {
 
             <p>
               Geen standaard templates, maar een website die past bij uw bedrijf, doelgroep
-              en ambities. Met een sterke technische basis, slimme SEO‑structuur en een
+              en ambities. Met een sterke technische basis, slimme SEO-structuur en een
               conversiegericht ontwerp.
             </p>
           </div>
@@ -98,7 +202,7 @@ export default function WebsiteRotterdamPage() {
             </li>
           </ul>
 
-          {/* Dubbele CTA — met gratis schets als primair aanbod */}
+          {/* Dubbele CTA */}
           <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
               href="/contact?intent=schets"
@@ -116,12 +220,12 @@ export default function WebsiteRotterdamPage() {
 
           {/* Subtiele uitleg onder CTA */}
           <p className="mt-4 text-sm text-[#525252]">
-            Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien zonder verplichtingen.
+            Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien — zonder verplichtingen.
           </p>
         </div>
       </section>
 
-      {/* PORTFOLIO — VISUEEL BEWIJS */}
+      {/* PORTFOLIO */}
       <PortfolioSection />
 
       {/* CONTENT */}
@@ -148,7 +252,7 @@ export default function WebsiteRotterdamPage() {
               <strong>Vertrouwen opbouwen</strong> door een professionele uitstraling.
             </li>
             <li>
-              <strong>Meer aanvragen genereren</strong> met duidelijke CTA’s.
+              <strong>Meer aanvragen genereren</strong> met duidelijke CTA's.
             </li>
             <li>
               <strong>Uw merk versterken</strong> met een herkenbare uitstraling.
@@ -176,10 +280,10 @@ export default function WebsiteRotterdamPage() {
               <strong>Technische SEO</strong> — correcte structuur, metadata en schema markup.
             </li>
             <li>
-              <strong>Uitstekende prestaties</strong> — razendsnel en Core Web Vitals‑proof.
+              <strong>Uitstekende prestaties</strong> — razendsnel en Core Web Vitals-proof.
             </li>
             <li>
-              <strong>Conversiegerichte structuur</strong> — duidelijke navigatie en CTA’s.
+              <strong>Conversiegerichte structuur</strong> — duidelijke navigatie en CTA's.
             </li>
             <li>
               <strong>Google Analytics 4 & Search Console</strong> — correct ingericht.
@@ -192,7 +296,7 @@ export default function WebsiteRotterdamPage() {
           <h2>Website laten maken voor ZZP en MKB</h2>
 
           <p>
-            WebBoost Partner helpt ZZP’ers en MKB‑bedrijven in Rotterdam en omgeving
+            WebBoost Partner helpt ZZP'ers en MKB-bedrijven in Rotterdam en omgeving
             met websites die professioneel ogen en bijdragen aan groei.
           </p>
 
@@ -204,7 +308,7 @@ export default function WebsiteRotterdamPage() {
 
           <p>
             Vandaag een sterke basis, morgen eenvoudig uit te breiden met nieuwe diensten,
-            extra pagina’s of meerdere locaties.
+            extra pagina's of meerdere locaties.
           </p>
 
           <h2>Waarom bouwen met Next.js</h2>
@@ -219,7 +323,7 @@ export default function WebsiteRotterdamPage() {
               <strong>Snellere prestaties</strong> — korte laadtijden.
             </li>
             <li>
-              <strong>Sterke SEO‑basis</strong> — volledige controle over metadata.
+              <strong>Sterke SEO-basis</strong> — volledige controle over metadata.
             </li>
             <li>
               <strong>Meer veiligheid</strong> — minder afhankelijkheid van plugins.
@@ -260,33 +364,37 @@ export default function WebsiteRotterdamPage() {
             terecht voor uitbreidingen en verbeteringen.
           </p>
 
-          {/* WAT KOST HET */}
+          {/* WAT KOST HET — ACTUELE PRIJZEN UIT SCREENSHOT */}
           <h2>Wat kost een website laten maken in Rotterdam?</h2>
 
           <p>
             De investering hangt af van uw wensen. Een professionele website op maat
-            start bij een vast bedrag dat vooraf duidelijk is. Geen verrassingen achteraf.
+            start bij een vast bedrag dat vooraf duidelijk is — geen verrassingen achteraf.
           </p>
 
           <p>Onze pakketten zijn opgebouwd voor verschillende behoeften:</p>
 
           <ul>
             <li>
-              <strong>Starter</strong> — voor ZZP&apos;ers en starters die een professionele
+              <strong>Starter — vanaf €1.250</strong> voor ZZP'ers en starters die een professionele
               website nodig hebben om serieus online te gaan.
             </li>
             <li>
-              <strong>Professional</strong> — voor MKB-bedrijven die willen groeien met
-              SEO, meerdere diensten en conversiegerichte pagina&apos;s.
+              <strong>Professional — vanaf €1.950</strong> voor MKB-bedrijven die willen groeien met
+              SEO, meerdere diensten en conversiegerichte pagina's. Dit is ons meest gekozen pakket.
             </li>
             <li>
-              <strong>Enterprise</strong> — voor organisaties die een uitgebreide website
-              met support en doorlopende optimalisatie nodig hebben.
+              <strong>Premium — vanaf €2.950</strong> voor bedrijven die online structureel willen groeien
+              met uitgebreide functionaliteit en de beste waarde.
+            </li>
+            <li>
+              <strong>Enterprise — op offerte</strong> voor organisaties met complexe digitale behoeften,
+              support en doorlopende optimalisatie.
             </li>
           </ul>
 
           <p>
-            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan. U ontvangt
+            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan — u ontvangt
             binnen 24 uur een helder voorstel met vaste prijs.
           </p>
 
@@ -317,7 +425,7 @@ export default function WebsiteRotterdamPage() {
         </div>
       </article>
 
-      {/* CTA — GRATIS SCHETS ALS PRIMAIR AANBOD */}
+      {/* CTA */}
       <CTASection
         title="Vraag een gratis schets aan."
         subtitle="Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien. Zonder verplichtingen, zonder verkoopgesprek."
