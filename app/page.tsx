@@ -107,7 +107,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-5xl sm:text-7xl lg:text-[5.5rem] max-w-4xl">
+            <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-4xl sm:text-5xl lg:text-6xl max-w-none">
               Next.js websites in <span className="text-[#FF4500]">Rotterdam</span> die scoren.
             </h1>
 
@@ -116,7 +116,6 @@ export default function HomePage() {
               Gebouwd met Next.js. Moderne techniek die écht werkt. Meer aanvragen, minder gedoe.
             </p>
 
-            {/* Interne link naar landingspagina met exacte ankertekst */}
             <p className="mt-3 text-sm text-[#525252]">
               Ook op zoek naar een traditionele{" "}
               <Link
@@ -219,8 +218,8 @@ export default function HomePage() {
           </div>
           <div className="lg:col-span-7 prose-brutal">
             <p>
-              Van lokale dienstverleners tot high-end webshops: wij bouwen websites 
-              die snel laden, goed scoren in Google en klanten opleveren. Bekijk 
+              Van lokale dienstverleners tot high-end webshops: wij bouwen websites
+              die snel laden, goed scoren in Google en klanten opleveren. Bekijk
               onze recente projecten en zie zelf het resultaat.
             </p>
             <Link
