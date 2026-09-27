@@ -3,9 +3,9 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Pakketten | Starter €1.250 · Professional €1.950 · Premium €2.950 · Enterprise",
+  title: "Website Pakketten | Starter €1.950 · Professional €3.495 · Premium €5.495 · Enterprise",
   description:
-    "Heldere Next.js pakketten — van Starter voor ZZP'ers tot Premium voor bedrijven die willen groeien. Razendsnel, SEO‑technisch sterk en gebouwd voor maximale conversie.",
+    "Heldere Next.js pakketten — van Starter voor ZZP'ers tot Enterprise voor maatwerk. Razendsnel, SEO-technisch sterk en gebouwd voor maximale conversie.",
   alternates: { canonical: "https://webboostpartner.nl/pakketten" },
 };
 
@@ -23,7 +23,7 @@ export default function PakkettenPage() {
 
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
             Vier pakketten — van <strong>Starter</strong> voor ZZP&apos;ers tot 
-            <strong> Premium</strong> voor bedrijven die willen groeien. 
+            <strong> Enterprise</strong> voor maatwerk. 
             <strong> Geen verborgen kosten</strong>, wel snelheid, SEO en een website die scoort.
           </p>
         </div>
@@ -52,25 +52,25 @@ export default function PakkettenPage() {
 
           <h2>Hoe kies ik het juiste pakket?</h2>
 
-          <h3>Starter — vanaf €1.250</h3>
+          <h3>Starter — €1.950 excl. btw (€2.360 incl.)</h3>
           <p>
             Ideaal voor ZZP&apos;ers en starters die snel een professionele online aanwezigheid nodig hebben.
-            3–5 pagina&apos;s, basis SEO en een razendsnelle website die binnen 1 seconde laadt.
+            3–5 pagina&apos;s, basis SEO en een razendsnelle website die binnen 2 seconden laadt.
           </p>
 
-          <h3>Professional — vanaf €1.950</h3>
+          <h3>Professional — €3.495 excl. btw (€4.229 incl.)</h3>
           <p>
             Voor ondernemers die willen groeien en lokaal beter gevonden willen worden.
-            Inclusief lokale SEO Rotterdam, landingspagina&apos;s, blogmodule en extra conversie‑optimalisatie.
+            Inclusief lokale SEO Rotterdam, landingspagina&apos;s, blogmodule en extra conversie-optimalisatie.
           </p>
 
-          <h3>Premium — vanaf €2.950</h3>
+          <h3>Premium — €5.495 excl. btw (€6.649 incl.)</h3>
           <p>
-            Voor bedrijven die maximale zichtbaarheid willen. High‑end ontwerp, technische SEO, 
-            animaties, CRM‑integraties, dashboards en een laadtijd onder 0.8s.
+            Voor bedrijven die maximale zichtbaarheid willen. High-end ontwerp, technische SEO, 
+            animaties, CRM-integraties, dashboards en een laadtijd onder 1 seconde.
           </p>
 
-          <h3>Enterprise — offerte</h3>
+          <h3>Enterprise — vanaf €7.995 excl. btw (€9.674 incl.)</h3>
           <p>
             Voor maatwerkprojecten, webshops, portals, dashboards en complexe integraties.
             Volledige strategie, headless CMS, schaalbare webshopfunctionaliteit en doorlopende ondersteuning.
@@ -94,7 +94,7 @@ export default function PakkettenPage() {
           <ul>
             <li>Content schrijven voor alle pagina&apos;s.</li>
             <li>Logo en huisstijl ontwerp.</li>
-            <li>Maandelijks SEO‑onderhoud.</li>
+            <li>Maandelijks SEO-onderhoud.</li>
             <li>Doorlopende advertentiecampagnes.</li>
             <li>Custom backend functionaliteit buiten de standaard.</li>
           </ul>
