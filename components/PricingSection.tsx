@@ -8,6 +8,7 @@ interface PricingPackage {
   id: string;
   name: string;
   price: string;
+  priceIncl: string;
   badge?: string;
   icon: React.ReactNode;
   forWho: string;
@@ -15,6 +16,7 @@ interface PricingPackage {
   inheritFrom?: string;
   features: string[];
   highlighted?: boolean;
+  isCustom?: boolean;
 }
 
 interface PricingSectionProps {
@@ -25,7 +27,8 @@ const packages: PricingPackage[] = [
   {
     id: "starter",
     name: "Starter",
-    price: "Vanaf € 1.250",
+    price: "€ 1.950",
+    priceIncl: "€ 2.360",
     icon: <Zap size={32} />,
     forWho: "Voor ZZP'ers en starters die serieus online willen.",
     promise: "Een professionele website die werkt — zonder gedoe.",
@@ -44,7 +47,8 @@ const packages: PricingPackage[] = [
   {
     id: "professional",
     name: "Professional",
-    price: "Vanaf € 1.950",
+    price: "€ 3.495",
+    priceIncl: "€ 4.229",
     badge: "Meest gekozen",
     icon: <TrendingUp size={32} />,
     forWho: "Voor MKB-bedrijven die klanten zoeken via Google.",
@@ -65,7 +69,8 @@ const packages: PricingPackage[] = [
   {
     id: "premium",
     name: "Premium",
-    price: "Vanaf € 2.950",
+    price: "€ 5.495",
+    priceIncl: "€ 6.649",
     badge: "Beste waarde",
     icon: <Star size={32} />,
     forWho: "Voor bedrijven die online structureel willen groeien.",
@@ -86,7 +91,8 @@ const packages: PricingPackage[] = [
   {
     id: "enterprise",
     name: "Enterprise",
-    price: "Offerte",
+    price: "Vanaf € 7.995",
+    priceIncl: "Vanaf € 9.674",
     icon: <Layers size={32} />,
     forWho: "Voor organisaties met complexe digitale behoeften.",
     promise: "Een digitaal platform dat uw processen ondersteunt.",
@@ -100,6 +106,7 @@ const packages: PricingPackage[] = [
       "Projectplanning + consultancy",
       "Doorlopende ondersteuning",
     ],
+    isCustom: true,
   },
 ];
 
@@ -133,22 +140,12 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
               }`}
             >
               {pkg.badge && (
-                <div
-                  className={`absolute -top-3 left-4 font-heading text-xs uppercase px-3 py-1 border-2 border-black ${
-                    pkg.highlighted
-                      ? "bg-[#FF4500] text-white"
-                      : "bg-[#FF4500] text-white"
-                  }`}
-                >
+                <div className="absolute -top-3 left-4 font-heading text-xs uppercase px-3 py-1 border-2 border-black bg-[#FF4500] text-white">
                   {pkg.badge}
                 </div>
               )}
 
-              <div
-                className={`mb-6 ${
-                  pkg.highlighted ? "text-[#FF4500]" : "text-[#FF4500]"
-                }`}
-              >
+              <div className="mb-6 text-[#FF4500]">
                 {pkg.icon}
               </div>
 
@@ -160,13 +157,31 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
                 {pkg.name}
               </h3>
 
-              <p
-                className={`font-heading text-xl mb-5 ${
-                  pkg.highlighted ? "text-[#FF4500]" : "text-black"
-                }`}
-              >
-                {pkg.price}
-              </p>
+              <div className="mb-5">
+                <p
+                  className={`font-heading text-xl ${
+                    pkg.highlighted ? "text-[#FF4500]" : "text-black"
+                  }`}
+                >
+                  {pkg.price} <span className="text-sm font-sans">excl. btw</span>
+                </p>
+                <p
+                  className={`text-xs mt-1 ${
+                    pkg.highlighted ? "text-white/60" : "text-[#525252]"
+                  }`}
+                >
+                  ({pkg.priceIncl} incl. 21% btw)
+                </p>
+                {pkg.isCustom && (
+                  <p
+                    className={`text-xs mt-1 font-medium ${
+                      pkg.highlighted ? "text-white/80" : "text-[#FF4500]"
+                    }`}
+                  >
+                    Vanaf prijs - maatwerk mogelijk
+                  </p>
+                )}
+              </div>
 
               {/* Voor wie */}
               <p
