@@ -2,11 +2,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
-import PortfolioSection from "@/components/PortfolioSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Laten Maken Rotterdam | Vanaf €1.250 | WebBoost Partner",
+  title: "Website Laten Maken Rotterdam | Vanaf €1.950 | WebBoost Partner",
   description:
     "Professionele website laten maken in Rotterdam? WebBoost Partner bouwt snelle, SEO-geoptimaliseerde websites voor ZZP & MKB. Vaste prijzen. Gratis schets binnen 24 uur.",
   keywords: [
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
   },
   openGraph: {
-    title: "Website Laten Maken Rotterdam | Vanaf €1.250 | WebBoost Partner",
+    title: "Website Laten Maken Rotterdam | Vanaf €1.950 | WebBoost Partner",
     description:
       "Snelle, SEO-geoptimaliseerde websites voor Rotterdamse ondernemers. Vaste prijzen, gratis schets binnen 24 uur. Bekijk ons werk.",
     url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
@@ -121,7 +120,7 @@ export default function WebsiteRotterdamPage() {
                 url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
                 telephone: "+31642628242",
                 email: "info@webboostpartner.nl",
-                priceRange: "€",
+                priceRange: "€€",
                 address: {
                   "@type": "PostalAddress",
                   streetAddress: "Neeltje Griffijnstraat 12",
@@ -216,15 +215,38 @@ export default function WebsiteRotterdamPage() {
             </Link>
           </div>
 
-          {/* Subtiele uitleg onder CTA */}
           <p className="mt-4 text-sm text-[#525252]">
             Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien — zonder verplichtingen.
           </p>
         </div>
       </section>
 
-      {/* PORTFOLIO */}
-      <PortfolioSection />
+      {/* PORTFOLIO VERWIJZING */}
+      <section className="bg-[#FAFAFA] py-20 sm:py-28 border-y-2 border-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+              // Recent werk
+            </p>
+            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[0.95]">
+              Websites die<br />presteren.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 prose-brutal">
+            <p>
+              Van lokale dienstverleners tot high-end webshops: wij bouwen websites
+              die snel laden, goed scoren in Google en klanten opleveren. Bekijk
+              onze recente projecten en zie zelf het resultaat.
+            </p>
+            <Link
+              href="/over-mij"
+              className="inline-flex items-center gap-2 mt-6 bg-[#FF4500] text-white px-8 py-4 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black transition-colors border-2 border-black hover:-translate-y-1 hover:shadow-brutal-sm"
+            >
+              Bekijk onze projecten <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* CONTENT */}
       <article className="bg-white py-16 sm:py-24">
@@ -374,19 +396,19 @@ export default function WebsiteRotterdamPage() {
 
           <ul>
             <li>
-              <strong>Starter — vanaf €1.250</strong> voor ZZP'ers en starters die een professionele
+              <strong>Starter — €1.950</strong> voor ZZP'ers en starters die een professionele
               website nodig hebben om serieus online te gaan.
             </li>
             <li>
-              <strong>Professional — vanaf €1.950</strong> voor MKB-bedrijven die willen groeien met
+              <strong>Professional — €3.495</strong> voor MKB-bedrijven die willen groeien met
               SEO, meerdere diensten en conversiegerichte pagina's. Dit is ons meest gekozen pakket.
             </li>
             <li>
-              <strong>Premium — vanaf €2.950</strong> voor bedrijven die online structureel willen groeien
+              <strong>Premium — €5.495</strong> voor bedrijven die online structureel willen groeien
               met uitgebreide functionaliteit en de beste waarde.
             </li>
             <li>
-              <strong>Enterprise — op offerte</strong> voor organisaties met complexe digitale behoeften,
+              <strong>Enterprise — vanaf €7.995</strong> voor organisaties met complexe digitale behoeften,
               support en doorlopende optimalisatie.
             </li>
           </ul>
@@ -404,6 +426,23 @@ export default function WebsiteRotterdamPage() {
               Bekijk alle pakketten en prijzen <ArrowRight size={16} />
             </Link>
           </p>
+
+          {/* CTA NA PRIJZEN */}
+          <div className="mt-10 p-6 border-2 border-black bg-[#FAFAFA]">
+            <p className="font-heading font-bold uppercase text-lg mb-4">
+              Klaar om te starten?
+            </p>
+            <p className="text-sm text-[#525252] mb-6">
+              Vraag een gratis schets aan en zie binnen 24 uur hoe uw nieuwe website
+              eruit kan zien — zonder verplichtingen.
+            </p>
+            <Link
+              href="/contact?intent=schets"
+              className="inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase text-sm tracking-widest px-6 py-3 border-2 border-black hover:bg-black hover:-translate-y-1 transition-all"
+            >
+              Vraag gratis schets aan <ArrowRight size={16} />
+            </Link>
+          </div>
 
           {/* WERKGEBIED */}
           <h2>Werkgebied</h2>
