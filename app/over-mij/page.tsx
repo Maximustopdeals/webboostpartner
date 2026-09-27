@@ -85,9 +85,9 @@ export default function OverMijPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-8 grid md:grid-cols-3 gap-10">
           {[
             {
-              title: "100/100 PageSpeed",
-              desc: "Sneller dan 98% van alle websites.",
-            },
+  title: "95+ PageSpeed",
+  desc: "Sneller dan 95% van alle websites.",
+},
             {
               title: "Technische SEO inbegrepen",
               desc: "Direct zichtbaar in Google.",
