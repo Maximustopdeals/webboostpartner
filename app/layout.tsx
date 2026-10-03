@@ -104,9 +104,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="nl" className={`${outfit.variable} ${ibmPlex.variable} ${ibmMono.variable}`}>
-      <head>
-        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FF4500'/%3E%3Cpath d='M55 20L35 55H50L45 80L70 45H55L60 20H55Z' fill='white'/%3E%3C/svg%3E" type="image/svg+xml" />
-      </head>
+      {/* ✅ De handmatige <head> met de data-URI favicon is hier verwijderd. 
+          Next.js genereert nu automatisch de juiste favicon-links 
+          op basis van de bestanden in de app/ map (favicon.ico, favicon.svg, etc.) */}
       <body>
         {/* GTM noscript */}
         <noscript>
