@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://webboostpartner.nl/sitemap.xml',
+    sitemap: 'https://www.webboostpartner.nl/sitemap.xml',
   };
 }
