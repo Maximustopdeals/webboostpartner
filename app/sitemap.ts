@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://webboostpartner.nl";
+const baseUrl = "https://www.webboostpartner.nl";
 
 interface RouteConfig {
   route: string;
