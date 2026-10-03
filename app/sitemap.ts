@@ -22,10 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // === Ondersteunende pagina's ===
     { route: "/over-mij", priority: 0.7, changeFrequency: "monthly" },
     { route: "/contact", priority: 0.7, changeFrequency: "monthly" },
+    { route: "/demo", priority: 0.5, changeFrequency: "monthly" },
 
     // === Diepgaande / technische pagina's ===
     { route: "/wordpress-naar-nextjs", priority: 0.6, changeFrequency: "monthly" },
     { route: "/core-web-vitals", priority: 0.6, changeFrequency: "monthly" },
+    { route: "/pagespeed", priority: 0.6, changeFrequency: "monthly" },
 
     // === Juridische pagina's ===
     { route: "/privacy", priority: 0.3, changeFrequency: "yearly" },
