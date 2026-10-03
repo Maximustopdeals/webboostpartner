@@ -37,7 +37,7 @@ const ibmMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://webboostpartner.nl"),
+  metadataBase: new URL("https://www.webboostpartner.nl"),
   
   title: {
     default: "WebBoost Partner | Next.js Websites Rotterdam die scoren in Google",
