@@ -1,4 +1,4 @@
-import { MapPin, Sparkles, ArrowRight } from "lucide-react";
+import { MapPin, Sparkles, User, Target, Coffee } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import PortfolioSection from "@/components/PortfolioSection";
 import type { Metadata } from "next";
@@ -25,9 +25,9 @@ function NextjsLogoCard() {
 }
 
 export const metadata: Metadata = {
-  title: "Over mij | Ron — Next.js webbouwer Rotterdam",
+  title: "Over mij | Ron — Jouw Webdesign & SEO Partner in Rotterdam",
   description:
-    "Ron uit Rotterdam — Next.js specialist voor ZZP & MKB. Snelle websites, sterke SEO en conversiegericht ontwerp. Geen WordPress-problemen, maar moderne techniek die werkt.",
+    "Maak kennis met Ron, de drijvende kracht achter WebBoost Partner. Ik bouw moderne, conversiegerichte Next.js websites voor ambitieuze ZZP'ers en MKB-bedrijven in de regio Rotterdam.",
   alternates: { canonical: "https://webboostpartner.nl/over-mij" },
 };
 
@@ -38,27 +38,28 @@ export default function OverMijPage() {
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Over mij</p>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Persoonlijk & Direct</p>
             <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
-              Over mij — <span className="text-[#FF4500]">Next.js</span> webbouwer Rotterdam
+              Het gezicht achter <span className="text-[#FF4500]">WebBoost</span> Partner
             </h1>
 
-            <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-2xl leading-relaxed">
+            <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-2xl leading-relaxed text-[#1a1a1a]">
               <p>
                 Ik ben <strong>Ron</strong>, oprichter van WebBoost Partner. 
-                Ik bouw Next.js websites die binnen 1 seconde laden, beter scoren in Google 
-                en ondernemers helpen groeien.
+                Ik help Rotterdamse ondernemers aan een modern digitaal fundament dat niet alleen online 
+                hun vakmanschap laat zien, maar ook daadwerkelijk **nieuwe klanten oplevert**.
               </p>
 
               <p>
-                Wat begon als hobby naast mijn baan, groeide uit tot een specialisme. 
-                Inmiddels heb ik meerdere Next.js projecten gebouwd voor echte ondernemers — 
-                van schoonmaakbedrijven tot rijscholen en zorgprofessionals.
+                Wat begon als een passie voor code, groeide uit tot een scherp specialisme. 
+                Inmiddels heb ik met succes maatwerk platforms mogen realiseren voor uiteenlopende lokale 
+                ondernemers — van rijscholen en zorgprofessionals tot schoonmaakbedrijven.
               </p>
 
               <p>
-                Ik werk bewust kleinschalig en persoonlijk. Geen grote bureaus, geen accountmanagers — 
-                u werkt rechtstreeks met mij. Duidelijk, eerlijk en zonder gedoe.
+                Ik werk bewust kleinschalig en persoonlijk. Bij mij vindt u geen grote, anonieme 
+                projectteams of accountmanagers; **u schakelt altijd rechtstreeks met mij**. Wel zo duidelijk, 
+                eerlijk en zonder gedoe.
               </p>
             </div>
           </div>
@@ -85,16 +86,16 @@ export default function OverMijPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-8 grid md:grid-cols-3 gap-10">
           {[
             {
-  title: "95+ PageSpeed",
-  desc: "Sneller dan 95% van alle websites.",
-},
-            {
-              title: "Technische SEO inbegrepen",
-              desc: "Direct zichtbaar in Google.",
+              title: "Resultaatgericht design",
+              desc: "Elke pixel staat in het teken van het overtuigen van uw bezoeker.",
             },
             {
-              title: "Maatwerk Next.js ontwerp",
-              desc: "Geen templates — pure branding.",
+              title: "Technische SEO-basis",
+              desc: "Uw website is vanaf de lancering optimaal indexeerbaar voor Google.",
+            },
+            {
+              title: "Toekomstbestendige techniek",
+              desc: "Bliksemsnel op mobiel, extreem veilig en gebouwd om met uw ambities mee te groeien.",
             },
           ].map((item, i) => (
             <div key={i} className="border-2 border-black bg-[#FAFAFA] p-6 shadow-brutal">
@@ -112,45 +113,46 @@ export default function OverMijPage() {
           <h2>Waarom ik WebBoost Partner ben gestart</h2>
 
           <p>
-            Jarenlang bouwde ik WordPress‑websites. Maar ik zag ondernemers steeds 
-            tegen dezelfde problemen aanlopen: trage laadtijden, onderhoud, 
-            plug‑ins die vastliepen en SEO‑beperkingen.
+            In mijn loopbaan heb ik met veel plezier talloze WordPress-websites gebouwd. Het is een fantastisch 
+            en krachtig systeem dat het internet groot heeft gemaakt. Echter, naarmate de eisen van 
+            Google en de verwachtingen van online consumenten stegen, zag ik ondernemers vaker tegen dezelfde 
+            technische uitdagingen aanlopen: laadtijden die stagneerden door zware plug-ins en complex maandelijks 
+            onderhoud om de veiligheid te garanderen.
           </p>
 
           <p>
-            Ondernemers verdienen een website die niet voor problemen zorgt, maar 
-            juist een oplossing is. Een digitaal fundament dat vertrouwen geeft en 
-            klaar is voor groei.
+            Ik geloof dat een website geen bron van constante updates of technische zorgen moet zijn, maar juist 
+            een **rendabele oplossing**. Ondernemers verdienen een digitaal fundament dat blindelings 
+            vertrouwen geeft en direct klaar is om serieuze online groei te ondersteunen.
           </p>
 
-          <h2>Waarom Next.js?</h2>
+          <h2>De keuze voor Next.js</h2>
 
           <p>
-            Next.js is snel, veilig en gebouwd voor prestaties. Het geeft mij de 
-            vrijheid om websites te bouwen die technisch sterk zijn, zonder dat 
-            ondernemers zich bezig hoeven te houden met techniek.
+            Next.js vertegenwoordigt voor mij de absolute standaard van morgen. Het biedt een moderne, schone 
+            technische basis waarbij ongeëvenaarde snelheid en stabiliteit centraal staan. Omdat pagina's 
+            statisch en kant-en-klaar aan de browser worden geleverd, ervaart uw bezoeker geen enkele vertraging.
           </p>
 
           <p>
-            Voor u betekent dat: een website die professioneel oogt, prettig werkt 
-            voor bezoekers en beter scoort in Google.
+            Voor u betekent dit simpelweg: een website die direct professioneel oogt, prettig en foutloos werkt 
+            voor uw potentiële klanten, en maximaal presteert in de zoekresultaten van Google.
           </p>
 
           <h2>Mijn werkwijze</h2>
 
           <ul>
-            <li><strong>Kennismaking</strong> — uw doelen en doelgroep.</li>
-            <li><strong>Strategie</strong> — structuur en aanpak.</li>
-            <li><strong>Design</strong> — overtuigend en professioneel.</li>
-            <li><strong>Ontwikkeling</strong> — snelle Next.js website.</li>
-            <li><strong>Lancering</strong> — SEO‑basis, analytics, controle.</li>
-            <li><strong>Nazorg</strong> — ondersteuning en groei.</li>
+            <li><strong>1. Kennismaking & Strategie</strong> — We bespreken uw bedrijf, uw unieke vakmanschap en brengen uw doelgroep helder in kaart.</li>
+            <li><strong>2. Structuur & Design</strong> — Een uniek, op maat gemaakt ontwerp dat past bij uw huisstijl en volledig is ingericht op conversie.</li>
+            <li><strong>3. Ontwikkeling & SEO</strong> — De website wordt strak geprogrammeerd in Next.js, inclusief de integratie van alle noodzakelijke Google-richtlijnen.</li>
+            <li><strong>4. Lancering & Support</strong> — Na een uitgebreide kwaliteitscontrole zetten we de site live en melden we uw sitemap direct aan bij Search Console.</li>
           </ul>
 
           <h2>Werkgebied</h2>
           <p>
-            Ik werk vanuit Rotterdam en kom graag langs voor een kennismaking. 
-            Persoonlijk contact staat centraal.
+            Hoewel ik landelijk projecten realiseer, ligt het zwaartepunt van mijn samenwerkingen heel bewust 
+            in Rotterdam en de directe omgeving. Lokaal en persoonlijk schakelen werkt in mijn ervaring 
+            het prettigst: ik begrijp uw regio, uw markt en uw lokale concurrentie.
           </p>
         </div>
 
@@ -171,8 +173,8 @@ export default function OverMijPage() {
       {/* CTA */}
       <CTASection
         title="Laten we kennismaken."
-        subtitle="Vrijblijvend, een uurtje, op locatie of online. Vertel waar u staat — ik luister."
-        button="Plan kennismaking"
+        subtitle="Vrijblijvend een uurtje sparren op locatie of online? Vertel me waar u staat met uw onderneming — ik luister."
+        button="Plan adviesgesprek"
       />
     </>
   );
