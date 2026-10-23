@@ -9,10 +9,10 @@ interface CTASectionProps {
 }
 
 export default function CTASection({
-  title = "Klaar voor een website die wél scoort?",
-  subtitle = "Plan een vrijblijvend kennismakingsgesprek. Geen verkooppraatjes — gewoon een eerlijk advies.",
-  button = "Plan een gesprek",
-  href = "/contact",
+  title = "Klaar om de verborgen kansen van jouw website te ontdekken?",
+  subtitle = "Vraag een gratis website & SEO Quickscan aan. Ik bekijk je website handmatig en stuur je binnen 48 uur een persoonlijk advies. 100% vrijblijvend, geen verkoopgesprek.",
+  button = "Vraag gratis Quickscan aan",
+  href = "/contact?intent=quickscan",
 }: CTASectionProps) {
   return (
     <section className="bg-black text-white py-20 sm:py-28 border-y-2 border-black relative overflow-hidden" data-testid="cta-section">
@@ -24,7 +24,7 @@ export default function CTASection({
         <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-6xl tracking-tighter leading-[0.95] mb-5">
           {title}
         </h2>
-        <p className="text-lg text-white/80 max-w-2xl mb-8">{subtitle}</p>
+        <p className="text-lg text-white/80 max-w-2xl mb-8 leading-relaxed">{subtitle}</p>
         <Link
           href={href}
           className="inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-white px-8 py-4 hover:bg-white hover:text-black hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#FF4500] transition-all"
