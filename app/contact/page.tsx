@@ -6,8 +6,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact | Vrijblijvende Website Quickscan & Advies | WebBoost Partner",
   description:
-    "Neem direct contact op met WebBoost Partner in Rotterdam voor een gratis website scan of onafhankelijk advies over uw overstap naar Next.js. Binnen 24 uur een persoonlijk antwoord.",
-  alternates: { canonical: "https://webboostpartner.nl/contact" },
+    "Neem direct contact op met WebBoost Partner in Rotterdam voor een gratis website scan of persoonlijk advies over jouw overstap naar Next.js. Binnen 24 uur een reactie direct van Ron.",
+  alternates: { canonical: "https://webboostpartner.nl" },
 };
 
 interface ContactCardProps {
@@ -37,7 +37,7 @@ function ContactCard({ icon: Icon, label, children }: ContactCardProps) {
 export default function ContactPage() {
   return (
     <>
-      {/* HERO: Gericht op drempelverlaging en de Quickscan */}
+      {/* HERO: Volledig gefocust op de Quickscan en strategisch advies */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
@@ -57,7 +57,7 @@ export default function ContactPage() {
       {/* CONTACT GRID */}
       <section className="bg-white py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-8 grid lg:grid-cols-5 gap-10">
-          {/* LEFT SIDE */}
+          {/* LINKERKOLOM: Directe contactgegevens */}
           <div className="lg:col-span-2 space-y-6">
             <div>
               <h2 className="font-heading font-extrabold uppercase text-2xl mb-2">
@@ -103,7 +103,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* RIGHT SIDE — Formulier met verplichte Suspense wrapper */}
+          {/* RECHTERKOLOM: Het dynamische contactformulier */}
           <div className="lg:col-span-3">
             <Suspense
               fallback={
