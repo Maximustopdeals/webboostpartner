@@ -5,9 +5,9 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Laten Maken Rotterdam | Vanaf €1.950 | WebBoost Partner",
+  title: "Website Laten Maken Rotterdam | Modern & Conversiegericht",
   description:
-    "Professionele website laten maken in Rotterdam? WebBoost Partner bouwt snelle, SEO-geoptimaliseerde websites voor ZZP & MKB. Vaste prijzen. Gratis schets binnen 24 uur.",
+    "Professionele website laten maken in Rotterdam? WebBoost Partner bouwt snelle, toekomstbestendige websites voor ZZP & MKB die écht resultaat opleveren.",
   keywords: [
     "website laten maken Rotterdam",
     "webdesign Rotterdam",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     canonical: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
   },
   openGraph: {
-    title: "Website Laten Maken Rotterdam | Vanaf €1.950 | WebBoost Partner",
+    title: "Website Laten Maken Rotterdam | Modern & Conversiegericht",
     description:
-      "Snelle, SEO-geoptimaliseerde websites voor Rotterdamse ondernemers. Vaste prijzen, gratis schets binnen 24 uur. Bekijk ons werk.",
+      "Professionele website laten maken in Rotterdam? WebBoost Partner bouwt snelle, toekomstbestendige websites voor ZZP & MKB die écht resultaat opleveren.",
     url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
     siteName: "WebBoost Partner",
     locale: "nl_NL",
@@ -44,7 +44,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Kan mijn bestaande WordPress website worden overgezet naar Next.js?",
-    a: "Ja. Uw WordPress website kan worden vernieuwd naar Next.js. Dit gebeurt niet door simpelweg een knop om te zetten, maar door de website opnieuw op te bouwen met behoud van content, structuur en SEO-waarde. Tijdens de migratie worden URL's, metadata en redirects meegenomen zodat uw vindbaarheid behouden blijft.",
+    a: "Ja. Uw WordPress website kan worden vernieuwd naar Next.js — een logische high-end upgrade voor groeiende bedrijven. Dit gebeurt niet door simpelweg een knop om te zetten, maar door de website opnieuw op te bouwen met behoud van content, structuur en SEO-waarde. Tijdens de migratie worden URL's, metadata en redirects meegenomen zodat uw vindbaarheid behouden blijft.",
   },
   {
     q: "Is SEO inbegrepen?",
@@ -60,7 +60,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Waarom kiezen voor Next.js in plaats van WordPress?",
-    a: "Veel WordPress websites worden na verloop van tijd zwaar door thema's en plugins. Next.js biedt een moderne technische basis waarbij snelheid, veiligheid en prestaties centraal staan. Het resultaat is een website die sneller laadt, beter scoort in Google en minder onderhoud vraagt.",
+    a: "WordPress is voor veel bedrijven een uitstekende start. Naarmate een website groeit, kunnen thema's en plugins de prestaties echter beïnvloeden. Next.js biedt een moderne technische basis waarbij snelheid, veiligheid en prestaties centraal staan. Het resultaat is een website die sneller laadt, beter scoort in Google en minder onderhoud vraagt.",
   },
   {
     q: "Kan ik zelf mijn website aanpassen?",
@@ -82,7 +82,7 @@ export default function WebsiteRotterdamPage() {
                 "@type": "WebPage",
                 "@id": "https://www.webboostpartner.nl/website-laten-maken-rotterdam#webpage",
                 url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
-                name: "Website Laten Maken Rotterdam | WebBoost Partner",
+                name: "Website Laten Maken Rotterdam | Modern & Conversiegericht",
                 isPartOf: {
                   "@id": "https://www.webboostpartner.nl/#website",
                 },
@@ -165,19 +165,10 @@ export default function WebsiteRotterdamPage() {
             Website laten maken in <span className="text-[#FF4500]">Rotterdam</span>
           </h1>
 
-          <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-3xl leading-relaxed">
-            <p>
-              Een website die professioneel oogt, snel laadt en nieuwe klanten oplevert.
-              WebBoost Partner bouwt moderne Next.js websites voor Rotterdamse ondernemers
-              die online willen groeien.
-            </p>
-
-            <p>
-              Geen standaard templates, maar een website die past bij uw bedrijf, doelgroep
-              en ambities. Met een sterke technische basis, slimme SEO-structuur en een
-              conversiegericht ontwerp.
-            </p>
-          </div>
+          <p className="mt-6 text-xl max-w-3xl leading-relaxed font-semibold">
+            Een modern, bliksemsnel digitaal fundament dat naadloos aansluit bij uw
+            doelgroep en structureel nieuwe klanten oplevert.
+          </p>
 
           {/* Trust-bar */}
           <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-[#525252]">
@@ -195,17 +186,17 @@ export default function WebsiteRotterdamPage() {
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
-              Gratis schets binnen 24 uur
+              Gratis adviesgesprek
             </li>
           </ul>
 
           {/* Dubbele CTA */}
           <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
-              href="/contact?intent=schets"
+              href="/contact?intent=advies"
               className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
             >
-              Vraag een gratis schets aan <ArrowRight size={18} />
+              Vraag vrijblijvend adviesgesprek aan <ArrowRight size={18} />
             </Link>
             <Link
               href="/pakketten"
@@ -214,10 +205,6 @@ export default function WebsiteRotterdamPage() {
               Bekijk pakketten
             </Link>
           </div>
-
-          <p className="mt-4 text-sm text-[#525252]">
-            Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien — zonder verplichtingen.
-          </p>
         </div>
       </section>
 
@@ -415,7 +402,7 @@ export default function WebsiteRotterdamPage() {
 
           <p>
             Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan — u ontvangt
-            binnen 24 uur een helder voorstel met vaste prijs.
+            binnen 48 uur een helder voorstel met vaste prijs.
           </p>
 
           <p>
@@ -433,14 +420,14 @@ export default function WebsiteRotterdamPage() {
               Klaar om te starten?
             </p>
             <p className="text-sm text-[#525252] mb-6">
-              Vraag een gratis schets aan en zie binnen 24 uur hoe uw nieuwe website
-              eruit kan zien — zonder verplichtingen.
+              Plan een vrijblijvend adviesgesprek in en ontdek de groeikansen
+              voor uw onderneming.
             </p>
             <Link
-              href="/contact?intent=schets"
+              href="/contact?intent=advies"
               className="inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase text-sm tracking-widest px-6 py-3 border-2 border-black hover:bg-black hover:-translate-y-1 transition-all"
             >
-              Vraag gratis schets aan <ArrowRight size={16} />
+              Plan adviesgesprek <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -464,10 +451,10 @@ export default function WebsiteRotterdamPage() {
 
       {/* CTA */}
       <CTASection
-        title="Vraag een gratis schets aan."
-        subtitle="Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien. Zonder verplichtingen, zonder verkoopgesprek."
-        button="Vraag gratis schets aan"
-        href="/contact?intent=schets"
+        title="Ontdek de groeikansen voor jouw onderneming."
+        subtitle="Plan een gratis adviesgesprek in en ontvang binnen 48 uur een heldere, vrijblijvende website-analyse."
+        button="Plan adviesgesprek"
+        href="/contact?intent=advies"
       />
     </>
   );
