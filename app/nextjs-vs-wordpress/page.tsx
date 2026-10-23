@@ -2,171 +2,134 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Next.js vs WordPress | Welke past bij jouw website in 2026?",
+  title: "Next.js vs WordPress | De beste keuze voor jouw website",
   description:
-    "Next.js vs WordPress: een eerlijke vergelijking op snelheid, SEO, veiligheid en onderhoud. Ontdek welke oplossing het beste aansluit bij jouw bedrijf.",
+    "Eerlijke vergelijking tussen WordPress en Next.js op laadsnelheid, SEO, veiligheid en onderhoud. Ontdek welk fundament past bij de groei van jouw bedrijf.",
   alternates: { canonical: "https://webboostpartner.nl/nextjs-vs-wordpress" },
 };
 
 export default function NextjsVsWordpressPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO: Toegankelijk en objectief, maar direct richting de ROI-focus */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Vergelijking</p>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Strategische Vergelijking</p>
 
           <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
             Next.js <span className="text-[#FF4500]">vs</span> WordPress
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
-            Twee populaire platforms, ieder met een eigen kracht.  
-            Dit is een eerlijke vergelijking — geen voorkeur, geen afkraken maar een helder overzicht van wat beide systemen kunnen en wanneer ze het beste passen.
+          <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed text-[#1a1a1a] font-medium">
+            Twee bewezen technologieën, elk met een eigen kracht. Dit is een objectieve vergelijking zonder traditionele systemen af te kraken. We kijken puur naar de resultaten voor jouw onderneming en wanneer een upgrade rendabel is.
           </p>
         </div>
       </section>
 
-      {/* SIDE-BY-SIDE */}
+      {/* SIDE-BY-SIDE: Strakke positionering van beide systemen */}
       <section className="bg-white py-16 sm:py-24 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid md:grid-cols-2 gap-6">
 
           {/* WordPress */}
-          <div className="border-2 border-black p-8 bg-[#FAFAFA]">
+          <div className="border-2 border-black p-8 bg-[#FAFAFA] shadow-brutal-sm">
             <p className="font-mono text-xs uppercase tracking-widest text-[#525252] mb-2">WordPress</p>
-            <h2 className="font-heading font-extrabold uppercase text-4xl mb-4">CMS<br/>+ Thema’s</h2>
+            <h2 className="font-heading font-extrabold uppercase text-4xl mb-4">De Wereldwijde<br/>Standaard</h2>
 
             <p className="text-[#1a1a1a] leading-relaxed">
-              WordPress is het meest gebruikte CMS ter wereld. Het is toegankelijk, flexibel en biedt een enorme bibliotheek aan thema’s en plugins.  
-              Voor veel ondernemers is het een laagdrempelige manier om snel een website te starten, met een vertrouwde backend en veel uitbreidingsmogelijkheden.
+              WordPress drijft miljoenen prachtige, goed werkende websites aan. Het is de ideale, laagdrempelige oplossing om snel een online aanwezigheid op te starten. Dankzij de vertrouwde backend en enorme flexibiliteit is het al jaren een betrouwbaar fundament voor veel ondernemers.
             </p>
           </div>
 
           {/* Next.js */}
-          <div className="border-2 border-black p-8 bg-black text-white shadow-brutal-orange">
+          <div className="border-2 border-black p-8 bg-black text-white shadow-brutal">
             <p className="font-mono text-xs uppercase tracking-widest text-[#FF4500] mb-2">Next.js</p>
-            <h2 className="font-heading font-extrabold uppercase text-4xl mb-4">Framework<br/>+ Code</h2>
+            <h2 className="font-heading font-extrabold uppercase text-4xl mb-4">De Premium<br/>Upgrade</h2>
 
-            <p className="leading-relaxed">
-              Next.js is een modern React‑framework ontwikkeld door Vercel.  
-              Het richt zich op snelheid, SEO, veiligheid en een professionele gebruikerservaring.  
-              Het vraagt om een ontwikkelaar, maar levert een website die technisch sterk is en lang meegaat.
+            <p className="leading-relaxed text-gray-200">
+              Next.js is een modern React‑framework gebouwd voor maximale prestaties. Het is de technologie achter grote platforms zoals Nike en Netflix. Next.js is een bewuste, strategische investering voor bedrijven die de absolute top in hun markt eisen qua snelheid, veiligheid en lokale Google-rankings.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CONTENT */}
+      {/* CONTENT: Diepgaande vergelijking geschreven naar klantvoordeel in plaats van pure techniek */}
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
 
           <h2>Wat is WordPress?</h2>
           <p>
-            WordPress is een open‑source CMS dat draait op PHP en een database.  
-            Het biedt een vertrouwde backend, duizenden plugins en een ecosysteem dat geschikt is voor blogs, bedrijfswebsites en webshops.
-          </p>
-          <p>
-            De kracht van WordPress zit in de flexibiliteit: veel functionaliteit is beschikbaar zonder maatwerk.  
-            Voor ondernemers die zelf content willen beheren of snel willen starten, is WordPress een logische keuze.
+            WordPress is een open‑source Content Management Systeem (CMS). De kracht ligt in de enorme bibliotheek aan plugins en thema's, waardoor veel functionaliteiten direct out-of-the-box beschikbaar zijn. Voor ondernemers die snel willen schakelen, zelf veel basiscontent beheren en een flexibel allround systeem zoeken, is en blijft WordPress een uitstekende keuze.
           </p>
 
           <h2>Wat is Next.js?</h2>
           <p>
-            Next.js is een React‑framework dat pagina’s vooraf rendert of server‑side levert.  
-            Hierdoor worden websites extreem snel geladen en direct goed gelezen door zoekmachines.
-          </p>
-          <p>
-            Grote bedrijven zoals Nike, Netflix en TikTok gebruiken Next.js vanwege de prestaties, schaalbaarheid en moderne architectuur.
+            Next.js levert pagina’s kant‑en‑klaar en statisch aan de browser van de bezoeker. Er hoeven geen zware database-processen te draaien op het moment dat iemand klikt. Dit resulteert in een website die direct laadt en foutloos functioneert, wat leidt tot een superieure gebruikerservaring en maximale conversie.
           </p>
 
-          <h2>Snelheid</h2>
+          <h2>Laadsnelheid & Conversie</h2>
           <p>
-            Snelheid is een belangrijke factor voor gebruikservaring én SEO.  
-            Beide systemen kunnen snel zijn, maar de technische basis verschilt:
+            Een snelle website zorgt direct voor minder afhakers en meer aanvragen. Hoewel beide systemen geoptimaliseerd kunnen worden, is de technische architectuur fundamenteel anders:
           </p>
-
           <ul>
-            <li><strong>WordPress</strong> — snelheid hangt af van thema’s, plugins en hosting. Met een licht thema en goede hosting kan WordPress prima presteren.</li>
-            <li><strong>Next.js</strong> — pagina’s worden vooraf gerenderd of via edge‑servers geleverd, wat zorgt voor zeer korte laadtijden.</li>
+            <li><strong>WordPress</strong> — De snelheid valt of staat met de kwaliteit van de hosting, de complexiteit van het thema en het aantal actieve plugins. Een schone WordPress-site kan prima presteren.</li>
+            <li><strong>Next.js</strong> — Snelheid zit ingebakken in het DNA. Pagina's laden in de regel in minder dan een seconde op mobiel, omdat de browser geen overtollige ballast of scripts hoeft in te laden.</li>
+          </ul>
+
+          <h2>SEO & Vindbaarheid</h2>
+          <p>
+            Google stelt steeds strengere eisen aan hoe soepel een website functioneert. Dit beïnvloedt je positie in de zoekresultaten:
+          </p>
+          <ul>
+            <li><strong>WordPress</strong> — SEO-optimalisatie verloopt meestal via plugins zoals Yoast of RankMath. Dit levert goede resultaten op, mits de code van het onderliggende thema niet te zwaar is.</li>
+            <li><strong>Next.js</strong> — Technische SEO is direct geïntegreerd in de core code via de Metadata API. Zonder extra plugins heeft de site een directe voorsprong bij het behalen van de maximale score binnen Google PageSpeed Insights.</li>
+          </ul>
+
+          <h2>Veiligheid & Stabiliteit</h2>
+          <p>
+            Het beschermen van je bedrijfsgegevens en klantgegevens is cruciaal:
+          </p>
+          <ul>
+            <li><strong>WordPress</strong> — Door de enorme populariteit is het een vaker gezocht doelwit. Met premium hosting, sterke beveiligingsplugins en structureel onderhoud is een WordPress-site echter uitstekend te beveiligen.</li>
+            <li><strong>Next.js</strong> — Omdat Next.js websites statisch gegenereerd worden, is er geen openbare database of login-omgeving direct aan de voorkant gekoppeld. Dit verkleint het risico op hackpogingen of plugin-gerelateerde crashes tot een absoluut minimum.</li>
+          </ul>
+
+          <h2>Onderhoud & Tijd</h2>
+          <p>
+            De tijd die je maandelijks kwijt bent aan het beheren van je website verschilt sterk:
+          </p>
+          <ul>
+            <li><strong>WordPress</strong> — Vraagt om regelmatige controle. Plugins, thema's en het core systeem moeten up-to-date gehouden worden om comptabiliteit en veiligheid te garanderen.</li>
+            <li><strong>Next.js</strong> — Vrijwel onderhoudsvrij op technisch vlak. Eenmaal gelanceerd blijft de website stabiel en snel online draaien, zonder dat je wekelijks updates hoeft te controleren.</li>
+          </ul>
+
+          <h2>Wanneer kies je voor WordPress?</h2>
+          <p>Het traditionele CMS past het beste bij jouw situatie als:</p>
+          <ul>
+            <li>Je snel live wilt gaan met een beproefd systeem en een toegankelijk budget.</li>
+            <li>Je direct gebruik wilt maken van specifieke, bestaande plugins voor je bedrijfsvoering.</li>
+            <li>Je volledig zelfstandig alle content en lay-outs wilt kunnen aanpassen in een vertrouwde admin-omgeving.</li>
+          </ul>
+
+          <h2>Wanneer kies je voor Next.js?</h2>
+          <p>De overstap naar het moderne React-framework is de juiste beslissing als:</p>
+          <ul>
+            <li>Maximale snelheid, kortere laadtijden en een hoge lokale Google-ranking cruciaal zijn voor het werven van je klanten.</li>
+            <li>Je op zoek bent naar een uniek design op maat, zonder de beperkingen of ballast van standaard templates.</li>
+            <li>Je kiest voor een stabiel, onderhoudsarm en veilig digitaal platform dat probleemloos meegroeit met jouw MKB-onderneming.</li>
           </ul>
 
           <p>
-            Voor ondernemers die maximale prestaties willen, biedt Next.js een voorsprong door de moderne architectuur.
-          </p>
-
-          <h2>SEO</h2>
-          <p>
-            Beide systemen kunnen goed scoren in Google, maar de aanpak verschilt:
-          </p>
-
-          <ul>
-            <li><strong>WordPress</strong> — SEO wordt vaak geregeld via plugins zoals Yoast of RankMath. Dit werkt goed, mits het thema en de hosting sterk zijn.</li>
-            <li><strong>Next.js</strong> — SEO is ingebouwd via de Metadata API. Titles, descriptions en structured data worden direct in code ingesteld.</li>
-          </ul>
-
-          <p>
-            Voor ondernemers die technische SEO belangrijk vinden, biedt Next.js meer controle en minder afhankelijkheid van plugins.
-          </p>
-
-          <h2>Veiligheid</h2>
-          <p>
-            Veiligheid is een belangrijk onderdeel van elke website:
-          </p>
-
-          <ul>
-            <li><strong>WordPress</strong> — door het grote ecosysteem is het belangrijk om updates en beveiliging serieus te nemen. Met goede hosting en onderhoud is WordPress veilig.</li>
-            <li><strong>Next.js</strong> — statische of server‑side gegenereerde pagina’s hebben geen publieke login‑omgeving, wat het aanvalsoppervlak verkleint.</li>
-          </ul>
-
-          <p>
-            Beide systemen kunnen veilig zijn, mits ze goed worden beheerd en onderhouden.
-          </p>
-
-          <h2>Onderhoud</h2>
-          <p>
-            Onderhoud verschilt per platform:
-          </p>
-
-          <ul>
-            <li><strong>WordPress</strong> — thema’s, plugins en core updates vragen regelmatig onderhoud.</li>
-            <li><strong>Next.js</strong> — weinig onderhoud, vooral afhankelijk van hosting en framework‑updates.</li>
-          </ul>
-
-          <p>
-            Voor ondernemers die weinig tijd willen besteden aan onderhoud, kan Next.js aantrekkelijk zijn.
-          </p>
-
-          <h2>Wanneer kiezen voor WordPress?</h2>
-          <p>Kies WordPress als:</p>
-
-          <ul>
-            <li>U zelf veel content wilt beheren via een vertrouwde backend.</li>
-            <li>U functionaliteit nodig heeft die beschikbaar is als plugin.</li>
-            <li>U een beperkt budget heeft en snel wilt starten.</li>
-            <li>U een CMS zoekt dat meerdere gebruikers ondersteunt.</li>
-          </ul>
-
-          <h2>Wanneer kiezen voor Next.js?</h2>
-          <p>Kies Next.js als:</p>
-
-          <ul>
-            <li>Snelheid en SEO belangrijk zijn voor uw bedrijf.</li>
-            <li>U een moderne, schaalbare website wilt die jaren meegaat.</li>
-            <li>U een professionele uitstraling wilt zonder afhankelijkheid van thema’s.</li>
-            <li>U later een headless CMS wilt koppelen voor flexibel beheer.</li>
-          </ul>
-
-          <p>
-            Voor veel Rotterdamse ondernemers — ZZP, MKB, dienstverleners, coaches, bouwbedrijven — is Next.js een toekomstgerichte keuze.  
-            Maar beide systemen kunnen uitstekend werken, afhankelijk van uw situatie.
+            Voor veel dienstverleners, ZZP'ers en MKB-bedrijven in de regio Rotterdam is Next.js een slimme, toekomstgerichte investering. Maar het belangrijkste is dat het fundament aansluit bij wat jouw bedrijf op dit moment nodig heeft om online te groeien.
           </p>
         </div>
       </article>
 
+      {/* CTA SECTION: Direct gericht op de gratis Quickscan-waarde */}
       <CTASection
-        title="Welke oplossing past bij uw bedrijf?"
-        subtitle="Tijdens een vrijblijvend gesprek bekijken we samen wat het beste aansluit bij uw doelen."
-        button="Plan een gesprek"
+        title="Ontdek welk fundament bij jouw groeidoelen past"
+        subtitle="Vraag een gratis website Quickscan aan. Ik bekijk je huidige website handmatig en stuur je binnen 48 uur een persoonlijk advies over waar je winst kunt behalen."
+        button="Vraag gratis website scan aan"
+        href="/contact?intent=quickscan"
       />
     </>
   );
