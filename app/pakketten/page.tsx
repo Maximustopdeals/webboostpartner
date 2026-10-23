@@ -3,28 +3,26 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Pakketten | Starter €1.950 · Professional €3.495 · Premium €5.495 · Enterprise",
+  title: "Website Laten Maken Prijzen & Pakketten | WebBoost Partner",
   description:
-    "Heldere Next.js pakketten — van Starter voor ZZP'ers tot Enterprise voor maatwerk. Razendsnel, SEO-technisch sterk en gebouwd voor maximale conversie.",
+    "Transparante tarieven voor een professionele Next.js website. Bekijk onze pakketten voor ZZP en MKB. Razendsnel, optimaal vindbaar en zonder verborgen kosten.",
   alternates: { canonical: "https://webboostpartner.nl/pakketten" },
 };
 
 export default function PakkettenPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO: Transparante en waardegerichte positionering */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Pakketten</p>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Investeringsopbouw</p>
 
           <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
-            Website <span className="text-[#FF4500]">pakketten</span>
+            Transparante <span className="text-[#FF4500]">tarieven</span>
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed">
-            Vier pakketten — van <strong>Starter</strong> voor ZZP&apos;ers tot 
-            <strong> Enterprise</strong> voor maatwerk. 
-            <strong> Geen verborgen kosten</strong>, wel snelheid, SEO en een website die scoort.
+          <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed text-[#1a1a1a] font-medium">
+            Duidelijkheid vooraf, maximaal resultaat achteraf. Vier heldere Next.js pakketten afgestemd op de groeifase van jouw onderneming. Altijd zonder onverwachte kosten tussendoor.
           </p>
         </div>
       </section>
@@ -32,91 +30,81 @@ export default function PakkettenPage() {
       {/* PRICING SECTION */}
       <PricingSection compact />
 
-      {/* CONTENT SECTION */}
+      {/* CONTENT SECTION: Volledig geoptimaliseerd naar de Clean High-End strategie */}
       <section className="bg-white py-16 sm:py-24 border-y-2 border-black">
         <div className="max-w-5xl mx-auto px-4 sm:px-8 prose-brutal">
 
           <h2>Wat zit standaard in elk pakket?</h2>
-          <p>Ongeacht welk pakket u kiest, krijgt u dezelfde fundamenten:</p>
+          <p>Ongeacht de omvang van je project, geloof ik dat elk digitaal fundament technisch perfect moet zijn. Daarom krijgt elke website deze basiselementen mee:</p>
 
           <ul>
-            <li><strong>Maatwerk Next.js website</strong> — geen sjablonen, wel een design dat bij uw merk past.</li>
-            <li><strong>Responsive ontwerp</strong> — perfect op mobiel, tablet en desktop.</li>
-            <li><strong>Technische SEO</strong> — schema, sitemap, robots, OG-tags.</li>
-            <li><strong>Core Web Vitals optimalisatie</strong> — sneller dan 90% van de concurrentie.</li>
-            <li><strong>Contactformulier</strong> — werkend, met e-mailnotificatie.</li>
-            <li><strong>Google Analytics 4</strong> — correct geconfigureerd.</li>
-            <li><strong>Search Console setup</strong> — sitemap ingediend, eigendom geverifieerd.</li>
-            <li><strong>SSL & hosting</strong> — eerste jaar inbegrepen.</li>
+            <li><strong>Maatwerk Next.js ontwerp</strong> — Geen dertien-in-een-dozijn sjablonen, maar een unieke uitstraling die past bij uw merkidentiteit.</li>
+            <li><strong>Responsive design</strong> — Foutloze weergave en optimale gebruiksvriendelijkheid op smartphone, tablet en desktop.</li>
+            <li><strong>Technische SEO-optimalisatie</strong> — Ingebouwde Google-richtlijnen zoals correcte metadata, sitemaps en gestructureerde data.</li>
+            <li><strong>Bliksemsnelle laadsnelheid</strong> — Volledig geoptimaliseerd om afhakers op mobiele netwerken te voorkomen.</li>
+            <li><strong>Betrouwbare contactmogelijkheden</strong> — Werkende formulieren inclusief directe e-mailnotificaties en eventuele WhatsApp-integratie.</li>
+            <li><strong>Conversiegericht fundament</strong> — Logische navigatiestructuren en duidelijke knoppen die de bezoeker aanzetten tot actie.</li>
+            <li><strong>Google Analytics 4 setup</strong> — Correct ingericht zodat u vanaf dag één uw bezoekersstromen nauwkeurig kunt meten.</li>
           </ul>
 
-          <h2>Hoe kies ik het juiste pakket?</h2>
+          <h2>Hoe kies je het juiste pakket?</h2>
 
-          <h3>Starter — €1.950 excl. btw (€2.360 incl.)</h3>
+          <h3>Starter — €1.950 excl. btw</h3>
           <p>
-            Ideaal voor ZZP&apos;ers en starters die snel een professionele online aanwezigheid nodig hebben.
-            3–5 pagina&apos;s, basis SEO en een razendsnelle website die binnen 2 seconden laadt.
+            Speciaal ontwikkeld voor ZZP'ers en startende ondernemers die direct een serieus, professioneel online visitekaartje willen neerzetten. Dit omvat 3 tot 5 complete pagina's, een solide SEO-basis en een extreem snelle laadtijd om direct lokaal je stempel te drukken.
           </p>
 
-          <h3>Professional — €3.495 excl. btw (€4.229 incl.)</h3>
+          <h3>Professional — €3.495 excl. btw</h3>
           <p>
-            Voor ondernemers die willen groeien en lokaal beter gevonden willen worden.
-            Inclusief lokale SEO Rotterdam, landingspagina&apos;s, blogmodule en extra conversie-optimalisatie.
+            Jouw ideale keuze als MKB-ondernemer wanneer je website actief leads en aanvragen moet genereren via zoekmachines. Dit pakket is uitgebreid met strategische landingspagina's, lokale SEO-optimalisaties gericht op de regio Rotterdam, en een flexibele blog- of nieuwsmodule voor content marketing.
           </p>
 
-          <h3>Premium — €5.495 excl. btw (€6.649 incl.)</h3>
+          <h3>Premium — €5.495 excl. btw</h3>
           <p>
-            Voor bedrijven die maximale zichtbaarheid willen. High-end ontwerp, technische SEO, 
-            animaties, CRM-integraties, dashboards en een laadtijd onder 1 seconde.
+            Voor gevestigde bedrijven die online de absolute top in hun branche willen claimen. Dit omvat een high-end, volledig custom platform (10 tot 20 pagina's), diepgaande conversiepsychologie, vloeiende animaties en naadloze integraties met jouw CRM- of online boekingssystemen.
           </p>
 
-          <h3>Enterprise — vanaf €7.995 excl. btw (€9.674 incl.)</h3>
+          <h3>Enterprise — vanaf €7.995 excl. btw</h3>
           <p>
-            Voor maatwerkprojecten, webshops, portals, dashboards en complexe integraties.
-            Volledige strategie, headless CMS, schaalbare webshopfunctionaliteit en doorlopende ondersteuning.
+            Voor organisaties met complexe digitale processen, grotere webshops, klantomgevingen of dashboards. Inclusief complete merkstrategie, een headless CMS-koppeling voor flexibel beheer, en uitgebreide ondersteuning na livegang.
             <strong className="block mt-2 text-[#FF4500]">
-              Vanaf prijs — maatwerk mogelijk. Vraag een offerte op maat aan.
+              * Maatwerk is altijd mogelijk. Vraag gerust een voorstel op maat aan.
             </strong>
           </p>
 
-          <div className="bg-[#FAFAFA] border-2 border-black p-6 my-8">
-            <h3 className="mt-0 mb-2">💡 Webshop functionaliteit?</h3>
+          <div className="bg-[#FAFAFA] border-2 border-black p-6 my-8 shadow-brutal-sm">
+            <h3 className="mt-0 mb-2">💡 Direct verkopen met een webshop?</h3>
             <p className="mb-0">
-              Het Enterprise pakket is de juiste keuze voor webshops. Denk aan productpagina&apos;s,
-              iDEAL / Mollie / Stripe integratie, voorraadbeheer, ordersysteem en een admin dashboard.
-              Vanaf 10 producten — schaalbaar tot honderden producten.
+              Indien u producten online wilt verkopen, is het Enterprise-segment de juiste start. We integreren veilige betaalsystemen (iDEAL, Mollie, Stripe), richten overzichtelijke productpagina's in en leveren een stabiel admin-dashboard waarmee u eenvoudig zelf uw voorraad beheert. Dit is schaalbaar van 10 tot honderden producten.
             </p>
           </div>
 
-          <h2>Wat zit er níet in?</h2>
-          <p>Eerlijk is eerlijk. Niet alles past in een pakket. Buiten scope (maar bespreekbaar):</p>
+          <h2>Wat zit er bewust níet in?</h2>
+          <p>Eerlijkheid duurt het langst. Om misverstanden te voorkomen, vallen de volgende werkzaamheden buiten de scope van de standaardpakketten:</p>
 
           <ul>
-            <li>Content schrijven voor alle pagina&apos;s.</li>
-            <li>Logo en huisstijl ontwerp.</li>
-            <li>Maandelijks SEO-onderhoud.</li>
-            <li>Doorlopende advertentiecampagnes.</li>
-            <li>Custom backend functionaliteit buiten de standaard.</li>
+            <li>Het volledig schrijven of redigeren van de paginateksten (contentlevering).</li>
+            <li>Het ontwerpen van een compleet nieuw logo of een uitgebreide huisstijl.</li>
+            <li>Doorlopend maandelijks SEO-onderhoud en linkbuilding na oplevering.</li>
+            <li>Het opzetten en beheren van betaalde advertantiecampagnes (Google Ads).</li>
           </ul>
-
           <p>
-            Voor alles wat buiten scope valt, geldt: ik denk graag mee. Soms is een ander pakket beter,
-            soms een vaste prijsafspraak voor extra werk.
+            Mocht u hier toch ondersteuning bij wensen, dan denk ik uiteraard graag met u mee via een aanvullend voorstel of een vast uurtarief.
           </p>
 
           <h2>Hoe verloopt de betaling?</h2>
           <p>
-            Standaard werk ik met twee termijnen: 50% bij start, 50% bij oplevering.
-            Voor grotere projecten (Enterprise) is een derde termijn bij milestone bespreekbaar.
+            Om het risico volledig transparant te verdelen, werk ik standaard in twee termijnen: 50% bij de start van het project en de resterende 50% pas wanneer de website volledig naar wens is gecontroleerd en live wordt gezet.
           </p>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA SECTION: Direct gericht op advies i.p.v. harde verkoop */}
       <CTASection
-        title="Vraag een offerte aan."
-        subtitle="Niet zeker welk pakket bij u past? Stuur een berichtje, we bespreken het samen."
-        button="Offerte aanvragen"
+        title="Ontdek welk pakket bij jouw doelen aansluit."
+        subtitle="Twijfel je over de juiste scope voor jouw onderneming? Plan een vrijblijvend adviesgesprek in en we kijken samen welk fundament jou het meeste rendement oplevert."
+        button="Plan gratis adviesgesprek"
+        href="/contact?intent=advies"
       />
     </>
   );
