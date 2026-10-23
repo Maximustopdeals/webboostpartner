@@ -50,7 +50,7 @@ export default function WordPressNaarNextjsPage() {
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed text-[#1a1a1a] font-medium">
-            Uw huidige website functioneert, maar voelt op mobiel traag aan, stagneert in vindbaarheid of vraagt maandelijks om intensief onderhoud? Een migratie naar Next.js biedt uw online business een krachtige stap voorwaarts: **sneller, veiliger en maximaal vindbaar** — met volledig behoud van uw opgebouwde Google-autoriteit.
+            Uw huidige website functioneert, maar voelt op mobiel traag aan, stagneert in vindbaarheid of vraagt maandelijks om intensief onderhoud? Een migratie naar Next.js biedt uw online business een krachtige stap voorwaarts: **sneller, veiliger en maximaal vindbaar** met volledig behoud van uw opgebouwde Google-autoriteit.
           </p>
         </div>
       </section>
