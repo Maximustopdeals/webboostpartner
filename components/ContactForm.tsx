@@ -1,6 +1,5 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
@@ -19,21 +18,59 @@ interface FormStatus {
   errorMsg: string;
 }
 
+function Field({ label, name, type = "text", required = false, testid }: FieldProps) {
+  return (
+    <div>
+      <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2 text-[#1a1a1a]">
+        {label}
+      </label>
+      <input
+        type={type}
+        name={name}
+        required={required}
+        data-testid={testid}
+        className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+      />
+    </div>
+  );
+}
+
+/* ---------- Intent helpers (single source of truth) ---------- */
+const isAnalyseIntent = (v: string | null): boolean =>
+  v === "analyse" ||
+  v === "quickscan" ||
+  v === "quickscan_analyse" ||
+  v === "migratie_analyse" ||
+  v === "website_analyse";
+
+const isOfferteIntent = (v: string | null): boolean =>
+  v === "offerte" || (v ? v.startsWith("pakket_") : false);
+
+const isAdviesIntent = (v: string | null): boolean =>
+  v === "advies" || v === "gesprek" || v === "adviesgesprek";
+
 export default function ContactForm() {
   const searchParams = useSearchParams();
   const intent = searchParams.get("intent");
 
-  const [schetsAanvraag, setSchetsAanvraag] = useState(intent === "schets");
-  const [offerteAanvraag, setOfferteAanvraag] = useState(intent === "offerte");
-  const [gesprekAanvraag, setGesprekAanvraag] = useState(intent === "gesprek");
+  const [analyseAanvraag, setAnalyseAanvraag] = useState<boolean>(() => isAnalyseIntent(intent));
+  const [offerteAanvraag, setOfferteAanvraag] = useState<boolean>(() => isOfferteIntent(intent));
+  const [adviesAanvraag, setAdviesAanvraag] = useState<boolean>(() => isAdviesIntent(intent));
 
   const [status, setStatus] = useState<FormStatus["status"]>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
 
+  // Sync checkboxes when the URL intent changes (soft navigation, CTA clicks)
+  useEffect(() => {
+    setAnalyseAanvraag(isAnalyseIntent(intent));
+    setOfferteAanvraag(isOfferteIntent(intent));
+    setAdviesAanvraag(isAdviesIntent(intent));
+  }, [intent]);
+
   const getTitle = (): string => {
-    if (intent === "schets") return "Vraag een gratis schets aan";
-    if (intent === "offerte") return "Vraag een offerte aan";
-    if (intent === "gesprek") return "Plan een kennismaking";
+    if (isAnalyseIntent(intent)) return "Vraag een gratis website-analyse aan";
+    if (isOfferteIntent(intent)) return "Vraag een voorstel op maat aan";
+    if (isAdviesIntent(intent)) return "Plan een vrijblijvend adviesgesprek";
     return "Stuur een bericht";
   };
 
@@ -44,9 +81,9 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    data.set("intentie_schets", schetsAanvraag ? "JA" : "NEE");
+    data.set("intentie_analyse", analyseAanvraag ? "JA" : "NEE");
     data.set("intentie_offerte", offerteAanvraag ? "JA" : "NEE");
-    data.set("intentie_gesprek", gesprekAanvraag ? "JA" : "NEE");
+    data.set("intentie_advies", adviesAanvraag ? "JA" : "NEE");
 
     if (intent) {
       data.set("cta_bron", intent);
@@ -79,9 +116,7 @@ export default function ContactForm() {
       }
     } catch (err: unknown) {
       const errorMessage =
-        err instanceof Error
-          ? err.message
-          : "Netwerkfout. Controleer je verbinding of probeer het later opnieuw.";
+        err instanceof Error ? err.message : "Netwerkfout. Probeer het later opnieuw.";
       setErrorMsg(errorMessage);
       setStatus("error");
     }
@@ -94,11 +129,12 @@ export default function ContactForm() {
         data-testid="contact-form-success"
       >
         <CheckCircle2 size={48} className="text-[#FF4500] mb-4" strokeWidth={2.5} />
-        <h3 className="font-heading font-extrabold uppercase text-3xl mb-2">
-          Bedankt voor je bericht!
+        <h3 className="font-heading font-extrabold uppercase text-3xl mb-2 text-black">
+          Bedankt voor je aanvraag!
         </h3>
-        <p className="text-base text-[#525252] max-w-prose">
-          Ik neem binnen 24 uur (werkdagen) contact met je op. Tot snel.
+        <p className="text-base text-[#525252] max-w-prose leading-relaxed">
+          Ik ga direct voor je aan de slag en stuur je binnen 24 tot 48 uur een
+          persoonlijke reactie. Tot snel!
         </p>
       </div>
     );
@@ -111,11 +147,12 @@ export default function ContactForm() {
       data-testid="contact-form"
     >
       <div className="border-b-2 border-black pb-4 mb-2">
-        <h2 className="font-heading font-extrabold uppercase text-2xl">
+        <h2 className="font-heading font-extrabold uppercase text-2xl text-black">
           {getTitle()}
         </h2>
-        <p className="text-sm text-[#525252] mt-1">
-          Vul het formulier in en ik reageer binnen 24 uur persoonlijk.
+        <p className="text-sm text-[#525252] mt-1 leading-relaxed">
+          Vul de velden in en je ontvangt binnen 24 tot 48 uur een persoonlijk en
+          onafhankelijk advies.
         </p>
       </div>
 
@@ -123,36 +160,50 @@ export default function ContactForm() {
         <Field label="Naam *" name="naam" required={true} testid="field-naam" />
         <Field label="Bedrijfsnaam" name="bedrijf" testid="field-bedrijf" />
       </div>
+
       <div className="grid sm:grid-cols-2 gap-5">
         <Field label="E-mail *" name="email" type="email" required={true} testid="field-email" />
         <Field label="Telefoon" name="telefoon" type="tel" testid="field-telefoon" />
       </div>
 
       <div>
-        <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2">
-          Bericht *
+        <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2 text-[#1a1a1a]">
+          Website URL (optioneel voor analyse)
+        </label>
+        <input
+          type="text"
+          name="website_url"
+          placeholder="www.jouwbedrijf.nl"
+          className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+        />
+      </div>
+
+      <div>
+        <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2 text-[#1a1a1a]">
+          Bericht of aanvullende opmerking *
         </label>
         <textarea
           name="bericht"
           required
-          rows={5}
-          className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors"
+          rows={4}
+          placeholder="Vertel kort wat over je bedrijf en je online ambities..."
+          className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
           data-testid="field-bericht"
         />
       </div>
 
       <div>
-        <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2">
+        <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2 text-[#1a1a1a]">
           Hoe heb je mij gevonden?
         </label>
         <select
           name="bron"
-          className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors"
+          className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
           data-testid="field-bron"
           defaultValue=""
         >
           <option value="">Maak een keuze</option>
-          <option value="Google">Google</option>
+          <option value="Google">Google Zoekmachine</option>
           <option value="Vrienden/kennissen">Vrienden / kennissen</option>
           <option value="Eigen netwerk">Eigen netwerk</option>
           <option value="Anders">Anders</option>
@@ -161,22 +212,22 @@ export default function ContactForm() {
 
       <div className="border-2 border-black bg-[#FAFAFA] p-5 space-y-4">
         <p className="font-heading font-bold uppercase text-xs tracking-widest text-[#525252]">
-          Waar kan ik u mee helpen?
+          Kies jouw gewenste startmethode:
         </p>
 
         <label className="flex items-start gap-3 cursor-pointer">
           <input
             type="checkbox"
-            checked={schetsAanvraag}
-            onChange={(e) => setSchetsAanvraag(e.target.checked)}
+            checked={analyseAanvraag}
+            onChange={(e) => setAnalyseAanvraag(e.target.checked)}
             className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
-            data-testid="intent-schets"
+            data-testid="intent-analyse"
           />
-          <span className="text-sm">
-            <strong>Ja, ik wil een gratis schets</strong>
+          <span className="text-sm text-black">
+            <strong>Ja, ik wil een gratis website-analyse</strong>
             <br />
-            <span className="text-[#525252]">
-              Binnen 24 uur ziet u hoe uw nieuwe website eruit kan zien.
+            <span className="text-[#525252] text-xs">
+              Binnen 48 uur een heldere, vrijblijvende analyse van uw huidige site.
             </span>
           </span>
         </label>
@@ -189,11 +240,11 @@ export default function ContactForm() {
             className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
             data-testid="intent-offerte"
           />
-          <span className="text-sm">
-            <strong>Ja, ik wil een offerte</strong>
+          <span className="text-sm text-black">
+            <strong>Ja, ik wil een transparant voorstel</strong>
             <br />
-            <span className="text-[#525252]">
-              U ontvangt een helder voorstel met vaste prijs.
+            <span className="text-[#525252] text-xs">
+              Een helder projectvoorstel met een vaste all-in prijs vooraf.
             </span>
           </span>
         </label>
@@ -201,16 +252,16 @@ export default function ContactForm() {
         <label className="flex items-start gap-3 cursor-pointer">
           <input
             type="checkbox"
-            checked={gesprekAanvraag}
-            onChange={(e) => setGesprekAanvraag(e.target.checked)}
+            checked={adviesAanvraag}
+            onChange={(e) => setAdviesAanvraag(e.target.checked)}
             className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
-            data-testid="intent-gesprek"
+            data-testid="intent-advies"
           />
-          <span className="text-sm">
-            <strong>Ja, ik wil een kennismakingsgesprek</strong>
+          <span className="text-sm text-black">
+            <strong>Ja, ik wil een vrijblijvend adviesgesprek</strong>
             <br />
-            <span className="text-[#525252]">
-              Vrijblijvend, telefonisch of via videocall.
+            <span className="text-[#525252] text-xs">
+              Een kort gesprek via telefoon of op locatie in de regio.
             </span>
           </span>
         </label>
@@ -222,15 +273,14 @@ export default function ContactForm() {
           data-testid="contact-form-error"
         >
           <AlertCircle size={20} className="text-[#FF4500] mt-0.5 shrink-0" />
-          <p className="text-sm font-medium">{errorMsg}</p>
+          <p className="text-sm font-medium text-black">{errorMsg}</p>
         </div>
       )}
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="group inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-        data-testid="contact-form-submit"
+        className="group w-full inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "loading" ? (
           <>
@@ -238,32 +288,10 @@ export default function ContactForm() {
           </>
         ) : (
           <>
-            Verstuur aanvraag{" "}
-            <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+            Verzend Mijn Aanvraag <Send size={18} />
           </>
         )}
       </button>
-      <p className="text-xs text-[#525252]">
-        Door dit formulier te versturen ga je akkoord met de verwerking van je gegevens
-        om contact met je op te nemen.
-      </p>
     </form>
-  );
-}
-
-function Field({ label, name, type = "text", required = false, testid }: FieldProps) {
-  return (
-    <div>
-      <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2">
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        required={required}
-        className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors"
-        data-testid={testid}
-      />
-    </div>
   );
 }
