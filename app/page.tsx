@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 import USPGrid from "@/components/USPGrid";
-import Marquee from "@/components/Marquee";
 import PageSpeedTool from "@/components/PageSpeedTool";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
