@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Cookie, X } from "lucide-react";
 
 const STORAGE_KEY = "cookie-consent";
-
 type Consent = "all" | "functional" | null;
 
 export default function CookieBanner() {
@@ -13,19 +12,12 @@ export default function CookieBanner() {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Consent;
-    console.log("[CookieBanner] Opgeslagen consent:", stored); // Debug tip!
-    
-    if (!stored) {
-      setVisible(true);
-    }
+    if (!stored) setVisible(true);
   }, []);
 
   const handleConsent = (consent: "all" | "functional") => {
     localStorage.setItem(STORAGE_KEY, consent);
     setVisible(false);
-    console.log("[CookieBanner] Nieuwe consent ingesteld op:", consent);
-
-    // Activeer of weiger Google Analytics op basis van de keuze
     if (typeof window !== "undefined") {
       // @ts-expect-error - gtag wordt door GTM ingeladen
       window.gtag?.("consent", "update", {
@@ -46,23 +38,19 @@ export default function CookieBanner() {
       <div className="p-5">
         <div className="flex items-start gap-3 mb-4">
           <div className="shrink-0 w-9 h-9 bg-[#FF4500] border-2 border-black grid place-items-center">
-            <Cookie size={18} className="text-white" strokeWidth={2.5} />
+            <Cookie size={18} className="text-black" strokeWidth={2.5} />
           </div>
           <div className="flex-1">
-            <h2
-              id="cookie-banner-title"
-              className="font-heading font-extrabold uppercase text-sm tracking-tight mb-1"
-            >
+            <h2 id="cookie-banner-title" className="font-heading font-extrabold uppercase text-sm tracking-tight mb-1">
               Cookies
             </h2>
             <p id="cookie-banner-desc" className="text-xs text-[#525252] leading-relaxed">
               Wij gebruiken functionele cookies om de website te laten werken, 
               en analytische cookies om te begrijpen hoe u onze site gebruikt. 
               Zie ons{" "}
-              <Link href="/cookiebeleid" className="text-[#FF4500] underline font-bold">
+              <Link href="/cookiebeleid" className="text-orange-accessible underline font-bold">
                 cookiebeleid
-              </Link>
-              .
+              </Link>.
             </p>
           </div>
           <button
@@ -79,7 +67,7 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={() => handleConsent("all")}
-            className="flex-1 bg-[#FF4500] text-white font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-3 hover:bg-black transition-colors"
+            className="flex-1 bg-[#FF4500] text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-3 hover:bg-black hover:text-white transition-colors"
           >
             Alles accepteren
           </button>
