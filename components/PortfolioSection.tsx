@@ -137,7 +137,6 @@ export default function PortfolioSection() {
 
         {/* WORK GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* ✅ index toegevoegd om de eerste afbeelding prioriteit te geven */}
           {projects.map((p, index) => (
             <div
               key={p.name}
@@ -173,7 +172,8 @@ export default function PortfolioSection() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] font-mono text-gray-500 hover:text-[#FF4500] transition-colors"
+                    /* ✅ FIX: hover:text-orange-accessible voor contrast */
+                    className="inline-flex items-center gap-1 text-[11px] font-mono text-gray-500 hover:text-orange-accessible transition-colors"
                   >
                     Live site <ExternalLink size={12} />
                   </a>
@@ -203,7 +203,8 @@ export default function PortfolioSection() {
                 {/* PRIMARY ACTION */}
                 <Link
                   href="/contact?intent=quickscan"
-                  className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase text-xs tracking-wider border-2 border-black py-3 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_#1A1A19]"
+                  /* ✅ FIX: text-black in plaats van text-white voor contrast */
+                  className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black py-3 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_#1A1A19]"
                 >
                   Ontdek Jouw Kansen <MonitorPlay size={14} />
                 </Link>
@@ -216,7 +217,8 @@ export default function PortfolioSection() {
         <div className="text-center mt-16">
           <Link
             href="/contact?intent=quickscan"
-            className="inline-flex items-center gap-2 bg-black text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-[#FF4500] hover:border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#FF4500] transition-all text-sm"
+            /* ✅ FIX: hover:text-black op de oranje hover-state */
+            className="inline-flex items-center gap-2 bg-black text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-[#FF4500] hover:text-black hover:border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#1A1A19] transition-all text-sm"
           >
             Wil jij ook structureel meer online resultaat?{" "}
             <ArrowRight size={16} />
@@ -224,7 +226,6 @@ export default function PortfolioSection() {
         </div>
       </div>
 
-      {/* ✅ Naam gewijzigd naar marquee-portfolio om conflicten met de globale Marquee te voorkomen */}
       <style>{`
         @keyframes marquee-portfolio {
           0% { transform: translateX(0); }
