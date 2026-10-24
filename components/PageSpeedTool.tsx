@@ -152,7 +152,8 @@ export default function PageSpeedTool() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full justify-center inline-flex items-center bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider text-xs border-2 border-black py-4 hover:bg-black transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+              /* ✅ FIX: text-black in plaats van text-white voor contrast */
+              className="w-full justify-center inline-flex items-center bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider text-xs border-2 border-black py-4 hover:bg-black hover:text-white transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
