@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Zap, Menu, X, FileText, ChevronDown } from "lucide-react";
+import { Zap, Menu, X, MonitorPlay, ChevronDown } from "lucide-react";
 
 interface NavLink {
   href: string;
@@ -11,7 +11,7 @@ interface NavLink {
   children?: NavLink[];
 }
 
-// Hoofdnavigatie: klantgericht met dropdown
+// Hoofdnavigatie: klantgericht, rustig en perfect gecategoriseerd naar ROI-pagina's
 const mainLinks: NavLink[] = [
   { href: "/", label: "HOME" },
   {
@@ -20,9 +20,8 @@ const mainLinks: NavLink[] = [
     children: [
       {
         href: "/website-laten-maken-rotterdam",
-        label: "Website laten maken in Rotterdam",
+        label: "Website laten maken",
       },
-      
       { href: "/nextjs-vs-wordpress", label: "Next.js vs WordPress" },
       { href: "/wordpress-naar-nextjs", label: "WordPress naar Next.js" },
     ],
@@ -41,7 +40,7 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
-  // Sluit dropdown bij klik buiten
+  // Sluit dropdown bij klik buiten de container
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -55,7 +54,7 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Sluit dropdown + mobile menu bij Escape
+  // Sluit dropdown + mobile menu bij de Escape toets
   useEffect(() => {
     function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -68,14 +67,13 @@ export default function Navbar() {
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
-  // Sluit mobile menu bij route-wijziging
+  // Reset menu statussen bij route-wijzigingen
   useEffect(() => {
     setOpen(false);
     setDropdownOpen(false);
     setMobileSubOpen(false);
   }, [pathname]);
 
-  // Check of een link actief is
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
@@ -91,21 +89,20 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 font-heading font-extrabold uppercase text-base tracking-tight shrink-0"
+            className="flex items-center gap-2 font-heading font-black uppercase text-base tracking-tight shrink-0 text-black"
             aria-label="WebBoost Partner - Home"
           >
-            <span className="bg-[#FF4500] text-white w-8 h-8 grid place-items-center border-2 border-black">
-              <Zap size={18} strokeWidth={3} />
+            <span className="bg-[#FF4500] text-white w-8 h-8 grid place-items-center border-2 border-black shadow-[1px_1px_0px_0px_#000]">
+              <Zap size={16} strokeWidth={3} />
             </span>
             WEBBOOSTPARTNER
           </Link>
 
-          {/* Desktop nav + CTA */}
+          {/* Desktop navigatie & High-End CTA */}
           <div className="hidden lg:flex items-center">
             <nav className="flex items-center" aria-label="Hoofdnavigatie">
               {mainLinks.map((item) =>
                 item.children ? (
-                  // Dropdown item
                   <div
                     key={item.href}
                     ref={dropdownRef}
@@ -121,20 +118,20 @@ export default function Navbar() {
                       className={`flex items-center gap-1 px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider transition-colors whitespace-nowrap ${
                         isActive(item.href)
                           ? "bg-black text-white"
-                          : "hover:bg-black hover:text-white"
+                          : "hover:bg-black hover:text-white text-black"
                       }`}
                     >
                       {item.label}
                       <ChevronDown
                         size={12}
                         strokeWidth={3}
-                        className={`transition-transform ${
-                          dropdownOpen ? "rotate-180" : ""
+                        className={`transition-transform duration-200 ${
+                          dropdownOpen ? "rotate-180 text-[#FF4500]" : ""
                         }`}
                       />
                     </button>
 
-                    {/* Dropdown */}
+                    {/* Dropdown Menu */}
                     {dropdownOpen && (
                       <div
                         className="absolute top-full left-0 pt-1 w-72"
@@ -149,7 +146,7 @@ export default function Navbar() {
                               className={`block px-4 py-3 font-heading font-bold uppercase text-xs tracking-wider border-b-2 border-black last:border-b-0 transition-colors ${
                                 isActive(child.href)
                                   ? "bg-black text-white"
-                                  : "hover:bg-[#FF4500] hover:text-white"
+                                  : "hover:bg-[#FF4500] hover:text-white text-black"
                               }`}
                             >
                               {child.label}
@@ -160,14 +157,13 @@ export default function Navbar() {
                     )}
                   </div>
                 ) : (
-                  // Reguliere link
                   <Link
                     key={item.href}
                     href={item.href}
                     className={`px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider transition-colors whitespace-nowrap ${
                       isActive(item.href)
                         ? "bg-black text-white"
-                        : "hover:bg-black hover:text-white"
+                        : "hover:bg-black hover:text-white text-black"
                     }`}
                   >
                     {item.label}
@@ -176,16 +172,16 @@ export default function Navbar() {
               )}
             </nav>
 
-            {/* CTA Button */}
+            {/* Conversieverhogende CTA Knop: Stuurt direct aan op de Quickscan */}
             <Link
-              href="/contact"
-              className="ml-3 inline-flex items-center gap-1.5 bg-[#FF4500] text-white font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-2.5 hover:bg-black hover:-translate-y-0.5 hover:shadow-brutal-sm transition-all whitespace-nowrap"
+              href="/contact?intent=quickscan"
+              className="ml-4 inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-2.5 hover:bg-black hover:-translate-y-0.5 hover:shadow-brutal-sm transition-all whitespace-nowrap"
             >
-              <FileText size={14} strokeWidth={2.5} /> OFFERTE AANVRAGEN
+              <MonitorPlay size={14} strokeWidth={2.5} /> GRATIS QUICKSCAN
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobiele Hamburger knop */}
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden w-9 h-9 grid place-items-center border-2 border-black bg-black text-white"
@@ -201,7 +197,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobiel Accordion Menu */}
         {open && (
           <nav
             className="lg:hidden border-t-2 border-black py-4 space-y-1"
@@ -209,19 +205,18 @@ export default function Navbar() {
           >
             {mainLinks.map((item) =>
               item.children ? (
-                // Mobile: accordion
                 <div key={item.href}>
                   <button
                     type="button"
                     onClick={() => setMobileSubOpen((v) => !v)}
-                    className="w-full flex items-center justify-between px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider hover:bg-[#FF4500] hover:text-white transition-colors"
+                    className="w-full flex items-center justify-between px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider text-black hover:bg-[#FF4500] hover:text-white transition-colors"
                     aria-expanded={mobileSubOpen}
                   >
                     {item.label}
                     <ChevronDown
                       size={16}
                       strokeWidth={3}
-                      className={`transition-transform ${
+                      className={`transition-transform duration-200 ${
                         mobileSubOpen ? "rotate-180" : ""
                       }`}
                     />
@@ -237,7 +232,7 @@ export default function Navbar() {
                           className={`block px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider transition-colors ${
                             isActive(child.href)
                               ? "bg-black text-white"
-                              : "hover:bg-[#FF4500] hover:text-white"
+                              : "hover:bg-[#FF4500] hover:text-white text-black"
                           }`}
                         >
                           {child.label}
@@ -254,7 +249,7 @@ export default function Navbar() {
                   className={`block px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider transition-colors ${
                     isActive(item.href)
                       ? "bg-black text-white"
-                      : "hover:bg-[#FF4500] hover:text-white"
+                      : "hover:bg-[#FF4500] hover:text-white text-black"
                   }`}
                 >
                   {item.label}
@@ -263,11 +258,11 @@ export default function Navbar() {
             )}
 
             <Link
-              href="/contact"
+              href="/contact?intent=quickscan"
               onClick={() => setOpen(false)}
               className="block px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider bg-[#FF4500] text-white border-2 border-black mt-2 text-center"
             >
-              OFFERTE AANVRAGEN
+              GRATIS QUICKSCAN
             </Link>
           </nav>
         )}
