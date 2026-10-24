@@ -23,8 +23,9 @@ export default function PortfolioSection() {
   const projects: Project[] = [
     {
       name: "Marley's Kraamzorg",
-      url: "https://marleyskraamzorg.nl",
-      tagline: "Volledig maatwerkplatform met een warme, betrouwbare branding en intuïtieve aanmeldingsflow.",
+      url: "https://www.marleyskraamzorg.nl",
+      tagline:
+        "Volledig maatwerkplatform met een warme, betrouwbare branding en intuïtieve aanmeldingsflow.",
       resultMetric: "Laadtijd 0.6s · Direct online aanmeldingen",
       image: "/images/portfolio/marleyskraamzorg-hero.jpg",
       testimonial: {
@@ -37,7 +38,8 @@ export default function PortfolioSection() {
     {
       name: "DTG Cleaning",
       url: "https://dtgcleaning.nl",
-      tagline: "Razendsnel lokaal SEO-platform ingericht op directe offerte-aanvragen in de schoonmaakbranche.",
+      tagline:
+        "Razendsnel lokaal SEO-platform ingericht op directe offerte-aanvragen in de schoonmaakbranche.",
       resultMetric: "Top 3 posities · Stijging in online aanvragen",
       image: "/images/portfolio/dtg-cleaning.jpg",
       testimonial: {
@@ -50,7 +52,8 @@ export default function PortfolioSection() {
     {
       name: "Autorijschool Valberg",
       url: "https://autorijschoolvalberg.nl",
-      tagline: "Conversiegerichte landingspagina's met slimme call-to-actions voor een constante stroom nieuwe leerlingen.",
+      tagline:
+        "Conversiegerichte landingspagina's met slimme call-to-actions voor een constante stroom nieuwe leerlingen.",
       resultMetric: "5-Sterren UX · Flink meer lesaanmeldingen",
       image: "/images/portfolio/valberg.jpg",
       testimonial: {
@@ -62,8 +65,9 @@ export default function PortfolioSection() {
     },
     {
       name: "Luxe Webshop",
-      url: "https://vercel.app",
-      tagline: "High-end, ultrasnel e-commerce platform met maatwerk design en vlekkeloze betaalintegraties.",
+      url: "https://luxe-webshop.vercel.app",
+      tagline:
+        "High-end, ultrasnel e-commerce platform met maatwerk design en vlekkeloze betaalintegraties.",
       resultMetric: "Headless Commerce Showcase",
       image: "/images/portfolio/luxe-webshop.jpg",
       isDemo: true,
@@ -71,7 +75,8 @@ export default function PortfolioSection() {
     {
       name: "Inas Kraamzorg",
       url: "https://inaskraamzorg.nl",
-      tagline: "Zorgplatform met meertalige ondersteuning en een uiterst toegankelijke mobiele structuur.",
+      tagline:
+        "Zorgplatform met meertalige ondersteuning en een uiterst toegankelijke mobiele structuur.",
       resultMetric: "100% Core Web Vitals score",
       image: "/images/portfolio/inas.jpg",
       testimonial: {
@@ -84,7 +89,8 @@ export default function PortfolioSection() {
     {
       name: "Cindy's Kraamzorg",
       url: "https://cindyskraamzorg.nl",
-      tagline: "WordPress migratie naar Next.js. Volledige modernisering en eliminatie van plugin-onderhoud.",
+      tagline:
+        "WordPress migratie naar Next.js. Volledige modernisering en eliminatie van plugin-onderhoud.",
       resultMetric: "Hostingkosten verlaagd · 3x snellere laadtijd",
       image: "/images/portfolio/cindys-kraamzorg.jpg",
       testimonial: {
@@ -95,10 +101,10 @@ export default function PortfolioSection() {
       },
     },
   ];
-return (
+
+  return (
     <section className="bg-white border-y-2 border-black py-20 sm:py-28 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-
         {/* HEADER */}
         <div className="mb-12 max-w-5xl">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
@@ -108,7 +114,9 @@ return (
             Websites die voor je werken.
           </h2>
           <p className="text-lg text-[#4a4a48] leading-relaxed max-w-3xl font-medium">
-            Geen theoretische verhalen, maar tastbaar rendement. Ontdek een selectie van maatwerk projecten die we volledig hebben geoptimaliseerd voor snelheid, lokale SEO en maximale leadgeneratie.
+            Geen theoretische verhalen, maar tastbaar rendement. Ontdek een
+            selectie van maatwerk projecten die we volledig hebben
+            geoptimaliseerd voor snelheid, lokale SEO en maximale leadgeneratie.
           </p>
         </div>
 
@@ -132,7 +140,7 @@ return (
           {projects.map((p) => (
             <div
               key={p.name}
-              className="relative border-2 border-black bg-[#FAFAFA] shadow-[4px_4px_0px_0px_#1A1A19] flex flex-col group overflow-hidden bg-white"
+              className="relative border-2 border-black bg-white shadow-[4px_4px_0px_0px_#1A1A19] flex flex-col group overflow-hidden"
             >
               {p.isDemo && (
                 <span className="absolute top-4 right-4 z-20 bg-black text-white font-mono text-[9px] uppercase tracking-widest px-2 py-1 border-2 border-white">
@@ -140,27 +148,29 @@ return (
                 </span>
               )}
 
-              {/* IMAGE AREA FIX: Zorgt voor perfecte centrering en schaling van je afbeeldingen */}
-              <div className="relative w-full h-52 border-b-2 border-black overflow-hidden bg-[#FAFAFA]">
-                <Image
-                  src={p.image}
-                  alt={`Screenshot van ${p.name}`}
-                  fill
-                  className="object-cover object-center group-hover:scale-102 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={true}
-                />
+              {/* AFBEELDING CONTAINER: object-contain + object-top zorgt dat de bovenkant van de site ALTIJD zichtbaar is */}
+              <div className="relative w-full h-52 border-b-2 border-black bg-[#F5F5F3] p-4 flex items-center justify-center">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={p.image}
+                    alt={`Screenshot van ${p.name}`}
+                    fill
+                    className="object-contain object-top group-hover:scale-102 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={true}
+                  />
+                </div>
               </div>
 
               {/* CONTENT AREA */}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col flex-grow bg-white">
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <h3 className="font-heading font-black uppercase text-xl text-black">
                     {p.name}
                   </h3>
-                  <a 
-                    href={p.url} 
-                    target="_blank" 
+                  <a
+                    href={p.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-2xs font-mono text-gray-500 hover:text-[#FF4500] transition-colors"
                   >
@@ -207,7 +217,8 @@ return (
             href="/contact?intent=quickscan"
             className="inline-flex items-center gap-2 bg-black text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-[#FF4500] hover:border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#FF4500] transition-all text-sm"
           >
-            Wil jij ook structureel meer online resultaat? <ArrowRight size={16} />
+            Wil jij ook structureel meer online resultaat?{" "}
+            <ArrowRight size={16} />
           </Link>
         </div>
       </div>
