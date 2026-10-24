@@ -185,7 +185,6 @@ export default function HomePage() {
       </section>
 
       {/* OVERIGE IMPORTS EN SECTIES */}
-      <Marquee />
       <USPGrid />
       <PageSpeedTool />
       <PricingSection />
