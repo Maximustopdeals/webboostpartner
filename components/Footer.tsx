@@ -29,7 +29,6 @@ export default function Footer() {
             <li><Link href="/website-laten-maken-rotterdam" className="hover:text-[#FF4500] transition-colors">Website laten maken</Link></li>
             <li><Link href="/seo-rotterdam" className="hover:text-[#FF4500] transition-colors">SEO Rotterdam</Link></li>
             <li><Link href="/wordpress-naar-nextjs" className="hover:text-[#FF4500] transition-colors">WordPress migratie</Link></li>
-            <li><Link href="/core-web-vitals" className="hover:text-[#FF4500] transition-colors">Core Web Vitals</Link></li>
             <li><Link href="/pakketten" className="hover:text-[#FF4500] transition-colors">Pakketten & Tarieven</Link></li>
           </ul>
         </div>
