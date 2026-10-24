@@ -5,34 +5,33 @@ const baseUrl = "https://www.webboostpartner.nl";
 interface RouteConfig {
   route: string;
   priority: number;
-  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: RouteConfig[] = [
-    // === Primaire pagina's ===
-    { route: "/", priority: 1.0, changeFrequency: "weekly" },
-    { route: "/website-laten-maken-rotterdam", priority: 0.9, changeFrequency: "monthly" },
-    { route: "/seo-rotterdam", priority: 0.9, changeFrequency: "monthly" },
+    // === 1. Pilaar pagina's (Absolute top prioriteit voor leadgeneratie) ===
+    { route: "", priority: 1.0, changeFrequency: "weekly" }, // Homepage
+    { route: "/website-laten-maken-rotterdam", priority: 0.9, changeFrequency: "weekly" },
+    { route: "/seo-rotterdam", priority: 0.9, changeFrequency: "weekly" },
 
-    // === Commerciële pagina's ===
+    // === 2. Lokale SEO Regiopagina's (Hier voeg je straks je nieuwe regio's toe) ===
+    // { route: "/website-laten-maken-capelle", priority: 0.8, changeFrequency: "weekly" },
+    // { route: "/website-laten-maken-barendrecht", priority: 0.8, changeFrequency: "weekly" },
+
+    // === 3. Commerciële & Diensten pagina's ===
     { route: "/pakketten", priority: 0.8, changeFrequency: "monthly" },
-    { route: "/nextjs-vs-wordpress", priority: 0.8, changeFrequency: "monthly" },
+    { route: "/wordpress-naar-nextjs", priority: 0.8, changeFrequency: "monthly" },
+    { route: "/nextjs-vs-wordpress", priority: 0.7, changeFrequency: "monthly" },
 
-    // === Ondersteunende pagina's ===
-    { route: "/over-mij", priority: 0.7, changeFrequency: "monthly" },
-    { route: "/contact", priority: 0.7, changeFrequency: "monthly" },
-    { route: "/demo", priority: 0.5, changeFrequency: "monthly" },
+    // === 4. Ondersteunende autoriteitspagina's ===
+    { route: "/over-mij", priority: 0.6, changeFrequency: "monthly" },
+    { route: "/contact", priority: 0.6, changeFrequency: "monthly" },
 
-    // === Diepgaande / technische pagina's ===
-    { route: "/wordpress-naar-nextjs", priority: 0.6, changeFrequency: "monthly" },
-    { route: "/core-web-vitals", priority: 0.6, changeFrequency: "monthly" },
-    { route: "/pagespeed", priority: 0.6, changeFrequency: "monthly" },
-
-    // === Juridische pagina's ===
-    { route: "/privacy", priority: 0.3, changeFrequency: "yearly" },
-    { route: "/voorwaarden", priority: 0.3, changeFrequency: "yearly" },
-    { route: "/cookiebeleid", priority: 0.3, changeFrequency: "yearly" },
+    // === 5. Juridische noodzaak (Laagste prioriteit voor de zoekmachine) ===
+    { route: "/privacy", priority: 0.2, changeFrequency: "yearly" },
+    { route: "/voorwaarden", priority: 0.2, changeFrequency: "yearly" },
+    { route: "/cookiebeleid", priority: 0.2, changeFrequency: "yearly" },
   ];
 
   const currentDate = new Date();
