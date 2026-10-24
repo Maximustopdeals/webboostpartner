@@ -29,6 +29,10 @@ body {
   .text-orange {
     color: #FF4500;
   }
+  /* ✅ NIEUW: Toegankelijk oranje voor kleine tekst op lichte achtergrond */
+  .text-orange-accessible {
+    color: #C2410C;
+  }
   .bg-orange {
     background-color: #FF4500;
   }
@@ -165,7 +169,8 @@ body {
 
 /* FIX: uitzondering voor knoppen met achtergrondkleur */
 .prose-brutal a:not([class*="bg-"]) {
-  color: #FF4500;
+  /* ✅ Aangepast voor contrast */
+  color: #C2410C; 
   font-weight: 600;
   text-decoration: underline;
   text-decoration-thickness: 2px;
