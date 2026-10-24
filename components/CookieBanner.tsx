@@ -13,6 +13,8 @@ export default function CookieBanner() {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Consent;
+    console.log("[CookieBanner] Opgeslagen consent:", stored); // Debug tip!
+    
     if (!stored) {
       setVisible(true);
     }
@@ -21,12 +23,13 @@ export default function CookieBanner() {
   const handleConsent = (consent: "all" | "functional") => {
     localStorage.setItem(STORAGE_KEY, consent);
     setVisible(false);
+    console.log("[CookieBanner] Nieuwe consent ingesteld op:", consent);
 
-    // Activeer Google Analytics alleen bij volledige toestemming
-    if (consent === "all" && typeof window !== "undefined") {
+    // Activeer of weiger Google Analytics op basis van de keuze
+    if (typeof window !== "undefined") {
       // @ts-expect-error - gtag wordt door GTM ingeladen
       window.gtag?.("consent", "update", {
-        analytics_storage: "granted",
+        analytics_storage: consent === "all" ? "granted" : "denied",
       });
     }
   };
@@ -56,7 +59,7 @@ export default function CookieBanner() {
               Wij gebruiken functionele cookies om de website te laten werken, 
               en analytische cookies om te begrijpen hoe u onze site gebruikt. 
               Zie ons{" "}
-              <Link href="/cookiebeleid" className="text-[#FF4500] underline">
+              <Link href="/cookiebeleid" className="text-[#FF4500] underline font-bold">
                 cookiebeleid
               </Link>
               .
@@ -66,7 +69,7 @@ export default function CookieBanner() {
             type="button"
             onClick={() => handleConsent("functional")}
             aria-label="Sluit en accepteer alleen functionele cookies"
-            className="shrink-0 w-7 h-7 grid place-items-center hover:bg-black hover:text-white transition-colors"
+            className="shrink-0 w-7 h-7 grid place-items-center hover:bg-black hover:text-white transition-colors border-2 border-transparent hover:border-black"
           >
             <X size={16} strokeWidth={3} />
           </button>
