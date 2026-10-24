@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
 import { Outfit, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import Script from "next/script";
-import dynamic from "next/dynamic"; // <-- NIEUW
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ClientWidgets from "@/components/ClientWidgets"; // ✅ NIEUW
 
-// ✅ Laad de zwevende knoppen en cookiebanner pas NA de initiële load
-const FloatingActions = dynamic(() => import("@/components/FloatingActions"), { ssr: false });
-const CookieBanner = dynamic(() => import("@/components/CookieBanner"), { ssr: false });
-
-// ... (je fonts en metadata blijven exact hetzelfde) ...
+// ... (fonts + metadata blijven exact hetzelfde) ...
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  // ... (je orgSchema blijft hetzelfde) ...
+  const orgSchema = { /* ... ongewijzigd ... */ };
 
   return (
-    <html lang="nl" className={`${outfit.variable} ${ibmPlex.variable} ${ibmMono.variable}`}>
+    <html
+      lang="nl"
+      className={`${outfit.variable} ${ibmPlex.variable} ${ibmMono.variable}`}
+    >
       <body>
         <noscript>
           <iframe
@@ -35,16 +34,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
-        
-        {/* Deze worden nu asynchroon ingeladen */}
-        <FloatingActions />
-        <CookieBanner />
 
-        {/* GTM + GA4 blijven zoals ze zijn (lazyOnload is perfect) */}
+        {/* ✅ Eén wrapper die de zware client-widgets lazy laadt */}
+        <ClientWidgets />
+
         <Script id="gtm-script" strategy="lazyOnload">
           {`...`}
         </Script>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-L8ZWH28FVR" strategy="lazyOnload" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-L8ZWH28FVR"
+          strategy="lazyOnload"
+        />
         <Script id="ga4-script" strategy="lazyOnload">
           {`...`}
         </Script>
