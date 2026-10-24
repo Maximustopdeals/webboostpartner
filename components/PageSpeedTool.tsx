@@ -75,7 +75,6 @@ export default function PageSpeedTool() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
         {/* Linkerkant: Overtuigende waarde */}
         <div className="lg:col-span-7">
-          {/* ✅ Toegankelijkheid: text-orange-accessible voor beter contrast op licht grijs */}
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
             // Gratis Website Scan
           </p>
@@ -115,25 +114,37 @@ export default function PageSpeedTool() {
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[10px] font-mono uppercase tracking-wider text-gray-700 mb-1 font-bold">
+              {/* ✅ FIX 1: htmlFor toegevoegd aan label */}
+              <label
+                htmlFor="website_url"
+                className="block text-[10px] font-mono uppercase tracking-wider text-gray-700 mb-1 font-bold"
+              >
                 Website URL
               </label>
               <input
+                id="website_url" // ✅ FIX 2: id toegevoegd
                 type="url"
                 name="website_url"
                 required
+                autoComplete="url" // ✅ FIX 3: autocomplete toegevoegd
                 placeholder="https://www.jouwbedrijf.nl"
                 className="w-full border-2 border-black p-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF4500] bg-[#FAFAFA]"
               />
             </div>
             <div>
-              <label className="block text-[10px] font-mono uppercase tracking-wider text-gray-700 mb-1 font-bold">
+              {/* ✅ FIX 1: htmlFor toegevoegd aan label */}
+              <label
+                htmlFor="email"
+                className="block text-[10px] font-mono uppercase tracking-wider text-gray-700 mb-1 font-bold"
+              >
                 E-mailadres
               </label>
               <input
+                id="email" // ✅ FIX 2: id toegevoegd
                 type="email"
                 name="email"
                 required
+                autoComplete="email" // ✅ FIX 3: autocomplete toegevoegd
                 placeholder="naam@bedrijf.nl"
                 className="w-full border-2 border-black p-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF4500] bg-[#FAFAFA]"
               />
@@ -152,7 +163,6 @@ export default function PageSpeedTool() {
             <button
               type="submit"
               disabled={loading}
-              /* ✅ FIX: text-black in plaats van text-white voor contrast */
               className="w-full justify-center inline-flex items-center bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider text-xs border-2 border-black py-4 hover:bg-black hover:text-white transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? (
