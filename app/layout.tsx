@@ -109,6 +109,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager" /* ✅ FIX: title toegevoegd voor toegankelijkheid */
           />
         </noscript>
 
