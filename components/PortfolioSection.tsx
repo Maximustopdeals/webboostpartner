@@ -107,7 +107,7 @@ export default function PortfolioSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* HEADER */}
         <div className="mb-12 max-w-5xl">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
             // Bewezen Resultaten
           </p>
           <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] mb-4 text-[#1a1a1a]">
@@ -122,7 +122,7 @@ export default function PortfolioSection() {
 
         {/* RETRO MARQUEE */}
         <div className="overflow-hidden border-2 border-black bg-[#FAFAFA] py-4 mb-16 shadow-[2px_2px_0px_0px_#1A1A19]">
-          <div className="flex animate-marquee whitespace-nowrap gap-16 px-4">
+          <div className="flex animate-marquee-portfolio whitespace-nowrap gap-16 px-4">
             {projects.map((p) => (
               <span
                 key={p.name}
@@ -137,7 +137,8 @@ export default function PortfolioSection() {
 
         {/* WORK GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((p) => (
+          {/* ✅ index toegevoegd om de eerste afbeelding prioriteit te geven */}
+          {projects.map((p, index) => (
             <div
               key={p.name}
               className="relative border-2 border-black bg-white shadow-[4px_4px_0px_0px_#1A1A19] flex flex-col group overflow-hidden"
@@ -148,7 +149,7 @@ export default function PortfolioSection() {
                 </span>
               )}
 
-              {/* AFBEELDING CONTAINER: object-contain + object-top zorgt dat de bovenkant van de site ALTIJD zichtbaar is */}
+              {/* AFBEELDING CONTAINER */}
               <div className="relative w-full h-52 border-b-2 border-black bg-[#F5F5F3] p-4 flex items-center justify-center">
                 <div className="relative w-full h-full">
                   <Image
@@ -157,7 +158,7 @@ export default function PortfolioSection() {
                     fill
                     className="object-contain object-top group-hover:scale-102 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={true}
+                    priority={index === 0} // ✅ Alleen de allereerste afbeelding krijgt prioriteit
                   />
                 </div>
               </div>
@@ -172,14 +173,14 @@ export default function PortfolioSection() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-2xs font-mono text-gray-500 hover:text-[#FF4500] transition-colors"
+                    className="inline-flex items-center gap-1 text-[11px] font-mono text-gray-500 hover:text-[#FF4500] transition-colors"
                   >
                     Live site <ExternalLink size={12} />
                   </a>
                 </div>
 
                 {/* METRIC BADGE */}
-                <p className="font-mono text-2xs uppercase tracking-wider text-[#FF4500] font-bold mb-3">
+                <p className="font-mono text-[11px] uppercase tracking-wider text-orange-accessible font-bold mb-3">
                   🚀 {p.resultMetric}
                 </p>
 
@@ -193,7 +194,7 @@ export default function PortfolioSection() {
                     <p className="mb-2">
                       &ldquo;{p.testimonial.quote}&rdquo;
                     </p>
-                    <footer className="font-mono text-3xs uppercase tracking-wider not-italic text-black font-bold">
+                    <footer className="font-mono text-[10px] uppercase tracking-wider not-italic text-black font-bold">
                       — {p.testimonial.author}, {p.testimonial.role}
                     </footer>
                   </blockquote>
@@ -223,13 +224,14 @@ export default function PortfolioSection() {
         </div>
       </div>
 
+      {/* ✅ Naam gewijzigd naar marquee-portfolio om conflicten met de globale Marquee te voorkomen */}
       <style>{`
-        @keyframes marquee {
+        @keyframes marquee-portfolio {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .animate-marquee {
-          animation: marquee 22s linear infinite;
+        .animate-marquee-portfolio {
+          animation: marquee-portfolio 22s linear infinite;
         }
       `}</style>
     </section>
