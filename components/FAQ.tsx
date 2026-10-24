@@ -15,31 +15,31 @@ interface FAQProps {
   schemaId?: string;
 }
 
-// Interface voor de FAQ schema structuur
-interface FAQSchema {
-  "@context": string;
-  "@type": string;
-  mainEntity: {
-    "@type": string;
-    name: string;
-    acceptedAnswer: {
-      "@type": string;
-      text: string;
-    };
-  }[];
-}
-
 export default function FAQ({ items, schemaId = "faq" }: FAQProps) {
+  // Standaard staat het eerste item open (index 0) voor directe interactie en betere UX
   const [open, setOpen] = useState<number>(0);
 
-  const faqSchema: FAQSchema = {
+  // Modern Google-proof Structured Data Schema (WebPage + hasPart)
+  const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: items.map((item: FAQItem) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
+    "@type": "WebPage",
+    "@id": `https://webboostpartner.nl{schemaId}`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Veelgestelde Vragen",
+      "itemListElement": items.map((item: FAQItem, index: number) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        }
+      }))
+    }
   };
 
   return (
@@ -48,30 +48,39 @@ export default function FAQ({ items, schemaId = "faq" }: FAQProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="space-y-3">
+      <div className="space-y-4">
         {items.map((item: FAQItem, index: number) => {
           const isOpen: boolean = open === index;
           return (
             <div
               key={index}
-              className="border-2 border-black bg-white"
+              className={`border-2 border-black bg-white transition-all duration-200 ${
+                isOpen ? "shadow-[4px_4px_0px_0px_#1A1A19]" : "hover:shadow-[2px_2px_0px_0px_#1A1A19]"
+              }`}
               data-testid={`faq-item-${index}`}
             >
               <button
                 onClick={() => setOpen(isOpen ? -1 : index)}
-                className="w-full flex items-center justify-between gap-4 p-5 text-left"
+                className="w-full flex items-center justify-between gap-4 p-5 text-left group"
                 aria-expanded={isOpen}
               >
-                <span className="font-heading font-bold uppercase text-base sm:text-lg tracking-tight">
+                <span className="font-heading font-black uppercase text-base sm:text-lg tracking-tight text-[#1a1a1a] group-hover:text-[#FF4500] transition-colors">
                   {item.q}
                 </span>
-                <span className={`shrink-0 grid place-items-center w-9 h-9 border-2 border-black ${isOpen ? "bg-[#FF4500] text-white" : "bg-white"}`}>
-                  {isOpen ? <Minus size={16} strokeWidth={3} /> : <Plus size={16} strokeWidth={3} />}
+                <span 
+                  className={`shrink-0 grid place-items-center w-9 h-9 border-2 border-black transition-all ${
+                    isOpen ? "bg-[#FF4500] text-white" : "bg-[#F5F5F3] text-black group-hover:bg-[#FF4500] group-hover:text-white"
+                  }`}
+                >
+                  {isOpen ? <Minus size={14} strokeWidth={3} /> : <Plus size={14} strokeWidth={3} />}
                 </span>
               </button>
+              
               {isOpen && (
-                <div className="px-5 pb-5 -mt-1 text-[#1a1a1a] text-base leading-relaxed border-t border-black/10">
-                  <div className="pt-4 whitespace-pre-line">{item.a}</div>
+                <div className="px-5 pb-5 -mt-1 text-[#4a4a48] text-sm sm:text-base leading-relaxed border-t border-gray-100">
+                  <div className="pt-4 whitespace-pre-line font-medium">
+                    {item.a}
+                  </div>
                 </div>
               )}
             </div>
