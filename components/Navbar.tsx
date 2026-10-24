@@ -143,10 +143,11 @@ export default function Navbar() {
                               key={child.href}
                               href={child.href}
                               role="menuitem"
+                              /* ✅ FIX: hover:text-black ipv wit */
                               className={`block px-4 py-3 font-heading font-bold uppercase text-xs tracking-wider border-b-2 border-black last:border-b-0 transition-colors ${
                                 isActive(child.href)
                                   ? "bg-black text-white"
-                                  : "hover:bg-[#FF4500] hover:text-white text-black"
+                                  : "hover:bg-[#FF4500] hover:text-black text-black"
                               }`}
                             >
                               {child.label}
@@ -172,10 +173,11 @@ export default function Navbar() {
               )}
             </nav>
 
-            {/* Conversieverhogende CTA Knop: Stuurt direct aan op de Quickscan */}
+            {/* Conversieverhogende CTA Knop */}
             <Link
               href="/contact?intent=quickscan"
-              className="ml-4 inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-2.5 hover:bg-black hover:-translate-y-0.5 hover:shadow-brutal-sm transition-all whitespace-nowrap"
+              /* ✅ FIX: text-black ipv wit */
+              className="ml-4 inline-flex items-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-2.5 hover:bg-black hover:text-white hover:-translate-y-0.5 hover:shadow-brutal-sm transition-all whitespace-nowrap"
             >
               <MonitorPlay size={14} strokeWidth={2.5} /> GRATIS QUICKSCAN
             </Link>
@@ -209,7 +211,8 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => setMobileSubOpen((v) => !v)}
-                    className="w-full flex items-center justify-between px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider text-black hover:bg-[#FF4500] hover:text-white transition-colors"
+                    /* ✅ FIX: hover:text-black ipv wit */
+                    className="w-full flex items-center justify-between px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider text-black hover:bg-[#FF4500] hover:text-black transition-colors"
                     aria-expanded={mobileSubOpen}
                   >
                     {item.label}
@@ -229,10 +232,11 @@ export default function Navbar() {
                           key={child.href}
                           href={child.href}
                           onClick={() => setOpen(false)}
+                          /* ✅ FIX: hover:text-black ipv wit */
                           className={`block px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider transition-colors ${
                             isActive(child.href)
                               ? "bg-black text-white"
-                              : "hover:bg-[#FF4500] hover:text-white text-black"
+                              : "hover:bg-[#FF4500] hover:text-black text-black"
                           }`}
                         >
                           {child.label}
@@ -246,10 +250,11 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
+                  /* ✅ FIX: hover:text-black ipv wit */
                   className={`block px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider transition-colors ${
                     isActive(item.href)
                       ? "bg-black text-white"
-                      : "hover:bg-[#FF4500] hover:text-white text-black"
+                      : "hover:bg-[#FF4500] hover:text-black text-black"
                   }`}
                 >
                   {item.label}
@@ -260,7 +265,8 @@ export default function Navbar() {
             <Link
               href="/contact?intent=quickscan"
               onClick={() => setOpen(false)}
-              className="block px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider bg-[#FF4500] text-white border-2 border-black mt-2 text-center"
+              /* ✅ FIX: text-black ipv wit */
+              className="block px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider bg-[#FF4500] text-black border-2 border-black mt-2 text-center"
             >
               GRATIS QUICKSCAN
             </Link>
