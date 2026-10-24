@@ -3,12 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, Globe } from "lucide-react";
+import { ArrowRight, Sparkles, MonitorPlay, ExternalLink } from "lucide-react";
 
 interface Project {
   name: string;
   url: string;
   tagline: string;
+  resultMetric: string;
   image: string;
   testimonial?: {
     quote: string;
@@ -23,7 +24,9 @@ export default function PortfolioSection() {
     {
       name: "Marley's Kraamzorg",
       url: "https://www.marleyskraamzorg.nl",
-      tagline: "Kraamzorg — persoonlijke website met 1 vast gezicht",
+      tagline:
+        "Volledig maatwerkplatform met een warme, betrouwbare branding en intuïtieve aanmeldingsflow.",
+      resultMetric: "Laadtijd 0.6s · Direct online aanmeldingen",
       image: "/images/portfolio/marleyskraamzorg-hero.jpg",
       testimonial: {
         quote:
@@ -35,19 +38,23 @@ export default function PortfolioSection() {
     {
       name: "DTG Cleaning",
       url: "https://dtgcleaning.nl",
-      tagline: "Schoonmaakbedrijf — razendsnelle lokale SEO website",
+      tagline:
+        "Razendsnel lokaal SEO-platform ingericht op directe offerte-aanvragen in de schoonmaakbranche.",
+      resultMetric: "Top 3 posities · Stijging in online aanvragen",
       image: "/images/portfolio/dtg-cleaning.jpg",
       testimonial: {
         quote:
           "De nieuwe website is een enorme sprong vooruit. Hij laadt razendsnel en ziet er professioneel uit. Ik krijg nu veel meer aanvragen via de site.",
         author: "Dominique",
-        role: "Eigenaar, DTG Cleaning",
+        role: "Eigenaar, D.T.G. Cleaning",
       },
     },
     {
       name: "Autorijschool Valberg",
       url: "https://autorijschoolvalberg.nl",
-      tagline: "Rijschool — conversiegerichte website met landingspagina’s",
+      tagline:
+        "Conversiegerichte landingspagina's met slimme call-to-actions voor een constante stroom nieuwe leerlingen.",
+      resultMetric: "5-Sterren UX · Flink meer lesaanmeldingen",
       image: "/images/portfolio/valberg.jpg",
       testimonial: {
         quote:
@@ -59,7 +66,9 @@ export default function PortfolioSection() {
     {
       name: "Inas Kraamzorg",
       url: "https://inaskraamzorg.nl",
-      tagline: "Zorgsector — warme branding + snelle Next.js performance",
+      tagline:
+        "Zorgplatform met meertalige ondersteuning en een uiterst toegankelijke mobiele structuur.",
+      resultMetric: "100% Core Web Vitals score",
       image: "/images/portfolio/inas.jpg",
       testimonial: {
         quote:
@@ -71,7 +80,9 @@ export default function PortfolioSection() {
     {
       name: "Cindy's Kraamzorg",
       url: "https://cindyskraamzorg.nl",
-      tagline: "Kraamzorg — van WordPress naar Next.js, lagere hostingkosten",
+      tagline:
+        "WordPress migratie naar Next.js. Volledige modernisering en eliminatie van plugin-onderhoud.",
+      resultMetric: "Hostingkosten verlaagd · 3x snellere laadtijd",
       image: "/images/portfolio/cindys-kraamzorg.jpg",
       testimonial: {
         quote:
@@ -83,40 +94,41 @@ export default function PortfolioSection() {
     {
       name: "Luxe Webshop",
       url: "https://luxe-webshop.vercel.app",
-      tagline: "Showcase — high-end webshop met maatwerk design",
+      tagline:
+        "High-end, ultrasnel e-commerce platform met maatwerk design en vlekkeloze betaalintegraties.",
+      resultMetric: "Headless Commerce Showcase",
       image: "/images/portfolio/luxe-webshop.jpg",
       isDemo: true,
     },
   ];
 
   return (
-    <section className="bg-white border-y-2 border-black py-20 sm:py-28">
+    <section className="bg-white border-y-2 border-black py-20 sm:py-28 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-
-        {/* HEADER — verbreed naar max-w-5xl */}
+        {/* HEADER */}
         <div className="mb-12 max-w-5xl">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
-            // Recent werk
+            // Bewezen Resultaten
           </p>
-          <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] mb-4 text-balance">
-            Websites die wij realiseerden.
+          <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] mb-4 text-[#1a1a1a] text-balance">
+            Websites die voor je werken.
           </h2>
-          <p className="text-lg text-[#525252] leading-relaxed max-w-3xl">
-            Een selectie van recente projecten. Van lokale dienstverleners tot 
-            high-end webshops — allemaal gebouwd met Next.js en geoptimaliseerd 
-            voor snelheid, SEO en conversie.
+          <p className="text-lg text-[#4a4a48] leading-relaxed max-w-3xl font-medium">
+            Geen theoretische verhalen, maar tastbaar rendement. Ontdek een
+            selectie van maatwerk projecten die we volledig hebben
+            geoptimaliseerd voor snelheid, lokale SEO en maximale leadgeneratie.
           </p>
         </div>
 
         {/* MARQUEE */}
-        <div className="overflow-hidden border-2 border-black bg-[#FAFAFA] py-4 mb-16">
+        <div className="overflow-hidden border-2 border-black bg-[#FAFAFA] py-4 mb-16 shadow-[2px_2px_0px_0px_#1A1A19]">
           <div className="flex animate-marquee whitespace-nowrap gap-16 px-4">
             {projects.map((p) => (
               <span
                 key={p.name}
-                className="font-heading uppercase text-xl tracking-wider flex items-center gap-2"
+                className="font-heading font-black uppercase text-base sm:text-lg tracking-wider flex items-center gap-2 text-black"
               >
-                <Sparkles size={18} className="text-[#FF4500]" />
+                <Sparkles size={16} className="text-[#FF4500]" />
                 {p.name}
               </span>
             ))}
@@ -128,11 +140,11 @@ export default function PortfolioSection() {
           {projects.map((p) => (
             <div
               key={p.name}
-              className="relative border-2 border-black bg-[#FAFAFA] shadow-brutal flex flex-col group overflow-hidden"
+              className="relative border-2 border-black bg-white shadow-brutal flex flex-col group overflow-hidden"
             >
               {p.isDemo && (
-                <span className="absolute top-4 right-4 z-20 bg-[#FF4500] text-white font-mono text-[10px] uppercase tracking-widest px-2 py-1 border-2 border-black">
-                  Showcase
+                <span className="absolute top-4 right-4 z-20 bg-black text-white font-mono text-[10px] uppercase tracking-widest px-2 py-1 border-2 border-white">
+                  Concept Showcase
                 </span>
               )}
 
@@ -149,55 +161,73 @@ export default function PortfolioSection() {
 
               {/* TEKST BLOK */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-heading font-black uppercase text-2xl mb-2">
-                  {p.name}
-                </h3>
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <h3 className="font-heading font-black uppercase text-xl text-black">
+                    {p.name}
+                  </h3>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-2xs font-mono text-gray-500 hover:text-[#FF4500] transition-colors"
+                  >
+                    Live site <ExternalLink size={12} />
+                  </a>
+                </div>
 
-                <p className="text-sm text-[#525252] mb-6">{p.tagline}</p>
+                {/* METRIC BADGE */}
+                <p className="font-mono text-2xs uppercase tracking-wider text-[#FF4500] font-bold mb-3">
+                  🚀 {p.resultMetric}
+                </p>
+
+                <p className="text-sm text-[#4a4a48] leading-relaxed mb-6 font-medium">
+                  {p.tagline}
+                </p>
 
                 {/* TESTIMONIAL */}
                 {p.testimonial && (
-                  <blockquote className="border-l-4 border-[#FF4500] pl-4 mb-6 italic text-sm text-[#525252]">
+                  <blockquote className="border-l-2 border-[#FF4500] pl-4 mb-6 italic text-xs text-gray-600 bg-[#FFE5DA]/20 py-2 pr-2">
                     <p className="mb-2">
                       &ldquo;{p.testimonial.quote}&rdquo;
                     </p>
-                    <footer className="font-mono text-xs uppercase tracking-wider not-italic text-[#0A0A0A]">
+                    <footer className="font-mono text-3xs uppercase tracking-wider not-italic text-black font-bold">
                       — {p.testimonial.author}, {p.testimonial.role}
                     </footer>
                   </blockquote>
                 )}
 
+                {/* PRIMARY ACTION: Lead Capture */}
                 <Link
-                  href={p.url}
-                  target="_blank"
-                  className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading uppercase text-sm tracking-wider border-2 border-black px-4 py-3 hover:bg-black hover:border-black transition-all"
+                  href="/contact?intent=quickscan"
+                  className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase text-xs tracking-wider border-2 border-black py-3 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_#1A1A19]"
                 >
-                  Bekijk website <ArrowRight size={16} />
+                  Ontdek Jouw Kansen <MonitorPlay size={14} />
                 </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
+        {/* BOTTOM GLOBAL CTA */}
         <div className="text-center mt-16">
           <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+            href="/contact?intent=quickscan"
+            className="inline-flex items-center gap-2 bg-black text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-[#FF4500] hover:border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#FF4500] transition-all text-sm"
           >
-            Uw website als volgende? <Globe size={18} />
+            Wil jij ook structureel meer online resultaat?{" "}
+            <ArrowRight size={16} />
           </Link>
         </div>
       </div>
 
-      {/* MARQUEE ANIMATION */}
+      {/* INFINITE MARQUEE STYLE */}
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-          animation: marquee 18s linear infinite;
+          animation: marquee 22s linear infinite;
         }
       `}</style>
     </section>
