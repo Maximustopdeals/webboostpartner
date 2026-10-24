@@ -3,8 +3,8 @@
 import React from "react";
 import { ArrowRight, Check, Loader2, AlertCircle } from "lucide-react";
 
-// ⚠️ VERVANG dit door jouw eigen Formspree form-ID (zie formspree.io)
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/JOUW_FORM_ID";
+// ✅ Jouw live Formspree endpoint
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdapzjod";
 
 export default function PageSpeedTool() {
   const [loading, setLoading] = React.useState(false);
@@ -75,7 +75,8 @@ export default function PageSpeedTool() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
         {/* Linkerkant: Overtuigende waarde */}
         <div className="lg:col-span-7">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+          {/* ✅ Toegankelijkheid: text-orange-accessible voor beter contrast op licht grijs */}
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
             // Gratis Website Scan
           </p>
           <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] text-black mb-6">
