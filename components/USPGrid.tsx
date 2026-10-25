@@ -51,12 +51,13 @@ export default function USPGrid() {
         
         {/* TITEL: Resultaatgericht en krachtig */}
         <div className="max-w-3xl mb-14">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+          {/* ✅ FIX: text-[#FF4500] -> text-orange-accessible */}
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
             // Jouw Digitale Voorsprong
           </p>
           <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] text-black">
             Geen ingewikkeld gedoe.<br />
-            Wel <span className="text-[#FF4500]">online resultaat</span>.
+            Wel <span className="text-orange-accessible">online resultaat</span>.
           </h2>
         </div>
 
@@ -71,13 +72,15 @@ export default function USPGrid() {
                 data-testid={`usp-card-${i}`}
               >
                 {/* ICON CONTAINER WITH RETRO ACCENT */}
-                <div className="w-11 h-11 grid place-items-center border-2 border-black bg-[#FF4500] text-white mb-5 shadow-[2px_2px_0px_0px_#1A1A19]">
+                {/* ✅ FIX: text-white -> text-black op de oranje achtergrond */}
+                <div className="w-11 h-11 grid place-items-center border-2 border-black bg-[#FF4500] text-black mb-5 shadow-[2px_2px_0px_0px_#1A1A19]">
                   <Icon size={20} strokeWidth={2.5} />
                 </div>
 
                 {/* OPTIONELE METRIC LABEL */}
                 {it.metric && (
-                  <p className="font-mono text-2xs uppercase tracking-widest mb-1.5 text-[#FF4500] font-bold">
+                  /* ✅ FIX: text-[#FF4500] -> text-orange-accessible, text-2xs -> text-[10px] */
+                  <p className="font-mono text-[10px] uppercase tracking-widest mb-1.5 text-orange-accessible font-bold">
                     {it.metric}
                   </p>
                 )}
