@@ -24,13 +24,11 @@ export default function PortfolioSection() {
     {
       name: "Marley's Kraamzorg",
       url: "https://www.marleyskraamzorg.nl",
-      tagline:
-        "Volledig maatwerkplatform met een warme, betrouwbare branding en intuïtieve aanmeldingsflow.",
+      tagline: "Volledig maatwerkplatform met een warme, betrouwbare branding en intuïtieve aanmeldingsflow.",
       resultMetric: "Laadtijd 0.6s · Direct online aanmeldingen",
       image: "/images/portfolio/marleyskraamzorg-hero.jpg",
       testimonial: {
-        quote:
-          "Ik ben ontzettend blij met mijn nieuwe website. Het geeft precies de warme, persoonlijke uitstraling die ik wilde. Klanten vinden mij nu veel makkelijker online en de site voelt echt als een verlengstuk van mijn praktijk.",
+        quote: "Ik ben ontzettend blij met mijn nieuwe website. Het geeft precies de warme, persoonlijke uitstraling die ik wilde. Klanten vinden mij nu veel makkelijker online en de site voelt echt als een verlengstuk van mijn praktijk.",
         author: "Lisa",
         role: "Oprichter, Marley's Kraamzorg",
       },
@@ -38,13 +36,11 @@ export default function PortfolioSection() {
     {
       name: "DTG Cleaning",
       url: "https://dtgcleaning.nl",
-      tagline:
-        "Razendsnel lokaal SEO-platform ingericht op directe offerte-aanvragen in de schoonmaakbranche.",
+      tagline: "Razendsnel lokaal SEO-platform ingericht op directe offerte-aanvragen in de schoonmaakbranche.",
       resultMetric: "Top 3 posities · Stijging in online aanvragen",
       image: "/images/portfolio/dtg-cleaning.jpg",
       testimonial: {
-        quote:
-          "De nieuwe website is een enorme sprong vooruit. Hij laadt razendsnel en ziet er professioneel uit. Ik krijg nu veel meer aanvragen via de site.",
+        quote: "De nieuwe website is een enorme sprong vooruit. Hij laadt razendsnel en ziet er professioneel uit. Ik krijg nu veel meer aanvragen via de site.",
         author: "Dominique",
         role: "Eigenaar, D.T.G. Cleaning",
       },
@@ -52,13 +48,11 @@ export default function PortfolioSection() {
     {
       name: "Autorijschool Valberg",
       url: "https://autorijschoolvalberg.nl",
-      tagline:
-        "Conversiegerichte landingspagina's met slimme call-to-actions voor een constante stroom nieuwe leerlingen.",
+      tagline: "Conversiegerichte landingspagina's met slimme call-to-actions voor een constante stroom nieuwe leerlingen.",
       resultMetric: "5-Sterren UX · Flink meer lesaanmeldingen",
       image: "/images/portfolio/valberg.jpg",
       testimonial: {
-        quote:
-          "De website is modern, overzichtelijk en trekt precies de juiste doelgroep aan. Het aantal aanmeldingen via de site is flink gestegen.",
+        quote: "De website is modern, overzichtelijk en trekt precies de juiste doelgroep aan. Het aantal aanmeldingen via de site is flink gestegen.",
         author: "Roy",
         role: "Eigenaar, Autorijschool Valberg",
       },
@@ -66,8 +60,7 @@ export default function PortfolioSection() {
     {
       name: "Luxe Webshop",
       url: "https://luxe-webshop.vercel.app",
-      tagline:
-        "High-end, ultrasnel e-commerce platform met maatwerk design en vlekkeloze betaalintegraties.",
+      tagline: "High-end, ultrasnel e-commerce platform met maatwerk design en vlekkeloze betaalintegraties.",
       resultMetric: "Headless Commerce Showcase",
       image: "/images/portfolio/luxe-webshop.jpg",
       isDemo: true,
@@ -75,13 +68,11 @@ export default function PortfolioSection() {
     {
       name: "Inas Kraamzorg",
       url: "https://inaskraamzorg.nl",
-      tagline:
-        "Zorgplatform met meertalige ondersteuning en een uiterst toegankelijke mobiele structuur.",
+      tagline: "Zorgplatform met meertalige ondersteuning en een uiterst toegankelijke mobiele structuur.",
       resultMetric: "100% Core Web Vitals score",
       image: "/images/portfolio/inas.jpg",
       testimonial: {
-        quote:
-          "De website straalt precies de warmte en professionaliteit uit die bij mijn praktijk past. Ik merk dat aanstaande ouders mij nu makkelijker weten te vinden.",
+        quote: "De website straalt precies de warmte en professionaliteit uit die bij mijn praktijk past. Ik merk dat aanstaande ouders mij nu makkelijker weten te vinden.",
         author: "Fatima",
         role: "Oprichter, Inas Kraamzorg",
       },
@@ -89,13 +80,11 @@ export default function PortfolioSection() {
     {
       name: "Cindy's Kraamzorg",
       url: "https://cindyskraamzorg.nl",
-      tagline:
-        "WordPress migratie naar Next.js. Volledige modernisering en eliminatie van plugin-onderhoud.",
+      tagline: "WordPress migratie naar Next.js. Volledige modernisering en eliminatie van plugin-onderhoud.",
       resultMetric: "Hostingkosten verlaagd · 3x snellere laadtijd",
       image: "/images/portfolio/cindys-kraamzorg.jpg",
       testimonial: {
-        quote:
-          "De nieuwe website is zoveel sneller en professioneler. En ik bespaar nu maandelijks op mijn hostingkosten. Maar wat ik het fijnste vind: de site voelt weer als mij.",
+        quote: "De nieuwe website is zoveel sneller en professioneler. En ik bespaar nu maandelijks op mijn hostingkosten. Maar wat ik het fijnste vind: de site voelt weer als mij.",
         author: "Cindy",
         role: "Eigenaar, Cindy's Kraamzorg",
       },
@@ -157,7 +146,7 @@ export default function PortfolioSection() {
                     fill
                     className="object-contain object-top group-hover:scale-102 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={index === 0} // ✅ Alleen de allereerste afbeelding krijgt prioriteit
+                    priority={index === 0}
                   />
                 </div>
               </div>
@@ -172,8 +161,8 @@ export default function PortfolioSection() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    /* ✅ FIX: hover:text-orange-accessible voor contrast */
-                    className="inline-flex items-center gap-1 text-[11px] font-mono text-gray-500 hover:text-orange-accessible transition-colors"
+                    /* ✅ FIX: text-gray-500 -> text-gray-600 voor contrast */
+                    className="inline-flex items-center gap-1 text-[11px] font-mono text-gray-600 hover:text-orange-accessible transition-colors"
                   >
                     Live site <ExternalLink size={12} />
                   </a>
@@ -203,7 +192,6 @@ export default function PortfolioSection() {
                 {/* PRIMARY ACTION */}
                 <Link
                   href="/contact?intent=quickscan"
-                  /* ✅ FIX: text-black in plaats van text-white voor contrast */
                   className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black py-3 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_#1A1A19]"
                 >
                   Ontdek Jouw Kansen <MonitorPlay size={14} />
@@ -217,7 +205,6 @@ export default function PortfolioSection() {
         <div className="text-center mt-16">
           <Link
             href="/contact?intent=quickscan"
-            /* ✅ FIX: hover:text-black op de oranje hover-state */
             className="inline-flex items-center gap-2 bg-black text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-[#FF4500] hover:text-black hover:border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#1A1A19] transition-all text-sm"
           >
             Wil jij ook structureel meer online resultaat?{" "}
