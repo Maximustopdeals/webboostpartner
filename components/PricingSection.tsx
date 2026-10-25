@@ -110,7 +110,8 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {!compact && (
           <div className="max-w-3xl mb-12">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
+            {/* ✅ FIX: text-[#FF4500] -> text-orange-accessible */}
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
               // Transparante Investeringen
             </p>
             <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
@@ -133,7 +134,8 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
               }`}
             >
               {pkg.badge && (
-                <div className="absolute -top-3 left-4 font-heading text-xs uppercase px-3 py-1 border-2 border-black bg-[#FF4500] text-white z-20">
+                /* ✅ FIX: text-white -> text-black op de oranje badge */
+                <div className="absolute -top-3 left-4 font-heading text-xs uppercase px-3 py-1 border-2 border-black bg-[#FF4500] text-black font-bold z-20">
                   {pkg.badge}
                 </div>
               )}
@@ -216,9 +218,10 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
 
               <Link
                 href={`/contact?intent=pakket_${pkg.id}`}
+                /* ✅ FIX: In de highlighted box, text-white -> text-black op de oranje knop */
                 className={`mt-auto inline-flex items-center justify-center gap-2 font-heading font-bold uppercase tracking-wider border-2 px-6 py-3 transition-all text-sm ${
                   pkg.highlighted
-                    ? "bg-[#FF4500] text-white border-black hover:bg-white hover:text-black hover:border-black"
+                    ? "bg-[#FF4500] text-black border-black hover:bg-white hover:text-black hover:border-black"
                     : "bg-white text-black border-black hover:bg-black hover:text-white"
                 }`}
               >
