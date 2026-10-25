@@ -25,7 +25,6 @@ export default function Footer() {
 
         {/* DIENSTEN NAVIGATIE */}
         <div>
-          {/* ✅ FIX: h4 -> h2 en text-[#FF4500] -> text-[#FF6B2B] (beter contrast op zwart) */}
           <h2 className="font-heading font-bold uppercase text-xs tracking-widest mb-4 text-[#FF6B2B]">
             Diensten
           </h2>
@@ -67,7 +66,6 @@ export default function Footer() {
 
         {/* GEGEVENS & REGIO */}
         <div>
-          {/* ✅ FIX: h4 -> h2 en text-[#FF4500] -> text-[#FF6B2B] */}
           <h2 className="font-heading font-bold uppercase text-xs tracking-widest mb-4 text-[#FF6B2B]">
             Contact
           </h2>
@@ -109,7 +107,6 @@ export default function Footer() {
       <div className="border-t border-white/10 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-center text-xs text-white/70">
-            {/* Links: copyright */}
             <p className="text-center md:text-left">
               &copy; {new Date().getFullYear()} WebBoost Partner.
               <span className="block sm:inline sm:ml-1">
@@ -117,12 +114,10 @@ export default function Footer() {
               </span>
             </p>
 
-            {/* Midden: built with */}
             <p className="text-center font-mono text-[10px] uppercase tracking-wider text-white/60">
               Built with Next.js &amp; Craftsmanship
             </p>
 
-            {/* Rechts: juridische navigatie */}
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2">
               <Link
                 href="/privacy"
