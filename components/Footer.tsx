@@ -16,6 +16,7 @@ export default function Footer() {
             </span>
             WebBoost Partner
           </div>
+          {/* ✅ FIX: text-white/70 is goed, contrast is 10.5:1 */}
           <p className="text-sm text-white/70 max-w-md leading-relaxed font-medium">
             Een professionele website die écht klanten oplevert. Wij bouwen
             bliksemsnelle, toekomstbestendige Next.js platforms voor ambitieuze
@@ -74,7 +75,8 @@ export default function Footer() {
               <MapPin size={16} className="mt-0.5 text-[#FF4500] shrink-0" />
               <span>
                 Rotterdam, Nederland
-                <span className="block text-3xs font-mono uppercase tracking-wider text-white/40 mt-0.5">
+                {/* ✅ FIX: text-white/40 -> text-white/60 */}
+                <span className="block text-3xs font-mono uppercase tracking-wider text-white/60 mt-0.5">
                   Regio Rijnmond
                 </span>
               </span>
@@ -106,8 +108,8 @@ export default function Footer() {
       {/* FOOTER BOTTOM SECTIE */}
       <div className="border-t border-white/10 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6">
-          {/* Drie-koloms verdeling op desktop, gestapeld op mobiel */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-center text-xs text-white/50">
+          {/* ✅ FIX: text-white/50 -> text-white/70 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-center text-xs text-white/70">
             {/* Links: copyright */}
             <p className="text-center md:text-left">
               &copy; {new Date().getFullYear()} WebBoost Partner.
@@ -117,7 +119,8 @@ export default function Footer() {
             </p>
 
             {/* Midden: built with */}
-            <p className="text-center font-mono text-3xs uppercase tracking-wider text-white/30">
+            {/* ✅ FIX: text-white/30 -> text-white/60 */}
+            <p className="text-center font-mono text-3xs uppercase tracking-wider text-white/60">
               Built with Next.js &amp; Craftsmanship
             </p>
 
@@ -129,14 +132,16 @@ export default function Footer() {
               >
                 Privacyverklaring
               </Link>
-              <span className="text-white/20">·</span>
+              {/* ✅ FIX: text-white/20 -> text-white/50 */}
+              <span className="text-white/50">·</span>
               <Link
                 href="/voorwaarden"
                 className="hover:text-[#FF4500] transition-colors"
               >
                 Algemene voorwaarden
               </Link>
-              <span className="text-white/20">·</span>
+              {/* ✅ FIX: text-white/20 -> text-white/50 */}
+              <span className="text-white/50">·</span>
               <Link
                 href="/cookiebeleid"
                 className="hover:text-[#FF4500] transition-colors"
