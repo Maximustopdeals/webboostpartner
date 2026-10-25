@@ -3,7 +3,6 @@ import { ArrowRight, Check, ExternalLink, Monitor, Smartphone } from "lucide-rea
 import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
 
-// ✅ Focus op "Webdesign Rotterdam" om concurrentie met de landingspagina te voorkomen
 export const metadata = {
   title: "Webdesign Rotterdam | Websites die klanten opleveren",
   description: "Professioneel webdesign in Rotterdam. Wij bouwen bliksemsnelle websites die jouw vakmanschap tonen en bezoekers omzetten in klanten.",
@@ -17,14 +16,9 @@ export default function HomePage() {
           
           {/* LINKERKANT: TEKST */}
           <div className="lg:col-span-7">
-            {/* ✅ HIGH-END FIX: 
-                - Geen uppercase meer (leest sneller)
-                - Font-extrabold in plaats van font-black (minder zwaar)
-                - Leading naar 1.1 (ademt beter)
-                - Max grootte naar 6xl
-            */}
             <h1 className="font-heading font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl text-black leading-[1.1]">
-              <span className="block text-orange-accessible mb-2">
+              {/* ✅ FIX: text-orange-accessible terug naar de felle merkkleur #FF4500 */}
+              <span className="block text-[#FF4500] mb-2">
                 Webdesign Rotterdam:
               </span>
               Een website die écht <br className="hidden sm:block" />
@@ -54,9 +48,8 @@ export default function HomePage() {
             </ul>
           </div>
 
-          {/* RECHTERKANT: LIVE BEWIJS KAART (Ongewijzigd) */}
+          {/* RECHTERKANT: LIVE BEWIJS KAART */}
           <div className="lg:col-span-5 relative mt-10 lg:mt-0">
-            {/* Achtergrond accent (het oranje blok achter de kaart) */}
             <div className="absolute inset-0 bg-[#FF4500] translate-x-3 translate-y-3 border-2 border-black" />
             
             <div className="relative bg-white border-2 border-black p-6 sm:p-8">
@@ -70,7 +63,6 @@ export default function HomePage() {
                 </span>
               </div>
 
-              {/* Scores */}
               <div className="flex items-end gap-6 mb-6 border-b-2 border-black pb-6">
                 <div>
                   <div className="flex items-center gap-1 text-[#525252] mb-1">
@@ -86,7 +78,6 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Klantnaam & Info */}
               <div className="mb-6">
                 <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 mb-1">
                   Recent project:
@@ -99,7 +90,6 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* Verificatie Link */}
               <a 
                 href="https://pagespeed.web.dev/analysis?url=https://www.marleyskraamzorg.nl/" 
                 target="_blank" 
@@ -114,7 +104,6 @@ export default function HomePage() {
       </section>
       
       <USPGrid />
-      {/* <PageSpeedTool /> */}
       <CTASection />
     </>
   );
