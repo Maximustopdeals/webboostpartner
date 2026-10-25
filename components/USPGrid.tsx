@@ -49,19 +49,18 @@ export default function USPGrid() {
     <section className="bg-[#FAFAFA] py-20 sm:py-28 border-t-2 border-black" data-testid="usp-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
-        {/* TITEL: Resultaatgericht en krachtig */}
         <div className="max-w-3xl mb-14">
-          {/* ✅ FIX: text-[#FF4500] -> text-orange-accessible */}
+          {/* ✅ KLEINE TEKST: blijft text-orange-accessible */}
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
             // Jouw Digitale Voorsprong
           </p>
           <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] text-black">
             Geen ingewikkeld gedoe.<br />
-            Wel <span className="text-orange-accessible">online resultaat</span>.
+            {/* ✅ GROTE KOP: text-[#FF4500] */}
+            Wel <span className="text-[#FF4500]">online resultaat</span>.
           </h2>
         </div>
 
-        {/* ELEGANT MINIMALISTISCH GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((it: USPItem, i: number) => {
             const Icon = it.icon;
@@ -71,15 +70,11 @@ export default function USPGrid() {
                 className="border-2 border-black bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#1A1A19]"
                 data-testid={`usp-card-${i}`}
               >
-                {/* ICON CONTAINER WITH RETRO ACCENT */}
-                {/* ✅ FIX: text-white -> text-black op de oranje achtergrond */}
                 <div className="w-11 h-11 grid place-items-center border-2 border-black bg-[#FF4500] text-black mb-5 shadow-[2px_2px_0px_0px_#1A1A19]">
                   <Icon size={20} strokeWidth={2.5} />
                 </div>
 
-                {/* OPTIONELE METRIC LABEL */}
                 {it.metric && (
-                  /* ✅ FIX: text-[#FF4500] -> text-orange-accessible, text-2xs -> text-[10px] */
                   <p className="font-mono text-[10px] uppercase tracking-widest mb-1.5 text-orange-accessible font-bold">
                     {it.metric}
                   </p>
