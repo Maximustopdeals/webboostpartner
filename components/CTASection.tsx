@@ -15,22 +15,43 @@ export default function CTASection({
   href = "/contact?intent=quickscan",
 }: CTASectionProps) {
   return (
-    <section className="bg-black text-white py-20 sm:py-28 border-y-2 border-black relative overflow-hidden" data-testid="cta-section">
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute -top-20 -right-20 w-96 h-96 border-8 border-[#FF4500] rotate-12" />
-        <div className="absolute -bottom-32 -left-16 w-80 h-80 border-8 border-white -rotate-12" />
+    <section 
+      className="bg-[#0A0A0A] text-white py-24 sm:py-32 border-y-2 border-black relative overflow-hidden" 
+      data-testid="cta-section"
+    >
+      {/* Subtiele achtergrond patronen */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute -top-20 -right-20 w-[30rem] h-[30rem] border-[12px] border-[#FF4500] rotate-12" />
+        <div className="absolute -bottom-32 -left-16 w-[25rem] h-[25rem] border-[12px] border-white -rotate-12" />
       </div>
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 relative">
-        <h2 className="font-heading font-extrabold uppercase text-4xl sm:text-6xl tracking-tighter leading-[0.95] mb-5">
-          {title}
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 relative z-10">
+        {/* ✅ HIGH-END FIX: 
+            - font-extrabold -> font-bold (minder agressief)
+            - tracking-tighter -> tracking-tight (ademt beter)
+            - leading-[0.95] -> leading-[1.1] (de regels raken elkaar niet meer)
+            - Toevoeging van een oranje accentkleur op de eerste woorden voor dynamiek
+        */}
+        <h2 className="font-heading font-bold uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 text-balance">
+          {title.split(' ').map((word, index) => {
+            // Maakt de eerste 3 woorden oranje voor een High-End accent (optioneel)
+            if (index < 3) {
+              return <span key={index} className="text-[#FF4500]">{word} </span>;
+            }
+            return <span key={index}>{word} </span>;
+          })}
         </h2>
-        <p className="text-lg text-white/80 max-w-2xl mb-8 leading-relaxed">{subtitle}</p>
+        
+        <p className="text-lg sm:text-xl text-white/70 max-w-2xl mb-10 leading-relaxed font-light">
+          {subtitle}
+        </p>
+        
         <Link
           href={href}
-          className="inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-white px-8 py-4 hover:bg-white hover:text-black hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#FF4500] transition-all"
+          className="inline-flex items-center gap-3 bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider text-sm border-2 border-[#FF4500] px-8 py-4 hover:bg-white hover:border-white hover:text-black hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#FF4500] transition-all"
           data-testid="cta-button"
         >
-          {button} <ArrowRight size={18} />
+          {button} <ArrowRight size={18} strokeWidth={3} />
         </Link>
       </div>
     </section>
