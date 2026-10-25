@@ -134,13 +134,14 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
               }`}
             >
               {pkg.badge && (
-                /* ✅ FIX: text-white -> text-black op de oranje badge */
+                /* ✅ FIX: text-black ipv wit op de badge */
                 <div className="absolute -top-3 left-4 font-heading text-xs uppercase px-3 py-1 border-2 border-black bg-[#FF4500] text-black font-bold z-20">
                   {pkg.badge}
                 </div>
               )}
 
-              <div className="mb-6 text-[#FF4500]">
+              {/* ✅ FIX: Icoon krijgt lichter oranje op zwarte achtergrond */}
+              <div className={`mb-6 ${pkg.highlighted ? "text-[#FF6B2B]" : "text-[#FF4500]"}`}>
                 {pkg.icon}
               </div>
 
@@ -153,9 +154,10 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
               </h3>
 
               <div className="mb-5">
+                {/* ✅ FIX: Prijs krijgt lichter oranje op zwarte achtergrond */}
                 <p
                   className={`font-heading text-xl font-bold ${
-                    pkg.highlighted ? "text-[#FF4500]" : "text-black"
+                    pkg.highlighted ? "text-[#FF6B2B]" : "text-black"
                   }`}
                 >
                   {pkg.price} <span className="text-sm font-sans font-normal text-gray-500">excl. btw</span>
@@ -191,9 +193,10 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
 
               {/* Inheritance label */}
               {pkg.inheritFrom && (
+                /* ✅ FIX: Inheritance label krijgt lichter oranje op zwarte achtergrond */
                 <p
                   className={`font-mono text-xs uppercase tracking-wider mb-3 ${
-                    pkg.highlighted ? "text-[#FF4500]" : "text-[#525252]"
+                    pkg.highlighted ? "text-[#FF6B2B]" : "text-[#525252]"
                   }`}
                 >
                   Alles uit {pkg.inheritFrom}, plus:
@@ -203,10 +206,11 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
               <ul className="space-y-3 mb-8 flex-1">
                 {pkg.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm">
+                    {/* ✅ FIX: Vinkjes krijgen lichter oranje op zwarte achtergrond */}
                     <Check
                       size={16}
                       className={`mt-1 shrink-0 ${
-                        pkg.highlighted ? "text-[#FF4500]" : "text-[#00B050]"
+                        pkg.highlighted ? "text-[#FF6B2B]" : "text-[#00B050]"
                       }`}
                     />
                     <span className={pkg.highlighted ? "text-white/90" : "text-[#1a1a1a]"}>
@@ -218,7 +222,6 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
 
               <Link
                 href={`/contact?intent=pakket_${pkg.id}`}
-                /* ✅ FIX: In de highlighted box, text-white -> text-black op de oranje knop */
                 className={`mt-auto inline-flex items-center justify-center gap-2 font-heading font-bold uppercase tracking-wider border-2 px-6 py-3 transition-all text-sm ${
                   pkg.highlighted
                     ? "bg-[#FF4500] text-black border-black hover:bg-white hover:text-black hover:border-black"
