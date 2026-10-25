@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.10.2",
     "next": "^16.2.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",
