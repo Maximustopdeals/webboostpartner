@@ -16,13 +16,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-8">
             <h1 className="font-heading font-black uppercase text-4xl sm:text-6xl text-black">
-              Een professionele website die écht <span className="text-[#FF4500]">klanten oplevert</span>.
+              {/* ✅ FIX: text-[#FF4500] -> text-orange-accessible */}
+              Een professionele website die écht <span className="text-orange-accessible">klanten oplevert</span>.
             </h1>
             <p className="mt-6 text-xl max-w-2xl text-[#1a1a1a] font-semibold leading-relaxed">
               Geen technisch jargon. Wel een bliksemsnelle website die jouw vakmanschap laat zien en bezoekers omzet in betalende klanten.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Link href="/contact?intent=quickscan" className="bg-[#FF4500] text-white font-bold uppercase px-8 py-4 border-2 border-black hover:bg-black transition-all">
+              {/* ✅ FIX: text-white -> text-black */}
+              <Link 
+                href="/contact?intent=quickscan" 
+                className="bg-[#FF4500] text-black font-bold uppercase px-8 py-4 border-2 border-black hover:bg-black hover:text-white transition-all"
+              >
                 Vraag gratis adviesgesprek aan
               </Link>
             </div>
