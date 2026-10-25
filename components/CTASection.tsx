@@ -26,17 +26,11 @@ export default function CTASection({
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-8 relative z-10">
-        {/* ✅ HIGH-END FIX: 
-            - font-extrabold -> font-bold (minder agressief)
-            - tracking-tighter -> tracking-tight (ademt beter)
-            - leading-[0.95] -> leading-[1.1] (de regels raken elkaar niet meer)
-            - Toevoeging van een oranje accentkleur op de eerste woorden voor dynamiek
-        */}
         <h2 className="font-heading font-bold uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 text-balance">
           {title.split(' ').map((word, index) => {
-            // Maakt de eerste 3 woorden oranje voor een High-End accent (optioneel)
+            // ✅ FIX: text-[#FF4500] -> text-orange-accessible
             if (index < 3) {
-              return <span key={index} className="text-[#FF4500]">{word} </span>;
+              return <span key={index} className="text-orange-accessible">{word} </span>;
             }
             return <span key={index}>{word} </span>;
           })}
