@@ -3,9 +3,10 @@ import { ArrowRight, Check, ExternalLink, Monitor, Smartphone } from "lucide-rea
 import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
 
+// ✅ AANGEPAST: Focus op "Webdesign Rotterdam" om concurrentie met de landingspagina te voorkomen
 export const metadata = {
-  title: "Website Laten Maken Rotterdam | Conversiegericht & Snel | WebBoost Partner",
-  description: "Professionele website laten maken in Rotterdam. Binnen 2 seconden laadtijd, optimale lokale SEO en een modern ontwerp dat écht klanten oplevert.",
+  title: "Webdesign Rotterdam | Websites die klanten opleveren",
+  description: "Professioneel webdesign in Rotterdam. Wij bouwen bliksemsnelle websites die jouw vakmanschap tonen en bezoekers omzetten in klanten.",
 };
 
 export default function HomePage() {
@@ -16,9 +17,11 @@ export default function HomePage() {
           
           {/* LINKERKANT: TEKST */}
           <div className="lg:col-span-7">
+            {/* ✅ AANGEPAST: Nieuwe H1 met "Webdesign Rotterdam" */}
             <h1 className="font-heading font-black uppercase text-4xl sm:text-6xl lg:text-7xl leading-[0.95] text-black">
-              Een professionele website die écht <span className="text-orange-accessible">klanten oplevert</span>.
+              Webdesign Rotterdam: een website die écht <span className="text-orange-accessible">klanten oplevert</span>.
             </h1>
+            
             <p className="mt-6 text-xl max-w-2xl text-[#1a1a1a] font-semibold leading-relaxed">
               Geen technisch jargon. Wel een bliksemsnelle website die jouw vakmanschap laat zien en bezoekers omzet in betalende klanten.
             </p>
