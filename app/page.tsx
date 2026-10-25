@@ -3,7 +3,7 @@ import { ArrowRight, Check, ExternalLink, Monitor, Smartphone } from "lucide-rea
 import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
 
-// ✅ AANGEPAST: Focus op "Webdesign Rotterdam" om concurrentie met de landingspagina te voorkomen
+// ✅ Focus op "Webdesign Rotterdam" om concurrentie met de landingspagina te voorkomen
 export const metadata = {
   title: "Webdesign Rotterdam | Websites die klanten opleveren",
   description: "Professioneel webdesign in Rotterdam. Wij bouwen bliksemsnelle websites die jouw vakmanschap tonen en bezoekers omzetten in klanten.",
@@ -17,12 +17,21 @@ export default function HomePage() {
           
           {/* LINKERKANT: TEKST */}
           <div className="lg:col-span-7">
-            {/* ✅ AANGEPAST: Nieuwe H1 met "Webdesign Rotterdam" */}
-            <h1 className="font-heading font-black uppercase text-4xl sm:text-6xl lg:text-7xl leading-[0.95] text-black">
-              Webdesign Rotterdam: een website die écht <span className="text-orange-accessible">klanten oplevert</span>.
+            {/* ✅ HIGH-END FIX: 
+                - Geen uppercase meer (leest sneller)
+                - Font-extrabold in plaats van font-black (minder zwaar)
+                - Leading naar 1.1 (ademt beter)
+                - Max grootte naar 6xl
+            */}
+            <h1 className="font-heading font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl text-black leading-[1.1]">
+              <span className="block text-orange-accessible mb-2">
+                Webdesign Rotterdam:
+              </span>
+              Een website die écht <br className="hidden sm:block" />
+              klanten oplevert.
             </h1>
             
-            <p className="mt-6 text-xl max-w-2xl text-[#1a1a1a] font-semibold leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] font-medium leading-relaxed">
               Geen technisch jargon. Wel een bliksemsnelle website die jouw vakmanschap laat zien en bezoekers omzet in betalende klanten.
             </p>
             
@@ -45,7 +54,7 @@ export default function HomePage() {
             </ul>
           </div>
 
-          {/* RECHTERKANT: LIVE BEWIJS KAART */}
+          {/* RECHTERKANT: LIVE BEWIJS KAART (Ongewijzigd) */}
           <div className="lg:col-span-5 relative mt-10 lg:mt-0">
             {/* Achtergrond accent (het oranje blok achter de kaart) */}
             <div className="absolute inset-0 bg-[#FF4500] translate-x-3 translate-y-3 border-2 border-black" />
@@ -105,7 +114,7 @@ export default function HomePage() {
       </section>
       
       <USPGrid />
-      {/* <PageSpeedTool />  <-- Als je deze nog hebt, kun je deze weer aanzetten */}
+      {/* <PageSpeedTool /> */}
       <CTASection />
     </>
   );
