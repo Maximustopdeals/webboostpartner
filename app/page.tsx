@@ -17,7 +17,6 @@ export default function HomePage() {
           {/* LINKERKANT: TEKST */}
           <div className="lg:col-span-7">
             <h1 className="font-heading font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl text-black leading-[1.1]">
-              {/* ✅ FIX: text-orange-accessible terug naar de felle merkkleur #FF4500 */}
               <span className="block text-[#FF4500] mb-2">
                 Webdesign Rotterdam:
               </span>
