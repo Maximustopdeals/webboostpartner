@@ -44,7 +44,8 @@ export default function CookieBanner() {
             <h2 id="cookie-banner-title" className="font-heading font-extrabold uppercase text-sm tracking-tight mb-1">
               Cookies
             </h2>
-            <p id="cookie-banner-desc" className="text-xs text-[#525252] leading-relaxed">
+            {/* ✅ FIX: text-[#525252] -> text-gray-700 */}
+            <p id="cookie-banner-desc" className="text-xs text-gray-700 leading-relaxed">
               Wij gebruiken functionele cookies om de website te laten werken, 
               en analytische cookies om te begrijpen hoe u onze site gebruikt. 
               Zie ons{" "}
