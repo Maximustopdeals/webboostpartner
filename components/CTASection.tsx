@@ -19,7 +19,6 @@ export default function CTASection({
       className="bg-[#0A0A0A] text-white py-24 sm:py-32 border-y-2 border-black relative overflow-hidden" 
       data-testid="cta-section"
     >
-      {/* Subtiele achtergrond patronen */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div className="absolute -top-20 -right-20 w-[30rem] h-[30rem] border-[12px] border-[#FF4500] rotate-12" />
         <div className="absolute -bottom-32 -left-16 w-[25rem] h-[25rem] border-[12px] border-white -rotate-12" />
@@ -28,9 +27,9 @@ export default function CTASection({
       <div className="max-w-5xl mx-auto px-4 sm:px-8 relative z-10">
         <h2 className="font-heading font-bold uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 text-balance">
           {title.split(' ').map((word, index) => {
-            // ✅ FIX: text-[#FF4500] -> text-orange-accessible
+            // ✅ FIX: text-orange-accessible -> text-[#FF4500] voor grote koppen
             if (index < 3) {
-              return <span key={index} className="text-orange-accessible">{word} </span>;
+              return <span key={index} className="text-[#FF4500]">{word} </span>;
             }
             return <span key={index}>{word} </span>;
           })}
