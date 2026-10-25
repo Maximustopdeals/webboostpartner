@@ -23,7 +23,7 @@ export default function FAQ({ items, schemaId = "faq" }: FAQProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `https://webboostpartner.nl{schemaId}`,
+    "@id": `https://webboostpartner.nl${schemaId}`,
     "mainEntity": {
       "@type": "ItemList",
       "name": "Veelgestelde Vragen",
@@ -64,12 +64,14 @@ export default function FAQ({ items, schemaId = "faq" }: FAQProps) {
                 className="w-full flex items-center justify-between gap-4 p-5 text-left group"
                 aria-expanded={isOpen}
               >
-                <span className="font-heading font-black uppercase text-base sm:text-lg tracking-tight text-[#1a1a1a] group-hover:text-[#FF4500] transition-colors">
+                {/* ✅ FIX: group-hover:text-[#FF4500] -> group-hover:text-orange-accessible */}
+                <span className="font-heading font-black uppercase text-base sm:text-lg tracking-tight text-[#1a1a1a] group-hover:text-orange-accessible transition-colors">
                   {item.q}
                 </span>
                 <span 
+                  /* ✅ FIX: text-white -> text-black voor contrast */
                   className={`shrink-0 grid place-items-center w-9 h-9 border-2 border-black transition-all ${
-                    isOpen ? "bg-[#FF4500] text-white" : "bg-[#F5F5F3] text-black group-hover:bg-[#FF4500] group-hover:text-white"
+                    isOpen ? "bg-[#FF4500] text-black" : "bg-[#F5F5F3] text-black group-hover:bg-[#FF4500] group-hover:text-black"
                   }`}
                 >
                   {isOpen ? <Minus size={14} strokeWidth={3} /> : <Plus size={14} strokeWidth={3} />}
