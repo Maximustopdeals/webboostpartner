@@ -16,7 +16,6 @@ export default function Footer() {
             </span>
             WebBoost Partner
           </div>
-          {/* ✅ FIX: text-white/70 is goed, contrast is 10.5:1 */}
           <p className="text-sm text-white/70 max-w-md leading-relaxed font-medium">
             Een professionele website die écht klanten oplevert. Wij bouwen
             bliksemsnelle, toekomstbestendige Next.js platforms voor ambitieuze
@@ -26,14 +25,15 @@ export default function Footer() {
 
         {/* DIENSTEN NAVIGATIE */}
         <div>
-          <h4 className="font-heading font-bold uppercase text-xs tracking-widest mb-4 text-[#FF4500]">
+          {/* ✅ FIX: h4 -> h2 en text-[#FF4500] -> text-[#FF6B2B] (beter contrast op zwart) */}
+          <h2 className="font-heading font-bold uppercase text-xs tracking-widest mb-4 text-[#FF6B2B]">
             Diensten
-          </h4>
+          </h2>
           <ul className="space-y-2 text-sm font-medium text-white/80">
             <li>
               <Link
                 href="/website-laten-maken-rotterdam"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[#FF6B2B] transition-colors"
               >
                 Website laten maken
               </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/seo-rotterdam"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[#FF6B2B] transition-colors"
               >
                 SEO Rotterdam
               </Link>
@@ -49,7 +49,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/wordpress-naar-nextjs"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[#FF6B2B] transition-colors"
               >
                 WordPress migratie
               </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/pakketten"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[#FF6B2B] transition-colors"
               >
                 Pakketten &amp; Tarieven
               </Link>
@@ -67,35 +67,35 @@ export default function Footer() {
 
         {/* GEGEVENS & REGIO */}
         <div>
-          <h4 className="font-heading font-bold uppercase text-xs tracking-widest mb-4 text-[#FF4500]">
+          {/* ✅ FIX: h4 -> h2 en text-[#FF4500] -> text-[#FF6B2B] */}
+          <h2 className="font-heading font-bold uppercase text-xs tracking-widest mb-4 text-[#FF6B2B]">
             Contact
-          </h4>
+          </h2>
           <ul className="space-y-3 text-sm font-medium text-white/80">
             <li className="flex items-start gap-2">
-              <MapPin size={16} className="mt-0.5 text-[#FF4500] shrink-0" />
+              <MapPin size={16} className="mt-0.5 text-[#FF6B2B] shrink-0" />
               <span>
                 Rotterdam, Nederland
-                {/* ✅ FIX: text-white/40 -> text-white/60 */}
-                <span className="block text-3xs font-mono uppercase tracking-wider text-white/60 mt-0.5">
+                <span className="block text-[10px] font-mono uppercase tracking-wider text-white/60 mt-0.5">
                   Regio Rijnmond
                 </span>
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <Phone size={16} className="mt-0.5 text-[#FF4500] shrink-0" />
+              <Phone size={16} className="mt-0.5 text-[#FF6B2B] shrink-0" />
               <a
                 href="tel:+31642628242"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[#FF6B2B] transition-colors"
                 data-testid="footer-phone"
               >
                 06-42628242
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <Mail size={16} className="mt-0.5 text-[#FF4500] shrink-0" />
+              <Mail size={16} className="mt-0.5 text-[#FF6B2B] shrink-0" />
               <a
                 href="mailto:info@webboostpartner.nl"
-                className="hover:text-[#FF4500] break-all transition-colors"
+                className="hover:text-[#FF6B2B] break-all transition-colors"
                 data-testid="footer-email"
               >
                 info@webboostpartner.nl
@@ -108,7 +108,6 @@ export default function Footer() {
       {/* FOOTER BOTTOM SECTIE */}
       <div className="border-t border-white/10 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6">
-          {/* ✅ FIX: text-white/50 -> text-white/70 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-center text-xs text-white/70">
             {/* Links: copyright */}
             <p className="text-center md:text-left">
@@ -119,8 +118,7 @@ export default function Footer() {
             </p>
 
             {/* Midden: built with */}
-            {/* ✅ FIX: text-white/30 -> text-white/60 */}
-            <p className="text-center font-mono text-3xs uppercase tracking-wider text-white/60">
+            <p className="text-center font-mono text-[10px] uppercase tracking-wider text-white/60">
               Built with Next.js &amp; Craftsmanship
             </p>
 
@@ -128,23 +126,21 @@ export default function Footer() {
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2">
               <Link
                 href="/privacy"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[#FF6B2B] transition-colors"
               >
                 Privacyverklaring
               </Link>
-              {/* ✅ FIX: text-white/20 -> text-white/50 */}
               <span className="text-white/50">·</span>
               <Link
                 href="/voorwaarden"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[#FF6B2B] transition-colors"
               >
                 Algemene voorwaarden
               </Link>
-              {/* ✅ FIX: text-white/20 -> text-white/50 */}
               <span className="text-white/50">·</span>
               <Link
                 href="/cookiebeleid"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[#FF6B2B] transition-colors"
               >
                 Cookiebeleid
               </Link>
