@@ -181,8 +181,6 @@ export default function VindbareSitePage() {
           <p>
             Wilt u een website laten maken die direct vindbaar is? Bekijk dan onze 
             pagina over <Link href="/website-laten-maken-rotterdam">website laten maken in Rotterdam</Link>. 
-            Wilt u meer weten over Core Web Vitals? Bekijk onze{" "}
-            <Link href="/core-web-vitals">uitleg over Core Web Vitals</Link>.
           </p>
         </div>
       </article>
