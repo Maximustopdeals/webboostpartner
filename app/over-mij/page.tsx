@@ -1,6 +1,8 @@
-import { MapPin, Sparkles, User, Target, Coffee } from "lucide-react";
+import { MapPin, Sparkles } from "lucide-react";
 import CTASection from "@/components/CTASection";
-import PortfolioSection from "@/components/PortfolioSection";
+import ProjectCard from "@/components/ProjectCard";
+import { projects } from "@/data/projects";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 function NextjsLogoCard() {
@@ -47,7 +49,7 @@ export default function OverMijPage() {
               <p>
                 Ik ben <strong>Ron</strong>, oprichter van WebBoost Partner. 
                 Ik help Rotterdamse ondernemers aan een modern digitaal fundament dat niet alleen online 
-                hun vakmanschap laat zien, maar ook daadwerkelijk **nieuwe klanten oplevert**.
+                hun vakmanschap laat zien, maar ook daadwerkelijk <strong>nieuwe klanten oplevert</strong>.
               </p>
 
               <p>
@@ -58,7 +60,7 @@ export default function OverMijPage() {
 
               <p>
                 Ik werk bewust kleinschalig en persoonlijk. Bij mij vindt u geen grote, anonieme 
-                projectteams of accountmanagers; **u schakelt altijd rechtstreeks met mij**. Wel zo duidelijk, 
+                projectteams of accountmanagers; <strong>u schakelt altijd rechtstreeks met mij</strong>. Wel zo duidelijk, 
                 eerlijk en zonder gedoe.
               </p>
             </div>
@@ -122,7 +124,7 @@ export default function OverMijPage() {
 
           <p>
             Ik geloof dat een website geen bron van constante updates of technische zorgen moet zijn, maar juist 
-            een **rendabele oplossing**. Ondernemers verdienen een digitaal fundament dat blindelings 
+            een <strong>rendabele oplossing</strong>. Ondernemers verdienen een digitaal fundament dat blindelings 
             vertrouwen geeft en direct klaar is om serieuze online groei te ondersteunen.
           </p>
 
@@ -167,8 +169,37 @@ export default function OverMijPage() {
         </div>
       </article>
 
-      {/* PORTFOLIO BLOK */}
-      <PortfolioSection />
+      {/* UITGELICHTE PROJECTEN (Vervangt de oude PortfolioSection) */}
+      <section className="bg-[#FAFAFA] border-y-2 border-black py-20 sm:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
+                // Recent Werk
+              </p>
+              <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] text-black">
+                Een greep uit mijn <span className="text-[#FF4500]">portfolio</span>.
+              </h2>
+            </div>
+            <Link 
+              href="/portfolio"
+              className="inline-flex items-center justify-center bg-white text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-6 py-3 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_#1A1A19] whitespace-nowrap"
+            >
+              Bekijk alle projecten
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.slice(0, 3).map((project, index) => (
+              <ProjectCard 
+                key={project.slug} 
+                project={project} 
+                priority={index === 0}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <CTASection
