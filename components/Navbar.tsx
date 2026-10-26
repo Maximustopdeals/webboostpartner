@@ -29,6 +29,7 @@ const mainLinks: NavLink[] = [
   { href: "/seo-rotterdam", label: "SEO" },
   { href: "/pakketten", label: "PAKKETTEN" },
   { href: "/over-mij", label: "OVER MIJ" },
+  { href: "/portfolio", label: "PORTFOLIO" }, // ✅ TOEGEVOEGD
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -143,7 +144,6 @@ export default function Navbar() {
                               key={child.href}
                               href={child.href}
                               role="menuitem"
-                              /* ✅ FIX: hover:text-black ipv wit */
                               className={`block px-4 py-3 font-heading font-bold uppercase text-xs tracking-wider border-b-2 border-black last:border-b-0 transition-colors ${
                                 isActive(child.href)
                                   ? "bg-black text-white"
@@ -176,7 +176,6 @@ export default function Navbar() {
             {/* Conversieverhogende CTA Knop */}
             <Link
               href="/contact?intent=quickscan"
-              /* ✅ FIX: text-black ipv wit */
               className="ml-4 inline-flex items-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-2.5 hover:bg-black hover:text-white hover:-translate-y-0.5 hover:shadow-brutal-sm transition-all whitespace-nowrap"
             >
               <MonitorPlay size={14} strokeWidth={2.5} /> GRATIS QUICKSCAN
@@ -211,7 +210,6 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => setMobileSubOpen((v) => !v)}
-                    /* ✅ FIX: hover:text-black ipv wit */
                     className="w-full flex items-center justify-between px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider text-black hover:bg-[#FF4500] hover:text-black transition-colors"
                     aria-expanded={mobileSubOpen}
                   >
@@ -232,7 +230,6 @@ export default function Navbar() {
                           key={child.href}
                           href={child.href}
                           onClick={() => setOpen(false)}
-                          /* ✅ FIX: hover:text-black ipv wit */
                           className={`block px-3 py-2 font-heading font-bold uppercase text-xs tracking-wider transition-colors ${
                             isActive(child.href)
                               ? "bg-black text-white"
@@ -250,7 +247,6 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  /* ✅ FIX: hover:text-black ipv wit */
                   className={`block px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider transition-colors ${
                     isActive(item.href)
                       ? "bg-black text-white"
@@ -265,7 +261,6 @@ export default function Navbar() {
             <Link
               href="/contact?intent=quickscan"
               onClick={() => setOpen(false)}
-              /* ✅ FIX: text-black ipv wit */
               className="block px-3 py-2 font-heading font-bold uppercase text-sm tracking-wider bg-[#FF4500] text-black border-2 border-black mt-2 text-center"
             >
               GRATIS QUICKSCAN
