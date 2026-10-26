@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     slug: "kraamzorg-t-gouden-hartje",
     name: "Kraamzorg 'T Gouden Hartje",
-    url: "https://www.kraamzorg-tgoudenhartje.nl/",
+    url: "https://www.kraamzorg-tgoudenhartje.nl/", 
     tagline: "Warm en persoonlijk platform voor kraamzorg in Almere, gericht op rust, vertrouwen en een liefdevolle start.",
     resultMetric: "100/100 PageSpeed · Perfecte Core Web Vitals",
     image: "/images/Kraamzorg-tgoudenhartje-hero.jpg", // Pas dit pad aan naar de exacte locatie van je upload
