@@ -15,6 +15,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "kraamzorg-t-gouden-hartje",
+    name: "Kraamzorg 'T Gouden Hartje",
+    url: "https://www.kraamzorg-tgoudenhartje.nl/",
+    tagline: "Warm en persoonlijk platform voor kraamzorg in Almere, gericht op rust, vertrouwen en een liefdevolle start.",
+    resultMetric: "100/100 PageSpeed · Perfecte Core Web Vitals",
+    image: "/images/Kraamzorg-tgoudenhartje-hero.jpg", // Pas dit pad aan naar de exacte locatie van je upload
+    testimonial: {
+      quote: "Als kraamverzorgende wil ik dat ouders zich direct op hun gemak voelen. De nieuwe website straalt precies die warmte en rust uit die ik in mijn praktijk breng. Ik word nu veel beter gevonden door gezinnen in Almere en kan mijn verhaal op een prachtige manier vertellen.",
+      author: "Hanan",
+      role: "Eigenaresse, Kraamzorg 'T Gouden Hartje",
+    },
+  },
+  {
     slug: "marleys-kraamzorg",
     name: "Marley's Kraamzorg",
     url: "https://www.marleyskraamzorg.nl",
