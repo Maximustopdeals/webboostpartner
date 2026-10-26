@@ -194,7 +194,8 @@ export default function WebsiteRotterdamPage() {
           <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
               href="/contact?intent=advies"
-              className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+              /* ✅ FIX: text-black ipv text-white */
+              className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
             >
               Vraag vrijblijvend adviesgesprek aan <ArrowRight size={18} />
             </Link>
@@ -226,8 +227,9 @@ export default function WebsiteRotterdamPage() {
               onze recente projecten en zie zelf het resultaat.
             </p>
             <Link
-              href="/over-mij"
-              className="inline-flex items-center gap-2 mt-6 bg-[#FF4500] text-white px-8 py-4 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black transition-colors border-2 border-black hover:-translate-y-1 hover:shadow-brutal-sm"
+              href="/portfolio" /* ✅ FIX: Linkt nu naar de nieuwe portfolio pagina */
+              /* ✅ FIX: text-black ipv text-white */
+              className="inline-flex items-center gap-2 mt-6 bg-[#FF4500] text-black px-8 py-4 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black hover:text-white transition-colors border-2 border-black hover:-translate-y-1 hover:shadow-brutal-sm"
             >
               Bekijk onze projecten <ArrowRight size={16} />
             </Link>
@@ -425,7 +427,8 @@ export default function WebsiteRotterdamPage() {
             </p>
             <Link
               href="/contact?intent=advies"
-              className="inline-flex items-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase text-sm tracking-widest px-6 py-3 border-2 border-black hover:bg-black hover:-translate-y-1 transition-all"
+              /* ✅ FIX: text-black ipv text-white */
+              className="inline-flex items-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-sm tracking-widest px-6 py-3 border-2 border-black hover:bg-black hover:text-white hover:-translate-y-1 transition-all"
             >
               Plan adviesgesprek <ArrowRight size={16} />
             </Link>
