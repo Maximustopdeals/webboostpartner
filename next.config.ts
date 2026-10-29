@@ -13,19 +13,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // 1. Domein-canonicalisatie: www -> non-www (permanent)
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.webboostpartner.nl",
-          },
-        ],
-        destination: "https://webboostpartner.nl/:path*",
-        permanent: true,
-      },
-      // 2. Uw bestaande inhoudelijke redirects
+      // De host-redirect voor www -> non-www is hier verwijderd.
+      // Vercel regelt deze doorverwijzing al op netwerkniveau.
       {
         source: "/nextjs-specialist",
         destination: "/over-mij",
