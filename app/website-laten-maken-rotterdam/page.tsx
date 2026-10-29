@@ -5,9 +5,9 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Laten Maken Rotterdam | Modern & Conversiegericht",
+  title: "Website Laten Maken Rotterdam | Webdesign Rotterdam | WebBoost",
   description:
-    "Professionele website laten maken in Rotterdam? WebBoost Partner bouwt snelle, toekomstbestendige websites voor ZZP & MKB die écht resultaat opleveren.",
+    "Op zoek naar professioneel webdesign Rotterdam of een website laten maken in Rotterdam? WebBoost Partner bouwt razendsnelle websites voor ZZP & MKB die echt resultaat opleveren.",
   keywords: [
     "website laten maken Rotterdam",
     "webdesign Rotterdam",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     canonical: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
   },
   openGraph: {
-    title: "Website Laten Maken Rotterdam | Modern & Conversiegericht",
+    title: "Website Laten Maken Rotterdam | Webdesign Rotterdam | WebBoost",
     description:
-      "Professionele website laten maken in Rotterdam? WebBoost Partner bouwt snelle, toekomstbestendige websites voor ZZP & MKB die écht resultaat opleveren.",
+      "Op zoek naar professioneel webdesign Rotterdam of een website laten maken in Rotterdam? WebBoost Partner bouwt razendsnelle websites voor ZZP & MKB die echt resultaat opleveren.",
     url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
     siteName: "WebBoost Partner",
     locale: "nl_NL",
@@ -43,12 +43,12 @@ const faqs: FAQItem[] = [
     a: "Een gemiddeld traject duurt 2 tot 4 weken. De exacte planning hangt af van het aantal pagina's, de hoeveelheid content en hoe snel keuzes en feedback worden aangeleverd. Een eenvoudige website kan sneller live gaan, terwijl uitgebreide websites met blogs, meerdere diensten of lokale SEO meer tijd nodig hebben.",
   },
   {
-    q: "Kan mijn bestaande WordPress website worden overgezet naar Next.js?",
-    a: "Ja. Uw WordPress website kan worden vernieuwd naar Next.js — een logische high-end upgrade voor groeiende bedrijven. Dit gebeurt niet door simpelweg een knop om te zetten, maar door de website opnieuw op te bouwen met behoud van content, structuur en SEO-waarde. Tijdens de migratie worden URL's, metadata en redirects meegenomen zodat uw vindbaarheid behouden blijft.",
+    q: "Kan mijn bestaande WordPress website worden vernieuwd?",
+    a: "Ja. Uw WordPress website kan worden vernieuwd naar een moderne, snelle website. Dit gebeurt niet door simpelweg een knop om te zetten, maar door de website opnieuw op te bouwen met behoud van content, structuur en vindbaarheid in Google. Tijdens de migratie worden links en pagina's netjes meegenomen zodat uw huidige posities behouden blijven.",
   },
   {
     q: "Is SEO inbegrepen?",
-    a: "Ja. Iedere website wordt technisch SEO-proof gebouwd: correcte structuur, metadata, schema markup, sitemap.xml, robots.txt, Open Graph en een logische heading-structuur. Voor lokale ondernemers in Rotterdam kunnen aanvullende lokale SEO-optimalisaties worden ingericht.",
+    a: "Ja. Iedere website wordt technisch perfect opgebouwd: een correcte structuur, heldere pagina's, snelle laadtijden en een logische opbouw. Voor lokale ondernemers in Rotterdam zorgen we er aanvullend voor dat u goed gevonden wordt op lokale zoekwoorden zoals webdesign Rotterdam.",
   },
   {
     q: "Werk je alleen voor bedrijven in Rotterdam?",
@@ -59,12 +59,12 @@ const faqs: FAQItem[] = [
     a: "Uw website wordt gebouwd met het oog op groei. Nieuwe pagina's, diensten of functionaliteit kunnen eenvoudig worden toegevoegd. Kleine aanpassingen kunnen tegen een vast uurtarief worden uitgevoerd. Bij het Enterprise pakket zit 6 maanden support inbegrepen.",
   },
   {
-    q: "Waarom kiezen voor Next.js in plaats van WordPress?",
-    a: "WordPress is voor veel bedrijven een uitstekende start. Naarmate een website groeit, kunnen thema's en plugins de prestaties echter beïnvloeden. Next.js biedt een moderne technische basis waarbij snelheid, veiligheid en prestaties centraal staan. Het resultaat is een website die sneller laadt, beter scoort in Google en minder onderhoud vraagt.",
+    q: "Waarom een moderne technische basis in plaats van WordPress?",
+    a: "WordPress is voor veel bedrijven een uitstekende start. Naarmate een website groeit, kunnen losse onderdelen en plugins de prestaties echter beïnvloeden. Een moderne technische basis zorgt voor optimale snelheid, veiligheid en prestaties. Het resultaat is een website die sneller laadt, beter scoort in Google en minder onderhoud vraagt.",
   },
   {
     q: "Kan ik zelf mijn website aanpassen?",
-    a: "Ja. Afhankelijk van uw wensen kan een CMS worden gekoppeld waarmee u zelf teksten, afbeeldingen of pagina's kunt beheren. Voor grotere wijzigingen kunt u altijd terugvallen op WebBoost Partner.",
+    a: "Ja. Afhankelijk van uw wensen kan een beheersysteem worden gekoppeld waarmee u zelf teksten, afbeeldingen of pagina's kunt beheren. Voor grotere wijzigingen kunt u altijd terugvallen op WebBoost Partner.",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function WebsiteRotterdamPage() {
                 "@type": "WebPage",
                 "@id": "https://www.webboostpartner.nl/website-laten-maken-rotterdam#webpage",
                 url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
-                name: "Website Laten Maken Rotterdam | Modern & Conversiegericht",
+                name: "Website Laten Maken Rotterdam | Webdesign Rotterdam | WebBoost",
                 isPartOf: {
                   "@id": "https://www.webboostpartner.nl/#website",
                 },
@@ -166,15 +166,14 @@ export default function WebsiteRotterdamPage() {
           </h1>
 
           <p className="mt-6 text-xl max-w-3xl leading-relaxed font-semibold">
-            Een modern, bliksemsnel digitaal fundament dat naadloos aansluit bij uw
-            doelgroep en structureel nieuwe klanten oplevert.
+            Op zoek naar professioneel <strong>webdesign Rotterdam</strong> of een website die naadloos aansluit bij uw doelgroep? Wij bouwen een modern, bliksemsnel digitaal fundament dat structureel nieuwe klanten oplevert.
           </p>
 
           {/* Trust-bar */}
           <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-[#525252]">
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
-              95+ PageSpeed
+              95+ Snelheidsscore
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
@@ -194,7 +193,6 @@ export default function WebsiteRotterdamPage() {
           <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
               href="/contact?intent=advies"
-              /* ✅ FIX: text-black ipv text-white */
               className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
             >
               Vraag vrijblijvend adviesgesprek aan <ArrowRight size={18} />
@@ -227,8 +225,7 @@ export default function WebsiteRotterdamPage() {
               onze recente projecten en zie zelf het resultaat.
             </p>
             <Link
-              href="/portfolio" /* ✅ FIX: Linkt nu naar de nieuwe portfolio pagina */
-              /* ✅ FIX: text-black ipv text-white */
+              href="/portfolio"
               className="inline-flex items-center gap-2 mt-6 bg-[#FF4500] text-black px-8 py-4 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black hover:text-white transition-colors border-2 border-black hover:-translate-y-1 hover:shadow-brutal-sm"
             >
               Bekijk onze projecten <ArrowRight size={16} />
@@ -251,7 +248,7 @@ export default function WebsiteRotterdamPage() {
           <p>
             In enkele seconden bepaalt iemand of uw bedrijf professioneel, betrouwbaar
             en geschikt genoeg is om contact mee op te nemen. Daarom moet een website
-            niet alleen mooi zijn, maar vooral effectief werken.
+            niet alleen mooi zijn, maar vooral effectief werken. Goed <strong>webdesign Rotterdam</strong> valt direct op.
           </p>
 
           <p>Een professionele website helpt u met:</p>
@@ -261,7 +258,7 @@ export default function WebsiteRotterdamPage() {
               <strong>Vertrouwen opbouwen</strong> door een professionele uitstraling.
             </li>
             <li>
-              <strong>Meer aanvragen genereren</strong> met duidelijke CTA's.
+              <strong>Meer aanvragen genereren</strong> met duidelijke call-to-actions.
             </li>
             <li>
               <strong>Uw merk versterken</strong> met een herkenbare uitstraling.
@@ -275,30 +272,30 @@ export default function WebsiteRotterdamPage() {
 
           <p>
             Een website moet een digitaal fundament zijn waarmee uw bedrijf kan groeien.
-            Daarom combineren wij strategie, design, techniek en SEO.
+            Daarom combineren wij strategie, design, techniek en online vindbaarheid.
           </p>
 
           <ul>
             <li>
-              <strong>Maatwerk design</strong> — geen templates, maar een unieke uitstraling.
+              <strong>Maatwerk design:</strong> geen templates, maar een unieke uitstraling.
             </li>
             <li>
-              <strong>Responsive ontwerp</strong> — perfect op mobiel, tablet en desktop.
+              <strong>Perfect op elk scherm:</strong> responsief ontwerp voor mobiel, tablet en desktop.
             </li>
             <li>
-              <strong>Technische SEO</strong> — correcte structuur, metadata en schema markup.
+              <strong>Sterke vindbaarheid:</strong> een slimme structuur zodat u beter gevonden wordt in Google.
             </li>
             <li>
-              <strong>Uitstekende prestaties</strong> — razendsnel en Core Web Vitals-proof.
+              <strong>Uitstekende prestaties:</strong> een razendsnelle website die direct reageert.
             </li>
             <li>
-              <strong>Conversiegerichte structuur</strong> — duidelijke navigatie en CTA's.
+              <strong>Conversiegerichte structuur:</strong> duidelijke navigatie en knoppen die aanzetten tot actie.
             </li>
             <li>
-              <strong>Google Analytics 4 & Search Console</strong> — correct ingericht.
+              <strong>Inzicht in resultaten:</strong> we monitoren netjes hoeveel bezoekers u krijgt en waar ze vandaan komen.
             </li>
             <li>
-              <strong>Betrouwbare contactmogelijkheden</strong> — formulieren die werken.
+              <strong>Betrouwbare contactmogelijkheden:</strong> formulieren die feilloos werken.
             </li>
           </ul>
 
@@ -320,31 +317,31 @@ export default function WebsiteRotterdamPage() {
             extra pagina's of meerdere locaties.
           </p>
 
-          <h2>Waarom bouwen met Next.js</h2>
+          <h2>Waarom een moderne en snelle technische basis</h2>
 
           <p>
-            Next.js biedt een moderne technische basis waarmee websites extreem snel,
-            veilig en toekomstgericht gebouwd worden.
+            Een moderne website biedt een technische basis waarmee websites extreem snel,
+            veilig en toekomstgericht gebouwd worden. Voor u als ondernemer betekent dit:
           </p>
 
           <ul>
             <li>
-              <strong>Snellere prestaties</strong> — korte laadtijden.
+              <strong>Snellere prestaties:</strong> korte laadtijden, geen wachttijd voor de bezoeker.
             </li>
             <li>
-              <strong>Sterke SEO-basis</strong> — volledige controle over metadata.
+              <strong>Sterke basis voor Google:</strong> volledige controle over uw online vindbaarheid.
             </li>
             <li>
-              <strong>Meer veiligheid</strong> — minder afhankelijkheid van plugins.
+              <strong>Meer veiligheid:</strong> geen kwetsbare losse onderdelen of plugins.
             </li>
             <li>
-              <strong>Toekomstbestendig</strong> — klaar voor groei.
+              <strong>Toekomstbestendig:</strong> klaar voor groei.
             </li>
           </ul>
 
           <p>
             Voor Rotterdamse ondernemers betekent dit: een website die sneller werkt,
-            professioneler oogt en klaar is om online meer resultaat te behalen.
+            professioneler oogt en klaar is om online meer resultaat te behalen. Zo maakt u het verschil met <strong>webdesign Rotterdam</strong>.
           </p>
 
           <h2>Het traject in vier stappen</h2>
@@ -363,8 +360,8 @@ export default function WebsiteRotterdamPage() {
 
           <h3>3. Ontwikkeling & optimalisatie</h3>
           <p>
-            Uw website wordt gebouwd met Next.js. Tijdens de ontwikkeling letten we op
-            gebruikservaring, SEO en prestaties.
+            Uw website wordt gebouwd op een razendsnelle basis. Tijdens de ontwikkeling letten we op
+            gebruiksvriendelijkheid, online vindbaarheid en prestaties.
           </p>
 
           <h3>4. Lancering & nazorg</h3>
@@ -378,32 +375,32 @@ export default function WebsiteRotterdamPage() {
 
           <p>
             De investering hangt af van uw wensen. Een professionele website op maat
-            start bij een vast bedrag dat vooraf duidelijk is — geen verrassingen achteraf.
+            start bij een vast bedrag dat vooraf duidelijk is. Geen verrassingen achteraf.
           </p>
 
           <p>Onze pakketten zijn opgebouwd voor verschillende behoeften:</p>
 
           <ul>
             <li>
-              <strong>Starter — €1.950</strong> voor ZZP'ers en starters die een professionele
+              <strong>Starter: €1.950</strong> voor ZZP'ers en starters die een professionele
               website nodig hebben om serieus online te gaan.
             </li>
             <li>
-              <strong>Professional — €3.495</strong> voor MKB-bedrijven die willen groeien met
+              <strong>Professional: €3.495</strong> voor MKB-bedrijven die willen groeien met
               SEO, meerdere diensten en conversiegerichte pagina's. Dit is ons meest gekozen pakket.
             </li>
             <li>
-              <strong>Premium — €5.495</strong> voor bedrijven die online structureel willen groeien
+              <strong>Premium: €5.495</strong> voor bedrijven die online structureel willen groeien
               met uitgebreide functionaliteit en de beste waarde.
             </li>
             <li>
-              <strong>Enterprise — vanaf €7.995</strong> voor organisaties met complexe digitale behoeften,
+              <strong>Enterprise: vanaf €7.995</strong> voor organisaties met complexe digitale behoeften,
               support en doorlopende optimalisatie.
             </li>
           </ul>
 
           <p>
-            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan — u ontvangt
+            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan. U ontvangt
             binnen 48 uur een helder voorstel met vaste prijs.
           </p>
 
@@ -427,7 +424,6 @@ export default function WebsiteRotterdamPage() {
             </p>
             <Link
               href="/contact?intent=advies"
-              /* ✅ FIX: text-black ipv text-white */
               className="inline-flex items-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-sm tracking-widest px-6 py-3 border-2 border-black hover:bg-black hover:text-white hover:-translate-y-1 transition-all"
             >
               Plan adviesgesprek <ArrowRight size={16} />
