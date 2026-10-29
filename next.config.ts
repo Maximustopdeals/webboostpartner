@@ -1,9 +1,9 @@
-import type { NextConfig } from "next"; 
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-    experimental: {
-    optimizePackageImports: ['lucide-react'], 
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
     nextScriptWorkers: true,
   },
   images: {
@@ -13,19 +13,32 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // 1. Domein-canonicalisatie: www -> non-www (permanent)
       {
-        source: '/nextjs-specialist',
-        destination: '/over-mij',
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.webboostpartner.nl",
+          },
+        ],
+        destination: "https://webboostpartner.nl/:path*",
+        permanent: true,
+      },
+      // 2. Uw bestaande inhoudelijke redirects
+      {
+        source: "/nextjs-specialist",
+        destination: "/over-mij",
         permanent: true,
       },
       {
-        source: '/nextjs-developer-rotterdam',
-        destination: '/over-mij',
+        source: "/nextjs-developer-rotterdam",
+        destination: "/over-mij",
         permanent: true,
       },
       {
-        source: '/nextjs-website-rotterdam',
-        destination: '/website-laten-maken-rotterdam',
+        source: "/nextjs-website-rotterdam",
+        destination: "/website-laten-maken-rotterdam",
         permanent: true,
       },
     ];
