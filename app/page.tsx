@@ -4,8 +4,8 @@ import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
 
 export const metadata = {
-  title: "Webdesign Rotterdam | Websites die klanten opleveren",
-  description: "Professioneel webdesign in Rotterdam. Wij bouwen bliksemsnelle websites die jouw vakmanschap tonen en bezoekers omzetten in klanten.",
+  title: "Webdesign Rotterdam | Website Laten Maken in Rotterdam",
+  description: "Op zoek naar professioneel webdesign Rotterdam of een website laten maken in Rotterdam? Wij bouwen bliksemsnelle websites die jouw vakmanschap tonen en bezoekers omzetten in klanten.",
 };
 
 export default function HomePage() {
@@ -25,12 +25,12 @@ export default function HomePage() {
             </h1>
             
             <p className="mt-6 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] font-medium leading-relaxed">
-              Geen technisch jargon. Wel een bliksemsnelle website die jouw vakmanschap laat zien en bezoekers omzet in betalende klanten.
+              Op zoek naar een <strong>website laten maken in Rotterdam</strong>? Geen technisch jargon. Wel een bliksemsnelle website die jouw vakmanschap laat zien en bezoekers direct omzet in betalende klanten.
             </p>
             
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link 
-                href="/contact?intent=quickscan" 
+                href="/contact?intent=advies" 
                 className="inline-flex items-center justify-center bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider px-8 py-4 border-2 border-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_#1A1A19]"
               >
                 Vraag gratis adviesgesprek aan <ArrowRight size={18} className="ml-2" />
@@ -85,7 +85,7 @@ export default function HomePage() {
                   Marley&apos;s Kraamzorg
                 </h3>
                 <p className="text-sm text-[#4a4a48] leading-relaxed font-medium">
-                  Volledig maatwerk in Next.js met een perfecte Core Web Vitals score.
+                  Volledig op maat gemaakt met een uitzonderlijk snelle laadtijd en een perfecte beoordeling.
                 </p>
               </div>
 
@@ -95,7 +95,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-[#FAFAFA] text-black font-heading font-bold uppercase text-[11px] tracking-wider border-2 border-black py-3 hover:bg-black hover:text-white transition-colors"
               >
-                Verifieer deze score op Google <ExternalLink size={14} />
+                Bekijk de live score bij Google <ExternalLink size={14} />
               </a>
             </div>
           </div>
