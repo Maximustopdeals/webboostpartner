@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
+import { projects } from "@/data/projects";
 
-const baseUrl = "https://www.webboostpartner.nl";
+// Let op: GEEN www meer!
+const baseUrl = "https://webboostpartner.nl";
 
 interface RouteConfig {
   route: string;
@@ -9,13 +11,13 @@ interface RouteConfig {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes: RouteConfig[] = [
+  const staticRoutes: RouteConfig[] = [
     // === 1. Pilaar pagina's (Absolute top prioriteit voor leadgeneratie) ===
     { route: "", priority: 1.0, changeFrequency: "weekly" }, // Homepage
     { route: "/website-laten-maken-rotterdam", priority: 0.9, changeFrequency: "weekly" },
     { route: "/seo-rotterdam", priority: 0.9, changeFrequency: "weekly" },
 
-    // === 2. Lokale SEO Regiopagina's (Hier voeg je straks je nieuwe regio's toe) ===
+    // === 2. Lokale SEO Regiopagina's ===
     // { route: "/website-laten-maken-capelle", priority: 0.8, changeFrequency: "weekly" },
     // { route: "/website-laten-maken-barendrecht", priority: 0.8, changeFrequency: "weekly" },
 
@@ -24,19 +26,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/wordpress-naar-nextjs", priority: 0.8, changeFrequency: "monthly" },
     { route: "/nextjs-vs-wordpress", priority: 0.7, changeFrequency: "monthly" },
 
-    // === 4. Ondersteunende autoriteitspagina's ===
+    // === 4. Portfolio (Overzicht) ===
+    { route: "/portfolio", priority: 0.8, changeFrequency: "weekly" },
+
+    // === 5. Ondersteunende autoriteitspagina's ===
     { route: "/over-mij", priority: 0.6, changeFrequency: "monthly" },
     { route: "/contact", priority: 0.6, changeFrequency: "monthly" },
 
-    // === 5. Juridische noodzaak (Laagste prioriteit voor de zoekmachine) ===
+    // === 6. Juridische noodzaak (Laagste prioriteit voor de zoekmachine) ===
     { route: "/privacy", priority: 0.2, changeFrequency: "yearly" },
     { route: "/voorwaarden", priority: 0.2, changeFrequency: "yearly" },
     { route: "/cookiebeleid", priority: 0.2, changeFrequency: "yearly" },
   ];
 
+  // === 7. Dynamische Portfolio Cases ===
+  // Dit genereert automatisch een URL voor Cindy, Marley's, DTG Cleaning, etc.
+  const portfolioRoutes: RouteConfig[] = projects.map((project) => ({
+    route: `/portfolio/${project.slug}`,
+    priority: 0.7, // Iets lager dan het overzicht, maar nog steeds belangrijk
+    changeFrequency: "monthly",
+  }));
+
+  // Combineer de statische routes met de dynamische portfolio routes
+  const allRoutes = [...staticRoutes, ...portfolioRoutes];
+
   const currentDate = new Date();
 
-  return routes.map(({ route, priority, changeFrequency }) => ({
+  return allRoutes.map(({ route, priority, changeFrequency }) => ({
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
     changeFrequency,
