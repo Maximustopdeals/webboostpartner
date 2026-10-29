@@ -51,7 +51,7 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
           {project.tagline}
         </p>
 
-        {/* TESTIMONIAL AREA (Geen em dash, high-end styling) */}
+        {/* TESTIMONIAL AREA */}
         {project.testimonial && (
           <blockquote className="border-l-2 border-[#FF4500] pl-4 mb-6 italic text-xs text-gray-600 bg-[#FFE5DA]/20 py-2 pr-2">
             <p className="mb-2">
@@ -63,12 +63,13 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
           </blockquote>
         )}
 
-        {/* PRIMARY ACTION - Linkt naar de case detail pagina */}
+        {/* PRIMARY ACTION */}
+        {/* De knop linkt nu direct naar de dynamische case-pagina */}
         <Link
           href={`/portfolio/${project.slug}`}
           className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black py-3 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_#1A1A19] group/btn"
         >
-          Lees het verhaal <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          Bekijk case <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
         </Link>
       </div>
     </div>
