@@ -13,8 +13,10 @@ export function generateStaticParams() {
 }
 
 // Dynamische metadata per case
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  // Next.js 15: we moeten wachten tot de params beschikbaar zijn
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     return {
@@ -31,8 +33,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function CasePage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+// Next.js 15: Ook hier moeten we de params eerst resolven
+export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();
