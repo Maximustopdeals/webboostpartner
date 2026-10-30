@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Zap, Menu, X, MonitorPlay, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, MonitorPlay, ChevronDown } from "lucide-react";
 
 interface NavLink {
   href: string;
@@ -29,7 +30,7 @@ const mainLinks: NavLink[] = [
   { href: "/seo-rotterdam", label: "SEO" },
   { href: "/pakketten", label: "PAKKETTEN" },
   { href: "/over-mij", label: "OVER MIJ" },
-  { href: "/portfolio", label: "PORTFOLIO" }, // ✅ TOEGEVOEGD
+  { href: "/portfolio", label: "PORTFOLIO" },
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -90,13 +91,17 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 font-heading font-black uppercase text-base tracking-tight shrink-0 text-black"
+            className="shrink-0 flex items-center"
             aria-label="WebBoost Partner - Home"
           >
-            <span className="bg-[#FF4500] text-white w-8 h-8 grid place-items-center border-2 border-black shadow-[1px_1px_0px_0px_#000]">
-              <Zap size={16} strokeWidth={3} />
-            </span>
-            WEBBOOSTPARTNER
+            <Image
+              src="/images/logo_webboostpartner.webp"
+              alt="WebBoost Partner"
+              width={2172}
+              height={725}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop navigatie & High-End CTA */}
