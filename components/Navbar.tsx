@@ -95,7 +95,7 @@ export default function Navbar() {
               alt="WebBoost Partner"
               width={2172}
               height={725}
-              className="h-12 w-auto" /* <--- AANGEPAST VAN h-10 NAAR h-12 */
+              className="h-14 w-auto" /* <--- AANGEPAST VAN h-12 NAAR h-14 */
               priority
             />
           </Link>
