@@ -12,7 +12,6 @@ interface NavLink {
   children?: NavLink[];
 }
 
-// Hoofdnavigatie: klantgericht, rustig en perfect gecategoriseerd naar ROI-pagina's
 const mainLinks: NavLink[] = [
   { href: "/", label: "HOME" },
   {
@@ -42,7 +41,6 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
-  // Sluit dropdown bij klik buiten de container
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -56,7 +54,6 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Sluit dropdown + mobile menu bij de Escape toets
   useEffect(() => {
     function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -69,7 +66,6 @@ export default function Navbar() {
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
-  // Reset menu statussen bij route-wijzigingen
   useEffect(() => {
     setOpen(false);
     setDropdownOpen(false);
@@ -99,7 +95,7 @@ export default function Navbar() {
               alt="WebBoost Partner"
               width={2172}
               height={725}
-              className="h-10 w-auto"
+              className="h-12 w-auto" /* <--- AANGEPAST VAN h-10 NAAR h-12 */
               priority
             />
           </Link>
@@ -137,7 +133,6 @@ export default function Navbar() {
                       />
                     </button>
 
-                    {/* Dropdown Menu */}
                     {dropdownOpen && (
                       <div
                         className="absolute top-full left-0 pt-1 w-72"
