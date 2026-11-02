@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "SEO Rotterdam | SEO die uw website vindbaar maakt",
   description:
     "SEO Rotterdam voor ondernemers die gevonden willen worden. Lokale SEO, technische SEO en Core Web Vitals. Specialist in Next.js websites met 95+ PageSpeed.",
-  alternates: { canonical: "https://webboostpartner.nl/seo-rotterdam" },
+  // AANGEPAST: Relatief pad gebruiken voor de canonical
+  alternates: { canonical: "/seo-rotterdam" },
   keywords: [
     "SEO Rotterdam",
     "lokale SEO Rotterdam",
