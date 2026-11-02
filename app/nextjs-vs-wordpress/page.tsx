@@ -5,7 +5,8 @@ export const metadata: Metadata = {
   title: "Next.js vs WordPress | De beste keuze voor jouw website",
   description:
     "Eerlijke vergelijking tussen WordPress en Next.js op laadsnelheid, SEO, veiligheid en onderhoud. Ontdek welk fundament past bij de groei van jouw bedrijf.",
-  alternates: { canonical: "https://webboostpartner.nl/nextjs-vs-wordpress" },
+  // AANGEPAST: Relatief pad gebruiken voor de canonical
+  alternates: { canonical: "/nextjs-vs-wordpress" },
 };
 
 export default function NextjsVsWordpressPage() {
@@ -98,7 +99,7 @@ export default function NextjsVsWordpressPage() {
             De tijd die je maandelijks kwijt bent aan het beheren van je website verschilt sterk:
           </p>
           <ul>
-            <li><strong>WordPress</strong> — Vraagt om regelmatige controle. Plugins, thema's en het core systeem moeten up-to-date gehouden worden om comptabiliteit en veiligheid te garanderen.</li>
+            <li><strong>WordPress</strong> — Vraagt om regelmatige controle. Plugins, thema's en het core systeem moeten up-to-date gehouden worden om compatibiliteit en veiligheid te garanderen.</li>
             <li><strong>Next.js</strong> — Vrijwel onderhoudsvrij op technisch vlak. Eenmaal gelanceerd blijft de website stabiel en snel online draaien, zonder dat je wekelijks updates hoeft te controleren.</li>
           </ul>
 
