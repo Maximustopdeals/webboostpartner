@@ -19,7 +19,8 @@ export const metadata: Metadata = {
     "professionele website Rotterdam",
   ],
   alternates: {
-    canonical: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
+    // AANGEPAST: Relatief pad gebruiken voor de canonical
+    canonical: "/website-laten-maken-rotterdam",
   },
   openGraph: {
     title: "Website Laten Maken Rotterdam | Webdesign Rotterdam | WebBoost",
