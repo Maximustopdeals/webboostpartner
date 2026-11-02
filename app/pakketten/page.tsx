@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "Website Laten Maken Prijzen & Pakketten | WebBoost Partner",
   description:
     "Transparante tarieven voor een professionele Next.js website. Bekijk onze pakketten voor ZZP en MKB. Razendsnel, optimaal vindbaar en zonder verborgen kosten.",
-  alternates: { canonical: "https://webboostpartner.nl/pakketten" },
+  // AANGEPAST: Relatief pad gebruiken voor de canonical
+  alternates: { canonical: "/pakketten" },
 };
 
 export default function PakkettenPage() {
@@ -86,7 +87,8 @@ export default function PakkettenPage() {
             <li>Het volledig schrijven of redigeren van de paginateksten (contentlevering).</li>
             <li>Het ontwerpen van een compleet nieuw logo of een uitgebreide huisstijl.</li>
             <li>Doorlopend maandelijks SEO-onderhoud en linkbuilding na oplevering.</li>
-            <li>Het opzetten en beheren van betaalde advertantiecampagnes (Google Ads).</li>
+            {/* AANGEPAST: Typfout 'advertantie' naar 'advertentie' */}
+            <li>Het opzetten en beheren van betaalde advertentiecampagnes (Google Ads).</li>
           </ul>
           <p>
             Mocht u hier toch ondersteuning bij wensen, dan denk ik uiteraard graag met u mee via een aanvullend voorstel of een vast uurtarief.
