@@ -28,7 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${project.name} | Case Study | WebBoost Partner`,
     description: `Ontdek hoe wij ${project.name} hebben geholpen met professioneel webdesign Rotterdam en een website die resultaat oplevert. ${project.tagline}`,
     alternates: {
-      canonical: `https://www.webboostpartner.nl/portfolio/${project.slug}`,
+      // AANGEPAST: Relatief pad gebruiken. Next.js vult de metadataBase (www) automatisch in.
+      canonical: `/portfolio/${project.slug}`,
     },
   };
 }
