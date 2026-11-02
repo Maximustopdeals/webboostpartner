@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 
-// Let op: GEEN www meer!
-const baseUrl = "https://webboostpartner.nl";
+// AANGEPAST: Nu MET www, conform de Vercel 308-redirect
+const baseUrl = "https://www.webboostpartner.nl";
 
 interface RouteConfig {
   route: string;
@@ -40,10 +40,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // === 7. Dynamische Portfolio Cases ===
-  // Dit genereert automatisch een URL voor Cindy, Marley's, DTG Cleaning, etc.
   const portfolioRoutes: RouteConfig[] = projects.map((project) => ({
     route: `/portfolio/${project.slug}`,
-    priority: 0.7, // Iets lager dan het overzicht, maar nog steeds belangrijk
+    priority: 0.7, 
     changeFrequency: "monthly",
   }));
 
