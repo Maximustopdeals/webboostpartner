@@ -55,14 +55,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "nl_NL",
-    url: "https://webboostpartner.nl",
+    url: "https://www.webboostpartner.nl", // AANGEPAST NAAR WWW
     siteName: "WebBoost Partner",
     title: "WebBoost Partner | Next.js Websites Rotterdam",
     description:
       "Razendsnelle Next.js websites voor ondernemers in Rotterdam en omgeving.",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://webboostpartner.nl" },
+  alternates: { canonical: "/" }, // AANGEPAST: Relatief pad pakt automatisch de metadataBase (www)
   verification: {
     google: "OjFfp_u3mWFOSFreofiGa1Pz4fgKv1h8X_xHCbr1l7Y",
   },
@@ -77,9 +77,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "WebBoost Partner",
-    image: "https://webboostpartner.nl/og.jpg",
-    "@id": "https://webboostpartner.nl",
-    url: "https://webboostpartner.nl",
+    image: "https://www.webboostpartner.nl/og.jpg", // AANGEPAST NAAR WWW
+    "@id": "https://www.webboostpartner.nl", // AANGEPAST NAAR WWW
+    url: "https://www.webboostpartner.nl", // AANGEPAST NAAR WWW
     telephone: "+31642628242",
     email: "info@webboostpartner.nl",
     priceRange: "€€",
