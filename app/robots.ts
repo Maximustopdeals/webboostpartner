@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    // Let op: geen www meer!
-    sitemap: 'https://webboostpartner.nl/sitemap.xml',
+    // AANGEPAST: Nu MET www, conform de Vercel-configuratie en sitemap
+    sitemap: 'https://www.webboostpartner.nl/sitemap.xml',
   };
 }
