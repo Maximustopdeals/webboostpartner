@@ -30,7 +30,8 @@ export const metadata: Metadata = {
   title: "Over WebBoost Partner | Webdesign Rotterdam & Omgeving",
   description:
     "Ontdek de visie achter WebBoost Partner. Wij bouwen moderne, conversiegerichte websites voor ambitieuze ZZP'ers en MKB-bedrijven. Uw specialist voor webdesign Rotterdam en website laten maken in Rotterdam.",
-  alternates: { canonical: "https://webboostpartner.nl/over-mij" },
+  // AANGEPAST: Relatief pad gebruiken voor de canonical
+  alternates: { canonical: "/over-mij" },
 };
 
 export default function OverMijPage() {
