@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "WordPress naar Next.js Migratie | Behoud je Google Rankings",
   description:
     "Veilig overstappen van WordPress naar Next.js zonder verlies van SEO-posities. Ervaar bliksemsnelle laadtijden, minder onderhoud en een stabiele techniek.",
-  alternates: { canonical: "https://webboostpartner.nl/wordpress-naar-nextjs" },
+  // AANGEPAST: Relatief pad gebruiken voor de canonical
+  alternates: { canonical: "/wordpress-naar-nextjs" },
 };
 
 interface FAQItem {
@@ -50,7 +51,7 @@ export default function WordPressNaarNextjsPage() {
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed text-[#1a1a1a] font-medium">
-            Uw huidige website functioneert, maar voelt op mobiel traag aan, stagneert in vindbaarheid of vraagt maandelijks om intensief onderhoud? Een migratie naar Next.js biedt uw online business een krachtige stap voorwaarts: **sneller, veiliger en maximaal vindbaar** met volledig behoud van uw opgebouwde Google-autoriteit.
+            Uw huidige website functioneert, maar voelt op mobiel traag aan, stagneert in vindbaarheid of vraagt maandelijks om intensief onderhoud? Een migratie naar Next.js biedt uw online business een krachtige stap voorwaarts: <strong>sneller, veiliger en maximaal vindbaar</strong> met volledig behoud van uw opgebouwde Google-autoriteit.
           </p>
         </div>
       </section>
@@ -66,13 +67,14 @@ export default function WordPressNaarNextjsPage() {
 
           <ul>
             <li><strong>De laadsnelheid neemt af</strong> door een opeenstapeling van plug-ins en zware thema-scripts.</li>
-            <li><strong>Wekelijkse updates zorgen voor stress</strong> of onverwachte comptabiliteitsfouten in de lay-out.</li>
+            {/* AANGEPAST: Typfout 'comptabiliteitsfouten' naar 'compatibiliteitsfouten' */}
+            <li><strong>Wekelijkse updates zorgen voor stress</strong> of onverwachte compatibiliteitsfouten in de lay-out.</li>
             <li><strong>Technisch onderhoud kost structureel tijd</strong> en budget om veiligheidsrisico's te minimaliseren.</li>
             <li><strong>Lokale Google-posities stagneren</strong> omdat de mobiele gebruikerservaring niet optimaal scoort op de Core Web Vitals.</li>
           </ul>
 
           <p>
-            In deze groeifase is een migratie naar Next.js geen puur 'technische beslissing', maar een **doelgerichte, strategische investering** in de conversie, betrouwbaarheid en schaalbaarheid van uw bedrijf.
+            In deze groeifase is een migratie naar Next.js geen puur 'technische beslissing', maar een <strong>doelgerichte, strategische investering</strong> in de conversie, betrouwbaarheid en schaalbaarheid van uw bedrijf.
           </p>
 
           <h2>Wat levert deze migratie concreet op?</h2>
@@ -86,7 +88,8 @@ export default function WordPressNaarNextjsPage() {
 
           <h2>SEO-waarde en posities gegarandeerd behouden</h2>
           <p>
-            De meest gestelde vraag bij een overstap is logischerwijs: *“Verlies ik mijn opgebouwde posities in Google?”* Het antwoord is helder: **nee**, mits het migratieproces technisch perfect wordt beheerd. 
+            {/* AANGEPAST: Markdown sterretjes vervangen door <em> tags */}
+            De meest gestelde vraag bij een overstap is logischerwijs: <em>“Verlies ik mijn opgebouwde posities in Google?”</em> Het antwoord is helder: <strong>nee</strong>, mits het migratieproces technisch perfect wordt beheerd. 
           </p>
 
           <p>Ons gestroomlijnde migratieproces omvat standaard:</p>
