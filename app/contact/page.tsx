@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Contact | Vrijblijvende Website Quickscan & Advies | WebBoost Partner",
   description:
     "Neem direct contact op met WebBoost Partner in Rotterdam voor een gratis website scan of persoonlijk advies over jouw overstap naar Next.js. Binnen 24 uur een reactie direct van Ron.",
-  alternates: { canonical: "https://webboostpartner.nl" },
+  alternates: { canonical: "/contact" },
 };
 
 interface ContactCardProps {
