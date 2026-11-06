@@ -39,7 +39,7 @@ export default function HomePage() {
             </h1>
             
             <p className="mt-6 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] font-medium leading-relaxed">
-              Op zoek naar een <strong>website laten maken in Rotterdam</strong>? Geen technisch jargon. Wel een bliksemsnelle website die jouw vakmanschap laat zien en bezoekers direct omzet in betalende klanten.
+              Op zoek naar professioneel <strong>webdesign Rotterdam</strong>? Geen technisch jargon. Wel een bliksemsnelle website die jouw vakmanschap laat zien en bezoekers direct omzet in betalende klanten.
             </p>
             
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -120,4 +120,3 @@ export default function HomePage() {
       <CTASection />
     </>
   );
-}
