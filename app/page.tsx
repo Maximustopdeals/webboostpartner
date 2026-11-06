@@ -4,8 +4,21 @@ import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
 
 export const metadata = {
-  title: "Webdesign Rotterdam | Website Laten Maken in Rotterdam",
-  description: "Op zoek naar professioneel webdesign Rotterdam of een website laten maken in Rotterdam? Wij bouwen bliksemsnelle websites die jouw vakmanschap tonen en bezoekers omzetten in klanten.",
+  title: "Webdesign Rotterdam | Website Laten Maken | 95+ PageSpeed | WebBoost Partner",
+  description:
+    "Webdesign Rotterdam en website laten maken? WebBoost Partner bouwt bliksemsnelle Next.js websites die jouw vakmanschap tonen en bezoekers omzetten in klanten. Vaste prijs, lokaal, SEO inbegrepen.",
+  openGraph: {
+    title: "Webdesign Rotterdam | Website Laten Maken | WebBoost Partner",
+    description:
+      "Bliksemsnelle Next.js websites in Rotterdam. 95+ PageSpeed, vaste prijs, meer aanvragen.",
+    url: "https://www.webboostpartner.nl",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webdesign Rotterdam | Website Laten Maken",
+    description: "Razendsnelle Next.js websites met 95+ PageSpeed. Lokaal in Rotterdam.",
+  },
 };
 
 export default function HomePage() {
@@ -106,4 +119,3 @@ export default function HomePage() {
       <CTASection />
     </>
   );
-}
