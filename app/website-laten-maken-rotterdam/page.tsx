@@ -5,31 +5,45 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Laten Maken Rotterdam | Webdesign Rotterdam | WebBoost",
+  title: "Website Laten Maken Rotterdam | Vanaf €1.950 | Next.js | WebBoost Partner",
   description:
-    "Op zoek naar professioneel webdesign Rotterdam of een website laten maken in Rotterdam? WebBoost Partner bouwt razendsnelle websites voor ZZP & MKB die echt resultaat opleveren.",
+    "Website laten maken in Rotterdam? WebBoost Partner bouwt razendsnelle Next.js websites (95+ PageSpeed) voor ZZP & MKB. Vaste prijs, SEO inbegrepen, gratis adviesgesprek.",
   keywords: [
     "website laten maken Rotterdam",
     "webdesign Rotterdam",
     "website bouwen Rotterdam",
     "nieuwe website Rotterdam",
     "website maken ZZP Rotterdam",
-    "website laten maken prijs",
-    "goedkope website Rotterdam",
     "professionele website Rotterdam",
+    "Next.js website Rotterdam",
+    "webdesign bureau Rotterdam",
   ],
   alternates: {
-    // AANGEPAST: Relatief pad gebruiken voor de canonical
     canonical: "/website-laten-maken-rotterdam",
   },
   openGraph: {
-    title: "Website Laten Maken Rotterdam | Webdesign Rotterdam | WebBoost",
+    title: "Website Laten Maken Rotterdam | Vanaf €1.950 | WebBoost Partner",
     description:
-      "Op zoek naar professioneel webdesign Rotterdam of een website laten maken in Rotterdam? WebBoost Partner bouwt razendsnelle websites voor ZZP & MKB die echt resultaat opleveren.",
+      "Razendsnelle Next.js websites voor ZZP & MKB in Rotterdam. 95+ PageSpeed, SEO inbegrepen, vaste prijs. Vraag gratis adviesgesprek aan.",
     url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
     siteName: "WebBoost Partner",
     locale: "nl_NL",
-    type: "article",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Website laten maken Rotterdam — WebBoost Partner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website Laten Maken Rotterdam | Vanaf €1.950",
+    description:
+      "Razendsnelle Next.js websites met 95+ PageSpeed. SEO inbegrepen, vaste prijs, lokaal in Rotterdam.",
+    images: ["/og.jpg"],
   },
 };
 
@@ -72,7 +86,7 @@ const faqs: FAQItem[] = [
 export default function WebsiteRotterdamPage() {
   return (
     <>
-      {/* Schema Markup: LocalBusiness + BreadcrumbList + WebPage */}
+      {/* Schema Markup: WebPage + Breadcrumb + Service + LocalBusiness */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -83,16 +97,15 @@ export default function WebsiteRotterdamPage() {
                 "@type": "WebPage",
                 "@id": "https://www.webboostpartner.nl/website-laten-maken-rotterdam#webpage",
                 url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
-                name: "Website Laten Maken Rotterdam | Webdesign Rotterdam | WebBoost",
-                isPartOf: {
-                  "@id": "https://www.webboostpartner.nl/#website",
-                },
-                about: {
-                  "@id": "https://www.webboostpartner.nl/#organization",
-                },
+                name: "Website Laten Maken Rotterdam | Vanaf €1.950 | WebBoost Partner",
+                description:
+                  "Website laten maken in Rotterdam? Razendsnelle Next.js websites met 95+ PageSpeed, SEO inbegrepen en vaste prijs. Voor ZZP en MKB.",
+                isPartOf: { "@id": "https://www.webboostpartner.nl/#website" },
+                about: { "@id": "https://www.webboostpartner.nl/#organization" },
                 breadcrumb: {
                   "@id": "https://www.webboostpartner.nl/website-laten-maken-rotterdam#breadcrumb",
                 },
+                inLanguage: "nl-NL",
               },
               {
                 "@type": "BreadcrumbList",
@@ -113,12 +126,41 @@ export default function WebsiteRotterdamPage() {
                 ],
               },
               {
+                "@type": "Service",
+                "@id": "https://www.webboostpartner.nl/website-laten-maken-rotterdam#service",
+                name: "Website laten maken Rotterdam",
+                description:
+                  "Professionele Next.js websites laten maken in Rotterdam. Inclusief design, ontwikkeling, technische SEO en 95+ PageSpeed score. Vaste prijzen vanaf €1.950.",
+                provider: { "@id": "https://www.webboostpartner.nl/#organization" },
+                areaServed: [
+                  { "@type": "City", name: "Rotterdam" },
+                  { "@type": "City", name: "Capelle aan den IJssel" },
+                  { "@type": "City", name: "Krimpen aan den IJssel" },
+                  { "@type": "City", name: "Ridderkerk" },
+                  { "@type": "City", name: "Barendrecht" },
+                  { "@type": "City", name: "Schiedam" },
+                ],
+                serviceType: [
+                  "Webdesign",
+                  "Website ontwikkeling",
+                  "Next.js development",
+                  "Technische SEO",
+                ],
+                offers: {
+                  "@type": "AggregateOffer",
+                  priceCurrency: "EUR",
+                  lowPrice: "1950",
+                  highPrice: "7995",
+                  offerCount: "4",
+                },
+              },
+              {
                 "@type": "LocalBusiness",
-                "@id": "https://www.webboostpartner.nl/#localbusiness",
+                "@id": "https://www.webboostpartner.nl/#organization",
                 name: "WebBoost Partner",
                 description:
-                  "Webdesign bureau in Rotterdam. Professionele websites voor ZZP en MKB.",
-                url: "https://www.webboostpartner.nl/website-laten-maken-rotterdam",
+                  "Next.js specialist en webdesign bureau in Rotterdam. Razendsnelle websites voor ZZP en MKB.",
+                url: "https://www.webboostpartner.nl",
                 telephone: "+31642628242",
                 email: "info@webboostpartner.nl",
                 priceRange: "€€",
@@ -142,13 +184,6 @@ export default function WebsiteRotterdamPage() {
                   { "@type": "City", name: "Barendrecht" },
                   { "@type": "City", name: "Schiedam" },
                 ],
-                serviceType: [
-                  "Webdesign",
-                  "Website ontwikkeling",
-                  "SEO",
-                  "Next.js development",
-                ],
-                openingHours: ["Mo,Tu,We,Th,Fr 09:00-18:00"],
               },
             ],
           }),
@@ -167,14 +202,17 @@ export default function WebsiteRotterdamPage() {
           </h1>
 
           <p className="mt-6 text-xl max-w-3xl leading-relaxed font-semibold">
-            Op zoek naar professioneel <strong>webdesign Rotterdam</strong> of een website die naadloos aansluit bij uw doelgroep? Wij bouwen een modern, bliksemsnel digitaal fundament dat structureel nieuwe klanten oplevert.
+            Op zoek naar <strong>webdesign Rotterdam</strong> dat écht klanten oplevert? 
+            WebBoost Partner bouwt razendsnelle Next.js websites die binnen 2 seconden laden, 
+            beter scoren in Google en bezoekers omzetten in aanvragen. Geen templates, geen verrassingen — 
+            wel een vaste prijs en een website die meegroeit met uw bedrijf.
           </p>
 
           {/* Trust-bar */}
           <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-[#525252]">
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
-              95+ Snelheidsscore
+              95+ PageSpeed
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
@@ -182,7 +220,7 @@ export default function WebsiteRotterdamPage() {
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
-              Vaste prijs
+              Vaste prijs vanaf €1.950
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00B050] rounded-full" />
@@ -202,7 +240,7 @@ export default function WebsiteRotterdamPage() {
               href="/pakketten"
               className="inline-flex items-center justify-center gap-2 bg-white text-black font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
             >
-              Bekijk pakketten
+              Bekijk pakketten & prijzen
             </Link>
           </div>
         </div>
@@ -221,15 +259,15 @@ export default function WebsiteRotterdamPage() {
           </div>
           <div className="lg:col-span-7 prose-brutal">
             <p>
-              Van lokale dienstverleners tot high-end webshops: wij bouwen websites
-              die snel laden, goed scoren in Google en klanten opleveren. Bekijk
-              onze recente projecten en zie zelf het resultaat.
+              Van lokale dienstverleners tot high-end projecten: elke website die wij bouwen 
+              laadt razendsnel, scoort sterk in Google en is gericht op het genereren van aanvragen. 
+              Bekijk recente cases en zie zelf het verschil.
             </p>
             <Link
               href="/portfolio"
               className="inline-flex items-center gap-2 mt-6 bg-[#FF4500] text-black px-8 py-4 font-heading font-bold uppercase text-sm tracking-widest hover:bg-black hover:text-white transition-colors border-2 border-black hover:-translate-y-1 hover:shadow-brutal-sm"
             >
-              Bekijk onze projecten <ArrowRight size={16} />
+              Bekijk recente projecten <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -238,171 +276,171 @@ export default function WebsiteRotterdamPage() {
       {/* CONTENT */}
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
-          <h2>Waarom een professionele website belangrijk is</h2>
+          <h2>Waarom een professionele website het verschil maakt</h2>
 
           <p>
-            Uw website is vaak het eerste contactmoment met een potentiële klant.
-            Nog voordat iemand belt of een offerte aanvraagt, vormt een bezoeker een
-            eerste indruk op basis van uw website.
+            Uw website is vaak het eerste (en soms enige) contactmoment met een potentiële klant. 
+            In minder dan drie seconden bepaalt iemand of uw bedrijf betrouwbaar en professioneel genoeg is 
+            om contact mee op te nemen.
           </p>
 
           <p>
-            In enkele seconden bepaalt iemand of uw bedrijf professioneel, betrouwbaar
-            en geschikt genoeg is om contact mee op te nemen. Daarom moet een website
-            niet alleen mooi zijn, maar vooral effectief werken. Goed <strong>webdesign Rotterdam</strong> valt direct op.
+            Een trage of onduidelijke website kost u aanvragen. Een snelle, conversiegerichte website 
+            levert ze op. Goed <strong>webdesign Rotterdam</strong> is daarom geen kostenpost, 
+            maar een investering die direct bijdraagt aan meer leads en omzet.
           </p>
 
-          <p>Een professionele website helpt u met:</p>
+          <p>Met een sterke website:</p>
 
           <ul>
             <li>
-              <strong>Vertrouwen opbouwen</strong> door een professionele uitstraling.
+              <strong>Bouwt u vertrouwen</strong> — bezoekers voelen direct dat u serieus bent.
             </li>
             <li>
-              <strong>Meer aanvragen genereren</strong> met duidelijke call-to-actions.
+              <strong>Genereert u meer aanvragen</strong> — duidelijke call-to-actions en een logische structuur.
             </li>
             <li>
-              <strong>Uw merk versterken</strong> met een herkenbare uitstraling.
+              <strong>Wordt u beter gevonden</strong> — sterke technische SEO en lokale vindbaarheid.
             </li>
             <li>
-              <strong>Beter gevonden worden</strong> dankzij een sterke technische basis.
+              <strong>Bespaart u tijd</strong> — minder onderhoud, geen plugin-problemen, stabiele prestaties.
             </li>
           </ul>
 
-          <h2>Wat krijgt u bij een website van WebBoost Partner</h2>
+          <h2>Wat u krijgt bij WebBoost Partner</h2>
 
           <p>
-            Een website moet een digitaal fundament zijn waarmee uw bedrijf kan groeien.
-            Daarom combineren wij strategie, design, techniek en online vindbaarheid.
-          </p>
-
-          <ul>
-            <li>
-              <strong>Maatwerk design:</strong> geen templates, maar een unieke uitstraling.
-            </li>
-            <li>
-              <strong>Perfect op elk scherm:</strong> responsief ontwerp voor mobiel, tablet en desktop.
-            </li>
-            <li>
-              <strong>Sterke vindbaarheid:</strong> een slimme structuur zodat u beter gevonden wordt in Google.
-            </li>
-            <li>
-              <strong>Uitstekende prestaties:</strong> een razendsnelle website die direct reageert.
-            </li>
-            <li>
-              <strong>Conversiegerichte structuur:</strong> duidelijke navigatie en knoppen die aanzetten tot actie.
-            </li>
-            <li>
-              <strong>Inzicht in resultaten:</strong> we monitoren netjes hoeveel bezoekers u krijgt en waar ze vandaan komen.
-            </li>
-            <li>
-              <strong>Betrouwbare contactmogelijkheden:</strong> formulieren die feilloos werken.
-            </li>
-          </ul>
-
-          <h2>Website laten maken voor ZZP en MKB</h2>
-
-          <p>
-            WebBoost Partner helpt ZZP'ers en MKB-bedrijven in Rotterdam en omgeving
-            met websites die professioneel ogen en bijdragen aan groei.
-          </p>
-
-          <p>
-            Of u nu een aannemer bent in Capelle aan den IJssel, een coach in Hillegersberg,
-            een fysiotherapeut in Kralingen of een ondernemer in het centrum: uw website
-            moet uw vakmanschap zichtbaar maken.
-          </p>
-
-          <p>
-            Vandaag een sterke basis, morgen eenvoudig uit te breiden met nieuwe diensten,
-            extra pagina's of meerdere locaties.
-          </p>
-
-          <h2>Waarom een moderne en snelle technische basis</h2>
-
-          <p>
-            Een moderne website biedt een technische basis waarmee websites extreem snel,
-            veilig en toekomstgericht gebouwd worden. Voor u als ondernemer betekent dit:
+            Elke website die wij bouwen is een compleet digitaal fundament: strategie, design, 
+            techniek en vindbaarheid in één. Geen half werk, geen open eindjes.
           </p>
 
           <ul>
             <li>
-              <strong>Snellere prestaties:</strong> korte laadtijden, geen wachttijd voor de bezoeker.
+              <strong>Maatwerk design</strong> — geen templates, maar een unieke uitstraling die past bij uw merk en doelgroep.
             </li>
             <li>
-              <strong>Sterke basis voor Google:</strong> volledige controle over uw online vindbaarheid.
+              <strong>95+ PageSpeed score</strong> — pagina’s laden in minder dan 2 seconden, ook op mobiel.
             </li>
             <li>
-              <strong>Meer veiligheid:</strong> geen kwetsbare losse onderdelen of plugins.
+              <strong>Technische SEO inbegrepen</strong> — schema markup, semantische HTML, sitemap en Core Web Vitals optimaal.
             </li>
             <li>
-              <strong>Toekomstbestendig:</strong> klaar voor groei.
+              <strong>Conversiegerichte structuur</strong> — elke pagina en knop is gericht op het genereren van aanvragen.
+            </li>
+            <li>
+              <strong>Volledig responsief</strong> — perfecte weergave op telefoon, tablet en desktop.
+            </li>
+            <li>
+              <strong>Vaste prijs vooraf</strong> — u weet precies waar u aan toe bent, zonder verrassingen achteraf.
+            </li>
+            <li>
+              <strong>Direct contact met de bouwer</strong> — u werkt met Ron, niet met accountmanagers of freelancers.
+            </li>
+          </ul>
+
+          <h2>Website laten maken voor ZZP’ers en MKB in Rotterdam</h2>
+
+          <p>
+            WebBoost Partner werkt vooral voor ondernemers in Rotterdam en de directe omgeving. 
+            Of u nu een aannemer bent in Capelle aan den IJssel, een coach in Hillegersberg, 
+            een fysiotherapeut in Kralingen of een dienstverlener in het centrum: uw website 
+            moet uw vakmanschap zichtbaar maken en nieuwe klanten opleveren.
+          </p>
+
+          <p>
+            Wij bouwen websites die vandaag sterk staan én morgen eenvoudig uit te breiden zijn 
+            met nieuwe diensten, extra pagina’s of meerdere locaties. Zo groeit uw online aanwezigheid 
+            mee met uw bedrijf.
+          </p>
+
+          <h2>Waarom Next.js in plaats van WordPress?</h2>
+
+          <p>
+            Veel websites starten op WordPress. Dat werkt prima — tot de plugins, updates en 
+            beveiligingsproblemen de overhand nemen. Next.js (het framework achter sites van 
+            onder andere Nike, Netflix en Notion) biedt een moderne, schone technische basis:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Sneller</strong> — geen overbodige code of trage plugins.
+            </li>
+            <li>
+              <strong>Veiliger</strong> — minder aanvalsoppervlak, geen kwetsbare plugins.
+            </li>
+            <li>
+              <strong>Beter voor Google</strong> — volledige controle over snelheid en structuur.
+            </li>
+            <li>
+              <strong>Toekomstbestendig</strong> — klaar voor groei zonder technische schuld.
             </li>
           </ul>
 
           <p>
-            Voor Rotterdamse ondernemers betekent dit: een website die sneller werkt,
-            professioneler oogt en klaar is om online meer resultaat te behalen. Zo maakt u het verschil met <strong>webdesign Rotterdam</strong>.
+            Voor Rotterdamse ondernemers betekent dit: een website die sneller laadt, 
+            professioneler oogt en structureel meer resultaat oplevert. Dat is het verschil 
+            met gemiddeld <strong>webdesign Rotterdam</strong>.
           </p>
 
           <h2>Het traject in vier stappen</h2>
 
           <h3>1. Kennismaking & strategie</h3>
           <p>
-            We bespreken uw bedrijf, doelgroep en doelen. U krijgt een duidelijk voorstel
-            met aanpak, planning en investering.
+            We bespreken uw bedrijf, doelgroep en doelen. U krijgt een helder voorstel 
+            met aanpak, planning en vaste investering — zonder verplichtingen.
           </p>
 
           <h3>2. Design & content</h3>
           <p>
-            Een professioneel ontwerp dat past bij uw merk en doelgroep. Geen templates,
-            maar een unieke uitstraling die vertrouwen opbouwt.
+            Een professioneel ontwerp dat past bij uw merk. Geen templates, 
+            maar een unieke uitstraling die vertrouwen opbouwt en bezoekers overtuigt.
           </p>
 
           <h3>3. Ontwikkeling & optimalisatie</h3>
           <p>
-            Uw website wordt gebouwd op een razendsnelle basis. Tijdens de ontwikkeling letten we op
-            gebruiksvriendelijkheid, online vindbaarheid en prestaties.
+            Uw website wordt gebouwd op een razendsnelle Next.js-basis. 
+            We optimaliseren voor snelheid, gebruiksvriendelijkheid en vindbaarheid.
           </p>
 
           <h3>4. Lancering & nazorg</h3>
           <p>
-            Na een uitgebreide controle zetten we uw website live. Ook daarna kunt u
-            terecht voor uitbreidingen en verbeteringen.
+            Na grondige controle gaat de site live. Ook daarna kunt u bij mij terecht 
+            voor uitbreidingen, verbeteringen of vragen.
           </p>
 
           {/* WAT KOST HET */}
           <h2>Wat kost een website laten maken in Rotterdam?</h2>
 
           <p>
-            De investering hangt af van uw wensen. Een professionele website op maat
-            start bij een vast bedrag dat vooraf duidelijk is. Geen verrassingen achteraf.
+            U krijgt altijd een vaste prijs vooraf. Geen verrassingen, geen uurtje-factuurtje. 
+            De investering hangt af van de omvang en uw ambities:
           </p>
-
-          <p>Onze pakketten zijn opgebouwd voor verschillende behoeften:</p>
 
           <ul>
             <li>
-              <strong>Starter: €1.950</strong> voor ZZP'ers en starters die een professionele
-              website nodig hebben om serieus online te gaan.
+              <strong>Starter — €1.950</strong><br />
+              Voor ZZP’ers en starters die serieus online willen. Professionele website, 
+              snelle laadtijd en SEO-basis.
             </li>
             <li>
-              <strong>Professional: €3.495</strong> voor MKB-bedrijven die willen groeien met
-              SEO, meerdere diensten en conversiegerichte pagina's. Dit is ons meest gekozen pakket.
+              <strong>Professional — €3.495</strong> <em>(meest gekozen)</em><br />
+              Voor MKB-bedrijven die willen groeien. Meerdere dienstenpagina’s, sterkere SEO 
+              en conversiegerichte structuur.
             </li>
             <li>
-              <strong>Premium: €5.495</strong> voor bedrijven die online structureel willen groeien
-              met uitgebreide functionaliteit en de beste waarde.
+              <strong>Premium — €5.495</strong><br />
+              Voor bedrijven die online structureel willen groeien. Uitgebreide functionaliteit 
+              en maximale waarde.
             </li>
             <li>
-              <strong>Enterprise: vanaf €7.995</strong> voor organisaties met complexe digitale behoeften,
-              support en doorlopende optimalisatie.
+              <strong>Enterprise — vanaf €7.995</strong><br />
+              Voor organisaties met complexe eisen, doorlopende support en optimalisatie.
             </li>
           </ul>
 
           <p>
-            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan. U ontvangt
-            binnen 48 uur een helder voorstel met vaste prijs.
+            Wilt u een exacte prijs voor uw situatie? Vraag een offerte aan. 
+            U ontvangt binnen 48 uur een helder voorstel met vaste prijs.
           </p>
 
           <p>
@@ -420,25 +458,25 @@ export default function WebsiteRotterdamPage() {
               Klaar om te starten?
             </p>
             <p className="text-sm text-[#525252] mb-6">
-              Plan een vrijblijvend adviesgesprek in en ontdek de groeikansen
-              voor uw onderneming.
+              Plan een vrijblijvend adviesgesprek. Ik bekijk uw huidige situatie 
+              en laat binnen 48 uur zien waar de kansen liggen.
             </p>
             <Link
               href="/contact?intent=advies"
               className="inline-flex items-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-sm tracking-widest px-6 py-3 border-2 border-black hover:bg-black hover:text-white hover:-translate-y-1 transition-all"
             >
-              Plan adviesgesprek <ArrowRight size={16} />
+              Plan gratis adviesgesprek <ArrowRight size={16} />
             </Link>
           </div>
 
           {/* WERKGEBIED */}
-          <h2>Werkgebied</h2>
+          <h2>Werkgebied: Rotterdam en omgeving</h2>
 
           <p>
-            Hoewel ik landelijk werk, zit het zwaartepunt van mijn klanten in Rotterdam
-            en de directe omgeving: Capelle aan den IJssel, Krimpen aan den IJssel,
-            Ridderkerk, Barendrecht en Schiedam. Lokaal werken heeft één groot voordeel:
-            ik begrijp uw markt, uw doelgroep en uw concurrentie.
+            Het zwaartepunt van mijn klanten ligt in Rotterdam en de directe omgeving: 
+            Capelle aan den IJssel, Krimpen aan den IJssel, Ridderkerk, Barendrecht en Schiedam. 
+            Lokaal werken heeft één groot voordeel: ik begrijp uw markt, uw doelgroep 
+            en uw concurrentie. Kennismaken kan op locatie of via videocall.
           </p>
 
           <h2>Veelgestelde vragen</h2>
@@ -451,9 +489,9 @@ export default function WebsiteRotterdamPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ontdek de groeikansen voor jouw onderneming."
-        subtitle="Plan een gratis adviesgesprek in en ontvang binnen 48 uur een heldere, vrijblijvende website-analyse."
-        button="Plan adviesgesprek"
+        title="Klaar voor een website die klanten oplevert?"
+        subtitle="Plan een gratis adviesgesprek. Ik bekijk uw situatie en stuur binnen 48 uur een heldere, vrijblijvende analyse — zonder verplichtingen."
+        button="Plan gratis adviesgesprek"
         href="/contact?intent=advies"
       />
     </>
