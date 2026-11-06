@@ -36,33 +36,58 @@ const ibmMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.webboostpartner.nl"),
   title: {
-    default: "WebBoost Partner | Next.js Websites Rotterdam die scoren in Google",
+    default: "Webdesign Rotterdam | Website Laten Maken | Next.js | WebBoost Partner",
     template: "%s | WebBoost Partner",
   },
   description:
-    "Website laten maken in Rotterdam? WebBoost Partner bouwt razendsnelle Next.js websites die beter scoreen in Google dan WordPress. Lokaal, eerlijk, no-nonsense.",
+    "Website laten maken in Rotterdam? WebBoost Partner bouwt razendsnelle Next.js websites (95+ PageSpeed) die beter scoren in Google. Lokaal, vaste prijs, SEO inbegrepen.",
   keywords: [
+    "website laten maken Rotterdam",
+    "webdesign Rotterdam",
     "Next.js website laten maken Rotterdam",
     "Next.js webbouwer Rotterdam",
-    "Next.js developer Rotterdam",
     "Next.js specialist Rotterdam",
-    "website laten maken Rotterdam",
     "SEO Rotterdam",
-    "WordPress alternatief",
-    "Core Web Vitals",
     "snelle website Rotterdam",
+    "WordPress alternatief Rotterdam",
+    "website bouwen Rotterdam",
   ],
   openGraph: {
     type: "website",
     locale: "nl_NL",
-    url: "https://www.webboostpartner.nl", // AANGEPAST NAAR WWW
+    url: "https://www.webboostpartner.nl",
     siteName: "WebBoost Partner",
-    title: "WebBoost Partner | Next.js Websites Rotterdam",
+    title: "Webdesign Rotterdam | Website Laten Maken | WebBoost Partner",
     description:
-      "Razendsnelle Next.js websites voor ondernemers in Rotterdam en omgeving.",
+      "Razendsnelle Next.js websites voor ondernemers in Rotterdam. 95+ PageSpeed, SEO inbegrepen, vaste prijs vanaf €1.950.",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "WebBoost Partner — Next.js Webdesign Rotterdam",
+      },
+    ],
   },
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/" }, // AANGEPAST: Relatief pad pakt automatisch de metadataBase (www)
+  twitter: {
+    card: "summary_large_image",
+    title: "Webdesign Rotterdam | Website Laten Maken | WebBoost Partner",
+    description:
+      "Razendsnelle Next.js websites voor ondernemers in Rotterdam. 95+ PageSpeed, SEO inbegrepen, vaste prijs.",
+    images: ["/og.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: { canonical: "/" },
   verification: {
     google: "OjFfp_u3mWFOSFreofiGa1Pz4fgKv1h8X_xHCbr1l7Y",
   },
@@ -76,26 +101,47 @@ export default function RootLayout({ children }: RootLayoutProps) {
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://www.webboostpartner.nl/#organization",
     name: "WebBoost Partner",
-    image: "https://www.webboostpartner.nl/og.jpg", // AANGEPAST NAAR WWW
-    "@id": "https://www.webboostpartner.nl", // AANGEPAST NAAR WWW
-    url: "https://www.webboostpartner.nl", // AANGEPAST NAAR WWW
+    alternateName: "WebBoost Partner Rotterdam",
+    description:
+      "WebBoost Partner is een Next.js specialist in Rotterdam. Wij bouwen razendsnelle, SEO-geoptimaliseerde websites voor ZZP en MKB met 95+ PageSpeed scores.",
+    image: "https://www.webboostpartner.nl/og.jpg",
+    logo: "https://www.webboostpartner.nl/logo_webboostpartner.webp",
+    url: "https://www.webboostpartner.nl",
     telephone: "+31642628242",
     email: "info@webboostpartner.nl",
     priceRange: "€€",
+    currenciesAccepted: "EUR",
+    paymentAccepted: "Bankoverschrijving, iDEAL",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Neeltje Griffijnstraat 12",
       addressLocality: "Rotterdam",
+      postalCode: "3065 KD",
+      addressRegion: "Zuid-Holland",
       addressCountry: "NL",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "51.9225",
+      longitude: "4.47917",
+    },
     areaServed: [
-      "Rotterdam",
-      "Capelle aan den IJssel",
-      "Krimpen aan den IJssel",
-      "Ridderkerk",
-      "Barendrecht",
-      "Schiedam",
+      { "@type": "City", name: "Rotterdam" },
+      { "@type": "City", name: "Capelle aan den IJssel" },
+      { "@type": "City", name: "Krimpen aan den IJssel" },
+      { "@type": "City", name: "Ridderkerk" },
+      { "@type": "City", name: "Barendrecht" },
+      { "@type": "City", name: "Schiedam" },
     ],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    sameAs: [],
   };
 
   return (
