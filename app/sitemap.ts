@@ -1,59 +1,74 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 
-// AANGEPAST: Nu MET www, conform de Vercel 308-redirect
 const baseUrl = "https://www.webboostpartner.nl";
+
+type ChangeFrequency =
+  | "always"
+  | "hourly"
+  | "daily"
+  | "weekly"
+  | "monthly"
+  | "yearly"
+  | "never";
 
 interface RouteConfig {
   route: string;
   priority: number;
-  changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  changeFrequency: ChangeFrequency;
+  /** Optionele vaste lastModified (ISO-string of Date). Standaard = vandaag. */
+  lastModified?: string | Date;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Vaste referentiedatum voor content die zelden wijzigt
+  const contentUpdated = new Date("2026-11-06");
+
   const staticRoutes: RouteConfig[] = [
-    // === 1. Pilaar pagina's (Absolute top prioriteit voor leadgeneratie) ===
-    { route: "", priority: 1.0, changeFrequency: "weekly" }, // Homepage
-    { route: "/website-laten-maken-rotterdam", priority: 0.9, changeFrequency: "weekly" },
-    { route: "/seo-rotterdam", priority: 0.9, changeFrequency: "weekly" },
+    // Pilaar-pagina's (leadgeneratie)
+    { route: "/", priority: 1.0, changeFrequency: "weekly", lastModified: contentUpdated },
+    {
+      route: "/website-laten-maken-rotterdam",
+      priority: 0.9,
+      changeFrequency: "weekly",
+      lastModified: contentUpdated,
+    },
+    {
+      route: "/seo-rotterdam",
+      priority: 0.9,
+      changeFrequency: "weekly",
+      lastModified: contentUpdated,
+    },
 
-    // === 2. Lokale SEO Regiopagina's ===
-    // { route: "/website-laten-maken-capelle", priority: 0.8, changeFrequency: "weekly" },
-    // { route: "/website-laten-maken-barendrecht", priority: 0.8, changeFrequency: "weekly" },
-
-    // === 3. Commerciële & Diensten pagina's ===
+    // Commerciële & dienstenpagina's
     { route: "/pakketten", priority: 0.8, changeFrequency: "monthly" },
     { route: "/wordpress-naar-nextjs", priority: 0.8, changeFrequency: "monthly" },
     { route: "/nextjs-vs-wordpress", priority: 0.7, changeFrequency: "monthly" },
 
-    // === 4. Portfolio (Overzicht) ===
+    // Portfolio
     { route: "/portfolio", priority: 0.8, changeFrequency: "weekly" },
 
-    // === 5. Ondersteunende autoriteitspagina's ===
+    // Ondersteunende pagina's
     { route: "/over-mij", priority: 0.6, changeFrequency: "monthly" },
     { route: "/contact", priority: 0.6, changeFrequency: "monthly" },
 
-    // === 6. Juridische noodzaak (Laagste prioriteit voor de zoekmachine) ===
+    // Juridisch
     { route: "/privacy", priority: 0.2, changeFrequency: "yearly" },
     { route: "/voorwaarden", priority: 0.2, changeFrequency: "yearly" },
     { route: "/cookiebeleid", priority: 0.2, changeFrequency: "yearly" },
   ];
 
-  // === 7. Dynamische Portfolio Cases ===
   const portfolioRoutes: RouteConfig[] = projects.map((project) => ({
     route: `/portfolio/${project.slug}`,
-    priority: 0.7, 
-    changeFrequency: "monthly",
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
   }));
 
-  // Combineer de statische routes met de dynamische portfolio routes
   const allRoutes = [...staticRoutes, ...portfolioRoutes];
 
-  const currentDate = new Date();
-
-  return allRoutes.map(({ route, priority, changeFrequency }) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: currentDate,
+  return allRoutes.map(({ route, priority, changeFrequency, lastModified }) => ({
+    url: `${baseUrl}${route === "/" ? "" : route}`,
+    lastModified: lastModified ?? new Date(),
     changeFrequency,
     priority,
   }));
