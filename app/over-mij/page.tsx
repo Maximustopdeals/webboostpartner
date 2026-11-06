@@ -106,7 +106,7 @@ export default function OverMijPage() {
               <p>
                 Ik ben Ron, oprichter van WebBoost Partner. Ik bouw websites die
                 snel laden, beter scoren in Google en ondernemers helpen aan meer
-                aanvragen — zonder jargon en zonder bureau-gedoe.
+                aanvragen zonder jargon en zonder bureau-gedoe.
               </p>
               <p>
                 Wat begon als hobby naast mijn baan, groeide uit tot een
@@ -116,7 +116,7 @@ export default function OverMijPage() {
               </p>
               <p>
                 Ik werk bewust kleinschalig. Geen accountmanagers, geen grote
-                teams — <strong>u werkt rechtstreeks met mij</strong>. Duidelijk,
+                teams <strong>u werkt rechtstreeks met mij</strong>. Duidelijk,
                 eerlijk en persoonlijk.
               </p>
             </div>
@@ -177,7 +177,7 @@ export default function OverMijPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
           <h2>Waarom ik WebBoost Partner ben gestart</h2>
           <p>
-            Jarenlang bouwde ik WordPress-websites. Dat werkt prima — tot
+            Jarenlang bouwde ik WordPress-websites. Dat werkt prima tot
             ondernemers tegen dezelfde problemen aanlopen: trage laadtijden,
             plugins die vastlopen, en SEO die stagneert. Een website hoort geen
             bron van stress te zijn, maar een tool die klanten oplevert.
