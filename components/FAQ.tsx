@@ -19,27 +19,19 @@ export default function FAQ({ items, schemaId = "faq" }: FAQProps) {
   // Standaard staat het eerste item open (index 0) voor directe interactie en betere UX
   const [open, setOpen] = useState<number>(0);
 
-  // Modern Google-proof Structured Data Schema (WebPage + hasPart)
+  // Correct FAQPage schema for rich results (with proper absolute @id)
   const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `https://webboostpartner.nl${schemaId}`,
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "Veelgestelde Vragen",
-      "itemListElement": items.map((item: FAQItem, index: number) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-          "@type": "Question",
-          "name": item.q,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": item.a
-          }
-        }
-      }))
-    }
+    "@type": "FAQPage",
+    "@id": `https://www.webboostpartner.nl/${schemaId}#faq`,
+    mainEntity: items.map((item: FAQItem) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
   };
 
   return (
