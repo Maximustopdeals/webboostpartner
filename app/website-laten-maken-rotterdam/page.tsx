@@ -202,10 +202,7 @@ export default function WebsiteRotterdamPage() {
           </h1>
 
           <p className="mt-6 text-xl max-w-3xl leading-relaxed font-semibold">
-            Op zoek naar een <strong>website laten maken in Rotterdam</strong> die écht klanten oplevert? 
-            WebBoost Partner bouwt razendsnelle Next.js websites die binnen 2 seconden laden, 
-            beter scoren in Google en bezoekers omzetten in aanvragen. Geen templates, geen verrassingen — 
-            wel een vaste prijs en een website die meegroeit met uw bedrijf.
+            Een website laten maken in Rotterdam die snel laadt, beter scoort in Google en structureel aanvragen oplevert. Vaste prijs, SEO inbegrepen, geen templates.
           </p>
 
           {/* Trust-bar */}
