@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Next.js vs WordPress | Welke past bij jouw bedrijf?",
     description:
-      "Objectieve vergelijking op snelheid, SEO, onderhoud en veiligheid. Zonder jargon — gericht op resultaat voor jouw onderneming.",
+      "Objectieve vergelijking op snelheid, SEO, onderhoud en veiligheid. Zonder jargon gericht op resultaat voor jouw onderneming.",
     url: "https://www.webboostpartner.nl/nextjs-vs-wordpress",
     siteName: "WebBoost Partner",
     locale: "nl_NL",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Next.js vs WordPress | Welke past bij jouw bedrijf?",
     description:
-      "Snelheid, vindbaarheid, onderhoud en kosten — helder vergeleken. Zonder technisch jargon.",
+      "Snelheid, vindbaarheid, onderhoud en kosten, helder vergeleken. Zonder technisch jargon.",
   },
 };
 
@@ -67,7 +67,7 @@ export default function NextjsVsWordpressPage() {
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed font-semibold">
-            Twee bewezen manieren om een website te bouwen — elk met eigen sterke
+            Twee bewezen manieren om een website te bouwen, elk met eigen sterke
             punten. Geen technisch verhaal, wel een heldere vergelijking: wat levert
             het op voor <strong>snelheid, vindbaarheid, onderhoud en groei</strong> van
             jouw bedrijf?
@@ -114,7 +114,7 @@ export default function NextjsVsWordpressPage() {
             </h2>
             <p className="leading-relaxed text-gray-200">
               Een moderne website laadt sneller, heeft minder onderhoud nodig en scoort
-              sterker in Google. Dezelfde techniek die grote merken gebruiken — vertaald
+              sterker in Google. Dezelfde techniek die grote merken gebruiken vertaald
               naar een praktische oplossing voor ZZP en MKB.
             </p>
           </div>
@@ -134,7 +134,7 @@ export default function NextjsVsWordpressPage() {
           <h2>Snelheid en aanvragen</h2>
           <p>
             Elke seconde extra laadtijd kost bezoekers. Beide systemen kúnnen snel
-            zijn — maar de uitgangspositie verschilt:
+            zijn maar de uitgangspositie verschilt:
           </p>
           <ul>
             <li>
@@ -219,7 +219,7 @@ export default function NextjsVsWordpressPage() {
 
           <p>
             Voor veel ZZP’ers en MKB-bedrijven in Rotterdam is een moderne website
-            een slimme volgende stap — vooral als de huidige WordPress-site traag
+            een slimme volgende stap vooral als de huidige WordPress-site traag
             voelt of te veel onderhoud vraagt. Het belangrijkste blijft: kies het
             fundament dat past bij jouw doelen nu.
           </p>
@@ -231,7 +231,7 @@ export default function NextjsVsWordpressPage() {
               WordPress naar Next.js migratie
             </Link>{" "}
             of vraag een gratis scan aan. Ik bekijk je huidige site en geef eerlijk
-            advies — ook als WordPress voor jou de betere keuze is.
+            advies ook als WordPress voor jou de betere keuze is.
           </p>
         </div>
       </article>
