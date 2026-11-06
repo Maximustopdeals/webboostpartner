@@ -32,14 +32,13 @@ export default function HomePage() {
           <div className="lg:col-span-7">
             <h1 className="font-heading font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl text-black leading-[1.1]">
               <span className="block text-[#FF4500] mb-2">
-                Webdesign Rotterdam:
+                Webdesign Rotterdam
               </span>
-              Een website die écht <br className="hidden sm:block" />
-              klanten oplevert.
+              dat klanten oplevert
             </h1>
             
             <p className="mt-6 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] font-medium leading-relaxed">
-              Op zoek naar professioneel <strong>webdesign Rotterdam</strong>? Geen technisch jargon. Wel een bliksemsnelle website die jouw vakmanschap laat zien en bezoekers direct omzet in betalende klanten.
+              Professioneel webdesign Rotterdam. Bliksemsnelle Next.js websites die jouw vakmanschap laten zien en bezoekers omzetten in aanvragen.
             </p>
             
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
