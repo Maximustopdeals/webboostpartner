@@ -1,9 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowRight, Check, ExternalLink, Monitor, Smartphone } from "lucide-react";
 import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Webdesign Rotterdam | Website Laten Maken | 95+ PageSpeed | WebBoost Partner",
   description:
     "Webdesign Rotterdam en website laten maken? WebBoost Partner bouwt bliksemsnelle Next.js websites die jouw vakmanschap tonen en bezoekers omzetten in klanten. Vaste prijs, lokaal, SEO inbegrepen.",
@@ -119,3 +120,4 @@ export default function HomePage() {
       <CTASection />
     </>
   );
+}
