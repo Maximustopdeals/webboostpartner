@@ -167,7 +167,7 @@ export default function NextjsVsWordpressPage() {
           <ul>
             <li>
               <strong>WordPress</strong> — Populair, dus vaker doelwit. Met goede
-              hosting, updates en beveiliging is het prima te beveiligen — dat
+              hosting, updates en beveiliging is het prima te beveiligen dat
               vraagt wel doorlopende aandacht.
             </li>
             <li>
