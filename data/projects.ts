@@ -20,7 +20,7 @@ export const projects: Project[] = [
     url: "https://www.deislamitischekraamzorg.nl/", // Pas deze URL aan indien nodig
     tagline: "Liefdevolle Islamitische kraamzorg in Utrecht en omstreken. Een warme, toegankelijke website die 24/7 beschikbaarheid en vertrouwen uitstraalt.",
     resultMetric: "Optimale gebruikerservaring en 24/7 bereikbaarheid",
-    image: "/images/portfolio/deislamitische-kraamzorg.webp",
+    image: "/images/portfolio/Schermafbeelding-deislamitische-kraamzorg",
     testimonial: {
       quote: "De nieuwe website straalt precies de warmte, rust en professionaliteit uit die wij als Islamitische kraamzorg willen bieden. Aanstaande ouders weten ons nu veel gemakkelijker te vinden.",
       author: "Eigenaresse",
