@@ -23,7 +23,7 @@ export const projects: Project[] = [
     image: "/images/portfolio/Schermafbeelding-deislamitische-kraamzorg.webp", // <-- .webp toegevoegd
     testimonial: {
       quote: "De nieuwe website straalt precies de warmte, rust en professionaliteit uit die wij als Islamitische kraamzorg willen bieden. Aanstaande ouders weten ons nu veel gemakkelijker te vinden.",
-      author: "Eigenaresse",
+      author: "Nadia - Eigenaresse",
       role: "De Islamitische Kraamzorg",
     },
   },
