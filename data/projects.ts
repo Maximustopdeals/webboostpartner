@@ -15,6 +15,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "de-islamitische-kraamzorg",
+    name: "De Islamitische Kraamzorg",
+    url: "https://www.deislamitischekraamzorg.nl/", // Pas deze URL aan indien nodig
+    tagline: "Liefdevolle Islamitische kraamzorg in Utrecht en omstreken. Een warme, toegankelijke website die 24/7 beschikbaarheid en vertrouwen uitstraalt.",
+    resultMetric: "Optimale gebruikerservaring en 24/7 bereikbaarheid",
+    image: "/images/portfolio/deislamitische-kraamzorg.webp",
+    testimonial: {
+      quote: "De nieuwe website straalt precies de warmte, rust en professionaliteit uit die wij als Islamitische kraamzorg willen bieden. Aanstaande ouders weten ons nu veel gemakkelijker te vinden.",
+      author: "Eigenaresse",
+      role: "De Islamitische Kraamzorg",
+    },
+  },
+  {
     slug: "kraamzorg-t-gouden-hartje",
     name: "Kraamzorg 'T Gouden Hartje",
     url: "https://www.kraamzorg-tgoudenhartje.nl/",
