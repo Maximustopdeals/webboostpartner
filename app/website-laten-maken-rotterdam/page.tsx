@@ -5,7 +5,7 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  // ... (Jouw bestaande metadata blijft hier ongewijzigd)
+  
   title: "Website Laten Maken Rotterdam | Vanaf €1.950 | Next.js | WebBoost Partner",
   description:
     "Website laten maken in Rotterdam? WebBoost Partner bouwt razendsnelle Next.js websites (95+ PageSpeed) voor ZZP & MKB. Vaste prijs, SEO inbegrepen, gratis adviesgesprek.",
