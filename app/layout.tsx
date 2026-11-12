@@ -34,6 +34,7 @@ const ibmMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  // ✅ CRUCIAAL: Dit zorgt dat alle relatieve links (zoals /contact) absolute www-links worden.
   metadataBase: new URL("https://www.webboostpartner.nl"),
   title: {
     default: "Webdesign Rotterdam | Website Laten Maken | Next.js | WebBoost Partner",
@@ -87,7 +88,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: { canonical: "/" },
+  // ✅ Basis canonical voor de homepage
+  alternates: {
+    canonical: "/",
+  },
   verification: {
     google: "OjFfp_u3mWFOSFreofiGa1Pz4fgKv1h8X_xHCbr1l7Y",
   },
@@ -147,7 +151,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="nl" className={`${outfit.variable} ${ibmPlex.variable} ${ibmMono.variable}`}>
       <body>
-        {/* GTM noscript */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PSM987PS"
@@ -169,7 +172,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         
         <ClientWidgets />
 
-        {/* ✅ GTM + GA4 nu via de 'worker' strategy (Partytown) voor betere TBT */}
         <Script id="gtm-script" strategy="worker">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
