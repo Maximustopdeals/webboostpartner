@@ -120,10 +120,10 @@ export const projects: Project[] = [
     name: "Kraamzorg 't Gouden Wiegje",
     url: "https://kraamzorgtgoudenwiegje.nl/",
     tagline: "Een zachte start. Een warme, rustgevende website die de persoonlijke kraamzorg van Vania perfect weerspiegelt en vertrouwen uitstraalt naar aanstaande ouders.",
-    resultMetric: "PageSpeed 98 (Desktop) & 97 (Mobiel) met 100 SEO-score",
+    resultMetric: "Perfecte PageSpeed 100 (Desktop) & 95 (Mobiel) met 100 SEO-score",
     image: "/images/portfolio/Schermafbeelding -kraamzorgtgoudenwiegje.webp",
     testimonial: {
-      quote: "Ik ben ontzettend dankbaar voor het resultaat! De website voelt precies zoals mijn kraamzorg: warm, rustig en professioneel. Het verschil in snelheid is enorm; waar de site eerst traag was, scoren we nu fantastische PageSpeed-cijfers (97 mobiel, 98 desktop) met een perfecte 100 voor SEO. Aanstaande ouders vinden mij nu veel sneller en makkelijker online. Echt een gouden samenwerking!",
+      quote: "Ik ben ontzettend dankbaar voor het resultaat! De website voelt precies zoals mijn kraamzorg: warm, rustig en professioneel. Het verschil in snelheid is enorm; waar de site eerst traag was, scoren we nu fantastische PageSpeed-cijfers (95 mobiel en zelfs een perfecte 100 op desktop) met een perfecte 100 voor SEO. Aanstaande ouders vinden mij nu veel sneller en makkelijker online. Echt een gouden samenwerking!",
       author: "Vania",
       role: "Eigenaresse, Kraamzorg 't Gouden Wiegje",
     },
