@@ -20,7 +20,7 @@ export const projects: Project[] = [
     url: "https://www.deislamitischekraamzorg.nl/", // Pas deze URL aan indien nodig
     tagline: "Liefdevolle Islamitische kraamzorg in Utrecht en omstreken. Een warme, toegankelijke website die 24/7 beschikbaarheid en vertrouwen uitstraalt.",
     resultMetric: "Optimale gebruikerservaring en 24/7 bereikbaarheid",
-    image: "/images/portfolio/Schermafbeelding-deislamitische-kraamzorg.webp", // <-- .webp toegevoegd
+    image: "/images/portfolio/Schermafbeelding-deislamitischekraamzorg.webp", // <-- .webp toegevoegd
     testimonial: {
       quote: "De nieuwe website straalt precies de warmte, rust en professionaliteit uit die wij als Islamitische kraamzorg willen bieden. Aanstaande ouders weten ons nu veel gemakkelijker te vinden.",
       author: "Nadia - Eigenaresse",
@@ -112,6 +112,20 @@ export const projects: Project[] = [
       quote: "Volgens mij werkt de nieuwe website en de foto's goed. Ik krijg zoveel aanmeldingen, dus ontzettend bedankt daarvoor!",
       author: "Cindy",
       role: "Eigenaar, Cindy's Kraamzorg",
+    },
+  },
+  // --- NIEUW PROJECT ---
+  {
+    slug: "kraamzorg-t-gouden-wiegje",
+    name: "Kraamzorg 't Gouden Wiegje",
+    url: "https://kraamzorgtgoudenwiegje.nl/",
+    tagline: "Een zachte start. Een warme, rustgevende website die de persoonlijke kraamzorg van Vania perfect weerspiegelt en vertrouwen uitstraalt naar aanstaande ouders.",
+    resultMetric: "PageSpeed 98 (Desktop) & 97 (Mobiel) met 100 SEO-score",
+    image: "/images/portfolio/Schermafbeelding -kraamzorgtgoudenwiegje.webp",
+    testimonial: {
+      quote: "Ik ben ontzettend dankbaar voor het resultaat! De website voelt precies zoals mijn kraamzorg: warm, rustig en professioneel. Het verschil in snelheid is enorm; waar de site eerst traag was, scoren we nu fantastische PageSpeed-cijfers (97 mobiel, 98 desktop) met een perfecte 100 voor SEO. Aanstaande ouders vinden mij nu veel sneller en makkelijker online. Echt een gouden samenwerking!",
+      author: "Vania",
+      role: "Eigenaresse, Kraamzorg 't Gouden Wiegje",
     },
   },
 ];
