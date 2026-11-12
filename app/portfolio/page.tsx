@@ -6,7 +6,10 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Portfolio | Webdesign Rotterdam & Website Laten Maken",
-  description: "Bekijk het portfolio van WebBoost Partner. Ontdek onze succesvolle projecten op het gebied van webdesign Rotterdam en website laten maken in Rotterdam. Bewezen resultaten voor ondernemers.",
+  description: "Ontdek mijn portfolio. Bewezen resultaten op het gebied van webdesign Rotterdam en website laten maken. Razendsnelle Next.js websites die écht nieuwe klanten opleveren.",
+  alternates: {
+    canonical: "/portfolio", // ✅ Toegevoegd voor perfecte SEO
+  },
 };
 
 export default function PortfolioPage() {
@@ -21,13 +24,13 @@ export default function PortfolioPage() {
           
           {/* H1 met sterke SEO focus */}
           <h1 className="font-heading font-black uppercase text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-black mb-6">
-            Ons <span className="text-[#FF4500]">Portfolio</span>.
+            Mijn <span className="text-[#FF4500]">Portfolio</span>.
           </h1>
           <p className="text-lg sm:text-xl text-[#4a4a48] leading-relaxed max-w-2xl font-medium">
             Geen loze beloftes, maar tastbaar bewijs. Ontdek een selectie van 
             succesvolle trajecten voor <strong>webdesign Rotterdam</strong> en omgeving. 
             Van <strong>website laten maken in Rotterdam</strong> tot complete moderniseringen: 
-            wij bouwen sites die razendsnel laden en écht nieuwe klanten opleveren.
+            ik bouw sites die razendsnel laden en écht nieuwe klanten opleveren.
           </p>
         </div>
       </section>
