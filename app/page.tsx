@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Webdesign Rotterdam | Website Laten Maken | 95+ PageSpeed | WebBoost Partner",
   description:
     "Webdesign Rotterdam en website laten maken? WebBoost Partner bouwt bliksemsnelle Next.js websites die jouw vakmanschap tonen en bezoekers omzetten in klanten. Vaste prijs, lokaal, SEO inbegrepen.",
+  alternates: {
+    canonical: "/", // ✅ Expliciet voor de homepage
+  },
   openGraph: {
     title: "Webdesign Rotterdam | Website Laten Maken | WebBoost Partner",
     description:
@@ -28,7 +31,6 @@ export default function HomePage() {
       <section className="relative bg-[#FAFAFA] border-b-2 border-black py-20 lg:py-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* LINKERKANT: TEKST */}
           <div className="lg:col-span-7">
             <h1 className="font-heading font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl text-black leading-[1.1]">
               <span className="block text-[#FF4500] mb-2">
@@ -60,7 +62,6 @@ export default function HomePage() {
             </ul>
           </div>
 
-          {/* RECHTERKANT: LIVE BEWIJS KAART */}
           <div className="lg:col-span-5 relative mt-10 lg:mt-0">
             <div className="absolute inset-0 bg-[#FF4500] translate-x-3 translate-y-3 border-2 border-black" />
             
