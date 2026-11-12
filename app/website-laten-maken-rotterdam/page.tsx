@@ -54,13 +54,13 @@ interface FAQItem {
 }
 
 const faqs: FAQItem[] = [
-  // ... (Jouw bestaande FAQ's blijven hier ongewijzigd)
+  
 ];
 
 export default function WebsiteRotterdamPage() {
   return (
     <>
-      {/* ... (Jouw bestaande JSON-LD Schema blijft hier ongewijzigd) ... */}
+      
 
       {/* HERO */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
@@ -97,7 +97,7 @@ export default function WebsiteRotterdamPage() {
             </li>
           </ul>
 
-          {/* Dubbele CTA */}
+          
           <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
               href="/contact?intent=advies"
@@ -115,7 +115,7 @@ export default function WebsiteRotterdamPage() {
         </div>
       </section>
 
-      {/* PORTFOLIO VERWIJZING MET CASE STUDY */}
+     
       <section className="bg-[#FAFAFA] py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
@@ -127,7 +127,7 @@ export default function WebsiteRotterdamPage() {
             </h2>
           </div>
           <div className="lg:col-span-7 prose-brutal">
-            {/* ✅ AANGEPAST: Case study verweven voor meer bewijs */}
+            
             <p>
               Van lokale dienstverleners tot high-end projecten: elke website die ik bouw 
               laadt razendsnel en is gericht op het genereren van aanvragen. 
@@ -144,7 +144,7 @@ export default function WebsiteRotterdamPage() {
         </div>
       </section>
 
-      {/* CONTENT */}
+      
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
           <h2>Waarom een professionele website het verschil maakt</h2>
@@ -170,7 +170,7 @@ export default function WebsiteRotterdamPage() {
             <li>
               <strong>Genereert u meer aanvragen</strong> — duidelijke call-to-actions en een logische structuur.
             </li>
-            {/* ✅ AANGEPAST: Interne link naar SEO pagina */}
+           
             <li>
               <strong>Wordt u beter gevonden</strong> — sterke technische SEO en uitstekende <Link href="/seo-rotterdam" className="text-[#FF4500] underline decoration-2 hover:bg-[#FF4500] hover:text-white transition-colors px-1">lokale vindbaarheid</Link>.
             </li>
@@ -225,7 +225,7 @@ export default function WebsiteRotterdamPage() {
             mee met uw bedrijf.
           </p>
 
-          {/* ... De rest van je tekst (Next.js vs WordPress, Traject, Prijzen, Werkgebied) blijft exact hetzelfde. Je kunt "Wij" hier en daar nog even checken en vervangen door "Ik". ... */}
+          
 
           <h2>Waarom Next.js in plaats van WordPress?</h2>
 
@@ -248,12 +248,11 @@ export default function WebsiteRotterdamPage() {
             met gemiddeld <strong>webdesign Rotterdam</strong>.
           </p>
 
-          {/* ... (De rest van de pagina: Traject, Prijzen, CTA, Werkgebied, FAQ) ... */}
-          
+                    
         </div>
       </article>
       
-      {/* ... (CTASection blijft hetzelfde) ... */}
+      
     </>
   );
 }
