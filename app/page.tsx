@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Check, ExternalLink, Monitor, Smartphone } from "lucide-react";
+import { ArrowRight, Check, ExternalLink, Monitor, Smartphone, Star } from "lucide-react"; // Star toegevoegd
 import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Webdesign Rotterdam en website laten maken? WebBoost Partner bouwt bliksemsnelle Next.js websites die jouw vakmanschap tonen en bezoekers omzetten in klanten. Vaste prijs, lokaal, SEO inbegrepen.",
   alternates: {
-    canonical: "/", // ✅ Expliciet voor de homepage
+    canonical: "/", 
   },
   openGraph: {
     title: "Webdesign Rotterdam | Website Laten Maken | WebBoost Partner",
@@ -36,11 +36,11 @@ export default function HomePage() {
               <span className="block text-[#FF4500] mb-2">
                 Webdesign Rotterdam
               </span>
-              dat klanten oplevert
+              die klanten oplevert.
             </h1>
             
             <p className="mt-6 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] font-medium leading-relaxed">
-              Professioneel webdesign Rotterdam. Bliksemsnelle Next.js websites die jouw vakmanschap laten zien en bezoekers omzetten in aanvragen.
+              Ik bouw bliksemsnelle Next.js websites die jouw vakmanschap laten zien en bezoekers omzetten in echte aanvragen. Geen standaard templates, maar <Link href="/portfolio" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500] transition-colors">bewezen maatwerk</Link>.
             </p>
             
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -50,6 +50,20 @@ export default function HomePage() {
               >
                 Vraag gratis adviesgesprek aan <ArrowRight size={18} className="ml-2" />
               </Link>
+            </div>
+
+            {/* ✅ NIEUW: Social Proof direct onder de CTA */}
+            <div className="mt-6 flex items-center gap-2">
+              <div className="flex text-[#FF4500]">
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+              </div>
+              <p className="text-sm font-medium text-[#525252]">
+                "Binnen een week 3 nieuwe aanvragen!" — Cindy, Cindy&apos;s Kraamzorg
+              </p>
             </div>
 
             <ul className="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-8 text-xs font-mono uppercase tracking-wider text-black font-bold">
