@@ -14,7 +14,7 @@ export function generateStaticParams() {
 
 // Dynamische metadata per case
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  // Next.js 15: we moeten wachten tot de params beschikbaar zijn
+  // Next.js 16: we moeten wachten tot de params beschikbaar zijn
   const resolvedParams = await params;
   const project = projects.find((p) => p.slug === resolvedParams.slug);
 
@@ -26,15 +26,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `${project.name} | Case Study | WebBoost Partner`,
-    description: `Ontdek hoe wij ${project.name} hebben geholpen met professioneel webdesign Rotterdam en een website die resultaat oplevert. ${project.tagline}`,
+    description: `Ontdek hoe ik ${project.name} heb geholpen met professioneel webdesign Rotterdam en een website die resultaat oplevert. ${project.tagline}`,
     alternates: {
-      // AANGEPAST: Relatief pad gebruiken. Next.js vult de metadataBase (www) automatisch in.
+      // Relatief pad: Next.js vult de metadataBase (www) automatisch in.
       canonical: `/portfolio/${project.slug}`,
     },
   };
 }
 
-// Next.js 15: Ook hier moeten we de params eerst resolven
+// Next.js 16: Ook hier moeten we de params eerst resolven
 export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const project = projects.find((p) => p.slug === resolvedParams.slug);
@@ -43,19 +43,17 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
-  // Schema markup voor de case study en review
+  // Schema markup voor de case study en review (Gekoppeld aan je hoofdorganisatie)
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "CreativeWork",
         "@id": `https://www.webboostpartner.nl/portfolio/${project.slug}#case`,
-        name: project.name,
+        name: `Case Study: ${project.name}`,
         description: project.tagline,
-        creator: {
-          "@type": "Organization",
-          name: "WebBoost Partner",
-          url: "https://www.webboostpartner.nl",
+        creator: { 
+          "@id": "https://www.webboostpartner.nl/#organization" // Linkt naar je LocalBusiness in layout.tsx
         },
         ...(project.testimonial && {
           review: {
@@ -65,6 +63,11 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
               "@type": "Person",
               name: project.testimonial.author,
             },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5"
+            }
           },
         }),
       },
@@ -149,10 +152,10 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             </p>
 
             <h2 className="font-heading font-black uppercase text-3xl mb-6">
-              Onze <span className="text-[#FF4500]">Aanpak</span>
+              Mijn <span className="text-[#FF4500]">Aanpak</span>
             </h2>
             <p className="text-lg text-[#4a4a48] leading-relaxed mb-6">
-              Wij hebben gekozen voor een moderne, bliksemsnelle technische basis zonder onnodige ballast. Dit betekent:
+              Ik heb gekozen voor een moderne, bliksemsnelle technische basis zonder onnodige ballast. Dit betekent concreet:
             </p>
             <ul className="space-y-4 mb-12">
               <li className="flex items-start gap-3 text-lg text-[#4a4a48]">
@@ -202,7 +205,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                 Ook op zoek naar een website die <span className="text-[#FF4500]">resultaat oplevert?</span>
               </h3>
               <p className="text-lg text-[#525252] mb-8">
-                Of je nu een nieuwe website wilt voor je bedrijf, of op zoek bent naar professioneel <strong>webdesign Rotterdam</strong>: wij helpen je graag verder met een <strong>website laten maken in Rotterdam</strong> en omgeving.
+                Of je nu een nieuwe website wilt voor je bedrijf, of op zoek bent naar professioneel <strong>webdesign Rotterdam</strong>: ik help je graag verder met een <strong>website laten maken in Rotterdam</strong> en omgeving.
               </p>
               <Link
                 href="/contact?intent=advies"
