@@ -24,84 +24,7 @@ interface PricingSectionProps {
 }
 
 const packages: PricingPackage[] = [
-  {
-    id: "starter",
-    name: "Starter",
-    price: "€ 1.950",
-    priceIncl: "€ 2.360",
-    icon: <Zap size={32} />,
-    forWho: "Voor ZZP'ers en starters die direct een serieus online visitekaartje willen.",
-    promise: "Een professionele en strakke website — volledig zonder technisch gedoe.",
-    features: [
-      "Uniek, op maat gemaakt Next.js ontwerp",
-      "Razendsnelle mobiele laadtijd (voorkomt afhakers)",
-      "3–5 pagina's (Home, Diensten, Contact)",
-      "Volledig responsive (perfect op smartphone en tablet)",
-      "Technische SEO-basis (optimaal leesbaar voor Google)",
-      "Betrouwbaar contactformulier + WhatsApp-koppeling",
-      "Veilige premium hosting & SSL inbegrepen",
-      "Korte doorlooptijd (binnen 2 weken live)",
-    ],
-  },
-  {
-    id: "professional",
-    name: "Professional",
-    price: "€ 3.495",
-    priceIncl: "€ 4.229",
-    badge: "Meest gekozen",
-    icon: <TrendingUp size={32} />,
-    forWho: "Voor MKB-bedrijven die actief nieuwe klanten en leads zoeken via Google.",
-    promise: "Een conversiegerichte website die online structureel voor uw bedrijf verkoopt.",
-    inheritFrom: "Starter",
-    features: [
-      "Volledig custom high-end design (geen templates)",
-      "6–10 pagina's inclusief specifieke landingspagina's",
-      "Lokale SEO-optimalisatie (Rotterdam + regio)",
-      "Conversie-psychologie (slimme indeling voor meer leads)",
-      "Geïntegreerde blog- of nieuwssectie voor content marketing",
-      "Inrichting Google Analytics 4 & Search Console",
-      "Extra trust-elementen (klantbeoordelingen & USP's prominent)",
-    ],
-    highlighted: true,
-  },
-  {
-    id: "premium",
-    name: "Premium",
-    price: "€ 5.495",
-    priceIncl: "€ 6.649",
-    badge: "Beste waarde",
-    icon: <Star size={32} />,
-    forWho: "Voor gevestigde bedrijven die online de absolute top in hun markt willen claimen.",
-    promise: "Een krachtig digitaal platform dat naadloos meegroeit met uw zakelijke ambities.",
-    inheritFrom: "Professional",
-    features: [
-      "Exclusief Next.js maatwerkplatform",
-      "10–20 pagina's inclusief uitgebreide SEO-locatiepagina's",
-      "Diepgaande contentstructuur & geavanceerde SEO-architectuur",
-      "Subtiele high-end animaties & premium UX-ontwerp",
-      "Slimme koppelingen met uw CRM- of online boekingssysteem",
-      "Uitgebreide marketing dashboards om resultaten te meten",
-      "Maximale optimalisatie voor de zwaarste Google-richtlijnen",
-    ],
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    price: "Vanaf € 7.995",
-    priceIncl: "Vanaf € 9.674",
-    icon: <Layers size={32} />,
-    forWho: "Voor organisaties met complexe systemen, webshops of portaalfuncties.",
-    promise: "Een op maat gemaakte webapplicatie die uw bedrijfsprocessen automatiseert.",
-    inheritFrom: "Premium",
-    features: [
-      "Volledig op maat geprogrammeerde webapplicatie of portaal",
-      "Complexe API-koppelingen met externe backends & ERP-systemen",
-      "Schaalbare webshopfunctionaliteit (iDEAL, Mollie, Stripe)",
-      "Volledige consultancy, projectplanning en strategische nazorg",
-      "Inclusief 6 maanden uitgebreide support en doorlopende optimalisatie",
-    ],
-    isCustom: true,
-  },
+  // ... (ongewijzigd, laat je data staan)
 ];
 
 export default function PricingSection({ compact = false }: PricingSectionProps) {
@@ -126,7 +49,9 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
           {packages.map((pkg) => (
             <div
               key={pkg.id}
-              className={`relative border-2 border-black p-8 flex flex-col transition-all ${
+              // ✅ NIEUW: id per pakket voor diepe links + scroll-offset
+              id={`pakket-${pkg.id}`}
+              className={`relative scroll-mt-24 border-2 border-black p-8 flex flex-col transition-all ${
                 pkg.highlighted
                   ? "bg-black text-white shadow-brutal-orange lg:-translate-y-2"
                   : "bg-white shadow-brutal"
