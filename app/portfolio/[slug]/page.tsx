@@ -4,37 +4,43 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Quote } from "lucide-react";
 import { projects } from "@/data/projects";
+import FAQ from "@/components/FAQ"; // ✅ NIEUW
 
-// Genereer statische routes voor alle projecten (goed voor snelheid en SEO)
 export function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+  return projects.map((project) => ({ slug: project.slug }));
 }
 
-// Dynamische metadata per case
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  // Next.js 16: we moeten wachten tot de params beschikbaar zijn
   const resolvedParams = await params;
   const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
-    return {
-      title: "Project niet gevonden | WebBoost Partner",
-    };
+    return { title: "Project niet gevonden | WebBoost Partner" };
   }
 
   return {
     title: `${project.name} | Case Study | WebBoost Partner`,
     description: `Ontdek hoe ik ${project.name} heb geholpen met professioneel webdesign Rotterdam en een website die resultaat oplevert. ${project.tagline}`,
-    alternates: {
-      // Relatief pad: Next.js vult de metadataBase (www) automatisch in.
-      canonical: `/portfolio/${project.slug}`,
+    alternates: { canonical: `/portfolio/${project.slug}` },
+    // ✅ NIEUW
+    openGraph: {
+      title: `${project.name} | Case Study | WebBoost Partner`,
+      description: `${project.tagline} — ${project.resultMetric}`,
+      url: `https://www.webboostpartner.nl/portfolio/${project.slug}`,
+      siteName: "WebBoost Partner",
+      locale: "nl_NL",
+      type: "article",
+      images: [{ url: project.image, alt: `Website voor ${project.name}` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} | Case Study | WebBoost Partner`,
+      description: `${project.tagline} — ${project.resultMetric}`,
+      images: [project.image],
     },
   };
 }
 
-// Next.js 16: Ook hier moeten we de params eerst resolven
 export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const project = projects.find((p) => p.slug === resolvedParams.slug);
@@ -43,7 +49,23 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
-  // Schema markup voor de case study en review (Gekoppeld aan je hoofdorganisatie)
+  // ✅ NIEUW: projectspecifieke FAQ
+  const faqs = [
+    {
+      q: `Wat was het resultaat van het project voor ${project.name}?`,
+      a: `${project.resultMetric}. ${project.tagline} Daarnaast is de website gebouwd op Next.js met 95+ PageSpeed, technische SEO en 100% eigenaarschap van de code.`,
+    },
+    {
+      q: `Welke techniek is gebruikt voor ${project.name}?`,
+      a: `De website van ${project.name} is gebouwd met Next.js en React. Dit zorgt voor snelle laadtijden, goede Core Web Vitals en een schone, onderhoudsarme codebase zonder plugin-afhankelijkheden.`,
+    },
+    {
+      q: `Kan ik een vergelijkbaar project laten bouwen?`,
+      a: `Ja. WebBoost Partner bouwt vergelijkbare Next.js-websites voor ZZP en MKB in Rotterdam en omgeving. Bekijk de pakketten of vraag een vrijblijvend adviesgesprek aan voor een plan op maat.`,
+    },
+  ];
+
+  // ✅ AANGEPAST: BreadcrumbList + author + FAQPage toegevoegd
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -52,34 +74,41 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
         "@id": `https://www.webboostpartner.nl/portfolio/${project.slug}#case`,
         name: `Case Study: ${project.name}`,
         description: project.tagline,
-        creator: { 
-          "@id": "https://www.webboostpartner.nl/#organization" // Linkt naar je LocalBusiness in layout.tsx
-        },
+        creator: { "@id": "https://www.webboostpartner.nl/#organization" },
+        author: { "@id": "https://www.webboostpartner.nl/over-mij#person" },
         ...(project.testimonial && {
           review: {
             "@type": "Review",
             reviewBody: project.testimonial.quote,
-            author: {
-              "@type": "Person",
-              name: project.testimonial.author,
-            },
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: "5",
-              bestRating: "5"
-            }
+            author: { "@type": "Person", name: project.testimonial.author },
+            reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
           },
         }),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `https://www.webboostpartner.nl/portfolio/${project.slug}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.webboostpartner.nl/" },
+          { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://www.webboostpartner.nl/portfolio" },
+          { "@type": "ListItem", position: 3, name: project.name, item: `https://www.webboostpartner.nl/portfolio/${project.slug}` },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `https://www.webboostpartner.nl/portfolio/${project.slug}#faq`,
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
       },
     ],
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <main className="bg-white min-h-screen">
         {/* Breadcrumb & Terugknop */}
@@ -97,22 +126,26 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
         {/* Hero Sectie */}
         <section className="bg-white py-16 sm:py-24 border-b-2 border-black">
           <div className="max-w-5xl mx-auto px-4 sm:px-8">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
-              // Case Study
-            </p>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Case Study</p>
             <h1 className="font-heading font-black uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] text-black mb-6">
               {project.name}
             </h1>
-            
             <p className="text-xl text-[#4a4a48] leading-relaxed max-w-3xl font-medium mb-8">
               {project.tagline}
             </p>
+
+            {/* ✅ NIEUW: TL;DR */}
+            <div className="mb-8 border-2 border-black bg-[#FAFAFA] p-5 shadow-[4px_4px_0px_0px_#1A1A19] max-w-3xl">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">Kort antwoord</p>
+              <p className="text-sm sm:text-base leading-relaxed text-[#1a1a1a]">
+                WebBoost Partner bouwde voor <strong>{project.name}</strong> een Next.js-website met als resultaat <strong>{project.resultMetric}</strong>. {project.tagline}
+              </p>
+            </div>
 
             <div className="flex flex-wrap items-center gap-4">
               <span className="inline-flex items-center gap-2 bg-[#FAFAFA] border-2 border-black px-4 py-2 font-mono text-sm font-bold text-black shadow-[2px_2px_0px_0px_#1A1A19]">
                 <CheckCircle2 size={16} className="text-[#FF4500]" /> {project.resultMetric}
               </span>
-              
               <a
                 href={project.url}
                 target="_blank"
@@ -143,17 +176,20 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
         {/* Content & Resultaten Sectie */}
         <section className="py-16 sm:py-24">
           <div className="max-w-3xl mx-auto px-4 sm:px-8">
-            
-            <h2 className="font-heading font-black uppercase text-3xl mb-6">
-              De <span className="text-[#FF4500]">Uitdaging</span>
-            </h2>
+            {/* ✅ NIEUW: auteur-signaal */}
+            <p className="text-sm font-mono uppercase tracking-wider text-[#525252] mb-6">
+              Geschreven door{" "}
+              <Link href="/over-mij" className="text-[#FF4500] underline decoration-2">
+                Ron — WebBoost Partner
+              </Link>
+            </p>
+
+            <h2 className="font-heading font-black uppercase text-3xl mb-6">De <span className="text-[#FF4500]">Uitdaging</span></h2>
             <p className="text-lg text-[#4a4a48] leading-relaxed mb-12">
               Elke ondernemer verdient een website die meegroeit met de ambities. Voor {project.name} was het tijd voor een digitale stap vooruit. De focus lag op het creëren van een uiterst betrouwbare en gebruiksvriendelijke omgeving, die direct vertrouwen wekt bij de bezoeker.
             </p>
 
-            <h2 className="font-heading font-black uppercase text-3xl mb-6">
-              Mijn <span className="text-[#FF4500]">Aanpak</span>
-            </h2>
+            <h2 className="font-heading font-black uppercase text-3xl mb-6">Mijn <span className="text-[#FF4500]">Aanpak</span></h2>
             <p className="text-lg text-[#4a4a48] leading-relaxed mb-6">
               Ik heb gekozen voor een moderne, bliksemsnelle technische basis zonder onnodige ballast. Dit betekent concreet:
             </p>
@@ -172,16 +208,10 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
               </li>
             </ul>
 
-            <h2 className="font-heading font-black uppercase text-3xl mb-6">
-              Het <span className="text-[#FF4500]">Resultaat</span>
-            </h2>
+            <h2 className="font-heading font-black uppercase text-3xl mb-6">Het <span className="text-[#FF4500]">Resultaat</span></h2>
             <div className="bg-[#FAFAFA] border-2 border-black p-6 sm:p-8 shadow-[4px_4px_0px_0px_#1A1A19] mb-12">
-              <p className="font-heading font-bold text-xl uppercase tracking-wide mb-2">
-                {project.resultMetric}
-              </p>
-              <p className="text-[#4a4a48]">
-                Een website die niet alleen technisch uitblinkt, maar vooral zorgt voor een betrouwbare online uitstraling en meer aanvragen.
-              </p>
+              <p className="font-heading font-bold text-xl uppercase tracking-wide mb-2">{project.resultMetric}</p>
+              <p className="text-[#4a4a48]">Een website die niet alleen technisch uitblinkt, maar vooral zorgt voor een betrouwbare online uitstraling en meer aanvragen.</p>
             </div>
 
             {/* Testimonial Highlight */}
@@ -189,15 +219,19 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
               <div className="relative bg-black text-white p-8 sm:p-12 border-2 border-black mb-16 shadow-[6px_6px_0px_0px_#FF4500]">
                 <Quote className="absolute top-6 left-6 text-[#FF4500] opacity-20" size={64} />
                 <blockquote className="relative z-10">
-                  <p className="text-xl sm:text-2xl font-medium leading-relaxed mb-6">
-                    &ldquo;{project.testimonial.quote}&rdquo;
-                  </p>
+                  <p className="text-xl sm:text-2xl font-medium leading-relaxed mb-6">&ldquo;{project.testimonial.quote}&rdquo;</p>
                   <footer className="font-mono text-sm text-[#FF4500] font-bold uppercase tracking-widest">
                     - {project.testimonial.author}, {project.testimonial.role}
                   </footer>
                 </blockquote>
               </div>
             )}
+
+            {/* ✅ NIEUW: FAQ-sectie */}
+            <div className="mb-16">
+              <h2 className="font-heading font-black uppercase text-3xl mb-6">Veelgestelde vragen</h2>
+              <FAQ items={faqs} schemaId={`case-${project.slug}`} />
+            </div>
 
             {/* Interne Link / CTA naar contact met focus op regio */}
             <div className="text-center">
@@ -213,8 +247,13 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
               >
                 Vraag een vrijblijvend adviesgesprek aan <ArrowRight size={18} className="ml-2" />
               </Link>
+              <p className="mt-6 text-sm text-[#525252]">
+                Bekijk ook{" "}
+                <Link href="/pakketten" className="text-[#FF4500] underline decoration-2">pakketten</Link>
+                {" · "}
+                <Link href="/website-laten-maken-rotterdam" className="text-[#FF4500] underline decoration-2">website laten maken Rotterdam</Link>
+              </p>
             </div>
-
           </div>
         </section>
       </main>
