@@ -11,16 +11,22 @@
 ## Belangrijkste pagina's
 - [Homepage](https://www.webboostpartner.nl/): overzicht diensten en werkwijze
 - [Website laten maken Rotterdam](https://www.webboostpartner.nl/website-laten-maken-rotterdam): vanaf €1.950, 3–6 weken doorlooptijd
+- [Pakketten & prijzen](https://www.webboostpartner.nl/pakketten): vier pakketten — Starter €1.950, Professional €3.495, Premium €5.495, Enterprise vanaf €7.995 (excl. btw)
 - [WordPress naar Next.js migratie](https://www.webboostpartner.nl/wordpress-naar-nextjs): vanaf €1.495, 2–4 weken, behoud van SEO-posities
 - [Next.js vs WordPress](https://www.webboostpartner.nl/nextjs-vs-wordpress): eerlijke vergelijking
+- [SEO Rotterdam](https://www.webboostpartner.nl/seo-rotterdam): technische en lokale SEO, gratis analyse, standaard inbegrepen bij elk pakket
+- [Portfolio](https://www.webboostpartner.nl/portfolio): bewezen projecten en meetbare resultaten
 - [Over mij](https://www.webboostpartner.nl/over-mij): over Ron en de werkwijze
 
 ## Veelgestelde vragen (kort)
-- Wat kost een website? Vanaf €1.950 excl. btw.
+- Wat kost een website? Vanaf €1.950 excl. btw (Starter). Professional €3.495, Premium €5.495, Enterprise vanaf €7.995.
 - Wat kost een migratie? Vanaf €1.495 excl. btw.
-- Krijg ik de code in eigendom? Ja, standalone Git-repository.
+- Krijg ik de code in eigendom? Ja, standalone Git-repository — geen platform lock-in.
 - Werkgebied? Rotterdam en omgeving, landelijk op aanvraag.
-- Techniek? Next.js, React, TypeScript, headless CMS.
+- Techniek? Next.js, React, TypeScript, headless CMS (Sanity of headless WordPress).
+- Wat kost SEO? Gratis analyse; doorlopend traject op aanvraag. SEO zit standaard in elk pakket.
+- Hoe lang duurt een project? Website: 3–6 weken. Migratie: 2–4 weken.
+- Betaling? Twee termijnen: 50% bij start, 50% bij livegang.
 
 ## Contact
 - Website: https://www.webboostpartner.nl
