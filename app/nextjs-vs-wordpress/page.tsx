@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import FAQ from "@/components/FAQ"; // ✅ NIEUW
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,18 +9,10 @@ export const metadata: Metadata = {
   description:
     "Eerlijke vergelijking: WordPress of een moderne website? Snelheid, vindbaarheid, onderhoud en kosten. Ontdek wat het beste past bij de groei van jouw bedrijf.",
   alternates: { canonical: "/nextjs-vs-wordpress" },
-  keywords: [
-    "Next.js vs WordPress",
-    "WordPress alternatief",
-    "WordPress of Next.js",
-    "moderne website vs WordPress",
-    "trage WordPress",
-    "website snelheid",
-  ],
+  keywords: ["Next.js vs WordPress", "WordPress alternatief", "WordPress of Next.js", "moderne website vs WordPress", "trage WordPress", "website snelheid"],
   openGraph: {
     title: "Next.js vs WordPress | Welke past bij jouw bedrijf?",
-    description:
-      "Objectieve vergelijking op snelheid, SEO, onderhoud en veiligheid. Zonder jargon gericht op resultaat voor jouw onderneming.",
+    description: "Objectieve vergelijking op snelheid, SEO, onderhoud en veiligheid. Zonder jargon gericht op resultaat voor jouw onderneming.",
     url: "https://www.webboostpartner.nl/nextjs-vs-wordpress",
     siteName: "WebBoost Partner",
     locale: "nl_NL",
@@ -28,29 +21,67 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Next.js vs WordPress | Welke past bij jouw bedrijf?",
-    description:
-      "Snelheid, vindbaarheid, onderhoud en kosten, helder vergeleken. Zonder technisch jargon.",
+    description: "Snelheid, vindbaarheid, onderhoud en kosten, helder vergeleken. Zonder technisch jargon.",
   },
 };
+
+// ✅ NIEUW: FAQ
+interface FAQItem { q: string; a: string }
+
+const faqs: FAQItem[] = [
+  {
+    q: "Is Next.js beter voor SEO dan WordPress?",
+    a: "Next.js biedt standaard technische SEO: schone semantische HTML, snelle Core Web Vitals en volledige controle over metadata. WordPress kan ook goed scoren, maar is afhankelijk van plugins (Yoast, RankMath) en hosting. Voor wie snelheid en vindbaarheid belangrijk vindt, heeft Next.js de betere uitgangspositie.",
+  },
+  {
+    q: "Kan ik zelf content aanpassen in een Next.js-website?",
+    a: "Ja. We koppelen een gebruiksvriendelijk CMS (bijv. Sanity of headless WordPress). U past teksten, afbeeldingen en blogs zelf aan — zonder plugin-updates of technische risico's.",
+  },
+  {
+    q: "Wat kost een overstap van WordPress naar Next.js?",
+    a: "Een migratie start bij WebBoost Partner vanaf €1.495 excl. btw. De prijs hangt af van het aantal pagina's en de complexiteit. U krijgt altijd vooraf een vaste offerte.",
+  },
+  {
+    q: "Verlies ik mijn Google-posities bij een overstap?",
+    a: "Nee, mits de migratie zorgvuldig wordt uitgevoerd. Bestaande URL's, metadata en interne links worden in kaart gebracht en waar nodig voorzien van 301-redirects. In de praktijk stijgen websites vaak in ranking door de betere laadsnelheid.",
+  },
+  {
+    q: "Wanneer is WordPress de betere keuze?",
+    a: "WordPress is een goede keuze als je snel en voordelig online wilt, specifieke plugins nodig hebt die je al kent, of alles zelf wilt beheren in een vertrouwde admin-omgeving. Voor eenvoudige sites zonder groeiproblemen is WordPress prima.",
+  },
+];
 
 export default function NextjsVsWordpressPage() {
   return (
     <>
-      {/* Schema */}
+      {/* ✅ NIEUW: JSON-LD met WebPage + FAQPage */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebPage",
-            "@id": "https://www.webboostpartner.nl/nextjs-vs-wordpress#webpage",
-            url: "https://www.webboostpartner.nl/nextjs-vs-wordpress",
-            name: "Next.js vs WordPress | Welke past bij jouw bedrijf?",
-            description:
-              "Eerlijke vergelijking tussen WordPress en een moderne website op snelheid, SEO, onderhoud en veiligheid.",
-            isPartOf: { "@id": "https://www.webboostpartner.nl/#website" },
-            about: { "@id": "https://www.webboostpartner.nl/#organization" },
-            inLanguage: "nl-NL",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": "https://www.webboostpartner.nl/nextjs-vs-wordpress#webpage",
+                url: "https://www.webboostpartner.nl/nextjs-vs-wordpress",
+                name: "Next.js vs WordPress | Welke past bij jouw bedrijf?",
+                description: "Eerlijke vergelijking tussen WordPress en een moderne website op snelheid, SEO, onderhoud en veiligheid.",
+                isPartOf: { "@id": "https://www.webboostpartner.nl/#website" },
+                about: { "@id": "https://www.webboostpartner.nl/#organization" },
+                author: { "@id": "https://www.webboostpartner.nl/over-mij#person" },
+                inLanguage: "nl-NL",
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://www.webboostpartner.nl/nextjs-vs-wordpress#faq",
+                mainEntity: faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              },
+            ],
           }),
         }}
       />
@@ -58,20 +89,24 @@ export default function NextjsVsWordpressPage() {
       {/* HERO */}
       <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
-            // Next.js vs WordPress
-          </p>
-
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Next.js vs WordPress</p>
           <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-4xl sm:text-5xl lg:text-6xl max-w-none">
             Next.js <span className="text-[#FF4500]">vs</span> WordPress
           </h1>
-
           <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed font-semibold">
             Twee bewezen manieren om een website te bouwen, elk met eigen sterke
             punten. Geen technisch verhaal, wel een heldere vergelijking: wat levert
             het op voor <strong>snelheid, vindbaarheid, onderhoud en groei</strong> van
             jouw bedrijf?
           </p>
+
+          {/* ✅ NIEUW: TL;DR */}
+          <div className="mt-6 border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#1A1A19] max-w-3xl">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">Kort antwoord</p>
+            <p className="text-sm sm:text-base leading-relaxed text-[#1a1a1a]">
+              <strong>Next.js</strong> is sneller, veiliger en onderhoudsarmer dan WordPress. <strong>WordPress</strong> is flexibeler en goedkoper om te starten. Voor ZZP en MKB in Rotterdam die snelheid en vindbaarheid belangrijk vinden, is Next.js meestal de betere keuze. Voor eenvoudige sites zonder groeiproblemen blijft WordPress prima.
+            </p>
+          </div>
 
           <div className="mt-9">
             <Link
@@ -88,30 +123,17 @@ export default function NextjsVsWordpressPage() {
       <section className="bg-white py-16 sm:py-24 border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid md:grid-cols-2 gap-6">
           <div className="border-2 border-black p-8 bg-[#FAFAFA] shadow-brutal-sm">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#525252] mb-2">
-              WordPress
-            </p>
-            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl mb-4">
-              De bekende
-              <br />
-              standaard
-            </h2>
+            <p className="font-mono text-xs uppercase tracking-widest text-[#525252] mb-2">WordPress</p>
+            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl mb-4">De bekende<br />standaard</h2>
             <p className="text-[#1a1a1a] leading-relaxed">
               WordPress drijft miljoenen websites aan. Het is laagdrempelig, flexibel
               en vertrouwd. Ideaal om snel online te gaan en zelf content te beheren
               in een omgeving die je al kent.
             </p>
           </div>
-
           <div className="border-2 border-black p-8 bg-black text-white shadow-brutal">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#FF4500] mb-2">
-              Moderne website (Next.js)
-            </p>
-            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl mb-4">
-              De snelle
-              <br />
-              upgrade
-            </h2>
+            <p className="font-mono text-xs uppercase tracking-widest text-[#FF4500] mb-2">Moderne website (Next.js)</p>
+            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl mb-4">De snelle<br />upgrade</h2>
             <p className="leading-relaxed text-gray-200">
               Een moderne website laadt sneller, heeft minder onderhoud nodig en scoort
               sterker in Google. Dezelfde techniek die grote merken gebruiken vertaald
@@ -121,9 +143,74 @@ export default function NextjsVsWordpressPage() {
         </div>
       </section>
 
+      {/* ✅ NIEUW: VERGELIJKINGSTABEL */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8">
+          <h2 className="font-heading font-black uppercase text-3xl sm:text-4xl tracking-tight mb-6">
+            Next.js vs WordPress in één tabel
+          </h2>
+          <div className="overflow-x-auto border-2 border-black shadow-[4px_4px_0px_0px_#1A1A19]">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-black text-white">
+                  <th className="text-left p-3 font-heading uppercase tracking-wider">Criterium</th>
+                  <th className="text-left p-3 font-heading uppercase tracking-wider">WordPress</th>
+                  <th className="text-left p-3 font-heading uppercase tracking-wider">Next.js</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t-2 border-black">
+                  <td className="p-3 font-bold bg-[#FAFAFA]">Snelheid</td>
+                  <td className="p-3">Afhankelijk van hosting, thema en plugins</td>
+                  <td className="p-3">Standaard 95+ PageSpeed, &lt;1s laadtijd</td>
+                </tr>
+                <tr className="border-t-2 border-black">
+                  <td className="p-3 font-bold bg-[#FAFAFA]">SEO</td>
+                  <td className="p-3">Via plugins (Yoast/RankMath)</td>
+                  <td className="p-3">Technisch in de kern ingebouwd</td>
+                </tr>
+                <tr className="border-t-2 border-black">
+                  <td className="p-3 font-bold bg-[#FAFAFA]">Onderhoud</td>
+                  <td className="p-3">Doorlopende plugin-/thema-updates</td>
+                  <td className="p-3">Vrijwel onderhoudsvrij</td>
+                </tr>
+                <tr className="border-t-2 border-black">
+                  <td className="p-3 font-bold bg-[#FAFAFA]">Veiligheid</td>
+                  <td className="p-3">Populair doelwit; actief beveiligen nodig</td>
+                  <td className="p-3">Kleiner aanvalsoppervlak</td>
+                </tr>
+                <tr className="border-t-2 border-black">
+                  <td className="p-3 font-bold bg-[#FAFAFA]">Kosten start</td>
+                  <td className="p-3">Lager</td>
+                  <td className="p-3">Hogere initiële investering</td>
+                </tr>
+                <tr className="border-t-2 border-black">
+                  <td className="p-3 font-bold bg-[#FAFAFA]">Eigenaarschap</td>
+                  <td className="p-3">Afhankelijk van hosting/plugins</td>
+                  <td className="p-3">Volledige Git-repository, geen lock-in</td>
+                </tr>
+                <tr className="border-t-2 border-black">
+                  <td className="p-3 font-bold bg-[#FAFAFA]">Schaalbaarheid</td>
+                  <td className="p-3">Beperkt bij groei</td>
+                  <td className="p-3">Gebouwd voor groei</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* CONTENT */}
       <article className="bg-white py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
+          {/* ✅ NIEUW: auteur-signaal */}
+          <p className="text-sm font-mono uppercase tracking-wider text-[#525252] mb-6">
+            Geschreven door{" "}
+            <Link href="/over-mij" className="text-[#FF4500] underline decoration-2">
+              Ron — WebBoost Partner
+            </Link>
+          </p>
+
           <h2>Waar gaat het écht om?</h2>
           <p>
             Niet om de naam van de techniek, maar om wat jij merkt als ondernemer:
@@ -137,89 +224,53 @@ export default function NextjsVsWordpressPage() {
             zijn maar de uitgangspositie verschilt:
           </p>
           <ul>
-            <li>
-              <strong>WordPress</strong> — Snelheid hangt af van hosting, thema en
-              plugins. Een schone site kan prima presteren; met veel plugins wordt
-              het vaak zwaarder.
-            </li>
-            <li>
-              <strong>Moderne website</strong> — Snelheid zit standaard in de
-              bouw. Pagina’s laden meestal in minder dan een seconde op mobiel,
-              zonder extra “snelheidsplugins”.
-            </li>
+            <li><strong>WordPress</strong> — Snelheid hangt af van hosting, thema en plugins. Een schone site kan prima presteren; met veel plugins wordt het vaak zwaarder.</li>
+            <li><strong>Moderne website</strong> — Snelheid zit standaard in de bouw. Pagina&apos;s laden meestal in minder dan een seconde op mobiel, zonder extra &quot;snelheidsplugins&quot;.</li>
           </ul>
+          <p>
+            Lees hoe Google{" "}
+            <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer">
+              Core Web Vitals meet
+            </a>{" "}
+            en waarom dat uitmaakt voor je positie.
+          </p>
 
           <h2>Vindbaarheid in Google</h2>
           <p>Google beloont sites die snel en stabiel zijn, vooral op mobiel:</p>
           <ul>
-            <li>
-              <strong>WordPress</strong> — SEO doe je vaak via plugins (Yoast,
-              RankMath). Dat werkt goed, mits de basis niet te zwaar is.
-            </li>
-            <li>
-              <strong>Moderne website</strong> — Technische SEO zit in de kern:
-              schone code, sterke metadata, uitstekende PageSpeed-scores zonder
-              extra plugins.
-            </li>
+            <li><strong>WordPress</strong> — SEO doe je vaak via plugins (Yoast, RankMath). Dat werkt goed, mits de basis niet te zwaar is.</li>
+            <li><strong>Moderne website</strong> — Technische SEO zit in de kern: schone code, sterke metadata, uitstekende PageSpeed-scores zonder extra plugins.</li>
           </ul>
 
           <h2>Veiligheid</h2>
           <ul>
-            <li>
-              <strong>WordPress</strong> — Populair, dus vaker doelwit. Met goede
-              hosting, updates en beveiliging is het prima te beveiligen dat
-              vraagt wel doorlopende aandacht.
-            </li>
-            <li>
-              <strong>Moderne website</strong> — Geen openbare inlog aan de
-              voorkant en minder “bewegende onderdelen”. Minder aanvalsoppervlak,
-              minder updates.
-            </li>
+            <li><strong>WordPress</strong> — Populair, dus vaker doelwit. Met goede hosting, updates en beveiliging is het prima te beveiligen, maar dat vraagt wel doorlopende aandacht.</li>
+            <li><strong>Moderne website</strong> — Geen openbare inlog aan de voorkant en minder &quot;bewegende onderdelen&quot;. Minder aanvalsoppervlak, minder updates.</li>
           </ul>
 
           <h2>Onderhoud en tijd</h2>
           <ul>
-            <li>
-              <strong>WordPress</strong> — Regelmatige updates van plugins, thema
-              en kern. Nodig voor veiligheid, maar kost tijd (of een
-              onderhoudscontract).
-            </li>
-            <li>
-              <strong>Moderne website</strong> — Technisch vrijwel
-              onderhoudsvrij. Eenmaal live blijft de site stabiel; jij richt je op
-              content en klanten.
-            </li>
+            <li><strong>WordPress</strong> — Regelmatige updates van plugins, thema en kern. Nodig voor veiligheid, maar kost tijd (of een onderhoudscontract).</li>
+            <li><strong>Moderne website</strong> — Technisch vrijwel onderhoudsvrij. Eenmaal live blijft de site stabiel; jij richt je op content en klanten.</li>
           </ul>
 
           <h2>Wanneer past WordPress beter?</h2>
           <ul>
             <li>Je wilt snel en voordelig online met een beproefd systeem.</li>
             <li>Je hebt specifieke plugins nodig die je al kent.</li>
-            <li>
-              Je wilt alles zelf in een vertrouwde admin-omgeving kunnen
-              aanpassen.
-            </li>
+            <li>Je wilt alles zelf in een vertrouwde admin-omgeving kunnen aanpassen.</li>
           </ul>
 
           <h2>Wanneer past een moderne website beter?</h2>
           <ul>
-            <li>
-              Snelheid, mobiele ervaring en Google-posities zijn cruciaal voor
-              nieuwe klanten.
-            </li>
-            <li>
-              Je wilt een uniek design zonder de beperkingen van standaard
-              templates.
-            </li>
-            <li>
-              Je zoekt minder onderhoud, meer stabiliteit en een site die meegroeit
-              met je bedrijf.
-            </li>
+            <li>Snelheid, mobiele ervaring en Google-posities zijn cruciaal voor nieuwe klanten.</li>
+            <li>Je wilt een uniek design zonder de beperkingen van standaard templates.</li>
+            <li>Je zoekt minder onderhoud, meer stabiliteit en een site die meegroeit met je bedrijf.</li>
           </ul>
 
           <p>
-            Voor veel ZZP’ers en MKB-bedrijven in Rotterdam is een moderne website
-            een slimme volgende stap vooral als de huidige WordPress-site traag
+            Voor veel ZZP&apos;ers en MKB-bedrijven in Rotterdam is een moderne website
+            een slimme volgende stap, vooral als de huidige WordPress-site traag
             voelt of te veel onderhoud vraagt. Het belangrijkste blijft: kies het
             fundament dat past bij jouw doelen nu.
           </p>
@@ -227,12 +278,17 @@ export default function NextjsVsWordpressPage() {
           <h2>Volgende stap</h2>
           <p>
             Twijfel je tussen blijven op WordPress of overstappen? Bekijk{" "}
-            <Link href="/wordpress-naar-nextjs">
-              WordPress naar Next.js migratie
-            </Link>{" "}
+            <Link href="/wordpress-naar-nextjs">WordPress naar Next.js migratie</Link>{" "}
             of vraag een gratis scan aan. Ik bekijk je huidige site en geef eerlijk
-            advies ook als WordPress voor jou de betere keuze is.
+            advies — ook als WordPress voor jou de betere keuze is.
           </p>
+
+          <h2>Veelgestelde vragen</h2>
+        </div>
+
+        {/* ✅ NIEUW: FAQ gerenderd */}
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 mt-6">
+          <FAQ items={faqs} schemaId="nextjs-vs-wordpress" />
         </div>
       </article>
 
