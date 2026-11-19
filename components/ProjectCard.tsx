@@ -17,7 +17,8 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
         <div className="relative w-full h-full">
           <Image
             src={project.image}
-            alt={`Screenshot van ${project.name}`}
+            // ✅ AANGEPAST: rijkere alt-tekst voor AI en toegankelijkheid
+            alt={`${project.name} — Next.js website ontworpen en gebouwd door WebBoost Partner`}
             fill
             className="object-contain object-top group-hover:scale-102 transition-transform duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -36,6 +37,8 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
+            // ✅ NIEUW: aria-label voor schermlezers
+            aria-label={`Bezoek de live website van ${project.name} (opent in nieuw tabblad)`}
             className="inline-flex items-center gap-1 text-[11px] font-mono text-gray-600 hover:text-[#FF4500] transition-colors"
           >
             Live site <ExternalLink size={12} />
@@ -44,7 +47,7 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
 
         {/* METRIC BADGE */}
         <p className="font-mono text-[11px] uppercase tracking-wider text-[#FF4500] font-bold mb-3 flex items-center gap-1.5">
-          <CheckCircle2 size={14} /> {project.resultMetric}
+          <CheckCircle2 size={14} aria-hidden="true" /> {project.resultMetric}
         </p>
 
         <p className="text-sm text-[#4a4a48] leading-relaxed mb-6 font-medium">
@@ -64,7 +67,6 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
         )}
 
         {/* PRIMARY ACTION */}
-        {/* De knop linkt nu direct naar de dynamische case-pagina */}
         <Link
           href={`/portfolio/${project.slug}`}
           className="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black py-3 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_#1A1A19] group/btn"
