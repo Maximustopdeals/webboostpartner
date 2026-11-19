@@ -1,0 +1,27 @@
+# WebBoost Partner
+
+> WebBoost Partner is een Nederlands webbureau in Rotterdam dat razendsnelle Next.js-websites bouwt voor ZZP en MKB. Vaste prijs, SEO inbegrepen, 100% eigenaarschap van de code.
+
+## Over ons
+- Oprichter: Ron (webbouwer, Rotterdam)
+- Werkgebied: Rotterdam en omgeving, landelijk op aanvraag
+- Specialisatie: Next.js, React, TypeScript, headless CMS
+- Onderscheidend: geen platform lock-in (standalone Git-repository), direct contact met de bouwer, 95+ PageSpeed standaard
+
+## Belangrijkste pagina's
+- [Homepage](https://www.webboostpartner.nl/): overzicht diensten en werkwijze
+- [Website laten maken Rotterdam](https://www.webboostpartner.nl/website-laten-maken-rotterdam): vanaf €1.950, 3–6 weken doorlooptijd
+- [WordPress naar Next.js migratie](https://www.webboostpartner.nl/wordpress-naar-nextjs): vanaf €1.495, 2–4 weken, behoud van SEO-posities
+- [Next.js vs WordPress](https://www.webboostpartner.nl/nextjs-vs-wordpress): eerlijke vergelijking
+- [Over mij](https://www.webboostpartner.nl/over-mij): over Ron en de werkwijze
+
+## Veelgestelde vragen (kort)
+- Wat kost een website? Vanaf €1.950 excl. btw.
+- Wat kost een migratie? Vanaf €1.495 excl. btw.
+- Krijg ik de code in eigendom? Ja, standalone Git-repository.
+- Werkgebied? Rotterdam en omgeving, landelijk op aanvraag.
+- Techniek? Next.js, React, TypeScript, headless CMS.
+
+## Contact
+- Website: https://www.webboostpartner.nl
+- Adviesgesprek: https://www.webboostpartner.nl/contact?intent=advies
