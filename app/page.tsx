@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ArrowRight, Check, ExternalLink, Monitor, Smartphone, Star } from "lucide-react";
 import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
-import FAQ from "@/components/FAQ"; // ✅ NIEUW
+import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
   title: "Webdesign Rotterdam | Website Laten Maken | 95+ PageSpeed | WebBoost Partner",
@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ NIEUW: FAQ voor homepage (entiteit + commerciële vragen)
 interface FAQItem { q: string; a: string }
 
 const faqs: FAQItem[] = [
@@ -42,7 +41,8 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Waarom Next.js en niet WordPress?",
-    a: "Next.js is sneller, veiliger en onderhoudsarmer dan WordPress. U heeft geen plugin-updates, geen openbare inlog en volledige controle over snelheid en SEO. Voor ZZP en MKB in Rotterdam die snelheid en vindbaarheid belangrijk vinden, is Next.js meistal de betere keuze. Lees de eerlijke vergelijking.",
+    // ✅ AANGEPAST: typo "meistal" → "meestal"
+    a: "Next.js is sneller, veiliger en onderhoudsarmer dan WordPress. U heeft geen plugin-updates, geen openbare inlog en volledige controle over snelheid en SEO. Voor ZZP en MKB in Rotterdam die snelheid en vindbaarheid belangrijk vinden, is Next.js meestal de betere keuze. Lees de eerlijke vergelijking.",
   },
   {
     q: "Hoe lang duurt het voordat mijn website klaar is?",
@@ -53,8 +53,6 @@ const faqs: FAQItem[] = [
 export default function HomePage() {
   return (
     <>
-      {/* ✅ NIEUW: Organization + WebSite + ProfessionalService JSON-LD */}
-      {/* Vervang de sameAs-URLs door je eigen LinkedIn-, KvK- en Google Business-profiel */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -86,7 +84,6 @@ export default function HomePage() {
                 sameAs: [
                   "https://www.linkedin.com/company/webboostpartner", // TODO: jouw LinkedIn
                   "https://www.kvk.nl/bedrijf/webboostpartner",        // TODO: jouw KvK
-                  // "https://github.com/...",                          // optioneel
                 ],
               },
               {
@@ -138,12 +135,10 @@ export default function HomePage() {
               die klanten oplevert.
             </h1>
 
-            {/* ✅ AANGEPAST: merknaam + Next.js expliciet in de paragraaf */}
             <p className="mt-6 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] font-medium leading-relaxed">
               WebBoost Partner bouwt bliksemsnelle Next.js-websites die jouw vakmanschap laten zien en bezoekers omzetten in echte aanvragen. Geen standaard templates, maar <Link href="/portfolio" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500] transition-colors">bewezen maatwerk</Link> — met 100% eigenaarschap van de code.
             </p>
 
-            {/* ✅ NIEUW: TL;DR / citeerbaar antwoordblok */}
             <div className="mt-6 border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#1A1A19]">
               <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">
                 Kort antwoord
@@ -175,7 +170,6 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* ✅ AANGEPAST: "100% eigenaarschap" linkt nu naar uitleg + extra interne link */}
             <ul className="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-8 text-xs font-mono uppercase tracking-wider text-black font-bold">
               <li className="flex items-center gap-2">
                 <Check size={16} className="text-[#FF4500] stroke-[3]" /> Vaste prijs vooraf
@@ -188,21 +182,37 @@ export default function HomePage() {
               </li>
             </ul>
 
-            {/* ✅ NIEUW: compacte interne links naar inhoudelijke pagina's */}
-            <p className="mt-6 text-sm text-[#525252]">
-              Meer weten?{" "}
-              <Link href="/website-laten-maken-rotterdam" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
-                Website laten maken Rotterdam
-              </Link>
-              {" · "}
-              <Link href="/wordpress-naar-nextjs" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
-                WordPress naar Next.js
-              </Link>
-              {" · "}
-              <Link href="/nextjs-vs-wordpress" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
-                Next.js vs WordPress
-              </Link>
-            </p>
+            {/* ✅ AANGEPAST: alle zes inhoudelijke pagina's, gegroepeerd */}
+            <div className="mt-6 space-y-2 text-sm text-[#525252]">
+              <p>
+                <strong className="font-bold text-black">Diensten:</strong>{" "}
+                <Link href="/website-laten-maken-rotterdam" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                  Website laten maken Rotterdam
+                </Link>
+                {" · "}
+                <Link href="/seo-rotterdam" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                  SEO Rotterdam
+                </Link>
+                {" · "}
+                <Link href="/pakketten" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                  Pakketten & prijzen
+                </Link>
+              </p>
+              <p>
+                <strong className="font-bold text-black">Meer weten:</strong>{" "}
+                <Link href="/wordpress-naar-nextjs" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                  WordPress naar Next.js
+                </Link>
+                {" · "}
+                <Link href="/nextjs-vs-wordpress" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                  Next.js vs WordPress
+                </Link>
+                {" · "}
+                <Link href="/portfolio" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                  Portfolio
+                </Link>
+              </p>
+            </div>
           </div>
 
           <div className="lg:col-span-5 relative mt-10 lg:mt-0">
@@ -261,7 +271,6 @@ export default function HomePage() {
 
       <USPGrid />
 
-      {/* ✅ NIEUW: FAQ-sectie op de homepage */}
       <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
         <div className="max-w-3xl mx-auto px-4 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
