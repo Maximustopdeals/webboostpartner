@@ -1,14 +1,14 @@
-import { MapPin, Sparkles } from "lucide-react";
+import { MapPin, Sparkles, Check } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import type { Metadata } from "next";
-import FAQ from "@/components/FAQ"; // ✅ NIEUW
+import FAQ from "@/components/FAQ";
 
 function NextjsLogoCard() {
   return (
-    <div className="bg-[#0A0A0A] border-2 border-black p-8 flex items-center justify-center relative z-10 min-h-[300px]">
+    <div className="bg-foreground rounded-t-sm p-8 flex items-center justify-center relative z-10 min-h-[300px]">
       <svg viewBox="0 0 180 180" className="w-48 h-48" xmlns="http://www.w3.org/2000/svg">
         <mask id="m" maskUnits="userSpaceOnUse">
           <circle cx="90" cy="90" r="90" fill="white" />
@@ -19,9 +19,9 @@ function NextjsLogoCard() {
           <path d="M146 60h-8v60h8V60z" fill="white" />
         </g>
       </svg>
-      <div className="absolute bottom-4 left-0 right-0 text-center">
-        <p className="font-mono text-xs uppercase tracking-widest text-white/40">Aangedreven door</p>
-        <p className="font-heading font-extrabold uppercase text-lg text-white tracking-tight">Next.js</p>
+      <div className="absolute bottom-6 left-0 right-0 text-center">
+        <p className="font-sans text-xs uppercase tracking-widest text-white/50 mb-1">Aangedreven door</p>
+        <p className="font-serif text-xl text-white">Next.js</p>
       </div>
     </div>
   );
@@ -48,7 +48,6 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ NIEUW: FAQ
 interface FAQItem { q: string; a: string }
 
 const faqs: FAQItem[] = [
@@ -73,8 +72,7 @@ const faqs: FAQItem[] = [
 export default function OverMijPage() {
   return (
     <>
-      {/* ✅ AANGEPAST: Person-schema uitgebreid met @id, sameAs, knowsAbout */}
-      {/* Vervang de sameAs-URLs door je eigen LinkedIn en GitHub */}
+      {/* Person Schema - Ongewijzigd */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -98,8 +96,7 @@ export default function OverMijPage() {
                   addressCountry: "NL",
                 },
                 sameAs: [
-                  "https://www.linkedin.com/in/ron-webboostpartner", // TODO: jouw LinkedIn
-                  // "https://github.com/...",                        // optioneel
+                  "https://www.linkedin.com/in/ron-webboostpartner",
                 ],
               },
               {
@@ -117,25 +114,25 @@ export default function OverMijPage() {
       />
 
       {/* HERO */}
-      <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-10 items-end">
+      <section className="bg-background pt-32 pb-24 lg:pt-40 lg:pb-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Over mij</p>
-            {/* ✅ AANGEPAST: merknaam in H1 */}
-            <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-4xl sm:text-5xl lg:text-6xl">
-              Ron — WebBoost Partner |{" "}
-              <span className="text-[#FF4500]">webbouwer in Rotterdam</span>
+            <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-6">
+              Over mij
+            </p>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-8">
+              Ron — WebBoost Partner | <span className="text-brand italic">webbouwer in Rotterdam</span>
             </h1>
 
-            {/* ✅ NIEUW: Kort profiel (citeerbaar) */}
-            <div className="mt-6 border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#1A1A19]">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">Kort profiel</p>
-              <p className="text-sm sm:text-base leading-relaxed text-[#1a1a1a]">
-                Ron is oprichter van <strong>WebBoost Partner</strong> (webboostpartner.nl), een Nederlands webbureau dat razendsnelle Next.js-websites bouwt voor ZZP en MKB in Rotterdam. Hij werkt bewust kleinschalig: u werkt direct met de bouwer, krijgt 100% eigenaarschap van de code en een vaste prijs vooraf.
+            {/* Kort profiel */}
+            <div className="bg-background-secondary p-6 sm:p-8 rounded-sm border border-border-subtle mb-10">
+              <p className="font-sans text-xs uppercase tracking-widest text-brand font-bold mb-3">Kort profiel</p>
+              <p className="text-base leading-relaxed text-foreground-muted font-sans">
+                Ron is oprichter van <strong className="text-foreground font-semibold">WebBoost Partner</strong> (webboostpartner.nl), een Nederlands webbureau dat razendsnelle Next.js-websites bouwt voor ZZP en MKB in Rotterdam. Hij werkt bewust kleinschalig: u werkt direct met de bouwer, krijgt 100% eigenaarschap van de code en een vaste prijs vooraf.
               </p>
             </div>
 
-            <div className="mt-6 space-y-4 text-lg sm:text-xl max-w-2xl leading-relaxed text-[#1a1a1a]">
+            <div className="space-y-6 text-lg sm:text-xl max-w-2xl leading-relaxed text-foreground-muted font-sans">
               <p>
                 Ik ben Ron, oprichter van WebBoost Partner. Ik bouw websites die
                 snel laden, beter scoren in Google en ondernemers helpen aan meer
@@ -149,83 +146,94 @@ export default function OverMijPage() {
               </p>
               <p>
                 Ik werk bewust kleinschalig. Geen accountmanagers, geen grote
-                teams <strong>u werkt rechtstreeks met mij</strong>. Duidelijk,
+                teams <strong className="text-foreground font-semibold">u werkt rechtstreeks met mij</strong>. Duidelijk,
                 eerlijk en persoonlijk.
               </p>
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative max-w-sm ml-auto">
-              <div className="bg-white border-2 border-black p-2 relative z-10">
+            <div className="relative max-w-sm mx-auto lg:ml-auto">
+              {/* Kaart container */}
+              <div className="bg-background border border-border-subtle rounded-sm shadow-soft relative z-10 overflow-hidden">
                 <NextjsLogoCard />
-                <div className="px-3 py-3 border-t-2 border-black mt-2">
-                  <p className="font-heading font-bold uppercase text-sm">Ron · Oprichter</p>
-                  <p className="font-mono text-xs text-[#525252] flex items-center gap-1 mt-1">
-                    <MapPin size={12} /> Rotterdam, NL
+                <div className="p-6 bg-background">
+                  <p className="font-serif text-xl text-foreground mb-1">Ron · Oprichter</p>
+                  <p className="font-sans text-sm text-foreground-muted flex items-center gap-1.5">
+                    <MapPin size={16} className="text-brand" /> Rotterdam, NL
                   </p>
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#FF4500] border-2 border-black -z-0" />
             </div>
           </div>
         </div>
       </section>
 
       {/* USP */}
-      <section className="bg-white py-20 border-y-2 border-black">
-        <div className="max-w-5xl mx-auto px-4 sm:px-8 grid md:grid-cols-3 gap-10">
+      <section className="bg-background-secondary py-24 sm:py-32 border-y border-border-subtle">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-3 gap-8">
           {[
             { title: "95+ PageSpeed", desc: "Websites die sneller laden dan 95% van alle sites — ook op mobiel." },
             { title: "SEO vanaf de basis", desc: "Technische SEO en lokale vindbaarheid standaard meegenomen." },
             { title: "Direct contact", desc: "U sparrt met mij, niet met een tussenpersoon of groot team." },
           ].map((item, i) => (
-            <div key={i} className="border-2 border-black bg-[#FAFAFA] p-6 shadow-brutal">
-              <Sparkles className="text-[#FF4500] mb-3" size={22} />
-              <h3 className="font-heading font-black uppercase text-xl mb-2">{item.title}</h3>
-              <p className="text-[#525252]">{item.desc}</p>
+            <div key={i} className="bg-background border border-border-subtle p-8 rounded-sm shadow-soft">
+              <Sparkles className="text-brand mb-5" size={24} />
+              <h3 className="font-serif text-2xl text-foreground mb-3">{item.title}</h3>
+              <p className="text-foreground-muted font-sans leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* STORY */}
-      <article className="bg-white py-16 sm:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
-          <h2>Waarom ik WebBoost Partner ben gestart</h2>
-          <p>
+      {/* STORY / ARTIKEL */}
+      <article className="bg-background py-24 sm:py-32">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-4 mb-6">Waarom ik WebBoost Partner ben gestart</h2>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             Jarenlang bouwde ik WordPress-websites. Dat werkt prima tot
             ondernemers tegen dezelfde problemen aanlopen: trage laadtijden,
             plugins die vastlopen, en SEO die stagneert. Een website hoort geen
             bron van stress te zijn, maar een tool die klanten oplevert.
           </p>
-          <p>
+          <p className="text-foreground-muted leading-relaxed mb-10 text-lg">
             Daarom bouw ik nu op een moderne, schone basis. Snel, veilig en
             onderhoudsarm. Voor u betekent dat: een site die professioneel oogt,
             prettig werkt voor bezoekers en beter presteert in Google.
           </p>
 
-          <h2>Hoe we samenwerken</h2>
-          <ul>
-            <li><strong>1. Kennismaking</strong> — We bespreken uw bedrijf, doelgroep en doelen. U krijgt een helder voorstel met vaste prijs.</li>
-            <li><strong>2. Design</strong> — Een uniek ontwerp dat past bij uw merk en is ingericht op conversie. Geen templates.</li>
-            <li><strong>3. Bouw</strong> — De website wordt strak opgebouwd, met snelheid en vindbaarheid als uitgangspunt.</li>
-            <li><strong>4. Live &amp; nazorg</strong> — Na controle zetten we de site live. Ook daarna kunt u bij mij terecht.</li>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Hoe we samenwerken</h2>
+          <ul className="space-y-6 mb-12 text-foreground-muted text-lg font-sans">
+            <li className="flex items-start gap-4">
+              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-brand/10 text-brand font-bold text-sm">1</span>
+              <span><strong className="text-foreground font-semibold">Kennismaking</strong> — We bespreken uw bedrijf, doelgroep en doelen. U krijgt een helder voorstel met vaste prijs.</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-brand/10 text-brand font-bold text-sm">2</span>
+              <span><strong className="text-foreground font-semibold">Design</strong> — Een uniek ontwerp dat past bij uw merk en is ingericht op conversie. Geen templates.</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-brand/10 text-brand font-bold text-sm">3</span>
+              <span><strong className="text-foreground font-semibold">Bouw</strong> — De website wordt strak opgebouwd, met snelheid en vindbaarheid als uitgangspunt.</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-brand/10 text-brand font-bold text-sm">4</span>
+              <span><strong className="text-foreground font-semibold">Live &amp; nazorg</strong> — Na controle zetten we de site live. Ook daarna kunt u bij mij terecht.</span>
+            </li>
           </ul>
 
-          <h2>Werkgebied</h2>
-          <p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Werkgebied</h2>
+          <p className="text-foreground-muted leading-relaxed mb-8 text-lg">
             Ik werk landelijk, maar het zwaartepunt ligt in Rotterdam en
             omgeving. Lokaal schakelen werkt het prettigst: ik begrijp uw markt
             en concurrentie. Kennismaken kan op locatie of online.
           </p>
-        </div>
 
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 mt-10">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="flex flex-wrap gap-3">
             {["Rotterdam", "Capelle aan den IJssel", "Krimpen aan den IJssel", "Ridderkerk", "Barendrecht", "Schiedam"].map((c, index) => (
-              <div key={index} className="border-2 border-black bg-[#FAFAFA] p-4 text-center hover:bg-[#FF4500] hover:text-white transition-colors">
-                <p className="font-heading font-bold uppercase text-sm tracking-tight">{c}</p>
+              <div key={index} className="bg-background-secondary border border-border-subtle px-5 py-2.5 rounded-sm text-sm font-medium text-foreground hover:border-brand transition-colors cursor-default">
+                {c}
               </div>
             ))}
           </div>
@@ -233,18 +241,18 @@ export default function OverMijPage() {
       </article>
 
       {/* PORTFOLIO */}
-      <section className="bg-[#FAFAFA] border-y-2 border-black py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <section className="bg-background-secondary border-y border-border-subtle py-24 sm:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">// Recent werk</p>
-              <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] text-black">
-                Projecten die <span className="text-[#FF4500]">presteren</span>
+              <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-4">Recent werk</p>
+              <h2 className="font-serif text-4xl sm:text-5xl text-foreground leading-[1.1] tracking-tight">
+                Projecten die <span className="text-brand italic">presteren</span>
               </h2>
             </div>
             <Link
               href="/portfolio"
-              className="inline-flex items-center justify-center bg-white text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-6 py-3 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_#1A1A19] whitespace-nowrap"
+              className="inline-flex items-center justify-center bg-background text-foreground font-sans font-medium text-sm border border-border-subtle px-6 py-3 rounded-sm hover:bg-border-subtle transition-all duration-300 whitespace-nowrap shadow-sm"
             >
               Bekijk alle projecten
             </Link>
@@ -258,17 +266,18 @@ export default function OverMijPage() {
         </div>
       </section>
 
-      {/* ✅ NIEUW: FAQ-sectie */}
-      <section className="bg-white py-20 sm:py-28">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">// Veelgestelde vragen</p>
-          <h2 className="font-heading font-black uppercase text-3xl sm:text-4xl tracking-tight leading-[0.95] mb-8">
-            Veelgestelde vragen
-          </h2>
+      {/* FAQ */}
+      <section className="bg-background py-24 sm:py-32">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl sm:text-5xl text-foreground mb-4">Veelgestelde vragen</h2>
+            <p className="text-foreground-muted font-sans">Alles wat je wilt weten over samenwerken met WebBoost Partner.</p>
+          </div>
           <FAQ items={faqs} schemaId="over-mij" />
         </div>
       </section>
 
+      {/* CTA Sectie */}
       <CTASection
         title="Laten we kennismaken"
         subtitle="Vrijblijvend sparren op locatie of online? Vertel waar u staat — ik luister en geef eerlijk advies."
