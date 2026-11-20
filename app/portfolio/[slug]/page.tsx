@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Quote } from "lucide-react";
 import { projects } from "@/data/projects";
-import FAQ from "@/components/FAQ"; // ✅ NIEUW
+import FAQ from "@/components/FAQ";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -22,7 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${project.name} | Case Study | WebBoost Partner`,
     description: `Ontdek hoe ik ${project.name} heb geholpen met professioneel webdesign Rotterdam en een website die resultaat oplevert. ${project.tagline}`,
     alternates: { canonical: `/portfolio/${project.slug}` },
-    // ✅ NIEUW
     openGraph: {
       title: `${project.name} | Case Study | WebBoost Partner`,
       description: `${project.tagline} — ${project.resultMetric}`,
@@ -49,7 +48,6 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
-  // ✅ NIEUW: projectspecifieke FAQ
   const faqs = [
     {
       q: `Wat was het resultaat van het project voor ${project.name}?`,
@@ -65,7 +63,6 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
     },
   ];
 
-  // ✅ AANGEPAST: BreadcrumbList + author + FAQPage toegevoegd
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -110,47 +107,47 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <main className="bg-white min-h-screen">
+      <main className="bg-background min-h-screen">
         {/* Breadcrumb & Terugknop */}
-        <div className="border-b-2 border-black bg-[#FAFAFA] py-4">
-          <div className="max-w-5xl mx-auto px-4 sm:px-8">
+        <div className="pt-32 pb-8">
+          <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#525252] hover:text-[#FF4500] transition-colors font-bold"
+              className="inline-flex items-center gap-2 font-sans text-sm text-foreground-muted hover:text-brand transition-colors font-medium"
             >
-              <ArrowLeft size={14} /> Terug naar overzicht
+              <ArrowLeft size={16} /> Terug naar overzicht
             </Link>
           </div>
         </div>
 
         {/* Hero Sectie */}
-        <section className="bg-white py-16 sm:py-24 border-b-2 border-black">
-          <div className="max-w-5xl mx-auto px-4 sm:px-8">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Case Study</p>
-            <h1 className="font-heading font-black uppercase text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] text-black mb-6">
+        <section className="pb-16 sm:pb-24">
+          <div className="max-w-5xl mx-auto px-6 lg:px-8">
+            <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-6">Case Study</p>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-8">
               {project.name}
             </h1>
-            <p className="text-xl text-[#4a4a48] leading-relaxed max-w-3xl font-medium mb-8">
+            <p className="text-xl text-foreground-muted leading-relaxed max-w-3xl font-sans mb-10">
               {project.tagline}
             </p>
 
-            {/* ✅ NIEUW: TL;DR */}
-            <div className="mb-8 border-2 border-black bg-[#FAFAFA] p-5 shadow-[4px_4px_0px_0px_#1A1A19] max-w-3xl">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">Kort antwoord</p>
-              <p className="text-sm sm:text-base leading-relaxed text-[#1a1a1a]">
-                WebBoost Partner bouwde voor <strong>{project.name}</strong> een Next.js-website met als resultaat <strong>{project.resultMetric}</strong>. {project.tagline}
+            {/* TL;DR */}
+            <div className="mb-10 bg-background-secondary p-6 sm:p-8 rounded-sm border border-border-subtle max-w-3xl">
+              <p className="font-sans text-xs uppercase tracking-widest text-brand font-bold mb-3">Kort antwoord</p>
+              <p className="text-base leading-relaxed text-foreground-muted font-sans">
+                WebBoost Partner bouwde voor <strong className="text-foreground font-semibold">{project.name}</strong> een Next.js-website met als resultaat <strong className="text-foreground font-semibold">{project.resultMetric}</strong>. {project.tagline}
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <span className="inline-flex items-center gap-2 bg-[#FAFAFA] border-2 border-black px-4 py-2 font-mono text-sm font-bold text-black shadow-[2px_2px_0px_0px_#1A1A19]">
-                <CheckCircle2 size={16} className="text-[#FF4500]" /> {project.resultMetric}
+              <span className="inline-flex items-center gap-2 bg-background-secondary border border-border-subtle px-5 py-3 rounded-sm font-sans text-sm font-medium text-foreground">
+                <CheckCircle2 size={18} className="text-brand" /> {project.resultMetric}
               </span>
               <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 font-heading font-bold uppercase text-sm tracking-wider border-2 border-black hover:bg-[#FF4500] transition-colors"
+                className="inline-flex items-center gap-2 bg-foreground text-white px-5 py-3 rounded-sm font-sans text-sm font-medium hover:bg-brand transition-colors"
               >
                 Bezoek live website <ExternalLink size={16} />
               </a>
@@ -159,9 +156,9 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
         </section>
 
         {/* Grote Afbeelding */}
-        <section className="border-b-2 border-black bg-[#F5F5F3] p-4 sm:p-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative w-full aspect-[16/9] border-2 border-black bg-white shadow-[6px_6px_0px_0px_#1A1A19] overflow-hidden">
+        <section className="bg-background-secondary py-12 sm:py-20 border-y border-border-subtle">
+          <div className="max-w-5xl mx-auto px-6 lg:px-8">
+            <div className="relative w-full aspect-[16/9] border border-border-subtle bg-background rounded-sm shadow-soft overflow-hidden">
               <Image
                 src={project.image}
                 alt={`Ontwerp en ontwikkeling van de website voor ${project.name}`}
@@ -174,84 +171,84 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
         </section>
 
         {/* Content & Resultaten Sectie */}
-        <section className="py-16 sm:py-24">
-          <div className="max-w-3xl mx-auto px-4 sm:px-8">
-            {/* ✅ NIEUW: auteur-signaal */}
-            <p className="text-sm font-mono uppercase tracking-wider text-[#525252] mb-6">
+        <section className="py-24 sm:py-32">
+          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+            
+            <p className="text-sm font-sans text-foreground-muted mb-10">
               Geschreven door{" "}
-              <Link href="/over-mij" className="text-[#FF4500] underline decoration-2">
+              <Link href="/over-mij" className="text-brand font-medium underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">
                 Ron — WebBoost Partner
               </Link>
             </p>
 
-            <h2 className="font-heading font-black uppercase text-3xl mb-6">De <span className="text-[#FF4500]">Uitdaging</span></h2>
-            <p className="text-lg text-[#4a4a48] leading-relaxed mb-12">
+            <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">De <span className="text-brand italic">Uitdaging</span></h2>
+            <p className="text-lg text-foreground-muted leading-relaxed mb-12">
               Elke ondernemer verdient een website die meegroeit met de ambities. Voor {project.name} was het tijd voor een digitale stap vooruit. De focus lag op het creëren van een uiterst betrouwbare en gebruiksvriendelijke omgeving, die direct vertrouwen wekt bij de bezoeker.
             </p>
 
-            <h2 className="font-heading font-black uppercase text-3xl mb-6">Mijn <span className="text-[#FF4500]">Aanpak</span></h2>
-            <p className="text-lg text-[#4a4a48] leading-relaxed mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Mijn <span className="text-brand italic">Aanpak</span></h2>
+            <p className="text-lg text-foreground-muted leading-relaxed mb-8">
               Ik heb gekozen voor een moderne, bliksemsnelle technische basis zonder onnodige ballast. Dit betekent concreet:
             </p>
             <ul className="space-y-4 mb-12">
-              <li className="flex items-start gap-3 text-lg text-[#4a4a48]">
-                <CheckCircle2 className="text-[#FF4500] shrink-0 mt-1" size={20} />
-                <span><strong>Maatwerk design:</strong> Een unieke uitstraling die perfect aansluit bij de identiteit van het bedrijf.</span>
+              <li className="flex items-start gap-4 text-lg text-foreground-muted">
+                <CheckCircle2 className="text-brand shrink-0 mt-1" size={22} />
+                <span><strong className="text-foreground font-semibold">Maatwerk design:</strong> Een unieke uitstraling die perfect aansluit bij de identiteit van het bedrijf.</span>
               </li>
-              <li className="flex items-start gap-3 text-lg text-[#4a4a48]">
-                <CheckCircle2 className="text-[#FF4500] shrink-0 mt-1" size={20} />
-                <span><strong>Optimale gebruikservaring:</strong> Een website die razendsnel laadt op zowel mobiel als desktop.</span>
+              <li className="flex items-start gap-4 text-lg text-foreground-muted">
+                <CheckCircle2 className="text-brand shrink-0 mt-1" size={22} />
+                <span><strong className="text-foreground font-semibold">Optimale gebruikservaring:</strong> Een website die razendsnel laadt op zowel mobiel als desktop.</span>
               </li>
-              <li className="flex items-start gap-3 text-lg text-[#4a4a48]">
-                <CheckCircle2 className="text-[#FF4500] shrink-0 mt-1" size={20} />
-                <span><strong>Vindbaarheid:</strong> Een sterke structuur zodat potentiële klanten de website direct weten te vinden in Google.</span>
+              <li className="flex items-start gap-4 text-lg text-foreground-muted">
+                <CheckCircle2 className="text-brand shrink-0 mt-1" size={22} />
+                <span><strong className="text-foreground font-semibold">Vindbaarheid:</strong> Een sterke structuur zodat potentiële klanten de website direct weten te vinden in Google.</span>
               </li>
             </ul>
 
-            <h2 className="font-heading font-black uppercase text-3xl mb-6">Het <span className="text-[#FF4500]">Resultaat</span></h2>
-            <div className="bg-[#FAFAFA] border-2 border-black p-6 sm:p-8 shadow-[4px_4px_0px_0px_#1A1A19] mb-12">
-              <p className="font-heading font-bold text-xl uppercase tracking-wide mb-2">{project.resultMetric}</p>
-              <p className="text-[#4a4a48]">Een website die niet alleen technisch uitblinkt, maar vooral zorgt voor een betrouwbare online uitstraling en meer aanvragen.</p>
+            <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Het <span className="text-brand italic">Resultaat</span></h2>
+            <div className="bg-background-secondary border-l-4 border-brand p-6 sm:p-8 rounded-r-sm mb-12">
+              <p className="font-serif text-xl text-foreground mb-3">{project.resultMetric}</p>
+              <p className="text-foreground-muted font-sans leading-relaxed">Een website die niet alleen technisch uitblinkt, maar vooral zorgt voor een betrouwbare online uitstraling en meer aanvragen.</p>
             </div>
 
             {/* Testimonial Highlight */}
             {project.testimonial && (
-              <div className="relative bg-black text-white p-8 sm:p-12 border-2 border-black mb-16 shadow-[6px_6px_0px_0px_#FF4500]">
-                <Quote className="absolute top-6 left-6 text-[#FF4500] opacity-20" size={64} />
+              <div className="relative bg-foreground text-white p-8 sm:p-12 rounded-sm mb-16 shadow-soft overflow-hidden">
+                <Quote className="absolute top-6 left-6 text-brand opacity-20" size={64} />
                 <blockquote className="relative z-10">
-                  <p className="text-xl sm:text-2xl font-medium leading-relaxed mb-6">&ldquo;{project.testimonial.quote}&rdquo;</p>
-                  <footer className="font-mono text-sm text-[#FF4500] font-bold uppercase tracking-widest">
-                    - {project.testimonial.author}, {project.testimonial.role}
+                  <p className="font-serif text-xl sm:text-2xl leading-relaxed mb-6">&ldquo;{project.testimonial.quote}&rdquo;</p>
+                  <footer className="font-sans text-sm text-brand font-medium tracking-wide">
+                    — {project.testimonial.author}, {project.testimonial.role}
                   </footer>
                 </blockquote>
               </div>
             )}
 
-            {/* ✅ NIEUW: FAQ-sectie */}
-            <div className="mb-16">
-              <h2 className="font-heading font-black uppercase text-3xl mb-6">Veelgestelde vragen</h2>
+            {/* FAQ-sectie */}
+            <div className="pt-12 border-t border-border-subtle mb-16">
+              <h2 className="font-serif text-3xl sm:text-4xl text-foreground mb-8">Veelgestelde vragen</h2>
               <FAQ items={faqs} schemaId={`case-${project.slug}`} />
             </div>
 
-            {/* Interne Link / CTA naar contact met focus op regio */}
-            <div className="text-center">
-              <h3 className="font-heading font-black uppercase text-2xl sm:text-3xl mb-4">
-                Ook op zoek naar een website die <span className="text-[#FF4500]">resultaat oplevert?</span>
+            {/* Interne Link / CTA */}
+            <div className="text-center pt-8">
+              <h3 className="font-serif text-3xl sm:text-4xl text-foreground mb-6">
+                Ook op zoek naar een website die <span className="text-brand italic">resultaat oplevert?</span>
               </h3>
-              <p className="text-lg text-[#525252] mb-8">
-                Of je nu een nieuwe website wilt voor je bedrijf, of op zoek bent naar professioneel <strong>webdesign Rotterdam</strong>: ik help je graag verder met een <strong>website laten maken in Rotterdam</strong> en omgeving.
+              <p className="text-lg text-foreground-muted mb-10 font-sans">
+                Of je nu een nieuwe website wilt voor je bedrijf, of op zoek bent naar professioneel <strong className="text-foreground font-semibold">webdesign Rotterdam</strong>: ik help je graag verder met een <strong className="text-foreground font-semibold">website laten maken in Rotterdam</strong> en omgeving.
               </p>
               <Link
                 href="/contact?intent=advies"
-                className="inline-flex items-center justify-center bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider px-8 py-4 border-2 border-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_#1A1A19]"
+                className="inline-flex items-center justify-center bg-brand text-white font-sans font-medium px-8 py-4 rounded-sm hover:bg-brand-hover transition-all duration-300"
               >
                 Vraag een vrijblijvend adviesgesprek aan <ArrowRight size={18} className="ml-2" />
               </Link>
-              <p className="mt-6 text-sm text-[#525252]">
+              <p className="mt-8 text-sm text-foreground-muted font-sans">
                 Bekijk ook{" "}
-                <Link href="/pakketten" className="text-[#FF4500] underline decoration-2">pakketten</Link>
+                <Link href="/pakketten" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">pakketten</Link>
                 {" · "}
-                <Link href="/website-laten-maken-rotterdam" className="text-[#FF4500] underline decoration-2">website laten maken Rotterdam</Link>
+                <Link href="/website-laten-maken-rotterdam" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">website laten maken Rotterdam</Link>
               </p>
             </div>
           </div>
