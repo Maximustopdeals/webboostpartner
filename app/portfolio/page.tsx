@@ -3,14 +3,13 @@ import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import FAQ from "@/components/FAQ"; // ✅ NIEUW
+import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
   title: "Portfolio | Webdesign Rotterdam & Website Laten Maken",
   description:
     "Ontdek mijn portfolio. Bewezen resultaten op het gebied van webdesign Rotterdam en website laten maken. Razendsnelle Next.js websites die écht nieuwe klanten opleveren.",
   alternates: { canonical: "/portfolio" },
-  // ✅ NIEUW
   openGraph: {
     title: "Portfolio | Webdesign Rotterdam & Website Laten Maken",
     description:
@@ -28,7 +27,6 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ NIEUW: FAQ
 interface FAQItem { q: string; a: string }
 
 const faqs: FAQItem[] = [
@@ -52,8 +50,8 @@ const faqs: FAQItem[] = [
 
 export default function PortfolioPage() {
   return (
-    <main className="bg-white min-h-screen">
-      {/* ✅ NIEUW: JSON-LD */}
+    <main className="bg-background min-h-screen">
+      {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -105,32 +103,32 @@ export default function PortfolioPage() {
       />
 
       {/* Header Sectie */}
-      <section className="bg-[#FAFAFA] border-b-2 border-black py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">// Bewezen Resultaten</p>
-          <h1 className="font-heading font-black uppercase text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-black mb-6">
-            Mijn <span className="text-[#FF4500]">Portfolio</span>.
+      <section className="bg-background pt-32 pb-24 lg:pt-40 lg:pb-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-6">Bewezen Resultaten</p>
+          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-8">
+            Mijn <span className="text-brand italic">Portfolio</span>.
           </h1>
-          <p className="text-lg sm:text-xl text-[#4a4a48] leading-relaxed max-w-2xl font-medium">
+          <p className="text-lg sm:text-xl text-foreground-muted leading-relaxed max-w-2xl font-sans mb-10">
             Geen loze beloftes, maar tastbaar bewijs. Ontdek een selectie van
-            succesvolle trajecten voor <strong>webdesign Rotterdam</strong> en omgeving.
-            Van <strong>website laten maken in Rotterdam</strong> tot complete moderniseringen:
+            succesvolle trajecten voor <strong className="text-foreground font-semibold">webdesign Rotterdam</strong> en omgeving.
+            Van <strong className="text-foreground font-semibold">website laten maken in Rotterdam</strong> tot complete moderniseringen:
             ik bouw sites die razendsnel laden en écht nieuwe klanten opleveren.
           </p>
 
-          {/* ✅ NIEUW: TL;DR */}
-          <div className="mt-6 border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#1A1A19] max-w-3xl">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">Kort antwoord</p>
-            <p className="text-sm sm:text-base leading-relaxed text-[#1a1a1a]">
-              WebBoost Partner bouwt Next.js-websites voor ZZP en MKB in Rotterdam. Recente projecten: <strong>{projects.slice(0, 3).map((p) => p.name).join(", ")}</strong>. Elk project met meetbare resultaten op snelheid, SEO en conversie, en 100% eigenaarschap van de code.
+          {/* TL;DR */}
+          <div className="bg-background-secondary p-6 sm:p-8 rounded-sm border border-border-subtle max-w-3xl">
+            <p className="font-sans text-xs uppercase tracking-widest text-brand font-bold mb-3">Kort antwoord</p>
+            <p className="text-base leading-relaxed text-foreground-muted font-sans">
+              WebBoost Partner bouwt Next.js-websites voor ZZP en MKB in Rotterdam. Recente projecten: <strong className="text-foreground font-semibold">{projects.slice(0, 3).map((p) => p.name).join(", ")}</strong>. Elk project met meetbare resultaten op snelheid, SEO en conversie, en 100% eigenaarschap van de code.
             </p>
           </div>
         </div>
       </section>
 
       {/* Grid Sectie */}
-      <section className="py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+      <section className="bg-background-secondary py-24 sm:py-32 border-y border-border-subtle">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={project.slug} project={project} priority={index === 0} />
@@ -139,29 +137,29 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* ✅ NIEUW: FAQ-sectie */}
-      <section className="bg-white border-t-2 border-black py-20 sm:py-28">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">// Veelgestelde vragen</p>
-          <h2 className="font-heading font-black uppercase text-3xl sm:text-4xl tracking-tight leading-[0.95] mb-8">
-            Veelgestelde vragen
-          </h2>
+      {/* FAQ-sectie */}
+      <section className="bg-background py-24 sm:py-32">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl sm:text-5xl text-foreground mb-4">Veelgestelde vragen</h2>
+            <p className="text-foreground-muted font-sans">Alles wat je wilt weten over mijn werkwijze en projecten.</p>
+          </div>
           <FAQ items={faqs} schemaId="portfolio" />
         </div>
       </section>
 
       {/* CTA Sectie */}
-      <section className="bg-[#FAFAFA] border-t-2 border-black py-20 text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8">
-          <h2 className="font-heading font-black uppercase text-3xl sm:text-4xl mb-4">
-            Klaar om jouw project hier <span className="text-[#FF4500]">tussen te zetten?</span>
+      <section className="bg-background-secondary border-t border-border-subtle py-24 text-center">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <h2 className="font-serif text-4xl sm:text-5xl text-foreground mb-6">
+            Klaar om jouw project hier <span className="text-brand italic">tussen te zetten?</span>
           </h2>
-          <p className="text-lg text-[#525252] mb-8 font-medium">
+          <p className="text-lg text-foreground-muted mb-10 font-sans">
             Laten we samen bouwen aan een website die jouw vakmanschap laat zien en structureel nieuwe klanten oplevert.
           </p>
           <Link
             href="/contact?intent=advies"
-            className="inline-flex items-center justify-center bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider px-8 py-4 border-2 border-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_#1A1A19]"
+            className="inline-flex items-center justify-center bg-brand text-white font-sans font-medium px-8 py-4 rounded-sm hover:bg-brand-hover transition-all duration-300"
           >
             Vraag vrijblijvend adviesgesprek aan <ArrowRight size={18} className="ml-2" />
           </Link>
