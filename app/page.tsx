@@ -41,7 +41,6 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Waarom Next.js en niet WordPress?",
-    // ✅ AANGEPAST: typo "meistal" → "meestal"
     a: "Next.js is sneller, veiliger en onderhoudsarmer dan WordPress. U heeft geen plugin-updates, geen openbare inlog en volledige controle over snelheid en SEO. Voor ZZP en MKB in Rotterdam die snelheid en vindbaarheid belangrijk vinden, is Next.js meestal de betere keuze. Lees de eerlijke vergelijking.",
   },
   {
@@ -82,8 +81,8 @@ export default function HomePage() {
                   { "@type": "City", name: "Schiedam" },
                 ],
                 sameAs: [
-                  "https://www.linkedin.com/company/webboostpartner", // TODO: jouw LinkedIn
-                  "https://www.kvk.nl/bedrijf/webboostpartner",        // TODO: jouw KvK
+                  "https://www.linkedin.com/company/webboostpartner",
+                  "https://www.kvk.nl/bedrijf/webboostpartner",
                 ],
               },
               {
@@ -125,133 +124,135 @@ export default function HomePage() {
         }}
       />
 
-      <section className="relative bg-[#FAFAFA] border-b-2 border-black py-20 lg:py-28 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      {/* HERO SECTIE - Editorial & Premium */}
+      <section className="relative bg-background pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-16 items-center">
+          
           <div className="lg:col-span-7">
-            <h1 className="font-heading font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl text-black leading-[1.1]">
-              <span className="block text-[#FF4500] mb-2">
-                Webdesign Rotterdam
-              </span>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-6">
+              <span className="block text-brand italic mb-2">Webdesign Rotterdam</span>
               die klanten oplevert.
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] font-medium leading-relaxed">
-              WebBoost Partner bouwt bliksemsnelle Next.js-websites die jouw vakmanschap laten zien en bezoekers omzetten in echte aanvragen. Geen standaard templates, maar <Link href="/portfolio" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500] transition-colors">bewezen maatwerk</Link> met 100% eigenaarschap van de code.
+            <p className="text-lg sm:text-xl max-w-2xl text-foreground-muted font-sans leading-relaxed mb-8">
+              WebBoost Partner bouwt bliksemsnelle Next.js-websites die jouw vakmanschap laten zien en bezoekers omzetten in echte aanvragen. Geen standaard templates, maar <Link href="/portfolio" className="text-foreground underline decoration-brand decoration-2 underline-offset-4 hover:text-brand transition-colors">bewezen maatwerk</Link> met 100% eigenaarschap van de code.
             </p>
 
-            <div className="mt-6 border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#1A1A19]">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">
+            {/* Kort Antwoord Box - Warm & Elegant */}
+            <div className="bg-background-secondary p-6 sm:p-8 rounded-sm border border-border-subtle mb-10">
+              <p className="font-sans text-xs uppercase tracking-widest text-brand font-bold mb-3">
                 Kort antwoord
               </p>
-              <p className="text-sm sm:text-base leading-relaxed text-[#1a1a1a]">
-                WebBoost Partner is een Nederlands webbureau in Rotterdam dat razendsnelle Next.js-websites bouwt voor ZZP en MKB. Website laten maken vanaf <strong>€1.950</strong>, 95+ PageSpeed, SEO inbegrepen, vaste prijs en <strong>100% eigenaarschap</strong> van de code — geen platform lock-in.
+              <p className="text-base text-foreground-muted leading-relaxed font-sans">
+                WebBoost Partner is een Nederlands webbureau in Rotterdam dat razendsnelle Next.js-websites bouwt voor ZZP en MKB. Website laten maken vanaf <strong className="text-foreground font-semibold">€1.950</strong>, 95+ PageSpeed, SEO inbegrepen, vaste prijs en <strong className="text-foreground font-semibold">100% eigenaarschap</strong> van de code — geen platform lock-in.
               </p>
             </div>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-10">
               <Link
                 href="/contact?intent=advies"
-                className="inline-flex items-center justify-center bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider px-8 py-4 border-2 border-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_#1A1A19]"
+                className="inline-flex items-center justify-center bg-brand text-white font-sans font-medium px-8 py-4 hover:bg-brand-hover transition-all duration-300 rounded-sm"
               >
                 Vraag gratis adviesgesprek aan <ArrowRight size={18} className="ml-2" />
               </Link>
             </div>
 
-            <div className="mt-6 flex items-center gap-2">
-              <div className="flex text-[#FF4500]">
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
+            <div className="flex flex-col gap-4 mb-10">
+              <div className="flex items-center gap-2">
+                <div className="flex text-brand">
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                </div>
+                <p className="text-sm font-medium text-foreground-muted">
+                  "Binnen een week 3 nieuwe aanvragen!" — Cindy, Cindy&apos;s Kraamzorg
+                </p>
               </div>
-              <p className="text-sm font-medium text-[#525252]">
-                "Binnen een week 3 nieuwe aanvragen!" — Cindy, Cindy&apos;s Kraamzorg
-              </p>
+
+              <ul className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm font-medium text-foreground">
+                <li className="flex items-center gap-2">
+                  <Check size={18} className="text-brand" /> Vaste prijs vooraf
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check size={18} className="text-brand" />
+                  <Link href="/over-mij" className="hover:text-brand transition-colors">
+                    100% eigenaarschap
+                  </Link>
+                </li>
+              </ul>
             </div>
 
-            <ul className="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-8 text-xs font-mono uppercase tracking-wider text-black font-bold">
-              <li className="flex items-center gap-2">
-                <Check size={16} className="text-[#FF4500] stroke-[3]" /> Vaste prijs vooraf
-              </li>
-              <li className="flex items-center gap-2">
-                <Check size={16} className="text-[#FF4500] stroke-[3]" />
-                <Link href="/over-mij" className="hover:text-[#FF4500] underline decoration-2 decoration-transparent hover:decoration-[#FF4500]">
-                  100% eigenaarschap
-                </Link>
-              </li>
-            </ul>
-
-            {/* ✅ AANGEPAST: alle zes inhoudelijke pagina's, gegroepeerd */}
-            <div className="mt-6 space-y-2 text-sm text-[#525252]">
+            {/* Interne Links - Subtiel */}
+            <div className="pt-8 border-t border-border-subtle space-y-3 text-sm text-foreground-muted font-sans">
               <p>
-                <strong className="font-bold text-black">Diensten:</strong>{" "}
-                <Link href="/website-laten-maken-rotterdam" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                <strong className="font-semibold text-foreground">Diensten:</strong>{" "}
+                <Link href="/website-laten-maken-rotterdam" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
                   Website laten maken Rotterdam
                 </Link>
                 {" · "}
-                <Link href="/seo-rotterdam" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                <Link href="/seo-rotterdam" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
                   SEO Rotterdam
                 </Link>
                 {" · "}
-                <Link href="/pakketten" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                <Link href="/pakketten" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
                   Pakketten & prijzen
                 </Link>
               </p>
               <p>
-                <strong className="font-bold text-black">Meer weten:</strong>{" "}
-                <Link href="/wordpress-naar-nextjs" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                <strong className="font-semibold text-foreground">Meer weten:</strong>{" "}
+                <Link href="/wordpress-naar-nextjs" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
                   WordPress naar Next.js
                 </Link>
                 {" · "}
-                <Link href="/nextjs-vs-wordpress" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                <Link href="/nextjs-vs-wordpress" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
                   Next.js vs WordPress
                 </Link>
                 {" · "}
-                <Link href="/portfolio" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500]">
+                <Link href="/portfolio" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
                   Portfolio
                 </Link>
               </p>
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative mt-10 lg:mt-0">
-            <div className="absolute inset-0 bg-[#FF4500] translate-x-3 translate-y-3 border-2 border-black" />
-
-            <div className="relative bg-white border-2 border-black p-6 sm:p-8">
-              <div className="flex items-center justify-between mb-6">
-                <p className="font-mono text-xs uppercase tracking-widest text-[#525252] font-bold">
+          {/* Rechterkolom - Live Bewijs Card */}
+          <div className="lg:col-span-5 relative">
+            <div className="bg-white border border-border-subtle p-8 sm:p-10 shadow-soft rounded-sm">
+              <div className="flex items-center justify-between mb-8 pb-6 border-b border-border-subtle">
+                <p className="font-sans text-xs uppercase tracking-widest text-foreground-muted font-bold">
                   Live Bewijs
                 </p>
-                <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-800 font-mono text-[10px] px-2 py-1 border border-green-800 font-bold">
-                  <span className="w-1.5 h-1.5 bg-green-600 rounded-full animate-pulse" />
-                  GEVERIFIEERD
+                <span className="inline-flex items-center gap-2 bg-[#F0FDF4] text-green-700 font-medium text-xs px-3 py-1 rounded-full border border-green-200">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  Geverifieerd
                 </span>
               </div>
 
-              <div className="flex items-end gap-6 mb-6 border-b-2 border-black pb-6">
+              <div className="flex items-end gap-10 mb-8 pb-8 border-b border-border-subtle">
                 <div>
-                  <div className="flex items-center gap-1 text-[#525252] mb-1">
-                    <Monitor size={14} /> <span className="text-[10px] font-mono uppercase font-bold">Desktop</span>
+                  <div className="flex items-center gap-2 text-foreground-muted mb-2">
+                    <Monitor size={16} /> <span className="text-xs font-semibold uppercase tracking-wider">Desktop</span>
                   </div>
-                  <span className="font-heading font-black text-5xl leading-none text-[#FF4500]">100</span>
+                  <span className="font-serif text-6xl text-brand leading-none">100</span>
                 </div>
                 <div>
-                  <div className="flex items-center gap-1 text-[#525252] mb-1">
-                    <Smartphone size={14} /> <span className="text-[10px] font-mono uppercase font-bold">Mobiel</span>
+                  <div className="flex items-center gap-2 text-foreground-muted mb-2">
+                    <Smartphone size={16} /> <span className="text-xs font-semibold uppercase tracking-wider">Mobiel</span>
                   </div>
-                  <span className="font-heading font-black text-5xl leading-none text-[#FF4500]">95</span>
+                  <span className="font-serif text-6xl text-brand leading-none">95</span>
                 </div>
               </div>
 
-              <div className="mb-6">
-                <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 mb-1">
+              <div className="mb-8">
+                <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted mb-2">
                   Recent project:
                 </p>
-                <h3 className="font-heading font-black text-xl uppercase mb-2">
+                <h3 className="font-serif text-2xl text-foreground mb-3">
                   Marley&apos;s Kraamzorg
                 </h3>
-                <p className="text-sm text-[#4a4a48] leading-relaxed font-medium">
+                <p className="text-base text-foreground-muted leading-relaxed font-sans">
                   Volledig op maat gemaakt met een uitzonderlijk snelle laadtijd en een perfecte beoordeling.
                 </p>
               </div>
@@ -260,29 +261,34 @@ export default function HomePage() {
                 href="https://pagespeed.web.dev/analysis?url=https://www.marleyskraamzorg.nl/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full bg-[#FAFAFA] text-black font-heading font-bold uppercase text-[11px] tracking-wider border-2 border-black py-3 hover:bg-black hover:text-white transition-colors"
+                className="flex items-center justify-center gap-2 w-full bg-background-secondary text-foreground font-medium text-sm py-3.5 rounded-sm hover:bg-border-subtle transition-colors"
               >
-                Bekijk de live score bij Google <ExternalLink size={14} />
+                Bekijk de live score bij Google <ExternalLink size={16} />
               </a>
             </div>
           </div>
         </div>
       </section>
 
+      {/* USPGrid - Deze stijlen we in de volgende stap aan */}
       <USPGrid />
 
-      <section className="bg-white py-20 sm:py-28 border-y-2 border-black">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-3">
-            // Veelgestelde vragen
-          </p>
-          <h2 className="font-heading font-black uppercase text-3xl sm:text-4xl tracking-tight leading-[0.95] mb-8">
-            Veelgestelde vragen
-          </h2>
+      {/* FAQ SECTIE - Rustig en Editorial */}
+      <section className="bg-background-secondary py-24 sm:py-32">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl sm:text-5xl text-foreground mb-4">
+              Veelgestelde vragen
+            </h2>
+            <p className="text-foreground-muted font-sans">
+              Alles wat je wilt weten over samenwerken met WebBoost Partner.
+            </p>
+          </div>
           <FAQ items={faqs} schemaId="home" />
         </div>
       </section>
 
+      {/* CTASection - Deze stijlen we in de volgende stap aan */}
       <CTASection />
     </>
   );
