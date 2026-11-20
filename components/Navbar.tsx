@@ -3,8 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { Menu, X, MonitorPlay, ChevronDown } from "lucide-react";
+import { Menu, X, MonitorPlay, ChevronDown, Zap } from "lucide-react"; // Zap toegevoegd
 
 interface NavLink {
   href: string;
@@ -97,20 +96,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
+          {/* Logo - Nu consistent met de footer */}
           <Link
             href="/"
-            className="shrink-0 flex items-center"
+            className="shrink-0 flex items-center gap-3 font-serif text-xl lg:text-2xl text-foreground"
             aria-label="WebBoost Partner - Home"
           >
-            <Image
-              src="/images/logo_webboostpartner.webp"
-              alt="WebBoost Partner"
-              width={2172}
-              height={725}
-              className="h-10 lg:h-12 w-auto object-contain"
-              priority
-            />
+            <span className="bg-brand text-white w-9 h-9 lg:w-10 lg:h-10 grid place-items-center rounded-sm">
+              <Zap size={20} className="fill-current" />
+            </span>
+            WebBoost Partner
           </Link>
 
           {/* Desktop navigatie */}
