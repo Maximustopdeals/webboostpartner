@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, Manrope } from "next/font/google";
 import "./globals.css";
 
-// Importeer hier je componenten
+// Importeer al je globale componenten
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions"; // 👈 DEZE WAS NOG NIET GEÏMPORTEERD
 
 const dmSerif = DM_Serif_Display({
   weight: "400",
@@ -21,6 +22,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   // ... (behoud hier je bestaande metadata, title, description, openGraph, etc.)
+  // Als je deze al had ingevuld in layout.tsx, laat ze dan staan.
 };
 
 export default function RootLayout({
@@ -32,16 +34,19 @@ export default function RootLayout({
     <html lang="nl" className={`${dmSerif.variable} ${manrope.variable}`}>
       <body className="bg-background text-foreground font-sans antialiased selection:bg-brand selection:text-white flex flex-col min-h-screen">
         
-        {/* Hier renderen we de Navbar */}
+        {/* 1. De Navigatiebalk */}
         <Navbar />
         
-        {/* De main content met flex-grow zodat de footer altijd onderaan blijft */}
+        {/* 2. De Pagina Content */}
         <main className="flex-grow">
           {children}
         </main>
         
-        {/* Hier renderen we de Footer */}
+        {/* 3. De Footer */}
         <Footer />
+        
+        {/* 4. De Floating Action Buttons (WhatsApp & Back to Top) */}
+        <FloatingActions />
         
       </body>
     </html>
