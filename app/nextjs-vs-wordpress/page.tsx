@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
-import FAQ from "@/components/FAQ"; // ✅ NIEUW
+import FAQ from "@/components/FAQ";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ NIEUW: FAQ
 interface FAQItem { q: string; a: string }
 
 const faqs: FAQItem[] = [
@@ -54,7 +53,7 @@ const faqs: FAQItem[] = [
 export default function NextjsVsWordpressPage() {
   return (
     <>
-      {/* ✅ NIEUW: JSON-LD met WebPage + FAQPage */}
+      {/* JSON-LD - Ongewijzigd */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -87,31 +86,33 @@ export default function NextjsVsWordpressPage() {
       />
 
       {/* HERO */}
-      <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// Next.js vs WordPress</p>
-          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-4xl sm:text-5xl lg:text-6xl max-w-none">
-            Next.js <span className="text-[#FF4500]">vs</span> WordPress
+      <section className="bg-background pt-32 pb-24 lg:pt-40 lg:pb-32">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-6">
+            Next.js vs WordPress
+          </p>
+          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-8">
+            Next.js <span className="text-brand italic">vs</span> WordPress
           </h1>
-          <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed font-semibold">
+          <p className="text-lg sm:text-xl max-w-3xl leading-relaxed text-foreground-muted font-sans mb-10">
             Twee bewezen manieren om een website te bouwen, elk met eigen sterke
             punten. Geen technisch verhaal, wel een heldere vergelijking: wat levert
-            het op voor <strong>snelheid, vindbaarheid, onderhoud en groei</strong> van
+            het op voor <strong className="text-foreground font-semibold">snelheid, vindbaarheid, onderhoud en groei</strong> van
             jouw bedrijf?
           </p>
 
-          {/* ✅ NIEUW: TL;DR */}
-          <div className="mt-6 border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#1A1A19] max-w-3xl">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">Kort antwoord</p>
-            <p className="text-sm sm:text-base leading-relaxed text-[#1a1a1a]">
-              <strong>Next.js</strong> is sneller, veiliger en onderhoudsarmer dan WordPress. <strong>WordPress</strong> is flexibeler en goedkoper om te starten. Voor ZZP en MKB in Rotterdam die snelheid en vindbaarheid belangrijk vinden, is Next.js meestal de betere keuze. Voor eenvoudige sites zonder groeiproblemen blijft WordPress prima.
+          {/* TL;DR */}
+          <div className="bg-background-secondary p-6 sm:p-8 rounded-sm border border-border-subtle max-w-3xl mb-10">
+            <p className="font-sans text-xs uppercase tracking-widest text-brand font-bold mb-3">Kort antwoord</p>
+            <p className="text-base leading-relaxed text-foreground-muted font-sans">
+              <strong className="text-foreground font-semibold">Next.js</strong> is sneller, veiliger en onderhoudsarmer dan WordPress. <strong className="text-foreground font-semibold">WordPress</strong> is flexibeler en goedkoper om te starten. Voor ZZP en MKB in Rotterdam die snelheid en vindbaarheid belangrijk vinden, is Next.js meestal de betere keuze. Voor eenvoudige sites zonder groeiproblemen blijft WordPress prima.
             </p>
           </div>
 
-          <div className="mt-9">
+          <div className="mt-8">
             <Link
               href="/contact?intent=quickscan"
-              className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-brand text-white font-sans font-medium px-8 py-4 rounded-sm hover:bg-brand-hover transition-all duration-300"
             >
               Vraag gratis website-scan aan <ArrowRight size={18} />
             </Link>
@@ -120,21 +121,25 @@ export default function NextjsVsWordpressPage() {
       </section>
 
       {/* SIDE-BY-SIDE */}
-      <section className="bg-white py-16 sm:py-24 border-y-2 border-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 grid md:grid-cols-2 gap-6">
-          <div className="border-2 border-black p-8 bg-[#FAFAFA] shadow-brutal-sm">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#525252] mb-2">WordPress</p>
-            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl mb-4">De bekende<br />standaard</h2>
-            <p className="text-[#1a1a1a] leading-relaxed">
+      <section className="bg-background-secondary py-24 sm:py-32 border-y border-border-subtle">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-8">
+          {/* WordPress Card */}
+          <div className="bg-background border border-border-subtle p-8 sm:p-10 rounded-sm shadow-soft">
+            <p className="font-sans text-xs uppercase tracking-widest text-foreground-muted font-semibold mb-3">WordPress</p>
+            <h2 className="font-serif text-3xl sm:text-4xl text-foreground mb-5">De bekende<br />standaard</h2>
+            <p className="text-foreground-muted leading-relaxed font-sans">
               WordPress drijft miljoenen websites aan. Het is laagdrempelig, flexibel
               en vertrouwd. Ideaal om snel online te gaan en zelf content te beheren
               in een omgeving die je al kent.
             </p>
           </div>
-          <div className="border-2 border-black p-8 bg-black text-white shadow-brutal">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#FF4500] mb-2">Moderne website (Next.js)</p>
-            <h2 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl mb-4">De snelle<br />upgrade</h2>
-            <p className="leading-relaxed text-gray-200">
+          
+          {/* Next.js Card */}
+          <div className="bg-foreground text-white p-8 sm:p-10 rounded-sm shadow-soft relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 rounded-bl-full pointer-events-none" />
+            <p className="font-sans text-xs uppercase tracking-widest text-brand font-semibold mb-3">Moderne website (Next.js)</p>
+            <h2 className="font-serif text-3xl sm:text-4xl mb-5">De snelle<br />upgrade</h2>
+            <p className="leading-relaxed text-gray-300 font-sans">
               Een moderne website laadt sneller, heeft minder onderhoud nodig en scoort
               sterker in Google. Dezelfde techniek die grote merken gebruiken vertaald
               naar een praktische oplossing voor ZZP en MKB.
@@ -143,56 +148,56 @@ export default function NextjsVsWordpressPage() {
         </div>
       </section>
 
-      {/* ✅ NIEUW: VERGELIJKINGSTABEL */}
-      <section className="bg-white py-16 sm:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-8">
-          <h2 className="font-heading font-black uppercase text-3xl sm:text-4xl tracking-tight mb-6">
+      {/* VERGELIJKINGSTABEL */}
+      <section className="bg-background py-24 sm:py-32">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mb-8 text-center">
             Next.js vs WordPress in één tabel
           </h2>
-          <div className="overflow-x-auto border-2 border-black shadow-[4px_4px_0px_0px_#1A1A19]">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto border border-border-subtle rounded-sm shadow-soft">
+            <table className="w-full text-sm font-sans">
               <thead>
-                <tr className="bg-black text-white">
-                  <th className="text-left p-3 font-heading uppercase tracking-wider">Criterium</th>
-                  <th className="text-left p-3 font-heading uppercase tracking-wider">WordPress</th>
-                  <th className="text-left p-3 font-heading uppercase tracking-wider">Next.js</th>
+                <tr className="bg-background-secondary text-foreground border-b border-border-subtle">
+                  <th className="text-left p-4 sm:p-5 font-semibold uppercase tracking-wider text-xs">Criterium</th>
+                  <th className="text-left p-4 sm:p-5 font-semibold uppercase tracking-wider text-xs">WordPress</th>
+                  <th className="text-left p-4 sm:p-5 font-semibold uppercase tracking-wider text-xs text-brand">Next.js</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Snelheid</td>
-                  <td className="p-3">Afhankelijk van hosting, thema en plugins</td>
-                  <td className="p-3">Standaard 95+ PageSpeed, &lt;1s laadtijd</td>
+              <tbody className="text-foreground-muted">
+                <tr className="border-b border-border-subtle hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Snelheid</td>
+                  <td className="p-4 sm:p-5">Afhankelijk van hosting, thema en plugins</td>
+                  <td className="p-4 sm:p-5">Standaard 95+ PageSpeed, &lt;1s laadtijd</td>
                 </tr>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">SEO</td>
-                  <td className="p-3">Via plugins (Yoast/RankMath)</td>
-                  <td className="p-3">Technisch in de kern ingebouwd</td>
+                <tr className="border-b border-border-subtle hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">SEO</td>
+                  <td className="p-4 sm:p-5">Via plugins (Yoast/RankMath)</td>
+                  <td className="p-4 sm:p-5">Technisch in de kern ingebouwd</td>
                 </tr>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Onderhoud</td>
-                  <td className="p-3">Doorlopende plugin-/thema-updates</td>
-                  <td className="p-3">Vrijwel onderhoudsvrij</td>
+                <tr className="border-b border-border-subtle hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Onderhoud</td>
+                  <td className="p-4 sm:p-5">Doorlopende plugin-/thema-updates</td>
+                  <td className="p-4 sm:p-5">Vrijwel onderhoudsvrij</td>
                 </tr>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Veiligheid</td>
-                  <td className="p-3">Populair doelwit; actief beveiligen nodig</td>
-                  <td className="p-3">Kleiner aanvalsoppervlak</td>
+                <tr className="border-b border-border-subtle hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Veiligheid</td>
+                  <td className="p-4 sm:p-5">Populair doelwit; actief beveiligen nodig</td>
+                  <td className="p-4 sm:p-5">Kleiner aanvalsoppervlak</td>
                 </tr>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Kosten start</td>
-                  <td className="p-3">Lager</td>
-                  <td className="p-3">Hogere initiële investering</td>
+                <tr className="border-b border-border-subtle hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Kosten start</td>
+                  <td className="p-4 sm:p-5">Lager</td>
+                  <td className="p-4 sm:p-5">Hogere initiële investering</td>
                 </tr>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Eigenaarschap</td>
-                  <td className="p-3">Afhankelijk van hosting/plugins</td>
-                  <td className="p-3">Volledige Git-repository, geen lock-in</td>
+                <tr className="border-b border-border-subtle hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Eigenaarschap</td>
+                  <td className="p-4 sm:p-5">Afhankelijk van hosting/plugins</td>
+                  <td className="p-4 sm:p-5">Volledige Git-repository, geen lock-in</td>
                 </tr>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Schaalbaarheid</td>
-                  <td className="p-3">Beperkt bij groei</td>
-                  <td className="p-3">Gebouwd voor groei</td>
+                <tr className="hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Schaalbaarheid</td>
+                  <td className="p-4 sm:p-5">Beperkt bij groei</td>
+                  <td className="p-4 sm:p-5">Gebouwd voor groei</td>
                 </tr>
               </tbody>
             </table>
@@ -200,95 +205,137 @@ export default function NextjsVsWordpressPage() {
         </div>
       </section>
 
-      {/* CONTENT */}
-      <article className="bg-white py-16 sm:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
-          {/* ✅ NIEUW: auteur-signaal */}
-          <p className="text-sm font-mono uppercase tracking-wider text-[#525252] mb-6">
+      {/* CONTENT / ARTIKEL */}
+      <article className="bg-background-secondary py-24 sm:py-32 border-t border-border-subtle">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          
+          <p className="text-sm font-sans text-foreground-muted mb-10">
             Geschreven door{" "}
-            <Link href="/over-mij" className="text-[#FF4500] underline decoration-2">
+            <Link href="/over-mij" className="text-brand font-medium underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">
               Ron — WebBoost Partner
             </Link>
           </p>
 
-          <h2>Waar gaat het écht om?</h2>
-          <p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Waar gaat het écht om?</h2>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             Niet om de naam van de techniek, maar om wat jij merkt als ondernemer:
             hoe snel laadt de site op de telefoon, hoe makkelijk vindbaar ben je in
             Google, en hoeveel tijd en stress kost het onderhoud?
           </p>
 
-          <h2>Snelheid en aanvragen</h2>
-          <p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Snelheid en aanvragen</h2>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             Elke seconde extra laadtijd kost bezoekers. Beide systemen kúnnen snel
             zijn maar de uitgangspositie verschilt:
           </p>
-          <ul>
-            <li><strong>WordPress</strong> — Snelheid hangt af van hosting, thema en plugins. Een schone site kan prima presteren; met veel plugins wordt het vaak zwaarder.</li>
-            <li><strong>Moderne website</strong> — Snelheid zit standaard in de bouw. Pagina&apos;s laden meestal in minder dan een seconde op mobiel, zonder extra &quot;snelheidsplugins&quot;.</li>
+          <ul className="space-y-4 mb-6 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">WordPress</strong> — Snelheid hangt af van hosting, thema en plugins. Een schone site kan prima presteren; met veel plugins wordt het vaak zwaarder.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Moderne website</strong> — Snelheid zit standaard in de bouw. Pagina&apos;s laden meestal in minder dan een seconde op mobiel, zonder extra &quot;snelheidsplugins&quot;.</span>
+            </li>
           </ul>
-          <p>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             Lees hoe Google{" "}
-            <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer">
+            <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">
               Core Web Vitals meet
             </a>{" "}
             en waarom dat uitmaakt voor je positie.
           </p>
 
-          <h2>Vindbaarheid in Google</h2>
-          <p>Google beloont sites die snel en stabiel zijn, vooral op mobiel:</p>
-          <ul>
-            <li><strong>WordPress</strong> — SEO doe je vaak via plugins (Yoast, RankMath). Dat werkt goed, mits de basis niet te zwaar is.</li>
-            <li><strong>Moderne website</strong> — Technische SEO zit in de kern: schone code, sterke metadata, uitstekende PageSpeed-scores zonder extra plugins.</li>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Vindbaarheid in Google</h2>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">Google beloont sites die snel en stabiel zijn, vooral op mobiel:</p>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">WordPress</strong> — SEO doe je vaak via plugins (Yoast, RankMath). Dat werkt goed, mits de basis niet te zwaar is.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Moderne website</strong> — Technische SEO zit in de kern: schone code, sterke metadata, uitstekende PageSpeed-scores zonder extra plugins.</span>
+            </li>
           </ul>
 
-          <h2>Veiligheid</h2>
-          <ul>
-            <li><strong>WordPress</strong> — Populair, dus vaker doelwit. Met goede hosting, updates en beveiliging is het prima te beveiligen, maar dat vraagt wel doorlopende aandacht.</li>
-            <li><strong>Moderne website</strong> — Geen openbare inlog aan de voorkant en minder &quot;bewegende onderdelen&quot;. Minder aanvalsoppervlak, minder updates.</li>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Veiligheid</h2>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">WordPress</strong> — Populair, dus vaker doelwit. Met goede hosting, updates en beveiliging is het prima te beveiligen, maar dat vraagt wel doorlopende aandacht.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Moderne website</strong> — Geen openbare inlog aan de voorkant en minder &quot;bewegende onderdelen&quot;. Minder aanvalsoppervlak, minder updates.</span>
+            </li>
           </ul>
 
-          <h2>Onderhoud en tijd</h2>
-          <ul>
-            <li><strong>WordPress</strong> — Regelmatige updates van plugins, thema en kern. Nodig voor veiligheid, maar kost tijd (of een onderhoudscontract).</li>
-            <li><strong>Moderne website</strong> — Technisch vrijwel onderhoudsvrij. Eenmaal live blijft de site stabiel; jij richt je op content en klanten.</li>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Onderhoud en tijd</h2>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">WordPress</strong> — Regelmatige updates van plugins, thema en kern. Nodig voor veiligheid, maar kost tijd (of een onderhoudscontract).</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Moderne website</strong> — Technisch vrijwel onderhoudsvrij. Eenmaal live blijft de site stabiel; jij richt je op content en klanten.</span>
+            </li>
           </ul>
 
-          <h2>Wanneer past WordPress beter?</h2>
-          <ul>
-            <li>Je wilt snel en voordelig online met een beproefd systeem.</li>
-            <li>Je hebt specifieke plugins nodig die je al kent.</li>
-            <li>Je wilt alles zelf in een vertrouwde admin-omgeving kunnen aanpassen.</li>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Wanneer past WordPress beter?</h2>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span>Je wilt snel en voordelig online met een beproefd systeem.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span>Je hebt specifieke plugins nodig die je al kent.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span>Je wilt alles zelf in een vertrouwde admin-omgeving kunnen aanpassen.</span>
+            </li>
           </ul>
 
-          <h2>Wanneer past een moderne website beter?</h2>
-          <ul>
-            <li>Snelheid, mobiele ervaring en Google-posities zijn cruciaal voor nieuwe klanten.</li>
-            <li>Je wilt een uniek design zonder de beperkingen van standaard templates.</li>
-            <li>Je zoekt minder onderhoud, meer stabiliteit en een site die meegroeit met je bedrijf.</li>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Wanneer past een moderne website beter?</h2>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span>Snelheid, mobiele ervaring en Google-posities zijn cruciaal voor nieuwe klanten.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span>Je wilt een uniek design zonder de beperkingen van standaard templates.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span>Je zoekt minder onderhoud, meer stabiliteit en een site die meegroeit met je bedrijf.</span>
+            </li>
           </ul>
 
-          <p>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             Voor veel ZZP&apos;ers en MKB-bedrijven in Rotterdam is een moderne website
             een slimme volgende stap, vooral als de huidige WordPress-site traag
             voelt of te veel onderhoud vraagt. Het belangrijkste blijft: kies het
             fundament dat past bij jouw doelen nu.
           </p>
 
-          <h2>Volgende stap</h2>
-          <p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Volgende stap</h2>
+          <p className="text-foreground-muted leading-relaxed mb-12 text-lg">
             Twijfel je tussen blijven op WordPress of overstappen? Bekijk{" "}
-            <Link href="/wordpress-naar-nextjs">WordPress naar Next.js migratie</Link>{" "}
+            <Link href="/wordpress-naar-nextjs" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">
+              WordPress naar Next.js migratie
+            </Link>{" "}
             of vraag een gratis scan aan. Ik bekijk je huidige site en geef eerlijk
             advies — ook als WordPress voor jou de betere keuze is.
           </p>
 
-          <h2>Veelgestelde vragen</h2>
-        </div>
-
-        {/* ✅ NIEUW: FAQ gerenderd */}
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 mt-6">
-          <FAQ items={faqs} schemaId="nextjs-vs-wordpress" />
+          <div className="pt-12 border-t border-border-subtle">
+            <h2 className="font-serif text-3xl sm:text-4xl text-foreground mb-8">Veelgestelde vragen</h2>
+            <FAQ items={faqs} schemaId="nextjs-vs-wordpress" />
+          </div>
         </div>
       </article>
 
