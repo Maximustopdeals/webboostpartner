@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
 import type { Metadata } from "next";
@@ -57,7 +57,7 @@ const faqs: FAQItem[] = [
 export default function WordPressNaarNextjsPage() {
   return (
     <>
-      {/* Schema */}
+      {/* Schema - Ongewijzigd */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -99,45 +99,55 @@ export default function WordPressNaarNextjsPage() {
       />
 
       {/* HERO */}
-      <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">// WordPress naar Next.js</p>
-          <h1 className="font-heading font-black uppercase tracking-tight leading-[0.95] text-4xl sm:text-5xl lg:text-6xl max-w-none">
-            WordPress naar <span className="text-[#FF4500]">Next.js</span> migratie
+      <section className="bg-background pt-32 pb-24 lg:pt-40 lg:pb-32">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-6">
+            WordPress naar Next.js
+          </p>
+          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-8">
+            WordPress naar <span className="text-brand italic">Next.js</span> migratie
           </h1>
-          <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed font-semibold">
+          <p className="text-lg sm:text-xl max-w-3xl leading-relaxed text-foreground-muted font-sans mb-10">
             Is uw WordPress-site traag op mobiel, lastig bij te houden of stagneert de
             vindbaarheid? Een migratie naar een moderne website lost dat op:{" "}
-            <strong>sneller, veiliger en beter vindbaar</strong> — met behoud van uw
+            <strong className="text-foreground font-semibold">sneller, veiliger en beter vindbaar</strong> — met behoud van uw
             Google-posities. U hoeft niets van de techniek te weten; u merkt vooral het
             resultaat.
           </p>
 
-          {/* ✅ NIEUW: TL;DR */}
-          <div className="mt-6 border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#1A1A19] max-w-3xl">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF4500] mb-2 font-bold">Kort antwoord</p>
-            <p className="text-sm sm:text-base leading-relaxed text-[#1a1a1a]">
-              Een migratie van WordPress naar Next.js kost bij WebBoost Partner <strong>vanaf €1.495 excl. btw</strong>, duurt <strong>2–4 weken</strong> en behoudt je Google-posities via 301-redirects. Je site wordt 10x sneller, heeft geen plugin-onderhoud meer en je behoudt <strong>100% eigenaarschap</strong> van de code.
+          {/* TL;DR */}
+          <div className="bg-background-secondary p-6 sm:p-8 rounded-sm border border-border-subtle max-w-3xl mb-10">
+            <p className="font-sans text-xs uppercase tracking-widest text-brand font-bold mb-3">Kort antwoord</p>
+            <p className="text-base leading-relaxed text-foreground-muted font-sans">
+              Een migratie van WordPress naar Next.js kost bij WebBoost Partner <strong className="text-foreground font-semibold">vanaf €1.495 excl. btw</strong>, duurt <strong className="text-foreground font-semibold">2–4 weken</strong> en behoudt je Google-posities via 301-redirects. Je site wordt 10x sneller, heeft geen plugin-onderhoud meer en je behoudt <strong className="text-foreground font-semibold">100% eigenaarschap</strong> van de code.
             </p>
           </div>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-[#525252]">
-            <li className="flex items-center gap-2"><span className="w-2 h-2 bg-[#00B050] rounded-full" /> Rankings behouden</li>
-            <li className="flex items-center gap-2"><span className="w-2 h-2 bg-[#00B050] rounded-full" /> 95+ PageSpeed</li>
-            <li className="flex items-center gap-2"><span className="w-2 h-2 bg-[#00B050] rounded-full" /> Vanaf €1.495</li>
-            <li className="flex items-center gap-2"><span className="w-2 h-2 bg-[#00B050] rounded-full" /> Gratis analyse</li>
+          <ul className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-medium text-foreground mb-12">
+            <li className="flex items-center gap-2">
+              <Check size={18} className="text-brand" /> Rankings behouden
+            </li>
+            <li className="flex items-center gap-2">
+              <Check size={18} className="text-brand" /> 95+ PageSpeed
+            </li>
+            <li className="flex items-center gap-2">
+              <Check size={18} className="text-brand" /> Vanaf €1.495
+            </li>
+            <li className="flex items-center gap-2">
+              <Check size={18} className="text-brand" /> Gratis analyse
+            </li>
           </ul>
 
-          <div className="mt-9 flex flex-col sm:flex-row gap-4 flex-wrap">
+          <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
               href="/contact?intent=migratie_analyse"
-              className="inline-flex items-center justify-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-brand text-white font-sans font-medium px-8 py-4 rounded-sm hover:bg-brand-hover transition-all duration-300"
             >
               Vraag gratis migratie-analyse aan <ArrowRight size={18} />
             </Link>
             <Link
               href="/pakketten"
-              className="inline-flex items-center justify-center gap-2 bg-white text-black font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:text-white hover:-translate-y-1 hover:shadow-brutal-sm transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-background-secondary text-foreground font-sans font-medium px-8 py-4 rounded-sm hover:bg-border-subtle transition-all duration-300"
             >
               Bekijk pakketten
             </Link>
@@ -145,150 +155,211 @@ export default function WordPressNaarNextjsPage() {
         </div>
       </section>
 
-      {/* CONTENT */}
-      <article className="bg-white py-16 sm:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 prose-brutal">
-          {/* ✅ NIEUW: auteur-signaal */}
-          <p className="text-sm font-mono uppercase tracking-wider text-[#525252] mb-6">
+      {/* CONTENT / ARTIKEL */}
+      <article className="bg-background py-24 sm:py-32">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          
+          <p className="text-sm font-sans text-foreground-muted mb-10">
             Geschreven door{" "}
-            <Link href="/over-mij" className="text-[#FF4500] underline decoration-2">
+            <Link href="/over-mij" className="text-brand font-medium underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">
               Ron — WebBoost Partner
             </Link>
           </p>
 
-          <h2>Herkent u dit bij uw WordPress-website?</h2>
-          <p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Herkent u dit bij uw WordPress-website?</h2>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             WordPress is een sterk systeem en heeft miljoenen websites groot gemaakt.
             Maar naarmate een bedrijf groeit, komen dezelfde problemen terug:
           </p>
-          <ul>
-            <li><strong>De site wordt trager</strong> — vooral op de telefoon. Bezoekers haken af.</li>
-            <li><strong>Updates en plugins kosten tijd en stress</strong> — of iets gaat kapot na een update.</li>
-            <li><strong>Onderhoud en beveiliging blijven terugkomen</strong> — structureel budget en aandacht.</li>
-            <li><strong>Google-posities stagneren</strong> — de mobiele ervaring en Core Web Vitals zijn niet sterk genoeg.</li>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">De site wordt trager</strong> — vooral op de telefoon. Bezoekers haken af.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Updates en plugins kosten tijd en stress</strong> — of iets gaat kapot na een update.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Onderhoud en beveiliging blijven terugkomen</strong> — structureel budget en aandacht.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Google-posities stagneren</strong> — de mobiele ervaring en Core Web Vitals zijn niet sterk genoeg.</span>
+            </li>
           </ul>
-          <p>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             Een migratie is dan geen technische hobby, maar een{" "}
-            <strong>strategische keuze</strong>: meer aanvragen, minder gedoe, een
+            <strong className="text-foreground font-semibold">strategische keuze</strong>: meer aanvragen, minder gedoe, een
             website die meegroeit.
           </p>
 
-          <h2>Wat levert de overstap u op?</h2>
-          <ul>
-            <li><strong>Merkbaar sneller</strong> — pagina&apos;s laden in minder dan een seconde. Minder afhakers, meer conversie.</li>
-            <li><strong>Sterkere positie in Google</strong> — betere scores op de factoren die Google meet (snelheid, stabiliteit, mobiel).</li>
-            <li><strong>Minder onderhoud</strong> — geen wekelijkse plugin-updates of onverwachte crashes.</li>
-            <li><strong>Veiliger</strong> — geen openbare inlogpagina&apos;s die constant aangevallen worden.</li>
-            <li><strong>Professionele uitstraling</strong> — maatwerk design, geen standaard thema.</li>
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Wat levert de overstap u op?</h2>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Merkbaar sneller</strong> — pagina&apos;s laden in minder dan een seconde. Minder afhakers, meer conversie.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Sterkere positie in Google</strong> — betere scores op de factoren die Google meet (snelheid, stabiliteit, mobiel).</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Minder onderhoud</strong> — geen wekelijkse plugin-updates of onverwachte crashes.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Veiliger</strong> — geen openbare inlogpagina&apos;s die constant aangevallen worden.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Professionele uitstraling</strong> — maatwerk design, geen standaard thema.</span>
+            </li>
           </ul>
-          <p>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             Next.js is de techniek achter sites van onder andere Nike, Netflix en
             Notion. U hoeft die naam niet te onthouden: u merkt vooral dat de site
             sneller en rustiger aanvoelt.
           </p>
 
-          <h2>Uw Google-posities blijven behouden</h2>
-          <p>
-            De belangrijkste vraag: <em>&quot;Verlies ik mijn rankings?&quot;</em> Het antwoord
-            is: <strong>nee</strong>, als de migratie goed wordt gedaan. Dit doen we standaard:
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Uw Google-posities blijven behouden</h2>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
+            De belangrijkste vraag: <em className="italic">&quot;Verlies ik mijn rankings?&quot;</em> Het antwoord
+            is: <strong className="text-foreground font-semibold">nee</strong>, als de migratie goed wordt gedaan. Dit doen we standaard:
           </p>
-          <ul>
-            <li><strong>URL-mapping + 301-redirects</strong> — oude links blijven werken en geven hun waarde door.</li>
-            <li><strong>Metadata meenemen</strong> — titles, descriptions, headings en alt-teksten verhuizen mee.</li>
-            <li><strong>Schema / structured data</strong> — opnieuw en beter ingericht.</li>
-            <li><strong>Direct na livegang</strong> — nieuwe sitemap indienen in Google Search Console en de crawl in de gaten houden.</li>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">URL-mapping + 301-redirects</strong> — oude links blijven werken en geven hun waarde door.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Metadata meenemen</strong> — titles, descriptions, headings en alt-teksten verhuizen mee.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Schema / structured data</strong> — opnieuw en beter ingericht.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Direct na livegang</strong> — nieuwe sitemap indienen in Google Search Console en de crawl in de gaten houden.</span>
+            </li>
           </ul>
-          <p>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             In de praktijk zien we vaak dat rankings na een paar weken{" "}
-            <strong>stijgen</strong>, juist door de betere snelheid en schonere techniek.
+            <strong className="text-foreground font-semibold">stijgen</strong>, juist door de betere snelheid en schonere techniek.
           </p>
 
-          {/* ✅ AANGEPAST: snelheid nu in tabelvorm */}
-          <h2>Snelheid: voor en na</h2>
-          <p>Gemiddelde resultaten na een migratie van WordPress naar Next.js:</p>
-          <div className="not-prose my-6 overflow-x-auto border-2 border-black shadow-[4px_4px_0px_0px_#1A1A19]">
-            <table className="w-full text-sm">
+          {/* Snelheidstabel */}
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Snelheid: voor en na</h2>
+          <p className="text-foreground-muted leading-relaxed mb-8 text-lg">Gemiddelde resultaten na een migratie van WordPress naar Next.js:</p>
+          
+          <div className="overflow-x-auto border border-border-subtle rounded-sm shadow-soft mb-8">
+            <table className="w-full text-sm font-sans">
               <thead>
-                <tr className="bg-black text-white">
-                  <th className="text-left p-3 font-heading uppercase tracking-wider">Metric</th>
-                  <th className="text-left p-3 font-heading uppercase tracking-wider">Voor (WordPress)</th>
-                  <th className="text-left p-3 font-heading uppercase tracking-wider">Na (Next.js)</th>
+                <tr className="bg-background-secondary text-foreground border-b border-border-subtle">
+                  <th className="text-left p-4 sm:p-5 font-semibold uppercase tracking-wider text-xs">Metric</th>
+                  <th className="text-left p-4 sm:p-5 font-semibold uppercase tracking-wider text-xs">Voor (WordPress)</th>
+                  <th className="text-left p-4 sm:p-5 font-semibold uppercase tracking-wider text-xs text-brand">Na (Next.js)</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Mobiele laadtijd (LCP)</td>
-                  <td className="p-3">3,4s</td>
-                  <td className="p-3 text-green-700 font-bold">0,8s</td>
+              <tbody className="text-foreground-muted">
+                <tr className="border-b border-border-subtle hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Mobiele laadtijd (LCP)</td>
+                  <td className="p-4 sm:p-5">3,4s</td>
+                  <td className="p-4 sm:p-5 text-brand font-semibold">0,8s</td>
                 </tr>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Google PageSpeed</td>
-                  <td className="p-3">52/100</td>
-                  <td className="p-3 text-green-700 font-bold">95+/100</td>
+                <tr className="border-b border-border-subtle hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Google PageSpeed</td>
+                  <td className="p-4 sm:p-5">52/100</td>
+                  <td className="p-4 sm:p-5 text-brand font-semibold">95+/100</td>
                 </tr>
-                <tr className="border-t-2 border-black">
-                  <td className="p-3 font-bold bg-[#FAFAFA]">Eerste serverreactie (TTFB)</td>
-                  <td className="p-3">1,8s</td>
-                  <td className="p-3 text-green-700 font-bold">0,1s</td>
+                <tr className="hover:bg-background-secondary/30 transition-colors">
+                  <td className="p-4 sm:p-5 font-medium text-foreground bg-background-secondary/50">Eerste serverreactie (TTFB)</td>
+                  <td className="p-4 sm:p-5">1,8s</td>
+                  <td className="p-4 sm:p-5 text-brand font-semibold">0,1s</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="text-sm">
+          <p className="text-sm text-foreground-muted leading-relaxed mb-10">
             Lees hoe Google{" "}
-            <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer">
+            <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">
               Core Web Vitals meet
             </a>{" "}
             en waarom dit direct invloed heeft op je ranking.
           </p>
 
-          {/* ✅ NIEUW: wanneer géén goed idee */}
-          <h2>Wanneer is deze migratie géén goed idee?</h2>
-          <p>Eerlijk advies hoort erbij. Een migratie is niet voor iedereen de juiste stap:</p>
-          <ul>
-            <li><strong>Je website is net nieuw</strong> (jonger dan 1 jaar) en presteert nog prima.</li>
-            <li><strong>Je hebt een kleine statische site</strong> zonder groeiproblemen of trage laadtijden.</li>
-            <li><strong>Je budget ligt onder €1.495</strong> — dan is een migratie niet realistisch.</li>
-            <li><strong>Je gebruikt specifieke WordPress-plugins</strong> die essentieel zijn en niet eenvoudig te vervangen zijn.</li>
+          {/* Wanneer géén goed idee */}
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Wanneer is deze migratie géén goed idee?</h2>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">Eerlijk advies hoort erbij. Een migratie is niet voor iedereen de juiste stap:</p>
+          <ul className="space-y-4 mb-8 text-foreground-muted text-lg">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Je website is net nieuw</strong> (jonger dan 1 jaar) en presteert nog prima.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Je hebt een kleine statische site</strong> zonder groeiproblemen of trage laadtijden.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Je budget ligt onder €1.495</strong> — dan is een migratie niet realistisch.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2.5 shrink-0" />
+              <span><strong className="text-foreground font-semibold">Je gebruikt specifieke WordPress-plugins</strong> die essentieel zijn en niet eenvoudig te vervangen zijn.</span>
+            </li>
           </ul>
-          <p>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
             In die gevallen is het verstandiger om je WordPress-site te optimaliseren
             in plaats van te migreren. Ik zeg dat liever vooraf dan dat je onnodig investeert.
           </p>
 
-          <h2>Het traject in vijf stappen</h2>
-          <h3>1. Analyse van uw huidige site</h3>
-          <p>We brengen structuur, sterke pagina&apos;s, content en technische knelpunten in kaart. U krijgt een helder migratieplan en een vaste prijs.</p>
-          <h3>2. Architectuur en content</h3>
-          <p>We bepalen wat behouden blijft en waar we meteen conversie verbeteren. U kiest hoe u content wilt beheren: vertrouwd (bijv. WordPress headless) of een moderner, lichter systeem.</p>
-          <h3>3. Herbouw</h3>
-          <p>De site wordt schoon opgebouwd. Snelheid, mobiel en design krijgen prioriteit. Geen oude ballast.</p>
-          <h3>4. Redirects en livegang</h3>
-          <p>Alle belangrijke URL&apos;s worden getest. Livegang op een rustig moment, daarna direct de sitemap naar Google.</p>
-          <h3>5. Nazorg</h3>
-          <p>De eerste weken monitoren we rankings, indexering en eventuele fouten in Search Console. Zo blijft de overstap stabiel.</p>
+          {/* Traject */}
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Het traject in vijf stappen</h2>
+          
+          <h3 className="font-serif text-2xl text-foreground mt-8 mb-4">1. Analyse van uw huidige site</h3>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">We brengen structuur, sterke pagina&apos;s, content en technische knelpunten in kaart. U krijgt een helder migratieplan en een vaste prijs.</p>
+          
+          <h3 className="font-serif text-2xl text-foreground mt-8 mb-4">2. Architectuur en content</h3>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">We bepalen wat behouden blijft en waar we meteen conversie verbeteren. U kiest hoe u content wilt beheren: vertrouwd (bijv. WordPress headless) of een moderner, lichter systeem.</p>
+          
+          <h3 className="font-serif text-2xl text-foreground mt-8 mb-4">3. Herbouw</h3>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">De site wordt schoon opgebouwd. Snelheid, mobiel en design krijgen prioriteit. Geen oude ballast.</p>
+          
+          <h3 className="font-serif text-2xl text-foreground mt-8 mb-4">4. Redirects en livegang</h3>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">Alle belangrijke URL&apos;s worden getest. Livegang op een rustig moment, daarna direct de sitemap naar Google.</p>
+          
+          <h3 className="font-serif text-2xl text-foreground mt-8 mb-4">5. Nazorg</h3>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">De eerste weken monitoren we rankings, indexering en eventuele fouten in Search Console. Zo blijft de overstap stabiel.</p>
 
-          <h2>Wat kost een migratie?</h2>
-          <p>
-            Migraties starten vanaf <strong>€1.495 excl. btw</strong>. De prijs hangt
+          {/* Kosten */}
+          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mt-12 mb-6">Wat kost een migratie?</h2>
+          <p className="text-foreground-muted leading-relaxed mb-6 text-lg">
+            Migraties starten vanaf <strong className="text-foreground font-semibold">€1.495 excl. btw</strong>. De prijs hangt
             af van het aantal pagina&apos;s en de complexiteit. U krijgt altijd vooraf een
             vaste offerte — geen uurtje-factuurtje.
           </p>
-          <p>
+          <p className="text-foreground-muted leading-relaxed mb-12 text-lg">
             Liever een complete nieuwe site met migratie van content? Bekijk ook{" "}
-            <Link href="/website-laten-maken-rotterdam">website laten maken in Rotterdam</Link>{" "}
-            of de <Link href="/pakketten">pakketten en prijzen</Link>. Twijfel je nog tussen blijven of overstappen? Lees{" "}
-            <Link href="/nextjs-vs-wordpress">Next.js vs WordPress</Link>.
+            <Link href="/website-laten-maken-rotterdam" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">
+              website laten maken in Rotterdam
+            </Link>{" "}
+            of de <Link href="/pakketten" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">pakketten en prijzen</Link>. Twijfel je nog tussen blijven of overstappen? Lees{" "}
+            <Link href="/nextjs-vs-wordpress" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-colors">Next.js vs WordPress</Link>.
           </p>
 
-          <h2>Veelgestelde vragen</h2>
-        </div>
-
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 mt-6">
-          <FAQ items={faqs} schemaId="wordpress-naar-nextjs" />
+          <div className="pt-12 border-t border-border-subtle mt-16">
+            <h2 className="font-serif text-3xl sm:text-4xl text-foreground mb-8">Veelgestelde vragen</h2>
+            <FAQ items={faqs} schemaId="wordpress-naar-nextjs" />
+          </div>
         </div>
       </article>
 
+      {/* CTA Sectie */}
       <CTASection
         title="Gratis migratie-analyse aanvragen"
         subtitle="Stuur de URL van uw WordPress-site. Ik beoordeel snelheid en kansen en stuur binnen 48 uur een vrijblijvend advies — zonder verplichtingen."
