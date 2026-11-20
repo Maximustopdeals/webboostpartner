@@ -46,45 +46,43 @@ const items: USPItem[] = [
 
 export default function USPGrid() {
   return (
-    <section className="bg-[#FAFAFA] py-20 sm:py-28 border-t-2 border-black" data-testid="usp-grid">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <section className="bg-background-secondary py-24 sm:py-32" data-testid="usp-grid">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
-        <div className="max-w-3xl mb-14">
-          {/* ✅ KLEINE TEKST: blijft text-orange-accessible */}
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
-            // Jouw Digitale Voorsprong
+        <div className="max-w-3xl mb-16">
+          <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-4">
+            Jouw Digitale Voorsprong
           </p>
-          <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95] text-black">
+          <h2 className="font-serif text-4xl sm:text-5xl text-foreground tracking-tight leading-[1.1]">
             Geen ingewikkeld gedoe.<br />
-            {/* ✅ GROTE KOP: text-[#FF4500] */}
-            Wel <span className="text-[#FF4500]">online resultaat</span>.
+            Wel <span className="text-brand italic">online resultaat</span>.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((it: USPItem, i: number) => {
             const Icon = it.icon;
             return (
               <div
                 key={i}
-                className="border-2 border-black bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#1A1A19]"
+                className="bg-background p-8 rounded-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-soft border border-border-subtle"
                 data-testid={`usp-card-${i}`}
               >
-                <div className="w-11 h-11 grid place-items-center border-2 border-black bg-[#FF4500] text-black mb-5 shadow-[2px_2px_0px_0px_#1A1A19]">
-                  <Icon size={20} strokeWidth={2.5} />
+                <div className="w-12 h-12 grid place-items-center bg-brand/10 text-brand rounded-full mb-6">
+                  <Icon size={24} strokeWidth={2} />
                 </div>
 
                 {it.metric && (
-                  <p className="font-mono text-[10px] uppercase tracking-widest mb-1.5 text-orange-accessible font-bold">
+                  <p className="font-sans text-xs uppercase tracking-widest mb-2 text-brand font-semibold">
                     {it.metric}
                   </p>
                 )}
 
-                <h3 className="font-heading font-black uppercase text-lg tracking-tight mb-2 text-black">
+                <h3 className="font-serif text-xl text-foreground mb-3">
                   {it.title}
                 </h3>
                 
-                <p className="text-sm text-[#4a4a48] leading-relaxed font-medium">
+                <p className="text-foreground-muted font-sans leading-relaxed text-sm">
                   {it.desc}
                 </p>
               </div>
