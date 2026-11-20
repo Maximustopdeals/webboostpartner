@@ -53,7 +53,7 @@ const faqs: FAQItem[] = [
 export default function NextjsVsWordpressPage() {
   return (
     <>
-      {/* JSON-LD - Ongewijzigd */}
+      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -120,13 +120,12 @@ export default function NextjsVsWordpressPage() {
         </div>
       </section>
 
-            {/* SIDE-BY-SIDE */}
+      {/* SIDE-BY-SIDE */}
       <section className="bg-background-secondary py-24 sm:py-32 border-y border-border-subtle">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-8">
           {/* WordPress Card */}
           <div className="bg-background border border-border-subtle p-8 sm:p-10 rounded-sm shadow-soft">
             <p className="font-sans text-xs uppercase tracking-widest text-foreground-muted font-semibold mb-3">WordPress</p>
-            {/* <br /> verwijderd, text-foreground toegevoegd voor de zekerheid */}
             <h2 className="font-serif text-3xl sm:text-4xl text-foreground mb-5">De bekende standaard</h2>
             <p className="text-foreground-muted leading-relaxed font-sans">
               WordPress drijft miljoenen websites aan. Het is laagdrempelig, flexibel
@@ -139,22 +138,7 @@ export default function NextjsVsWordpressPage() {
           <div className="bg-foreground text-white p-8 sm:p-10 rounded-sm shadow-soft relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 rounded-bl-full pointer-events-none" />
             <p className="font-sans text-xs uppercase tracking-widest text-brand font-semibold mb-3">Moderne website (Next.js)</p>
-            {/* <br /> verwijderd en text-white toegevoegd aan de h2 */}
             <h2 className="font-serif text-3xl sm:text-4xl text-white mb-5">De snelle upgrade</h2>
-            <p className="leading-relaxed text-gray-300 font-sans">
-              Een moderne website laadt sneller, heeft minder onderhoud nodig en scoort
-              sterker in Google. Dezelfde techniek die grote merken gebruiken vertaald
-              naar een praktische oplossing voor ZZP en MKB.
-            </p>
-          </div>
-        </div>
-      </section>
-          
-          {/* Next.js Card */}
-          <div className="bg-foreground text-white p-8 sm:p-10 rounded-sm shadow-soft relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 rounded-bl-full pointer-events-none" />
-            <p className="font-sans text-xs uppercase tracking-widest text-brand font-semibold mb-3">Moderne website (Next.js)</p>
-            <h2 className="font-serif text-3xl sm:text-4xl mb-5">De snelle<br />upgrade</h2>
             <p className="leading-relaxed text-gray-300 font-sans">
               Een moderne website laadt sneller, heeft minder onderhoud nodig en scoort
               sterker in Google. Dezelfde techniek die grote merken gebruiken vertaald
