@@ -21,7 +21,7 @@ interface FormStatus {
 function Field({ label, name, type = "text", required = false, testid }: FieldProps) {
   return (
     <div>
-      <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2 text-[#1a1a1a]">
+      <label className="block font-sans text-sm font-medium mb-2 text-foreground">
         {label}
       </label>
       <input
@@ -29,19 +29,14 @@ function Field({ label, name, type = "text", required = false, testid }: FieldPr
         name={name}
         required={required}
         data-testid={testid}
-        className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+        className="w-full border border-border-subtle bg-background p-3.5 rounded-sm focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-sm text-foreground placeholder:text-foreground-muted/50"
       />
     </div>
   );
 }
 
-/* ---------- Intent helpers (single source of truth) ---------- */
 const isAnalyseIntent = (v: string | null): boolean =>
-  v === "analyse" ||
-  v === "quickscan" ||
-  v === "quickscan_analyse" ||
-  v === "migratie_analyse" ||
-  v === "website_analyse";
+  v === "analyse" || v === "quickscan" || v === "quickscan_analyse" || v === "migratie_analyse" || v === "website_analyse";
 
 const isOfferteIntent = (v: string | null): boolean =>
   v === "offerte" || (v ? v.startsWith("pakket_") : false);
@@ -60,7 +55,6 @@ export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus["status"]>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
 
-  // Sync checkboxes when the URL intent changes (soft navigation, CTA clicks)
   useEffect(() => {
     setAnalyseAanvraag(isAnalyseIntent(intent));
     setOfferteAanvraag(isOfferteIntent(intent));
@@ -103,11 +97,8 @@ export default function ContactForm() {
         let msg = "Er ging iets mis. Probeer het opnieuw.";
         try {
           const json = await res.json();
-          if (json?.errors?.[0]?.message) {
-            msg = json.errors[0].message;
-          } else if (json?.error) {
-            msg = json.error;
-          }
+          if (json?.errors?.[0]?.message) msg = json.errors[0].message;
+          else if (json?.error) msg = json.error;
         } catch {
           msg = `Server fout (${res.status}). Probeer het later opnieuw.`;
         }
@@ -115,8 +106,7 @@ export default function ContactForm() {
         setStatus("error");
       }
     } catch (err: unknown) {
-      const errorMessage =
-        err instanceof Error ? err.message : "Netwerkfout. Probeer het later opnieuw.";
+      const errorMessage = err instanceof Error ? err.message : "Netwerkfout. Probeer het later opnieuw.";
       setErrorMsg(errorMessage);
       setStatus("error");
     }
@@ -125,14 +115,14 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div
-        className="bg-white border-2 border-black p-8 sm:p-12 shadow-brutal"
+        className="bg-background-secondary border border-border-subtle p-8 sm:p-12 rounded-sm shadow-soft"
         data-testid="contact-form-success"
       >
-        <CheckCircle2 size={48} className="text-[#FF4500] mb-4" strokeWidth={2.5} />
-        <h3 className="font-heading font-extrabold uppercase text-3xl mb-2 text-black">
+        <CheckCircle2 size={48} className="text-brand mb-6" strokeWidth={1.5} />
+        <h3 className="font-serif text-3xl mb-4 text-foreground">
           Bedankt voor je aanvraag!
         </h3>
-        <p className="text-base text-[#525252] max-w-prose leading-relaxed">
+        <p className="text-base text-foreground-muted max-w-prose leading-relaxed font-sans">
           Ik ga direct voor je aan de slag en stuur je binnen 24 tot 48 uur een
           persoonlijke reactie. Tot snel!
         </p>
@@ -143,14 +133,14 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white border-2 border-black p-6 sm:p-10 shadow-brutal space-y-5"
+      className="bg-background border border-border-subtle p-6 sm:p-10 rounded-sm shadow-soft space-y-6"
       data-testid="contact-form"
     >
-      <div className="border-b-2 border-black pb-4 mb-2">
-        <h2 className="font-heading font-extrabold uppercase text-2xl text-black">
+      <div className="border-b border-border-subtle pb-6 mb-2">
+        <h2 className="font-serif text-3xl text-foreground mb-2">
           {getTitle()}
         </h2>
-        <p className="text-sm text-[#525252] mt-1 leading-relaxed">
+        <p className="text-sm text-foreground-muted font-sans leading-relaxed">
           Vul de velden in en je ontvangt binnen 24 tot 48 uur een persoonlijk en
           onafhankelijk advies.
         </p>
@@ -167,19 +157,19 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2 text-[#1a1a1a]">
+        <label className="block font-sans text-sm font-medium mb-2 text-foreground">
           Website URL (optioneel voor analyse)
         </label>
         <input
           type="text"
           name="website_url"
           placeholder="www.jouwbedrijf.nl"
-          className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+          className="w-full border border-border-subtle bg-background p-3.5 rounded-sm focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-sm text-foreground placeholder:text-foreground-muted/50"
         />
       </div>
 
       <div>
-        <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2 text-[#1a1a1a]">
+        <label className="block font-sans text-sm font-medium mb-2 text-foreground">
           Bericht of aanvullende opmerking *
         </label>
         <textarea
@@ -187,18 +177,18 @@ export default function ContactForm() {
           required
           rows={4}
           placeholder="Vertel kort wat over je bedrijf en je online ambities..."
-          className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+          className="w-full border border-border-subtle bg-background p-3.5 rounded-sm focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-sm text-foreground placeholder:text-foreground-muted/50"
           data-testid="field-bericht"
         />
       </div>
 
       <div>
-        <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2 text-[#1a1a1a]">
+        <label className="block font-sans text-sm font-medium mb-2 text-foreground">
           Hoe heb je mij gevonden?
         </label>
         <select
           name="bron"
-          className="w-full border-2 border-black p-4 bg-[#FAFAFA] focus:bg-white focus:border-[#FF4500] outline-none transition-colors text-sm"
+          className="w-full border border-border-subtle bg-background p-3.5 rounded-sm focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-sm text-foreground"
           data-testid="field-bron"
           defaultValue=""
         >
@@ -210,57 +200,57 @@ export default function ContactForm() {
         </select>
       </div>
 
-      <div className="border-2 border-black bg-[#FAFAFA] p-5 space-y-4">
-        <p className="font-heading font-bold uppercase text-xs tracking-widest text-[#525252]">
+      <div className="bg-background-secondary border border-border-subtle p-5 rounded-sm space-y-5">
+        <p className="font-sans font-semibold text-sm text-foreground">
           Kies jouw gewenste startmethode:
         </p>
 
-        <label className="flex items-start gap-3 cursor-pointer">
+        <label className="flex items-start gap-3 cursor-pointer group">
           <input
             type="checkbox"
             checked={analyseAanvraag}
             onChange={(e) => setAnalyseAanvraag(e.target.checked)}
-            className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
+            className="w-5 h-5 mt-0.5 shrink-0 accent-brand cursor-pointer"
             data-testid="intent-analyse"
           />
-          <span className="text-sm text-black">
-            <strong>Ja, ik wil een gratis website-analyse</strong>
+          <span className="text-sm text-foreground font-sans group-hover:text-brand transition-colors">
+            <strong className="font-semibold">Ja, ik wil een gratis website-analyse</strong>
             <br />
-            <span className="text-[#525252] text-xs">
+            <span className="text-foreground-muted text-xs leading-relaxed block mt-1">
               Binnen 48 uur een heldere, vrijblijvende analyse van uw huidige site.
             </span>
           </span>
         </label>
 
-        <label className="flex items-start gap-3 cursor-pointer">
+        <label className="flex items-start gap-3 cursor-pointer group">
           <input
             type="checkbox"
             checked={offerteAanvraag}
             onChange={(e) => setOfferteAanvraag(e.target.checked)}
-            className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
+            className="w-5 h-5 mt-0.5 shrink-0 accent-brand cursor-pointer"
             data-testid="intent-offerte"
           />
-          <span className="text-sm text-black">
-            <strong>Ja, ik wil een transparant voorstel</strong>
+          <span className="text-sm text-foreground font-sans group-hover:text-brand transition-colors">
+            <strong className="font-semibold">Ja, ik wil een transparant voorstel</strong>
             <br />
-            <span className="text-[#525252] text-xs">
+            <span className="text-foreground-muted text-xs leading-relaxed block mt-1">
               Een helder projectvoorstel met een vaste all-in prijs vooraf.
             </span>
           </span>
         </label>
 
-        <label className="flex items-start gap-3 cursor-pointer">
+        <label className="flex items-start gap-3 cursor-pointer group">
           <input
             type="checkbox"
             checked={adviesAanvraag}
             onChange={(e) => setAdviesAanvraag(e.target.checked)}
-            className="w-5 h-5 border-2 border-black accent-[#FF4500] mt-0.5 shrink-0"
+            className="w-5 h-5 mt-0.5 shrink-0 accent-brand cursor-pointer"
             data-testid="intent-advies"
           />
-          <span className="text-sm text-black">
-            <strong>Ja, ik wil een vrijblijvend adviesgesprek</strong>
+          <span className="text-sm text-foreground font-sans group-hover:text-brand transition-colors">
+            <strong className="font-semibold">Ja, ik wil een vrijblijvend adviesgesprek</strong>
             <br />
-            <span className="text-[#525252] text-xs">
+            <span className="text-foreground-muted text-xs leading-relaxed block mt-1">
               Een kort gesprek via telefoon of op locatie in de regio.
             </span>
           </span>
@@ -269,22 +259,22 @@ export default function ContactForm() {
 
       {status === "error" && (
         <div
-          className="flex items-start gap-2 border-2 border-black bg-[#FFE5DA] p-4"
+          className="flex items-start gap-3 border border-red-200 bg-red-50 p-4 rounded-sm"
           data-testid="contact-form-error"
         >
-          <AlertCircle size={20} className="text-[#FF4500] mt-0.5 shrink-0" />
-          <p className="text-sm font-medium text-black">{errorMsg}</p>
+          <AlertCircle size={20} className="text-red-500 mt-0.5 shrink-0" />
+          <p className="text-sm font-medium text-red-800">{errorMsg}</p>
         </div>
       )}
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="group w-full inline-flex items-center justify-center gap-2 bg-[#FF4500] text-white font-heading font-bold uppercase tracking-wider border-2 border-black px-8 py-4 hover:bg-black hover:-translate-y-1 hover:shadow-brutal-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full inline-flex items-center justify-center gap-2 bg-brand text-white font-sans font-medium px-8 py-4 rounded-sm hover:bg-brand-hover transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed text-base"
       >
         {status === "loading" ? (
           <>
-            <Loader2 className="animate-spin" size={18} /> Versturen...
+            <Loader2 className="animate-spin" size={20} /> Versturen...
           </>
         ) : (
           <>
