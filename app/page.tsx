@@ -136,7 +136,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl max-w-2xl text-[#1a1a1a] font-medium leading-relaxed">
-              WebBoost Partner bouwt bliksemsnelle Next.js-websites die jouw vakmanschap laten zien en bezoekers omzetten in echte aanvragen. Geen standaard templates, maar <Link href="/portfolio" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500] transition-colors">bewezen maatwerk</Link> — met 100% eigenaarschap van de code.
+              WebBoost Partner bouwt bliksemsnelle Next.js-websites die jouw vakmanschap laten zien en bezoekers omzetten in echte aanvragen. Geen standaard templates, maar <Link href="/portfolio" className="underline decoration-2 decoration-[#FF4500] hover:text-[#FF4500] transition-colors">bewezen maatwerk</Link> met 100% eigenaarschap van de code.
             </p>
 
             <div className="mt-6 border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#1A1A19]">
