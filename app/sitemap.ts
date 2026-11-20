@@ -16,13 +16,14 @@ interface RouteConfig {
   route: string;
   priority: number;
   changeFrequency: ChangeFrequency;
-  /** Optionele vaste lastModified (ISO-string of Date). Standaard = vandaag. */
+  /** Optionele vaste lastModified (ISO-string of Date). */
   lastModified?: string | Date;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Vaste referentiedatum voor content die zelden wijzigt
-  const contentUpdated = new Date("2026-11-06");
+  // Vaste referentiedatum voor content die zelden wijzigt.
+  // ⚠️ LET OP: Zet dit op een datum in het verleden (bijv. de datum van je laatste grote update).
+  const contentUpdated = new Date("2024-05-20");
 
   const staticRoutes: RouteConfig[] = [
     // Pilaar-pagina's (leadgeneratie)
@@ -68,7 +69,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allRoutes.map(({ route, priority, changeFrequency, lastModified }) => ({
     url: `${baseUrl}${route === "/" ? "" : route}`,
-    lastModified: lastModified ?? new Date(),
+    // ✅ AANGEPAST: Alleen toevoegen als lastModified bestaat (waarheidsgetrouw)
+    ...(lastModified ? { lastModified } : {}),
     changeFrequency,
     priority,
   }));
