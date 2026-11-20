@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, Zap, TrendingUp, Star, Layers, ArrowRight } from "lucide-react";
 
 interface PricingPackage {
   id: string;
@@ -23,11 +23,83 @@ interface PricingSectionProps {
   compact?: boolean;
 }
 
-// 👇 HIER PLAK JE JOUW BESTAANDE PACKAGES ARRAY TERUG 👇
+// ✅ HIER IS JOUW DATA WEER INGEVULD
 const packages: PricingPackage[] = [
-  // ... (jouw bestaande data)
+  {
+    id: "starter",
+    name: "Starter",
+    price: "€1.950",
+    priceIncl: "€2.359,50",
+    icon: <Zap size={32} strokeWidth={1.5} />,
+    forWho: "Voor ZZP'ers en starters die een professioneel online visitekaartje willen.",
+    promise: "Snel, strak en klaar om leads te ontvangen.",
+    features: [
+      "3 tot 5 pagina's",
+      "Maatwerk Next.js design",
+      "95+ PageSpeed score",
+      "Technische SEO basis",
+      "Contactformulier",
+      "Google Analytics 4 setup"
+    ],
+  },
+  {
+    id: "professional",
+    name: "Professional",
+    price: "€3.495",
+    priceIncl: "€4.228,95",
+    badge: "Meest gekozen",
+    icon: <TrendingUp size={32} strokeWidth={1.5} />,
+    forWho: "Voor MKB-ondernemers die via Google actief leads en aanvragen willen genereren.",
+    promise: "Het perfecte fundament voor online groei en lokale vindbaarheid.",
+    inheritFrom: "Starter",
+    highlighted: true,
+    features: [
+      "Tot 10 pagina's",
+      "Strategische landingspagina's",
+      "Lokale SEO Rotterdam",
+      "Blog / nieuwsmodule",
+      "Uitgebreide conversie-optimalisatie",
+      "WhatsApp-integratie"
+    ],
+  },
+  {
+    id: "premium",
+    name: "Premium",
+    price: "€5.495",
+    priceIncl: "€6.648,95",
+    icon: <Star size={32} strokeWidth={1.5} />,
+    forWho: "Voor gevestigde bedrijven die online de absolute top in hun branche willen claimen.",
+    promise: "High-end maatwerk met diepgaande conversiepsychologie.",
+    inheritFrom: "Professional",
+    features: [
+      "10 tot 20 pagina's",
+      "Volledig custom platform",
+      "Diepgaande conversiepsychologie",
+      "Vloeiende animaties",
+      "CRM / boekingssysteem integraties",
+      "Uitgebreide SEO-strategie"
+    ],
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise",
+    price: "€7.995+",
+    priceIncl: "Op aanvraag",
+    icon: <Layers size={32} strokeWidth={1.5} />,
+    forWho: "Voor organisaties met complexe digitale processen, grotere webshops of dashboards.",
+    promise: "Onbeperkte schaalbaarheid en volledige integratie met jouw systemen.",
+    inheritFrom: "Premium",
+    isCustom: true,
+    features: [
+      "Volledig maatwerk & strategie",
+      "Headless CMS koppeling",
+      "Webshop / klantomgeving",
+      "Complexe API-koppelingen",
+      "Uitgebreide nazorg & support",
+      "Schaalbaar voor honderden producten"
+    ],
+  },
 ];
-// 👆 EINDE PACKAGES ARRAY 👆
 
 export default function PricingSection({ compact = false }: PricingSectionProps) {
   return (
