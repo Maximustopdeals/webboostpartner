@@ -1,12 +1,21 @@
+
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Check, ExternalLink, Monitor, Smartphone, Star } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  ExternalLink,
+  Monitor,
+  Smartphone,
+  Star,
+} from "lucide-react";
 import USPGrid from "@/components/USPGrid";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
-  title: "Webdesign Rotterdam | Website Laten Maken | 95+ PageSpeed | WebBoost Partner",
+  title:
+    "Webdesign Rotterdam | Website Laten Maken | 95+ PageSpeed | WebBoost Partner",
   description:
     "Webdesign Rotterdam en website laten maken? WebBoost Partner bouwt bliksemsnelle Next.js websites die jouw vakmanschap tonen en bezoekers omzetten in klanten. Vaste prijs, lokaal, SEO inbegrepen.",
   alternates: { canonical: "/" },
@@ -20,11 +29,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Webdesign Rotterdam | Website Laten Maken",
-    description: "Razendsnelle Next.js websites met 95+ PageSpeed. Lokaal in Rotterdam.",
+    description:
+      "Razendsnelle Next.js websites met 95+ PageSpeed. Lokaal in Rotterdam.",
   },
 };
 
-interface FAQItem { q: string; a: string }
+interface FAQItem {
+  q: string;
+  a: string;
+}
 
 const faqs: FAQItem[] = [
   {
@@ -66,7 +79,9 @@ export default function HomePage() {
                 logo: "https://www.webboostpartner.nl/og.jpg",
                 description:
                   "WebBoost Partner is een Nederlands webbureau dat razendsnelle Next.js-websites bouwt voor ZZP en MKB in Rotterdam en omgeving. Vaste prijs, SEO inbegrepen, 100% eigenaarschap van de code.",
-                founder: { "@id": "https://www.webboostpartner.nl/over-mij#person" },
+                founder: {
+                  "@id": "https://www.webboostpartner.nl/over-mij#person",
+                },
                 address: {
                   "@type": "PostalAddress",
                   addressLocality: "Rotterdam",
@@ -90,7 +105,9 @@ export default function HomePage() {
                 "@id": "https://www.webboostpartner.nl/#website",
                 url: "https://www.webboostpartner.nl",
                 name: "WebBoost Partner",
-                publisher: { "@id": "https://www.webboostpartner.nl/#organization" },
+                publisher: {
+                  "@id": "https://www.webboostpartner.nl/#organization",
+                },
                 inLanguage: "nl-NL",
               },
               {
@@ -107,8 +124,13 @@ export default function HomePage() {
                   addressLocality: "Rotterdam",
                   addressCountry: "NL",
                 },
-                areaServed: { "@type": "City", name: "Rotterdam" },
-                parentOrganization: { "@id": "https://www.webboostpartner.nl/#organization" },
+                areaServed: {
+                  "@type": "City",
+                  name: "Rotterdam",
+                },
+                parentOrganization: {
+                  "@id": "https://www.webboostpartner.nl/#organization",
+                },
               },
               {
                 "@type": "FAQPage",
@@ -116,7 +138,10 @@ export default function HomePage() {
                 mainEntity: faqs.map((f) => ({
                   "@type": "Question",
                   name: f.q,
-                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: f.a,
+                  },
                 })),
               },
             ],
@@ -124,100 +149,157 @@ export default function HomePage() {
         }}
       />
 
-      {/* HERO SECTIE - Editorial & Premium */}
+      {/* HERO SECTIE */}
       <section className="relative bg-background pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-16 items-center">
-          
           <div className="lg:col-span-7">
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-6">
-              <span className="block text-brand italic mb-2">Webdesign Rotterdam</span>
+              <span className="block text-brand-accessible italic mb-2">
+                Webdesign Rotterdam
+              </span>
               die klanten oplevert.
             </h1>
 
             <p className="text-lg sm:text-xl max-w-2xl text-foreground-muted font-sans leading-relaxed mb-8">
-              WebBoost Partner bouwt bliksemsnelle Next.js-websites die jouw vakmanschap laten zien en bezoekers omzetten in echte aanvragen. Geen standaard templates, maar <Link href="/portfolio" className="text-foreground underline decoration-brand decoration-2 underline-offset-4 hover:text-brand transition-colors">bewezen maatwerk</Link> met 100% eigenaarschap van de code.
+              WebBoost Partner bouwt bliksemsnelle Next.js-websites die jouw
+              vakmanschap laten zien en bezoekers omzetten in echte aanvragen.
+              Geen standaard templates, maar{" "}
+              <Link
+                href="/portfolio"
+                className="text-foreground underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-accessible transition-colors"
+              >
+                bewezen maatwerk
+              </Link>{" "}
+              met 100% eigenaarschap van de code.
             </p>
 
-            {/* Kort Antwoord Box - Warm & Elegant */}
             <div className="bg-background-secondary p-6 sm:p-8 rounded-sm border border-border-subtle mb-10">
-              <p className="font-sans text-xs uppercase tracking-widest text-brand font-bold mb-3">
+              <p className="font-sans text-xs uppercase tracking-widest text-brand-accessible font-bold mb-3">
                 Kort antwoord
               </p>
               <p className="text-base text-foreground-muted leading-relaxed font-sans">
-                WebBoost Partner is een Nederlands webbureau in Rotterdam dat razendsnelle Next.js-websites bouwt voor ZZP en MKB. Website laten maken vanaf <strong className="text-foreground font-semibold">€1.950</strong>, 95+ PageSpeed, SEO inbegrepen, vaste prijs en <strong className="text-foreground font-semibold">100% eigenaarschap</strong> van de code — geen platform lock-in.
+                WebBoost Partner is een Nederlands webbureau in Rotterdam dat
+                razendsnelle Next.js-websites bouwt voor ZZP en MKB. Website
+                laten maken vanaf{" "}
+                <strong className="text-foreground font-semibold">
+                  €1.950
+                </strong>
+                , 95+ PageSpeed, SEO inbegrepen, vaste prijs en{" "}
+                <strong className="text-foreground font-semibold">
+                  100% eigenaarschap
+                </strong>{" "}
+                van de code. Geen platform lock-in.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-10">
               <Link
                 href="/contact?intent=advies"
-                className="inline-flex items-center justify-center bg-brand text-white font-sans font-medium px-8 py-4 hover:bg-brand-hover transition-all duration-300 rounded-sm"
+                className="inline-flex items-center justify-center bg-brand-accessible text-white font-sans font-medium px-8 py-4 hover:bg-brand-accessible-hover transition-all duration-300 rounded-sm"
               >
-                Vraag gratis adviesgesprek aan <ArrowRight size={18} className="ml-2" />
+                Vraag gratis adviesgesprek aan{" "}
+                <ArrowRight size={18} className="ml-2" aria-hidden="true" />
               </Link>
             </div>
 
             <div className="flex flex-col gap-4 mb-10">
               <div className="flex items-center gap-2">
-                <div className="flex text-brand">
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
+                <div className="flex text-brand" aria-label="5 sterren">
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <Star
+                      key={index}
+                      size={16}
+                      fill="currentColor"
+                      aria-hidden="true"
+                    />
+                  ))}
                 </div>
                 <p className="text-sm font-medium text-foreground-muted">
-                  "Binnen een week 3 nieuwe aanvragen!" — Cindy, Cindy&apos;s Kraamzorg
+                  &quot;Binnen een week 3 nieuwe aanvragen!&quot; — Cindy,
+                  Cindy&apos;s Kraamzorg
                 </p>
               </div>
 
               <ul className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm font-medium text-foreground">
                 <li className="flex items-center gap-2">
-                  <Check size={18} className="text-brand" /> Vaste prijs vooraf
+                  <Check
+                    size={18}
+                    className="text-brand"
+                    aria-hidden="true"
+                  />
+                  Vaste prijs vooraf
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check size={18} className="text-brand" />
-                  <Link href="/over-mij" className="hover:text-brand transition-colors">
+                  <Check
+                    size={18}
+                    className="text-brand"
+                    aria-hidden="true"
+                  />
+                  <Link
+                    href="/over-mij"
+                    className="hover:text-brand-accessible transition-colors"
+                  >
                     100% eigenaarschap
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Interne Links - Subtiel */}
             <div className="pt-8 border-t border-border-subtle space-y-3 text-sm text-foreground-muted font-sans">
               <p>
-                <strong className="font-semibold text-foreground">Diensten:</strong>{" "}
-                <Link href="/website-laten-maken-rotterdam" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
+                <strong className="font-semibold text-foreground">
+                  Diensten:
+                </strong>{" "}
+                <Link
+                  href="/website-laten-maken-rotterdam"
+                  className="hover:text-brand-accessible transition-colors underline decoration-transparent hover:decoration-brand-accessible underline-offset-4"
+                >
                   Website laten maken Rotterdam
                 </Link>
                 {" · "}
-                <Link href="/seo-rotterdam" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
+                <Link
+                  href="/seo-rotterdam"
+                  className="hover:text-brand-accessible transition-colors underline decoration-transparent hover:decoration-brand-accessible underline-offset-4"
+                >
                   SEO Rotterdam
                 </Link>
                 {" · "}
-                <Link href="/pakketten" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
-                  Pakketten & prijzen
+                <Link
+                  href="/pakketten"
+                  className="hover:text-brand-accessible transition-colors underline decoration-transparent hover:decoration-brand-accessible underline-offset-4"
+                >
+                  Pakketten &amp; prijzen
                 </Link>
               </p>
               <p>
-                <strong className="font-semibold text-foreground">Meer weten:</strong>{" "}
-                <Link href="/wordpress-naar-nextjs" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
+                <strong className="font-semibold text-foreground">
+                  Meer weten:
+                </strong>{" "}
+                <Link
+                  href="/wordpress-naar-nextjs"
+                  className="hover:text-brand-accessible transition-colors underline decoration-transparent hover:decoration-brand-accessible underline-offset-4"
+                >
                   WordPress naar Next.js
                 </Link>
                 {" · "}
-                <Link href="/nextjs-vs-wordpress" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
+                <Link
+                  href="/nextjs-vs-wordpress"
+                  className="hover:text-brand-accessible transition-colors underline decoration-transparent hover:decoration-brand-accessible underline-offset-4"
+                >
                   Next.js vs WordPress
                 </Link>
                 {" · "}
-                <Link href="/portfolio" className="hover:text-brand transition-colors underline decoration-transparent hover:decoration-brand underline-offset-4">
+                <Link
+                  href="/portfolio"
+                  className="hover:text-brand-accessible transition-colors underline decoration-transparent hover:decoration-brand-accessible underline-offset-4"
+                >
                   Portfolio
                 </Link>
               </p>
             </div>
           </div>
 
-          {/* Rechterkolom - Live Bewijs Card */}
+          {/* RECHTERKOLOM - LIVE BEWIJS */}
           <div className="lg:col-span-5 relative">
             <div className="bg-white border border-border-subtle p-8 sm:p-10 shadow-soft rounded-sm">
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-border-subtle">
@@ -225,7 +307,10 @@ export default function HomePage() {
                   Live Bewijs
                 </p>
                 <span className="inline-flex items-center gap-2 bg-[#F0FDF4] text-green-700 font-medium text-xs px-3 py-1 rounded-full border border-green-200">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  <span
+                    className="w-2 h-2 bg-green-500 rounded-full animate-pulse"
+                    aria-hidden="true"
+                  />
                   Geverifieerd
                 </span>
               </div>
@@ -233,15 +318,25 @@ export default function HomePage() {
               <div className="flex items-end gap-10 mb-8 pb-8 border-b border-border-subtle">
                 <div>
                   <div className="flex items-center gap-2 text-foreground-muted mb-2">
-                    <Monitor size={16} /> <span className="text-xs font-semibold uppercase tracking-wider">Desktop</span>
+                    <Monitor size={16} aria-hidden="true" />
+                    <span className="text-xs font-semibold uppercase tracking-wider">
+                      Desktop
+                    </span>
                   </div>
-                  <span className="font-serif text-6xl text-brand leading-none">100</span>
+                  <span className="font-serif text-6xl text-brand-accessible leading-none">
+                    100
+                  </span>
                 </div>
                 <div>
                   <div className="flex items-center gap-2 text-foreground-muted mb-2">
-                    <Smartphone size={16} /> <span className="text-xs font-semibold uppercase tracking-wider">Mobiel</span>
+                    <Smartphone size={16} aria-hidden="true" />
+                    <span className="text-xs font-semibold uppercase tracking-wider">
+                      Mobiel
+                    </span>
                   </div>
-                  <span className="font-serif text-6xl text-brand leading-none">95</span>
+                  <span className="font-serif text-6xl text-brand-accessible leading-none">
+                    95
+                  </span>
                 </div>
               </div>
 
@@ -249,11 +344,12 @@ export default function HomePage() {
                 <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted mb-2">
                   Recent project:
                 </p>
-                <h3 className="font-serif text-2xl text-foreground mb-3">
+                <h2 className="font-serif text-2xl text-foreground mb-3">
                   Marley&apos;s Kraamzorg
-                </h3>
+                </h2>
                 <p className="text-base text-foreground-muted leading-relaxed font-sans">
-                  Volledig op maat gemaakt met een uitzonderlijk snelle laadtijd en een perfecte beoordeling.
+                  Volledig op maat gemaakt met een uitzonderlijk snelle laadtijd
+                  en een perfecte beoordeling.
                 </p>
               </div>
 
@@ -263,17 +359,20 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-background-secondary text-foreground font-medium text-sm py-3.5 rounded-sm hover:bg-border-subtle transition-colors"
               >
-                Bekijk de live score bij Google <ExternalLink size={16} />
+                Bekijk de live score bij Google{" "}
+                <ExternalLink size={16} aria-hidden="true" />
+                <span className="sr-only">
+                  (opent in een nieuw tabblad)
+                </span>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* USPGrid - Deze stijlen we in de volgende stap aan */}
       <USPGrid />
 
-      {/* FAQ SECTIE - Rustig en Editorial */}
+      {/* FAQ SECTIE */}
       <section className="bg-background-secondary py-24 sm:py-32">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -288,7 +387,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTASection - Deze stijlen we in de volgende stap aan */}
       <CTASection />
     </>
   );
