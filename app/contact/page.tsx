@@ -18,16 +18,16 @@ interface ContactCardProps {
 
 function ContactCard({ icon: Icon, label, children }: ContactCardProps) {
   return (
-    <div className="border-2 border-black bg-white p-5 hover:shadow-brutal-sm hover:-translate-y-1 transition-all">
+    <div className="bg-background border border-border-subtle p-6 rounded-sm shadow-sm hover:shadow-soft hover:-translate-y-1 transition-all duration-300">
       <div className="flex items-start gap-4">
-        <div className="w-11 h-11 grid place-items-center bg-[#FF4500] text-white border-2 border-black shrink-0">
-          <Icon size={20} strokeWidth={2.5} />
+        <div className="w-12 h-12 grid place-items-center bg-brand/10 text-brand rounded-full shrink-0">
+          <Icon size={22} strokeWidth={2} />
         </div>
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-[#525252] mb-1">
+          <p className="font-sans text-xs uppercase tracking-widest text-foreground-muted font-semibold mb-1.5">
             {label}
           </p>
-          <div className="text-[#1a1a1a]">{children}</div>
+          <div className="text-foreground font-sans">{children}</div>
         </div>
       </div>
     </div>
@@ -37,34 +37,36 @@ function ContactCard({ icon: Icon, label, children }: ContactCardProps) {
 export default function ContactPage() {
   return (
     <>
-      {/* HERO: Volledig gefocust op de Quickscan en strategisch advies */}
-      <section className="bg-[#FAFAFA] border-b-2 border-black py-16 sm:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF4500] mb-4">
-            // Vrijblijvend Advies
+      {/* HERO */}
+      <section className="bg-background pt-32 pb-24 lg:pt-40 lg:pb-32">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-6">
+            Vrijblijvend Advies
           </p>
 
-          <h1 className="font-heading font-black uppercase tracking-tighter leading-[0.9] text-5xl sm:text-7xl">
-            Laten we <span className="text-[#FF4500]">kennismaken</span>.
+          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-8">
+            Laten we <span className="text-brand italic">kennismaken</span>.
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed text-[#1a1a1a] font-medium">
-            Wil je weten waar jouw website momenteel online kansen laat liggen, of overweeg je een strategische upgrade naar Next.js? Stuur een bericht. Je ontvangt <strong>binnen 24 uur</strong> een persoonlijk en inhoudelijk antwoord direct van mij (Ron). Geen geautomatiseerde funnels, wel eerlijk advies.
+          <p className="text-lg sm:text-xl max-w-3xl leading-relaxed text-foreground-muted font-sans mb-10">
+            Wil je weten waar jouw website momenteel online kansen laat liggen, of overweeg je een strategische upgrade naar Next.js? Stuur een bericht. Je ontvangt <strong className="text-foreground font-semibold">binnen 24 uur</strong> een persoonlijk en inhoudelijk antwoord direct van mij (Ron). Geen geautomatiseerde funnels, wel eerlijk advies.
           </p>
         </div>
       </section>
 
       {/* CONTACT GRID */}
-      <section className="bg-white py-16 sm:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 grid lg:grid-cols-5 gap-10">
+      <section className="bg-background-secondary py-24 sm:py-32 border-t border-border-subtle">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-5 gap-12 lg:gap-16">
+          
           {/* LINKERKOLOM: Directe contactgegevens */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-8">
             <div>
-              <h2 className="font-heading font-extrabold uppercase text-2xl mb-2">
+              <h2 className="font-serif text-3xl text-foreground mb-4">
                 Rechtstreeks contact
               </h2>
-              <p className="text-[#525252]">
-                Heb je een korte vraag of stem je zaken liever direct telefonisch af?
+              <p className="text-foreground-muted font-sans leading-relaxed">
+                Heb je een korte vraag of stem je zaken liever direct telefonisch af? 
+                Ik sta je graag persoonlijk te woord.
               </p>
             </div>
 
@@ -72,7 +74,7 @@ export default function ContactPage() {
               <ContactCard icon={Phone} label="Telefoon">
                 <a
                   href="tel:+31642628242"
-                  className="hover:text-[#FF4500] font-semibold transition-colors"
+                  className="hover:text-brand font-medium transition-colors text-lg"
                   data-testid="contact-phone"
                 >
                   06‑42628242
@@ -82,7 +84,7 @@ export default function ContactPage() {
               <ContactCard icon={Mail} label="E-mail">
                 <a
                   href="mailto:info@webboostpartner.nl"
-                  className="hover:text-[#FF4500] font-semibold break-all transition-colors"
+                  className="hover:text-brand font-medium break-all transition-colors text-lg"
                   data-testid="contact-email"
                 >
                   info@webboostpartner.nl
@@ -90,15 +92,15 @@ export default function ContactPage() {
               </ContactCard>
 
               <ContactCard icon={MapPin} label="Regio Rotterdam">
-                <span className="font-semibold">Rotterdam, NL</span>
-                <p className="text-sm text-[#525252] mt-1 leading-relaxed">
+                <span className="font-medium text-lg">Rotterdam, NL</span>
+                <p className="text-sm text-foreground-muted mt-2 leading-relaxed">
                   Ik kom graag bij u langs op locatie in Rotterdam, Capelle aan den IJssel, Barendrecht, Schiedam, Ridderkerk of Krimpen aan den IJssel.
                 </p>
               </ContactCard>
 
               <ContactCard icon={Clock} label="Persoonlijke reactie">
-                <span className="font-semibold">Binnen 24 uur</span>
-                <p className="text-sm text-[#525252] mt-1">Elke werkdag snel en direct antwoord.</p>
+                <span className="font-medium text-lg">Binnen 24 uur</span>
+                <p className="text-sm text-foreground-muted mt-2">Elke werkdag snel en direct antwoord.</p>
               </ContactCard>
             </div>
           </div>
@@ -107,8 +109,8 @@ export default function ContactPage() {
           <div className="lg:col-span-3">
             <Suspense
               fallback={
-                <div className="border-2 border-black bg-white p-8 shadow-brutal">
-                  <p className="font-mono text-sm text-[#525252]">Formulier laden...</p>
+                <div className="bg-background border border-border-subtle p-8 rounded-sm shadow-soft">
+                  <p className="font-sans text-sm text-foreground-muted">Formulier laden...</p>
                 </div>
               }
             >
