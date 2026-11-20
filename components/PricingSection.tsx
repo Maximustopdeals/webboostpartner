@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Check, Zap, TrendingUp, Star, Layers, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 interface PricingPackage {
   id: string;
@@ -23,113 +23,87 @@ interface PricingSectionProps {
   compact?: boolean;
 }
 
+// 👇 HIER PLAK JE JOUW BESTAANDE PACKAGES ARRAY TERUG 👇
 const packages: PricingPackage[] = [
-  // ... (ongewijzigd, laat je data staan)
+  // ... (jouw bestaande data)
 ];
+// 👆 EINDE PACKAGES ARRAY 👆
 
 export default function PricingSection({ compact = false }: PricingSectionProps) {
   return (
-    <section className="bg-[#FAFAFA] py-20 sm:py-28 border-t-2 border-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <section className={`py-24 sm:py-32 ${compact ? 'bg-transparent' : 'bg-background-secondary'}`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        
         {!compact && (
-          <div className="max-w-3xl mb-12">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-orange-accessible mb-3">
-              // Transparante Investeringen
+          <div className="max-w-3xl mb-16">
+            <p className="font-sans text-xs uppercase tracking-[0.25em] text-brand font-bold mb-4">
+              Transparante Investeringen
             </p>
-            <h2 className="font-heading font-black uppercase text-4xl sm:text-5xl tracking-tight leading-[0.95]">
+            <h2 className="font-serif text-4xl sm:text-5xl text-foreground leading-[1.1] tracking-tight mb-6">
               Kies een pakket dat<br />bij jouw groeidoelen past.
             </h2>
-            <p className="mt-4 text-lg text-[#525252] max-w-2xl">
+            <p className="text-lg text-foreground-muted max-w-2xl font-sans">
               Vaste prijzen vooraf, zonder verrassingen achteraf. Altijd gebouwd op een bliksemsnel, veilig en optimaal vindbaar fundament.
             </p>
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {packages.map((pkg) => (
             <div
               key={pkg.id}
-              // ✅ NIEUW: id per pakket voor diepe links + scroll-offset
               id={`pakket-${pkg.id}`}
-              className={`relative scroll-mt-24 border-2 border-black p-8 flex flex-col transition-all ${
+              className={`relative flex flex-col p-8 rounded-sm transition-all duration-300 scroll-mt-24 ${
                 pkg.highlighted
-                  ? "bg-black text-white shadow-brutal-orange lg:-translate-y-2"
-                  : "bg-white shadow-brutal"
+                  ? "bg-foreground text-white shadow-soft lg:-translate-y-4 border border-foreground"
+                  : "bg-background border border-border-subtle shadow-sm hover:shadow-soft hover:border-foreground-muted/30"
               }`}
             >
               {pkg.badge && (
-                <div className="absolute -top-3 left-4 font-heading text-xs uppercase px-3 py-1 border-2 border-black bg-[#FF4500] text-black font-bold z-20">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap z-20">
                   {pkg.badge}
                 </div>
               )}
 
-              <div className={`mb-6 ${pkg.highlighted ? "text-[#FF6B2B]" : "text-[#FF4500]"}`}>
+              <div className={`mb-6 ${pkg.highlighted ? "text-brand" : "text-brand"}`}>
                 {pkg.icon}
               </div>
 
-              <h3
-                className={`font-heading font-black uppercase text-3xl mb-2 ${
-                  pkg.highlighted ? "text-white" : "text-black"
-                }`}
-              >
+              <h3 className={`font-serif text-2xl mb-2 ${pkg.highlighted ? "text-white" : "text-foreground"}`}>
                 {pkg.name}
               </h3>
 
               <div className="mb-5">
-                <p
-                  className={`font-heading text-xl font-bold ${
-                    pkg.highlighted ? "text-[#FF6B2B]" : "text-black"
-                  }`}
-                >
-                  {pkg.price} <span className="text-sm font-sans font-normal text-gray-500">excl. btw</span>
+                <p className={`font-serif text-4xl tracking-tight ${pkg.highlighted ? "text-white" : "text-foreground"}`}>
+                  {pkg.price} <span className="text-sm font-sans font-medium text-foreground-muted">excl. btw</span>
                 </p>
-                <p
-                  className={`text-xs mt-1 ${
-                    pkg.highlighted ? "text-white/60" : "text-[#525252]"
-                  }`}
-                >
+                <p className={`text-xs mt-2 font-sans ${pkg.highlighted ? "text-white/60" : "text-foreground-muted"}`}>
                   ({pkg.priceIncl} incl. 21% btw)
                 </p>
               </div>
 
-              <p
-                className={`text-sm leading-relaxed mb-3 ${
-                  pkg.highlighted ? "text-white/70" : "text-[#525252]"
-                }`}
-              >
+              <p className={`text-sm leading-relaxed mb-4 font-sans ${pkg.highlighted ? "text-white/80" : "text-foreground-muted"}`}>
                 {pkg.forWho}
               </p>
 
-              <p
-                className={`text-sm font-semibold leading-relaxed mb-6 pb-6 border-b-2 ${
-                  pkg.highlighted
-                    ? "text-white border-white/20"
-                    : "text-black border-black/10"
-                }`}
-              >
+              <p className={`text-sm font-medium leading-relaxed mb-6 pb-6 border-b ${pkg.highlighted ? "text-white border-white/20" : "text-foreground border-border-subtle"}`}>
                 {pkg.promise}
               </p>
 
               {pkg.inheritFrom && (
-                <p
-                  className={`font-mono text-xs uppercase tracking-wider mb-3 ${
-                    pkg.highlighted ? "text-[#FF6B2B]" : "text-[#525252]"
-                  }`}
-                >
+                <p className={`font-sans text-xs uppercase tracking-widest mb-4 font-semibold ${pkg.highlighted ? "text-brand" : "text-foreground-muted"}`}>
                   Alles uit {pkg.inheritFrom}, plus:
                 </p>
               )}
 
-              <ul className="space-y-3 mb-8 flex-1">
+              <ul className="space-y-4 mb-8 flex-1">
                 {pkg.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm">
+                  <li key={idx} className="flex items-start gap-3">
                     <Check
-                      size={16}
-                      className={`mt-1 shrink-0 ${
-                        pkg.highlighted ? "text-[#FF6B2B]" : "text-[#00B050]"
-                      }`}
+                      size={18}
+                      className={`mt-0.5 shrink-0 ${pkg.highlighted ? "text-brand" : "text-brand"}`}
                     />
-                    <span className={pkg.highlighted ? "text-white/90" : "text-[#1a1a1a]"}>
+                    <span className={`text-sm font-sans leading-snug ${pkg.highlighted ? "text-white/90" : "text-foreground-muted"}`}>
                       {feature}
                     </span>
                   </li>
@@ -138,10 +112,10 @@ export default function PricingSection({ compact = false }: PricingSectionProps)
 
               <Link
                 href={`/contact?intent=pakket_${pkg.id}`}
-                className={`mt-auto inline-flex items-center justify-center gap-2 font-heading font-bold uppercase tracking-wider border-2 px-6 py-3 transition-all text-sm ${
+                className={`mt-auto inline-flex items-center justify-center gap-2 font-sans font-medium px-6 py-3.5 rounded-sm transition-colors duration-200 text-sm ${
                   pkg.highlighted
-                    ? "bg-[#FF4500] text-black border-black hover:bg-white hover:text-black hover:border-black"
-                    : "bg-white text-black border-black hover:bg-black hover:text-white"
+                    ? "bg-brand text-white hover:bg-brand-hover"
+                    : "bg-background-secondary text-foreground hover:bg-border-subtle"
                 }`}
               >
                 Offerte Aanvragen <ArrowRight size={16} />
