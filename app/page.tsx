@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
@@ -204,7 +203,11 @@ export default function HomePage() {
 
             <div className="flex flex-col gap-4 mb-10">
               <div className="flex items-center gap-2">
-                <div className="flex text-brand" aria-label="5 sterren">
+                <div
+                  className="flex text-brand"
+                  role="img"
+                  aria-label="5 van de 5 sterren"
+                >
                   {Array.from({ length: 5 }, (_, index) => (
                     <Star
                       key={index}
@@ -214,6 +217,7 @@ export default function HomePage() {
                     />
                   ))}
                 </div>
+
                 <p className="text-sm font-medium text-foreground-muted">
                   &quot;Binnen een week 3 nieuwe aanvragen!&quot; — Cindy,
                   Cindy&apos;s Kraamzorg
