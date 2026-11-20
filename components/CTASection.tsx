@@ -20,7 +20,8 @@ export default function CTASection({
       data-testid="cta-section"
     >
       <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
-        <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 text-balance max-w-4xl">
+        {/* text-white toegevoegd aan de h2 */}
+        <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 text-balance max-w-4xl text-white">
           {title.split(' ').map((word, index) => {
             if (index < 3) {
               return <span key={index} className="text-brand italic">{word} </span>;
