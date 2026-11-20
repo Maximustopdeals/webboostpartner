@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, Manrope } from "next/font/google";
 import "./globals.css";
 
+// Importeer hier je componenten
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 const dmSerif = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
@@ -26,9 +30,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl" className={`${dmSerif.variable} ${manrope.variable}`}>
-      <body className="bg-background text-foreground font-sans antialiased selection:bg-brand selection:text-white">
-        {/* Navbar en Footer komen hier later omheen */}
-        <main>{children}</main>
+      <body className="bg-background text-foreground font-sans antialiased selection:bg-brand selection:text-white flex flex-col min-h-screen">
+        
+        {/* Hier renderen we de Navbar */}
+        <Navbar />
+        
+        {/* De main content met flex-grow zodat de footer altijd onderaan blijft */}
+        <main className="flex-grow">
+          {children}
+        </main>
+        
+        {/* Hier renderen we de Footer */}
+        <Footer />
+        
       </body>
     </html>
   );
