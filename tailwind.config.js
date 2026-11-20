@@ -14,11 +14,11 @@ module.exports = {
         },
         foreground: {
           DEFAULT: '#242424', // Diep Antraciet
-          muted: '#5E5A54', // ✅ AANGEPAST: Donkerder warm grijs (voldoet aan contrast)
+          muted: '#77736D', // Warm Grijs
         },
         brand: {
-          DEFAULT: '#C45000', // ✅ AANGEPAST: Dieper, rijker oranje (voldoet aan contrast)
-          hover: '#A34000', // Iets donkerder voor hover states
+          DEFAULT: '#FB6311', // Jouw exacte oranje uit het logo
+          hover: '#E0550A', // Iets donkerder voor hover states
         },
         border: {
           subtle: '#E8E4DD', // Subtiel warm grijs voor randen
