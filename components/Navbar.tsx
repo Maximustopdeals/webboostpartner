@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -50,8 +51,12 @@ export default function Navbar() {
         setDropdownOpen(false);
       }
     }
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   useEffect(() => {
@@ -62,8 +67,12 @@ export default function Navbar() {
         setMobileSubOpen(false);
       }
     }
+
     document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
   }, []);
 
   useEffect(() => {
@@ -83,8 +92,9 @@ export default function Navbar() {
       data-testid="site-navbar"
     >
       <div className="max-w-full mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-[72px] lg:h-20">
+
+          {/* Logo - Prominentere merkidentiteit */}
           <Link
             href="/"
             className="shrink-0 flex items-center"
@@ -95,14 +105,17 @@ export default function Navbar() {
               alt="WebBoost Partner"
               width={2172}
               height={725}
-              className="h-14 w-auto" /* <--- AANGEPAST VAN h-12 NAAR h-14 */
+              className="h-12 lg:h-16 w-auto object-contain"
               priority
             />
           </Link>
 
           {/* Desktop navigatie & High-End CTA */}
           <div className="hidden lg:flex items-center">
-            <nav className="flex items-center" aria-label="Hoofdnavigatie">
+            <nav
+              className="flex items-center"
+              aria-label="Hoofdnavigatie"
+            >
               {mainLinks.map((item) =>
                 item.children ? (
                   <div
@@ -178,7 +191,8 @@ export default function Navbar() {
               href="/contact?intent=quickscan"
               className="ml-4 inline-flex items-center gap-2 bg-[#FF4500] text-black font-heading font-bold uppercase text-xs tracking-wider border-2 border-black px-4 py-2.5 hover:bg-black hover:text-white hover:-translate-y-0.5 hover:shadow-brutal-sm transition-all whitespace-nowrap"
             >
-              <MonitorPlay size={14} strokeWidth={2.5} /> GRATIS QUICKSCAN
+              <MonitorPlay size={14} strokeWidth={2.5} />
+              GRATIS QUICKSCAN
             </Link>
           </div>
 
@@ -188,6 +202,7 @@ export default function Navbar() {
             className="lg:hidden w-9 h-9 grid place-items-center border-2 border-black bg-black text-white"
             aria-label={open ? "Sluit menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
             data-testid="mobile-menu-btn"
           >
             {open ? (
@@ -201,6 +216,7 @@ export default function Navbar() {
         {/* Mobiel Accordion Menu */}
         {open && (
           <nav
+            id="mobile-navigation"
             className="lg:hidden border-t-2 border-black py-4 space-y-1"
             aria-label="Mobiele navigatie"
           >
